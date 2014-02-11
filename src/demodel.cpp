@@ -1,0 +1,95 @@
+#include <QDebug>
+#include "demodel.h"
+
+const char* DeModel::COLUMN_NAMES[] = {
+    "itemId",
+    "sign",
+    "name",
+    "type",
+    "state",
+    NULL
+};
+
+DeModel::DeModel(QObject *parent) :
+    QSqlQueryModel(parent)
+{
+}
+
+QHash<int,QByteArray> DeModel::roleNames() const
+{
+    int idx = 0;
+    QHash<int, QByteArray> roles;
+    while (COLUMN_NAMES[idx]) {
+        roles[Qt::UserRole + idx + 1] = COLUMN_NAMES[idx];
+        idx++;
+    }
+    return roles;
+}
+
+
+
+QVariant DeModel::data(const QModelIndex &index, int role) const
+{
+    QVariant value = QSqlQueryModel::data(index, role);
+
+    if(role < Qt::UserRole)
+    {
+        value = QSqlQueryModel::data(index, role);
+    } else {
+        int columnIdx = role - Qt::UserRole - 1;
+        QModelIndex modelIndex = this->index(index.row(), columnIdx);
+        value = QSqlQueryModel::data(modelIndex, Qt::DisplayRole);
+        if (columnIdx == 3) {
+
+            value = helper->getType(value.toInt());
+
+        } else if (columnIdx == 4) {
+
+            value = helper->getState(value.toInt());
+        }
+    }
+
+    return value;
+
+}
+
+
+void DeModel::refresh(int sort, int searchTarget, const QString &search)
+{
+
+    QString queryString("SELECT id AS itemId, sign, name, type, state FROM germany");
+
+    if (!search.isEmpty())
+    {
+        QString t_search = search;
+        t_search.prepend("%");
+        t_search.append("%");
+
+        switch(searchTarget)
+        {
+        case 1:
+            queryString.append(QString(" WHERE name LIKE \"%1\"").arg(t_search));
+            break;
+        case 2:
+            queryString.append(QString(" WHERE (name LIKE \"%1\") OR (sign LIKE \"%1\")").arg(t_search));
+            break;
+        default:
+            queryString.append(QString(" WHERE sign LIKE \"%1\"").arg(t_search));
+            break;
+        }
+    }
+
+    switch(sort)
+    {
+    case 1:
+        queryString.append(" ORDER BY name ASC");
+        break;
+    default:
+        queryString.append(" ORDER BY sign ASC");
+        break;
+    }
+
+
+    this->setQuery(queryString);
+
+}
