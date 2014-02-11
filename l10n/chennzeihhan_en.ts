@@ -8,11 +8,6 @@
         <source>Germany</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../qml/Models/CountriesModel.qml" line="9"/>
-        <source>Poland</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>CountryDelegate</name>
@@ -196,59 +191,72 @@
 <context>
     <name>ItemView</name>
     <message>
-        <location filename="../qml/Views/ItemView.qml" line="63"/>
+        <location filename="../qml/Views/ItemView.qml" line="73"/>
         <source>%1 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemView.qml" line="77"/>
+        <location filename="../qml/Views/ItemView.qml" line="87"/>
         <source>Capital</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemView.qml" line="85"/>
+        <location filename="../qml/Views/ItemView.qml" line="95"/>
         <source>Existing since</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemView.qml" line="85"/>
+        <location filename="../qml/Views/ItemView.qml" line="95"/>
         <source>Existed from</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemView.qml" line="93"/>
+        <location filename="../qml/Views/ItemView.qml" line="103"/>
         <source>Optional plate signs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemView.qml" line="102"/>
+        <location filename="../qml/Views/ItemView.qml" line="112"/>
         <source>Disbanded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemView.qml" line="111"/>
+        <location filename="../qml/Views/ItemView.qml" line="121"/>
         <source>Sign optional available since</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemView.qml" line="120"/>
+        <location filename="../qml/Views/ItemView.qml" line="130"/>
         <source>Merged into</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemView.qml" line="131"/>
-        <location filename="../qml/Views/ItemView.qml" line="189"/>
+        <location filename="../qml/Views/ItemView.qml" line="141"/>
+        <location filename="../qml/Views/ItemView.qml" line="199"/>
         <source>%1 - %2 %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemView.qml" line="146"/>
-        <source>Managed by</source>
+        <location filename="../qml/Views/ItemView.qml" line="181"/>
+        <source>Includes this old districts</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ItemWebView</name>
+    <message>
+        <location filename="../qml/Views/ItemWebView.qml" line="24"/>
+        <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemView.qml" line="171"/>
-        <source>Successor of</source>
+        <location filename="../qml/Views/ItemWebView.qml" line="28"/>
+        <source>Open in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Views/ItemWebView.qml" line="32"/>
+        <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

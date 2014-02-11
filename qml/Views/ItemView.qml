@@ -33,7 +33,7 @@ Page {
         stateLabel.text = itemData["state"];
         allocatedText.text = itemData["assign"];
         successor = itemData["successor"];
-        managedByText.text = itemData["admin"];
+//        managedByText.text = itemData["admin"];
         closedText.text = itemData["closed"];
         optionalText.text = itemData["optional"];
         valid = itemData["valid"];
@@ -109,7 +109,7 @@ Page {
                 color: Theme.primaryColor
             }
 
-            SectionHeader { text: qsTr("Disbanded"); visible: closedText.text !== "0" }
+            SectionHeader { text: qsTr("Disbanded"); visible: closedText.visible }
 
             Text {
                 id: closedText
@@ -118,7 +118,7 @@ Page {
                 color: Theme.primaryColor
             }
 
-            SectionHeader { text: qsTr("Sign optional available since"); visible: optionalText.text !== "0" }
+            SectionHeader { text: qsTr("Sign optional available since"); visible: optionalText.visible }
 
             Text {
                 id: optionalText
@@ -153,32 +153,32 @@ Page {
                 onClicked: pageStack.replace(Qt.resolvedUrl("ItemView.qml"), {itemId: succId})
             }
 
-            SectionHeader { text: qsTr("Managed by"); visible: managedByText.text !== "" }
+//            SectionHeader { text: qsTr("Managed by"); visible: managedByText.text !== "" }
 
-            BackgroundItem {
-                id: bgItem2
-                width: parent.width + Theme.paddingLarge
-                height: Theme.itemSizeSmall
-                anchors.left: parent.left
-                anchors.leftMargin: -Theme.paddingLarge
-                visible: managedByText.text !== ""
-                Label {
-                    id: managedByText
-                    visible: text !== ""
-                    width: parent.width
-                    maximumLineCount: 1
-                    truncationMode: TruncationMode.Fade
-                    font.pixelSize: Theme.fontSizeSmall
-                    color: bgItem2.highlighted ? Theme.highlightColor : Theme.primaryColor
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.leftMargin: Theme.paddingLarge
-                    anchors.rightMargin: Theme.paddingLarge
-                }
-            }
+//            BackgroundItem {
+//                id: bgItem2
+//                width: parent.width + Theme.paddingLarge
+//                height: Theme.itemSizeSmall
+//                anchors.left: parent.left
+//                anchors.leftMargin: -Theme.paddingLarge
+//                visible: managedByText.text !== ""
+//                Label {
+//                    id: managedByText
+//                    visible: text !== ""
+//                    width: parent.width
+//                    maximumLineCount: 1
+//                    truncationMode: TruncationMode.Fade
+//                    font.pixelSize: Theme.fontSizeSmall
+//                    color: bgItem2.highlighted ? Theme.highlightColor : Theme.primaryColor
+//                    anchors.verticalCenter: parent.verticalCenter
+//                    anchors.left: parent.left
+//                    anchors.right: parent.right
+//                    anchors.leftMargin: Theme.paddingLarge
+//                    anchors.rightMargin: Theme.paddingLarge
+//                }
+//            }
 
-            SectionHeader { text: qsTr("Successor of"); visible: succRep.visible }
+            SectionHeader { text: qsTr("Includes this old districts"); visible: succRep.visible }
 
             Repeater {
                 id: succRep
