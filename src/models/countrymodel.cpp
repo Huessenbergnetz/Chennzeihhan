@@ -1,7 +1,6 @@
-#include <QDebug>
-#include "demodel.h"
+#include "countrymodel.h"
 
-const char* DeModel::COLUMN_NAMES[] = {
+const char* CountryModel::COLUMN_NAMES[] = {
     "itemId",
     "sign",
     "name",
@@ -10,12 +9,14 @@ const char* DeModel::COLUMN_NAMES[] = {
     NULL
 };
 
-DeModel::DeModel(QObject *parent) :
+
+CountryModel::CountryModel(QObject *parent) :
     QSqlQueryModel(parent)
 {
 }
 
-QHash<int,QByteArray> DeModel::roleNames() const
+
+QHash<int,QByteArray> CountryModel::roleNames() const
 {
     int idx = 0;
     QHash<int, QByteArray> roles;
@@ -28,7 +29,7 @@ QHash<int,QByteArray> DeModel::roleNames() const
 
 
 
-QVariant DeModel::data(const QModelIndex &index, int role) const
+QVariant CountryModel::data(const QModelIndex &index, int role) const
 {
     QVariant value = QSqlQueryModel::data(index, role);
 
@@ -39,13 +40,13 @@ QVariant DeModel::data(const QModelIndex &index, int role) const
         int columnIdx = role - Qt::UserRole - 1;
         QModelIndex modelIndex = this->index(index.row(), columnIdx);
         value = QSqlQueryModel::data(modelIndex, Qt::DisplayRole);
-        if (columnIdx == 3) {
+        if (columnIdx == 3 && countryCode == "de") {
 
-            value = helper->getType(value.toInt());
+            value = deHelper->getType(value.toInt());
 
-        } else if (columnIdx == 4) {
+        } else if (columnIdx == 4 && countryCode == "de") {
 
-            value = helper->getState(value.toInt());
+            value = deHelper->getState(value.toInt());
         }
     }
 
@@ -54,10 +55,17 @@ QVariant DeModel::data(const QModelIndex &index, int role) const
 }
 
 
-void DeModel::refresh(int sort, int searchTarget, const QString &search)
+void CountryModel::refresh(const QString &cc, int sort, int searchTarget, const QString &search)
 {
+    countryCode = cc;
 
-    QString queryString("SELECT id AS itemId, sign, name, type, state FROM germany");
+    QString queryString;
+
+    if (cc == "ch") {
+        queryString = QString("SELECT id AS itemId, sign, name, '%1' AS type, '' AS state FROM ch").arg(tr("Canton"));
+    } else {
+        queryString = QString("SELECT id AS itemId, sign, name, type, state FROM %1").arg(cc);
+    }
 
     if (!search.isEmpty())
     {

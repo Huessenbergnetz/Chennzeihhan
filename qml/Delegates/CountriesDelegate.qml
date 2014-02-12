@@ -14,18 +14,20 @@ BackgroundItem {
         anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: 5 }
         source: "/usr/share/harbour-chennzeihhan/images/countries/" + model.code + ".png"
         sourceSize.width: 150
-        width: 150
+        width: 140
+        smooth: true
     }
 
     Label {
         id: itemTitle
-        anchors { bottom: parent.bottom; bottomMargin: 5 }
+        anchors { bottom: parent.bottom; bottomMargin: 5; horizontalCenter: parent.horizontalCenter }
         text: model.name
         color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
         maximumLineCount: 1
+        font.pixelSize: Theme.fontSizeSmall
         truncationMode: TruncationMode.Fade
         textFormat: Text.PlainText
-        width: parent.width
+        width: parent.width - 2* Theme.paddingMedium
         horizontalAlignment: Text.AlignHCenter
     }
 }

@@ -1,12 +1,12 @@
-#include "helper.h"
+#include "dehelper.h"
 
-Helper::Helper(QObject *parent) :
+DeHelper::DeHelper(QObject *parent) :
     QObject(parent)
 {
 }
 
 
-QString Helper::getState(int state)
+QString DeHelper::getState(int state)
 {
     QString value;
 
@@ -59,6 +59,9 @@ QString Helper::getState(int state)
     case 16:
         value = tr("Thuringia");
         break;
+    case 17:
+        value = tr("Germany");
+        break;
     default:
         value = tr("Unknown");
         break;
@@ -68,7 +71,7 @@ QString Helper::getState(int state)
 }
 
 
-QString Helper::getType(int type)
+QString DeHelper::getType(int type)
 {
     QString value;
 
@@ -91,6 +94,9 @@ QString Helper::getType(int type)
     case 5:
         value = tr("Regional association of");
         break;
+    case 6:
+        value = tr("Official cars");
+        break;
     case 10:
         value = tr("Members of the");
         break;
@@ -103,4 +109,18 @@ QString Helper::getType(int type)
     }
 
     return value;
+}
+
+
+
+bool DeHelper::isValid(const QString &assign, int closed)
+{
+
+    if (assign.contains("-") || closed > 0)
+    {
+        return false;
+    } else {
+        return true;
+    }
+
 }

@@ -7,6 +7,8 @@ Page {
 
     property int itemId
 
+    property string countryCode: "de"
+
     property string sign
     property string name
     property string capitol
@@ -27,7 +29,8 @@ Page {
 
     function getItemData()
     {
-        var itemData = deItemModel.getItemData(itemId);
+//        var itemData = deItemModel.getItemData(itemId);
+        var itemData = itemModel.getItemData(countryCode, itemId);
         sign = itemData["sign"];
         name = itemData["name"];
         capitalText.text = itemData["capitol"];
@@ -51,7 +54,7 @@ Page {
 
     Component.onCompleted: {
         getItemData()
-        coverConnector.country = "de"
+        coverConnector.country = qsTr("Germany")
         coverConnector.name = name
         coverConnector.sign = sign
         coverConnector.state = stateLabel.text
@@ -59,7 +62,7 @@ Page {
 
     onStatusChanged: {
         if (status == PageStatus.Active && wikipedia !== "") {
-            pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {itemUrl: "http://de.m.wikipedia.org/wiki/" + wikipedia})
+            pageStack.pushAttached(Qt.resolvedUrl("../Views/ItemWebView.qml"), {itemUrl: "http://de.m.wikipedia.org/wiki/" + wikipedia})
         }
     }
 
@@ -157,7 +160,7 @@ Page {
                     anchors.leftMargin: Theme.paddingLarge
                     anchors.rightMargin: Theme.paddingLarge
                 }
-                onClicked: pageStack.replace(Qt.resolvedUrl("ItemView.qml"), {itemId: succId})
+                onClicked: pageStack.replace(Qt.resolvedUrl("de.qml"), {itemId: succId}, PageStackAction.Immediate)
             }
 
 //            SectionHeader { text: qsTr("Managed by"); visible: managedByText.text !== "" }
@@ -190,7 +193,6 @@ Page {
             Repeater {
                 id: succRep
                 visible: count > 0
-                height: count * Theme.itemSizeSmall
                 model: deAntecessorModel
                 delegate: BackgroundItem {
                     id: bgItem3
@@ -213,7 +215,7 @@ Page {
                         anchors.leftMargin: Theme.paddingLarge
                         anchors.rightMargin: Theme.paddingLarge
                     }
-                    onClicked: pageStack.replace(Qt.resolvedUrl("ItemView.qml"), {itemId: model.itemId})
+                    onClicked: pageStack.replace(Qt.resolvedUrl("de.qml"), {itemId: model.itemId}, PageStackAction.Immediate)
                 }
             }
         }

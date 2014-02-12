@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Models"
 import "../Delegates"
+import "../Common"
 
 
 Page {
@@ -13,26 +14,11 @@ Page {
     property int searchTarget: 0
     property int sortType: 0
 
-    onSortTypeChanged: listView.model.refresh(sortType, searchTarget, searchString)
-    onSearchStringChanged: listView.model.refresh(sortType, searchTarget, searchString)
-    onSearchTargetChanged: listView.model.refresh(sortType, searchTarget, searchString)
+    onSortTypeChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
+    onSearchStringChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
+    onSearchTargetChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
 
-    function getModel()
-    {
-        switch(code)
-        {
-        case "de":
-            listView.model = deModel;
-            deModel.refresh(sortType, searchTarget, searchString);
-            break
-        default:
-            listView.model = deModel;
-            deModel.refresh(sortType, searchTarget, searchString);
-            break
-        }
-    }
-
-    Component.onCompleted: getModel()
+    Component.onCompleted: countryModel.refresh(code, sortType, searchTarget, searchString)
 
     SilicaListView {
         id: listView
@@ -55,19 +41,11 @@ Page {
 
         delegate: CountryDelegate { countryCode: code; search: searchString; target: searchTarget }
 
-        model: deModel
+        model: countryModel
 
         VerticalScrollDecorator {}
 
-        PushUpMenu {
-            enabled: listView.contentHeight >= listView.height
-            visible: listView.contentHeight >= listView.height
-            MenuItem {
-                id: goToTop
-                text: qsTr("Scroll to top")
-                onClicked: listView.scrollToTop()
-            }
-        }
+        FancyScroller {}
     }
 
     DockedPanel {

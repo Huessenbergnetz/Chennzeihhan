@@ -10,7 +10,7 @@ QVariantMap DeItemModel::getItemData(int id)
 {
     QVariantMap itemresult;
     QSqlQuery query;
-    query.exec(QString("SELECT id, sign, name, capitol, type, state, assign, successor, admin, closed, optional, wikipedia FROM germany WHERE id = %1").arg(id));
+    query.exec(QString("SELECT id, sign, name, capitol, type, state, assign, successor, admin, closed, optional, wikipedia FROM de WHERE id = %1").arg(id));
 
     if (query.next())
     {
@@ -36,7 +36,7 @@ QVariantMap DeItemModel::getItemData(int id)
 
     if (itemresult["successor"].toInt() != 0)
     {
-        query.exec(QString("SELECT id, name, type, sign FROM germany WHERE id = %1").arg(itemresult["successor"].toInt()));
+        query.exec(QString("SELECT id, name, type, sign FROM de WHERE id = %1").arg(itemresult["successor"].toInt()));
         if (query.next())
         {
             itemresult["succId"] = query.value(0).toInt();
@@ -47,7 +47,7 @@ QVariantMap DeItemModel::getItemData(int id)
     }
 
     QStringList optSigns;
-    query.exec(QString("SELECT sign FROM germany WHERE successor = %1 AND optional > 0").arg(itemresult["itemId"].toInt()));
+    query.exec(QString("SELECT sign FROM de WHERE successor = %1 AND optional > 0").arg(itemresult["itemId"].toInt()));
     while (query.next()) {
         optSigns << query.value(0).toString();
     }

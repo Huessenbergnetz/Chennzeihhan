@@ -6,10 +6,12 @@ QT += core sql
 SOURCES += \
     src/main.cpp \
     src/dbmanager.cpp \
-    src/deitemmodel.cpp \
-    src/demodel.cpp \
-    src/deantecessormodel.cpp \
-    src/helper.cpp
+    src/models/deitemmodel.cpp \
+    src/models/deantecessormodel.cpp \
+    src/models/dehelper.cpp \
+    src/models/countrymodel.cpp \
+    src/models/chitemmodel.cpp \
+    src/models/itemmodel.cpp
 
 datafiles.path = /usr/share/harbour-chennzeihhan/data
 datafiles.files = data/*
@@ -29,21 +31,32 @@ OTHER_FILES += \
     qml/Models/CountriesModel.qml \
     qml/Delegates/CountriesDelegate.qml \
     qml/Views/CountryView.qml \
-    qml/Delegates/CountryDelegate.qml \
     qml/Views/ItemView.qml \
     l10n/chennzeihhan_en.ts \
     l10n/chennzeihhan_de.ts \
     data/carplates.sqlite \
     qml/Views/ItemWebView.qml \
-    images/countries/de.png
+    images/countries/de.png \
+    qml/Delegates/CountryDelegate.qml \
+    qml/ItemViews/de.qml \
+    qml/ItemViews/ch.qml \
+    qml/Common/FancyScroller.qml \
+    qml/Pages/CoverPage.qml \
+    qml/Pages/About.qml \
+    images/countries/ch.png \
+    images/harbour-chennzeihhan-256.png \
+    harbour-chennzeihhan.png \
+    harbour-chennzeihhan.svg
 
 HEADERS += \
     src/dbmanager.h \
     src/globals.h \
-    src/deitemmodel.h \
-    src/demodel.h \
-    src/deantecessormodel.h \
-    src/helper.h
+    src/models/deitemmodel.h \
+    src/models/deantecessormodel.h \
+    src/models/dehelper.h \
+    src/models/countrymodel.h \
+    src/models/chitemmodel.h \
+    src/models/itemmodel.h
 
 RESOURCES += \
     l10n/translations.qrc

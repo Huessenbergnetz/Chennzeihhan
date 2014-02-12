@@ -11,14 +11,19 @@
 #include <sailfishapp.h>
 #include "globals.h"
 #include "dbmanager.h"
-#include "demodel.h"
-#include "deitemmodel.h"
-#include "deantecessormodel.h"
+#include "models/countrymodel.h"
+#include "models/deantecessormodel.h"
+#include "models/itemmodel.h"
 
 
 int main(int argc, char *argv[])
 {
     QGuiApplication* app = SailfishApp::application(argc, argv);
+
+    app->setOrganizationName("Buschtrommel");
+    app->setOrganizationDomain("buschmann23.de");
+    app->setApplicationName("harbour-chennzeihhan");
+    app->setApplicationVersion(VERSION_STRING);
 
     QString locale = QLocale::system().name();
     QTranslator *translator = new QTranslator;
@@ -28,14 +33,15 @@ int main(int argc, char *argv[])
     DbManager dbman;
     dbman.openDB();
 
-    DeModel *deModel = new DeModel();
-    DeItemModel *deItemModel = new DeItemModel();
+    CountryModel *countryModel = new CountryModel();
+    ItemModel *itemModel = new ItemModel();
+
     DeAntecessorModel *deAntecessorModel = new DeAntecessorModel();
 
     QQuickView* view = SailfishApp::createView();
 
-    view->rootContext()->setContextProperty("deModel", deModel);
-    view->rootContext()->setContextProperty("deItemModel", deItemModel);
+    view->rootContext()->setContextProperty("countryModel", countryModel);
+    view->rootContext()->setContextProperty("itemModel", itemModel);
     view->rootContext()->setContextProperty("deAntecessorModel", deAntecessorModel);
     view->rootContext()->setContextProperty("versionString", VERSION_STRING);
 

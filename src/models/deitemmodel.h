@@ -6,7 +6,7 @@
 #include <QVariantMap>
 #include <QStringList>
 
-#include "helper.h"
+#include "dehelper.h"
 
 class DeItemModel : public QObject
 {
@@ -23,7 +23,7 @@ public slots:
 private:
     bool isValid(const QString &assign, int closed);
 
-    Helper helper;
+    DeHelper helper;
 
 };
 

@@ -3,7 +3,7 @@
 
 #include <QSqlQueryModel>
 
-#include "helper.h"
+#include "dehelper.h"
 
 class DeAntecessorModel : public QSqlQueryModel
 {
@@ -21,7 +21,7 @@ public slots:
 
 private:
     const static char* COLUMN_NAMES[];
-    Helper *helper;
+    DeHelper *helper;
 
 };
 

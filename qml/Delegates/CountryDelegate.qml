@@ -13,7 +13,7 @@ ListItem {
 
     contentHeight: Theme.itemSizeMedium
 
-    onClicked: pageStack.push(Qt.resolvedUrl("../Views/ItemView.qml"), {itemId: model.itemId})
+    onClicked: pageStack.push(Qt.resolvedUrl("../ItemViews/"+ countryCode + ".qml"), {itemId: model.itemId})
 
     ListView.onAdd: AddAnimation { target: listItem }
 
@@ -49,7 +49,7 @@ ListItem {
             }
 
             Text {
-                text: qsTr("%1 - %2").arg(sign).arg(model.state)
+                text: model.state ? qsTr("%1 - %2").arg(sign).arg(model.state) : sign
                 color: listItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
                 textFormat: Text.RichText
                 font.pixelSize: Theme.fontSizeSmall
