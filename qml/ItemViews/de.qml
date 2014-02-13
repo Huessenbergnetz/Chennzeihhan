@@ -193,6 +193,7 @@ Page {
             Repeater {
                 id: succRep
                 visible: count > 0
+                height: count * Theme.itemSizeSmall
                 model: deAntecessorModel
                 delegate: BackgroundItem {
                     id: bgItem3

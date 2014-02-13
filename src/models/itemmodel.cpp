@@ -1,4 +1,5 @@
 #include "itemmodel.h"
+#include <QDebug>
 
 ItemModel::ItemModel(QObject *parent) :
     QObject(parent)
@@ -75,13 +76,39 @@ QVariantMap ItemModel::getDeData(int id)
         }
     }
 
-    QStringList optSigns;
-    query.exec(QString("SELECT sign FROM de WHERE successor = %1 AND optional > 0").arg(itemresult["itemId"].toInt()));
-    while (query.next()) {
-        optSigns << query.value(0).toString();
+    if (itemresult["valid"].toBool())
+    {
+
+        QStringList optSigns;
+        QList<int> subOptSignIds;
+        QList<int> subSubOptSignIds;
+        query.exec(QString("SELECT id, sign FROM de WHERE successor = %1 AND optional > 0").arg(itemresult["itemId"].toInt()));
+        while (query.next()) {
+            subOptSignIds << query.value(0).toInt();
+            optSigns << query.value(1).toString();
+        }
+
+        for (int i = 0; i < subOptSignIds.size(); ++i)
+        {
+            query.exec(QString("SELECT id, sign FROM de WHERE successor = %1 AND optional > 0").arg(subOptSignIds.at(i)));
+            while (query.next()) {
+                subSubOptSignIds << query.value(0).toInt();
+                optSigns << query.value(1).toString();
+            }
+        }
+
+        for (int i = 0; i < subSubOptSignIds.size(); ++i)
+        {
+            query.exec(QString("SELECT sign FROM de WHERE successor = %1 AND optional > 0").arg(subSubOptSignIds.at(i)));
+            while (query.next()) {
+                optSigns << query.value(0).toString();
+            }
+        }
+
+        if (!optSigns.isEmpty())
+            itemresult["optionalSigns"] = optSigns.join(", ");
+
     }
-    if (!optSigns.isEmpty())
-        itemresult["optionalSigns"] = optSigns.join(", ");
 
 
     return itemresult;
