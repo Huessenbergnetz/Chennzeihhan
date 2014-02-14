@@ -47,36 +47,51 @@ QVariantMap ItemModel::getDeData(int id)
         itemresult["itemId"] = query.value(0).toInt();
         itemresult["sign"] = query.value(1).toString();
         itemresult["name"] = query.value(2).toString();
-        itemresult["capitol"] = query.value(3).toString();
+        itemresult["capital"] = query.value(3).toString();
         itemresult["type"] = deHelper->getType(query.value(4).toInt());
         itemresult["state"] = deHelper->getState(query.value(5).toInt());
-        itemresult["assign"] = query.value(6).toString();
-        itemresult["successor"] = query.value(7).toInt();
-        itemresult["admin"] = query.value(8).toString();
-        itemresult["closed"] = query.value(9).toInt();
+        itemresult["founded"] = query.value(6).toInt();
+        itemresult["disbanded"] = query.value(9).toInt();
         itemresult["optional"] = query.value(10).toInt();
         itemresult["wikipedia"] = query.value(11).toString();
-        itemresult["valid"] = deHelper->isValid(itemresult["assign"].toString(), itemresult["closed"].toInt());
-        itemresult["succId"] = 0;
+        itemresult["succId"] = query.value(7).toInt(); // id of the district it was merged in
         itemresult["succName"] = "";
         itemresult["succType"] = "";
         itemresult["succSign"] = "";
+        itemresult["tpoId"] = query.value(8).toInt(); // id of the the current district it is part of
+        itemresult["tpoName"] = "";
+        itemresult["tpoType"] = "";
+        itemresult["tpoSign"] = "";
         itemresult["optionalSigns"] = "";
     }
 
-    if (itemresult["successor"].toInt() != 0)
+    if (itemresult["succId"].toInt() != 0)
     {
-        query.exec(QString("SELECT id, name, type, sign FROM de WHERE id = %1").arg(itemresult["successor"].toInt()));
+        query.exec(QString("SELECT name, type, sign FROM de WHERE id = %1").arg(itemresult["succId"].toInt()));
         if (query.next())
         {
-            itemresult["succId"] = query.value(0).toInt();
-            itemresult["succName"] = query.value(1).toString();
-            itemresult["succType"] = deHelper->getType(query.value(2).toInt());
-            itemresult["succSign"] = query.value(3).toString();
+            itemresult["succName"] = query.value(0).toString();
+            itemresult["succType"] = deHelper->getType(query.value(1).toInt());
+            itemresult["succSign"] = query.value(2).toString();
         }
     }
 
-    if (itemresult["valid"].toBool())
+
+    // check if district today belongs to another district than it was first merged into
+    if (itemresult["succId"] != itemresult["tpoId"] && itemresult["tpoId"].toInt() != 0)
+    {
+        query.exec(QString("SELECT name, type, sign FROM de WHERE id = %1").arg(itemresult["tpoId"].toInt()));
+        if (query.next())
+        {
+            itemresult["tpoName"] = query.value(0).toString();
+            itemresult["tpoType"] = deHelper->getType(query.value(1).toInt());
+            itemresult["tpoSign"] = query.value(2).toString();
+        }
+    } else {
+        itemresult["tpoId"] = 0;
+    }
+
+    if (itemresult["disbanded"].toInt() == 0)
     {
 
         QStringList optSigns;
@@ -109,7 +124,6 @@ QVariantMap ItemModel::getDeData(int id)
             itemresult["optionalSigns"] = optSigns.join(", ");
 
     }
-
 
     return itemresult;
 }

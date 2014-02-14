@@ -14,38 +14,39 @@ Page {
     property string capitol
     property string type
     property string state
-    property string assign
-    property int successor
-    property string admin
-    property int closed
+    property int founded
+    property int disbanded
     property int optional
-    property bool valid
-    property int succId
+    property int succId  // data for the successor
     property string succName
     property string succType
     property string succSign
+    property int tpoId // data for the district it is part of today if it is not the same as successor
+    property string tpoName
+    property string tpoType
+    property string tpoSign
     property string optSigns
     property string wikipedia
 
     function getItemData()
     {
-//        var itemData = deItemModel.getItemData(itemId);
         var itemData = itemModel.getItemData(countryCode, itemId);
         sign = itemData["sign"];
         name = itemData["name"];
-        capitalText.text = itemData["capitol"];
+        capitalText.text = itemData["capital"];
         type = itemData["type"];
         stateLabel.text = itemData["state"];
-        allocatedText.text = itemData["assign"];
-        successor = itemData["successor"];
-//        managedByText.text = itemData["admin"];
-        closedText.text = itemData["closed"];
+        founded = itemData["founded"];
+        disbanded = itemData["disbanded"];
         optionalText.text = itemData["optional"];
-        valid = itemData["valid"];
         succId = itemData["succId"];
         succName = itemData["succName"];
         succType = itemData["succType"];
         succSign = itemData["succSign"];
+        tpoId = itemData["tpoId"];
+        tpoName = itemData["tpoName"];
+        tpoType = itemData["tpoType"];
+        tpoSign = itemData["tpoSign"];
         optSignsText.text = itemData["optionalSigns"];
         wikipedia = itemData["wikipedia"];
 
@@ -102,10 +103,11 @@ Page {
                 color: Theme.primaryColor
             }
 
-            SectionHeader { text: valid ? qsTr("Existing since") : qsTr("Existed from") }
+            SectionHeader { text: disbanded === 0 ? qsTr("Existing since") : qsTr("Existed from") }
 
             Text {
-                id: allocatedText
+                id: existenceText
+                text: disbanded === 0 ? founded : founded + " - " + disbanded
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.primaryColor
             }
@@ -115,15 +117,6 @@ Page {
             Text {
                 id: optSignsText
                 visible: text !== ""
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.primaryColor
-            }
-
-            SectionHeader { text: qsTr("Disbanded"); visible: closedText.visible }
-
-            Text {
-                id: closedText
-                visible: text !== "0"
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.primaryColor
             }
@@ -163,32 +156,33 @@ Page {
                 onClicked: pageStack.replace(Qt.resolvedUrl("de.qml"), {itemId: succId}, PageStackAction.Immediate)
             }
 
-//            SectionHeader { text: qsTr("Managed by"); visible: managedByText.text !== "" }
+            SectionHeader { text: qsTr("Today part of"); visible: tpoId !== 0 }
 
-//            BackgroundItem {
-//                id: bgItem2
-//                width: parent.width + Theme.paddingLarge
-//                height: Theme.itemSizeSmall
-//                anchors.left: parent.left
-//                anchors.leftMargin: -Theme.paddingLarge
-//                visible: managedByText.text !== ""
-//                Label {
-//                    id: managedByText
-//                    visible: text !== ""
-//                    width: parent.width
-//                    maximumLineCount: 1
-//                    truncationMode: TruncationMode.Fade
-//                    font.pixelSize: Theme.fontSizeSmall
-//                    color: bgItem2.highlighted ? Theme.highlightColor : Theme.primaryColor
-//                    anchors.verticalCenter: parent.verticalCenter
-//                    anchors.left: parent.left
-//                    anchors.right: parent.right
-//                    anchors.leftMargin: Theme.paddingLarge
-//                    anchors.rightMargin: Theme.paddingLarge
-//                }
-//            }
+            BackgroundItem {
+                id: bgItem2
+                width: parent.width + Theme.paddingLarge
+                height: Theme.itemSizeSmall
+                anchors.left: parent.left
+                anchors.leftMargin: -Theme.paddingLarge
+                visible: tpoId !== 0
+                Label {
+                    id: todayPartOfText
+                    text: qsTr("%1 - %2 %3").arg(tpoSign).arg(tpoType).arg(tpoName)
+                    width: parent.width
+                    maximumLineCount: 1
+                    truncationMode: TruncationMode.Fade
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: bgItem2.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.leftMargin: Theme.paddingLarge
+                    anchors.rightMargin: Theme.paddingLarge
+                }
+                onClicked: pageStack.replace(Qt.resolvedUrl("de.qml"), {itemId: tpoId}, PageStackAction.Immediate)
+            }
 
-            SectionHeader { text: qsTr("Includes this old districts"); visible: succRep.visible }
+            SectionHeader { text: disbanded === 0 ? qsTr("Includes this old districts") : qsTr("Included this old districts"); visible: succRep.visible }
 
             Repeater {
                 id: succRep
