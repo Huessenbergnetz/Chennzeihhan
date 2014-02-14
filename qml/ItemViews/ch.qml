@@ -19,7 +19,7 @@ Page {
         var itemData = itemModel.getItemData(countryCode, itemId);
         sign = itemData["sign"];
         name = itemData["name"];
-        capitalText.text = itemData["capital"];
+        capitalText.contentText = itemData["capital"];
         wikipedia = itemData["wikipedia"];
     }
 
@@ -42,14 +42,12 @@ Page {
         PageHeader { title: sign }
         anchors.fill: parent
         VerticalScrollDecorator {}
-        contentHeight: contentCol.height + Theme.paddingLarge
+        contentHeight: headerCol.height + contentCol.height + Theme.paddingLarge
 
 
         Column {
-            id: contentCol
-            anchors { top: parent.top; left: parent.left; right: parent.right; topMargin: 4 * Theme.paddingLarge; leftMargin: Theme.paddingLarge }
-
-
+            id: headerCol
+            anchors { top: parent.top; left: parent.left; right: parent.right; topMargin: 4 * Theme.paddingLarge; leftMargin: Theme.paddingLarge; rightMargin: Theme.paddingLarge }
             Label {
                 id: nameLabel
                 text: qsTr("Canton %2").arg(name)
@@ -58,6 +56,14 @@ Page {
                 width: parent.width
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
+
+        }
+
+
+        Column {
+            id: contentCol
+            anchors { top: headerCol.bottom; left: parent.left; right: parent.right; topMargin: Theme.paddingLarge; leftMargin: Theme.paddingLarge; rightMargin: Theme.paddingLarge }
+            spacing:Theme.paddingLarge
 
             ItemEntry {
                 id: capitalText
