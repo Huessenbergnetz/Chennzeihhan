@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../Common"
 
 BackgroundItem {
     id: listItem
@@ -18,13 +19,18 @@ BackgroundItem {
 //        smooth: true
 //    }
 
-    Rectangle {
-        id: plate
+//    Rectangle {
+//        id: plate
+//        anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: 5 }
+//        width: 140; height: 90; radius: 180
+//        color: "transparent"
+//        border.color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+//        border.width: 4
+//    }
+
+    CountryPlate {
+        width: 140; height: 90
         anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: 5 }
-        width: 140; height: 90; radius: 180
-        color: "transparent"
-        border.color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
-        border.width: 4
     }
 
     Label {
