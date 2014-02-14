@@ -6,11 +6,9 @@ QT += core sql
 SOURCES += \
     src/main.cpp \
     src/dbmanager.cpp \
-    src/models/deitemmodel.cpp \
     src/models/deantecessormodel.cpp \
     src/models/dehelper.cpp \
     src/models/countrymodel.cpp \
-    src/models/chitemmodel.cpp \
     src/models/itemmodel.cpp
 
 datafiles.path = /usr/share/harbour-chennzeihhan/data
@@ -31,7 +29,6 @@ OTHER_FILES += \
     qml/Models/CountriesModel.qml \
     qml/Delegates/CountriesDelegate.qml \
     qml/Views/CountryView.qml \
-    qml/Views/ItemView.qml \
     l10n/chennzeihhan_en.ts \
     l10n/chennzeihhan_de.ts \
     data/carplates.sqlite \
@@ -51,11 +48,9 @@ OTHER_FILES += \
 HEADERS += \
     src/dbmanager.h \
     src/globals.h \
-    src/models/deitemmodel.h \
     src/models/deantecessormodel.h \
     src/models/dehelper.h \
     src/models/countrymodel.h \
-    src/models/chitemmodel.h \
     src/models/itemmodel.h
 
 RESOURCES += \
