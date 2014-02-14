@@ -33,12 +33,12 @@ Page {
         var itemData = itemModel.getItemData(countryCode, itemId);
         sign = itemData["sign"];
         name = itemData["name"];
-        capitalText.text = itemData["capital"];
+        capitalText.contentText = itemData["capital"];
         type = itemData["type"];
         stateLabel.text = itemData["state"];
         founded = itemData["founded"];
         disbanded = itemData["disbanded"];
-        optionalText.text = itemData["optional"];
+        optionalText.contentText = itemData["optional"];
         succId = itemData["succId"];
         succName = itemData["succName"];
         succType = itemData["succType"];
@@ -47,7 +47,7 @@ Page {
         tpoName = itemData["tpoName"];
         tpoType = itemData["tpoType"];
         tpoSign = itemData["tpoSign"];
-        optSignsText.text = itemData["optionalSigns"];
+        optSignsText.contentText = itemData["optionalSigns"];
         wikipedia = itemData["wikipedia"];
 
         deAntecessorModel.refresh(itemId)
@@ -72,13 +72,12 @@ Page {
         PageHeader { title: sign }
         anchors.fill: parent
         VerticalScrollDecorator {}
-        contentHeight: contentCol.height + Theme.paddingLarge
+        contentHeight: headerCol.height + contentCol.height + listCol.height + Theme.paddingLarge
 
 
         Column {
-            id: contentCol
-            anchors { top: parent.top; left: parent.left; right: parent.right; topMargin: 4 * Theme.paddingLarge; leftMargin: Theme.paddingLarge }
-
+            id: headerCol
+            anchors { top: parent.top; left: parent.left; right: parent.right; topMargin: 4 * Theme.paddingLarge; leftMargin: Theme.paddingLarge; rightMargin: Theme.paddingLarge }
 
             Label {
                 id: nameLabel
@@ -94,124 +93,74 @@ Page {
                 textFormat: Text.PlainText
                 color: Theme.highlightColor
             }
+        }
 
-            SectionHeader { text: qsTr("Capital") }
 
-            Text {
+        Column {
+            id: contentCol
+            anchors { top: headerCol.bottom; left: parent.left; right: parent.right; topMargin: Theme.paddingLarge; leftMargin: Theme.paddingLarge; rightMargin: Theme.paddingLarge }
+            spacing:Theme.paddingLarge
+
+            ItemEntry {
                 id: capitalText
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.primaryColor
+                header: qsTr("Capital")
+                icon: "image://theme/icon-s-task"
             }
 
-            SectionHeader { text: disbanded === 0 ? qsTr("Existing since") : qsTr("Existed from") }
-
-            Text {
+            ItemEntry {
                 id: existenceText
-                text: disbanded === 0 ? founded : founded + " - " + disbanded
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.primaryColor
+                header: disbanded === 0 ? qsTr("Existing since") : qsTr("Existed from")
+                contentText: disbanded === 0 ? founded : founded + " - " + disbanded
+                icon: "image://theme/icon-s-date"
             }
 
-            SectionHeader { text: qsTr("Optional plate signs"); visible: optSignsText.text !== ""}
-
-            Text {
+            ItemEntry {
                 id: optSignsText
-                visible: text !== ""
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.primaryColor
+                header: qsTr("Optional plate signs")
+                visible: contentText !== ""
+                icon: "image://theme/icon-l-share"
             }
 
-            SectionHeader { text: qsTr("Sign optional available since"); visible: optionalText.visible }
-
-            Text {
+            ItemEntry {
                 id: optionalText
-                visible: text !== "0"
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.primaryColor
+                header: qsTr("Sign optional available since")
+                visible: contentText !== "0"
+                icon: "image://theme/icon-m-refresh"
             }
+        }
 
-            SectionHeader { text: qsTr("Merged into"); visible: succId !== 0 }
+        Column {
+            id: listCol
+            anchors { top: contentCol.bottom; left: parent.left; right: parent.right; topMargin: Theme.paddingLarge; leftMargin: Theme.paddingLarge; rightMargin: Theme.paddingLarge }
 
-            BackgroundItem {
-                id: bgItem
-                width: parent.width + Theme.paddingLarge
-                height: Theme.itemSizeSmall
-                anchors.left: parent.left
-                anchors.leftMargin: -Theme.paddingLarge
+            ItemEntry {
+                id: mergedText
+                header: qsTr("Merged into")
                 visible: succId !== 0
-                Label {
-                    id: mergedText
-                    text: qsTr("%1 - %2 %3").arg(succSign).arg(succType).arg(succName)
-                    width: parent.width
-                    font.pixelSize: Theme.fontSizeSmall
-                    maximumLineCount: 1
-                    truncationMode: TruncationMode.Fade
-                    color: bgItem.highlighted ? Theme.highlightColor : Theme.primaryColor
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.leftMargin: Theme.paddingLarge
-                    anchors.rightMargin: Theme.paddingLarge
-                }
+                icon: "image://theme/icon-s-device-upload"
+                contentText: qsTr("%1 - %2 %3").arg(succSign).arg(succType).arg(succName)
+                clickable: true
                 onClicked: pageStack.replace(Qt.resolvedUrl("de.qml"), {itemId: succId}, PageStackAction.Immediate)
             }
 
-            SectionHeader { text: qsTr("Today part of"); visible: tpoId !== 0 }
-
-            BackgroundItem {
-                id: bgItem2
-                width: parent.width + Theme.paddingLarge
-                height: Theme.itemSizeSmall
-                anchors.left: parent.left
-                anchors.leftMargin: -Theme.paddingLarge
+            ItemEntry {
+                id: todayPartOfText
+                header: qsTr("Today part of")
                 visible: tpoId !== 0
-                Label {
-                    id: todayPartOfText
-                    text: qsTr("%1 - %2 %3").arg(tpoSign).arg(tpoType).arg(tpoName)
-                    width: parent.width
-                    maximumLineCount: 1
-                    truncationMode: TruncationMode.Fade
-                    font.pixelSize: Theme.fontSizeSmall
-                    color: bgItem2.highlighted ? Theme.highlightColor : Theme.primaryColor
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.leftMargin: Theme.paddingLarge
-                    anchors.rightMargin: Theme.paddingLarge
-                }
+                icon: "image://theme/icon-m-location"
+                contentText: qsTr("%1 - %2 %3").arg(tpoSign).arg(tpoType).arg(tpoName)
+                clickable: true
                 onClicked: pageStack.replace(Qt.resolvedUrl("de.qml"), {itemId: tpoId}, PageStackAction.Immediate)
             }
 
-            SectionHeader { text: disbanded === 0 ? qsTr("Includes this old districts") : qsTr("Included this old districts"); visible: succRep.visible }
-
-            Repeater {
-                id: succRep
+            ItemEntry {
+                id: antecessors
+                header: qsTr("Includes this old districts")
                 visible: count > 0
-                height: count * Theme.itemSizeSmall
-                model: deAntecessorModel
-                delegate: BackgroundItem {
-                    id: bgItem3
-                    width: contentCol.width + Theme.paddingLarge
-                    height: Theme.itemSizeSmall
-                    anchors.left: contentCol.left
-                    anchors.leftMargin: -Theme.paddingLarge
-                    visible: succRep.visible
-                    Label {
-                        id: succOfText
-                        width: parent.width
-                        maximumLineCount: 1
-                        truncationMode: TruncationMode.Fade
-                        text: qsTr("%1 - %2 %3").arg(model.sign).arg(model.type).arg(model.name)
-                        font.pixelSize: Theme.fontSizeSmall
-                        color: bgItem3.highlighted ? Theme.highlightColor : Theme.primaryColor
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.left: parent.left
-                        anchors.right: parent.right
-                        anchors.leftMargin: Theme.paddingLarge
-                        anchors.rightMargin: Theme.paddingLarge
-                    }
-                    onClicked: pageStack.replace(Qt.resolvedUrl("de.qml"), {itemId: model.itemId}, PageStackAction.Immediate)
-                }
+                icon: "image://theme/icon-m-levels"
+                repeaterModel: deAntecessorModel
+                list: true
+                onModelClicked: pageStack.replace(Qt.resolvedUrl("de.qml"), {itemId: modelId}, PageStackAction.Immediate)
             }
         }
     }

@@ -59,12 +59,10 @@ Page {
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             }
 
-            SectionHeader { text: qsTr("Capital") }
-
-            Text {
+            ItemEntry {
                 id: capitalText
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.primaryColor
+                header: qsTr("Capital")
+                icon: "image://theme/icon-s-task"
             }
         }
     }

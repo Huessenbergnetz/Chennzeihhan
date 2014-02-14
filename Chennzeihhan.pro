@@ -43,7 +43,8 @@ OTHER_FILES += \
     images/countries/ch.png \
     images/harbour-chennzeihhan-256.png \
     harbour-chennzeihhan.png \
-    harbour-chennzeihhan.svg
+    harbour-chennzeihhan.svg \
+    qml/ItemViews/ItemEntry.qml
 
 HEADERS += \
     src/dbmanager.h \
