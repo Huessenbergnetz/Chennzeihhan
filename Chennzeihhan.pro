@@ -33,14 +33,12 @@ OTHER_FILES += \
     l10n/chennzeihhan_de.ts \
     data/carplates.sqlite \
     qml/Views/ItemWebView.qml \
-    images/countries/de.png \
     qml/Delegates/CountryDelegate.qml \
     qml/ItemViews/de.qml \
     qml/ItemViews/ch.qml \
     qml/Common/FancyScroller.qml \
     qml/Pages/CoverPage.qml \
     qml/Pages/About.qml \
-    images/countries/ch.png \
     images/harbour-chennzeihhan-256.png \
     harbour-chennzeihhan.png \
     harbour-chennzeihhan.svg \
