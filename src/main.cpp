@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
     QString locale = QLocale::system().name();
     QTranslator *translator = new QTranslator;
-    if ((translator->load("chennzeihhan_"+locale, ":/")))
+    if ((translator->load("chennzeihhan_"+locale, "/usr/share/harbour-chennzeihhan/translations")))
         app->installTranslator(translator);
 
     DbManager dbman;

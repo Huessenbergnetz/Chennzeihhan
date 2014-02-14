@@ -233,57 +233,11 @@
     </message>
 </context>
 <context>
-    <name>ItemView</name>
+    <name>ItemEntry</name>
     <message>
-        <location filename="../qml/Views/ItemView.qml" line="81"/>
-        <source>%1 %2</source>
-        <translation>%1 %2</translation>
-    </message>
-    <message>
-        <location filename="../qml/Views/ItemView.qml" line="94"/>
-        <source>Capital</source>
-        <translation>Verwaltungssitz</translation>
-    </message>
-    <message>
-        <location filename="../qml/Views/ItemView.qml" line="102"/>
-        <source>Existing since</source>
-        <translation>Existiert seit</translation>
-    </message>
-    <message>
-        <location filename="../qml/Views/ItemView.qml" line="102"/>
-        <source>Existed from</source>
-        <translation>Existierte von</translation>
-    </message>
-    <message>
-        <location filename="../qml/Views/ItemView.qml" line="110"/>
-        <source>Optional plate signs</source>
-        <translation>Optionale Kennzeichen</translation>
-    </message>
-    <message>
-        <location filename="../qml/Views/ItemView.qml" line="119"/>
-        <source>Disbanded</source>
-        <translation>Aufgelöst</translation>
-    </message>
-    <message>
-        <location filename="../qml/Views/ItemView.qml" line="128"/>
-        <source>Sign optional available since</source>
-        <translation>Kennzeichen optional erhältlich seit</translation>
-    </message>
-    <message>
-        <location filename="../qml/Views/ItemView.qml" line="137"/>
-        <source>Merged into</source>
-        <translation>Aufgegangen in</translation>
-    </message>
-    <message>
-        <location filename="../qml/Views/ItemView.qml" line="148"/>
-        <location filename="../qml/Views/ItemView.qml" line="206"/>
+        <location filename="../qml/ItemViews/ItemEntry.qml" line="98"/>
         <source>%1 - %2 %3</source>
         <translation>%1 - %2 %3</translation>
-    </message>
-    <message>
-        <location filename="../qml/Views/ItemView.qml" line="188"/>
-        <source>Includes this old districts</source>
-        <translation>Beinhaltet folgende Altkreise</translation>
     </message>
 </context>
 <context>
@@ -320,12 +274,12 @@
         <translation>Schweiz</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ch.qml" line="55"/>
+        <location filename="../qml/ItemViews/ch.qml" line="53"/>
         <source>Canton %2</source>
         <translation>Kanton %2</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ch.qml" line="62"/>
+        <location filename="../qml/ItemViews/ch.qml" line="70"/>
         <source>Capital</source>
         <translation>Hauptort</translation>
     </message>
@@ -333,7 +287,7 @@
 <context>
     <name>de</name>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="57"/>
+        <location filename="../qml/ItemViews/de.qml" line="58"/>
         <source>Germany</source>
         <translation>Deutschland</translation>
     </message>
@@ -343,48 +297,48 @@
         <translation>%1 %2</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="97"/>
+        <location filename="../qml/ItemViews/de.qml" line="106"/>
         <source>Capital</source>
         <translation>Verwaltungssitz</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="105"/>
+        <location filename="../qml/ItemViews/de.qml" line="112"/>
         <source>Existing since</source>
         <translation>Existiert seit</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="105"/>
+        <location filename="../qml/ItemViews/de.qml" line="112"/>
         <source>Existed from</source>
         <translation>Existierte von</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="113"/>
+        <location filename="../qml/ItemViews/de.qml" line="119"/>
         <source>Optional plate signs</source>
         <translation>Optionale Kennzeichen</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="122"/>
-        <source>Disbanded</source>
-        <translation>Aufgelöst</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="131"/>
+        <location filename="../qml/ItemViews/de.qml" line="126"/>
         <source>Sign optional available since</source>
         <translation>Kennzeichen optional erhältlich seit</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="140"/>
+        <location filename="../qml/ItemViews/de.qml" line="138"/>
         <source>Merged into</source>
         <translation>Aufgegangen in</translation>
     </message>
     <message>
+        <location filename="../qml/ItemViews/de.qml" line="141"/>
         <location filename="../qml/ItemViews/de.qml" line="151"/>
-        <location filename="../qml/ItemViews/de.qml" line="209"/>
         <source>%1 - %2 %3</source>
         <translation>%1 - %2 %3</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="191"/>
+        <location filename="../qml/ItemViews/de.qml" line="148"/>
+        <source>Today part of</source>
+        <translation>Heute Teil von</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/de.qml" line="158"/>
         <source>Includes this old districts</source>
         <translation>Beinhaltet folgende Altkreise</translation>
     </message>

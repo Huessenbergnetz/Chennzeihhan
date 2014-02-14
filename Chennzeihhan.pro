@@ -15,6 +15,10 @@ datafiles.path = /usr/share/harbour-chennzeihhan/data
 datafiles.files = data/*
 INSTALLS += datafiles
 
+translations.path = /usr/share/harbour-chennzeihhan/translations
+translations.files = l10n/*.qm
+INSTALLS += translations
+
 images.path = /usr/share/harbour-chennzeihhan/images
 images.files = images/*
 INSTALLS += images
@@ -52,7 +56,3 @@ HEADERS += \
     src/models/dehelper.h \
     src/models/countrymodel.h \
     src/models/itemmodel.h
-
-RESOURCES += \
-    l10n/translations.qrc
-
