@@ -9,13 +9,22 @@ BackgroundItem {
     width: GridView.view.cellWidth
     height: GridView.view.cellHeight
 
-    Image {
-        id: coa
+//    Image {
+//        id: coa
+//        anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: 5 }
+//        source: "/usr/share/harbour-chennzeihhan/images/countries/" + model.code + ".png"
+//        sourceSize.width: 150
+//        width: 140
+//        smooth: true
+//    }
+
+    Rectangle {
+        id: plate
         anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: 5 }
-        source: "/usr/share/harbour-chennzeihhan/images/countries/" + model.code + ".png"
-        sourceSize.width: 150
-        width: 140
-        smooth: true
+        width: 140; height: 90; radius: 180
+        color: "transparent"
+        border.color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+        border.width: 4
     }
 
     Label {
