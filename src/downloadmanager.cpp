@@ -27,15 +27,21 @@ void DownloadManager::downloadDB()
         return;
     }
 
-    QUrl url("http://www.buschmann23.de/chennzeihhan-data/carplates.sqlite.gz");
+//    QUrl url("http://www.buschmann23.de/chennzeihhan-data/carplates.sqlite.gz");
     onlineDBVersion = getOnlineDBVersion();
+    QUrl url(dbUrl);
 
-    qDebug() << "Start downloading database";
-    QNetworkRequest request(url);
-    reply = manager.get(request);
-    connect(reply, SIGNAL(downloadProgress(qint64,qint64)), this, SLOT(downloadDBProgress(qint64,qint64)));
-    connect(reply, SIGNAL(finished()), this, SLOT(downloadDBFinished()));
-    connect(reply, SIGNAL(readyRead()), this, SLOT(downloadDBReadyRead()));
+    if (onlineDBVersion > 0) {
+        qDebug() << "Start downloading database";
+        QNetworkRequest request(url);
+        reply = manager.get(request);
+        connect(reply, SIGNAL(downloadProgress(qint64,qint64)), this, SLOT(downloadDBProgress(qint64,qint64)));
+        connect(reply, SIGNAL(finished()), this, SLOT(downloadDBFinished()));
+        connect(reply, SIGNAL(readyRead()), this, SLOT(downloadDBReadyRead()));
+    } else {
+        qDebug() << "Can not retrieve DB info file.";
+        emit dbDownloadFailed();
+    }
 
 }
 
@@ -92,7 +98,7 @@ void DownloadManager::downloadDBReadyRead()
 
 int DownloadManager::getOnlineDBVersion()
 {
-    QUrl url("http://www.buschmann23.de/chennzeihhan-data/database.json");
+    QUrl url("https://raw2.github.com/Buschtrommel/Chennzeihhan/master/data/database.json");
     int newVersion = 0;
     int oldVersion = getLocalDBVersion();
 
@@ -109,6 +115,7 @@ int DownloadManager::getOnlineDBVersion()
         result = QJsonDocument::fromJson(reply->readAll()).object().toVariantMap();
 
         newVersion = result["version"].toInt();
+        dbUrl = result["url"].toString();
         emit gotDBVersion(oldVersion, newVersion);
     }
     reply->deleteLater();

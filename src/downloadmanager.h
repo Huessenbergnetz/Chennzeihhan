@@ -50,6 +50,7 @@ private:
     QSettings settings;
     int onlineDBVersion;
     QProcess *m_process;
+    QString dbUrl;
 
 };
 
