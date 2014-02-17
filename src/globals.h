@@ -10,8 +10,6 @@
 #define VER_MIN 1
 #define VER_PAT 0
 
-#define CONFIG_DIR "/.config/harbour-chennzeihhan"
 #define DATA_DIR "/.local/share/harbour-chennzeihhan"
-#define CACHE_DIR "/.cache/harbour-chennzeihhan"
 
 #endif // GLOBALS_H

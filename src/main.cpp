@@ -29,8 +29,6 @@ int main(int argc, char *argv[])
     app->setApplicationName("harbour-chennzeihhan");
     app->setApplicationVersion(VERSION_STRING);
 
-    QSettings::setPath(QSettings::NativeFormat, QSettings::UserScope, QDir::homePath().append(CONFIG_DIR));
-
     QDir().mkpath(QDir::homePath().append(DATA_DIR));
 
 
