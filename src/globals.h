@@ -4,10 +4,10 @@
 #include <QString>
 
 #define DB_PATH "/usr/share/harbour-chennzeihhan/data/carplates.sqlite"
-#define VERSION_STRING "1.0.0"
-#define VERSION 100
+#define VERSION_STRING "1.1.0"
+#define VERSION 110
 #define VER_MAJ 1
-#define VER_MIN 0
+#define VER_MIN 1
 #define VER_PAT 0
 
 #define CONFIG_DIR "/.config/harbour-chennzeihhan"
