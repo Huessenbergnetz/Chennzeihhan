@@ -2,27 +2,27 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/Pages/About.qml" line="20"/>
+        <location filename="../qml/Pages/About.qml" line="19"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="42"/>
+        <location filename="../qml/Pages/About.qml" line="41"/>
         <source>Vehicle registation plates database for Sailfish OS</source>
         <translation>Kfz-Kennzeichendatenbank für Sailfish OS</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="67"/>
+        <location filename="../qml/Pages/About.qml" line="66"/>
         <source>Licensed under the &lt;a href=&apos;http://www.gnu.org/licenses/gpl-2.0.en.html&apos;&gt;GNU GPL v2&lt;/a&gt;</source>
         <translation>Lizensiert unter der &lt;a href=&apos;http://www.gnu.org/licenses/gpl-2.0.en.html&apos;&gt;GNU GPL v2&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="78"/>
+        <location filename="../qml/Pages/About.qml" line="77"/>
         <source>Visit website</source>
         <translation>Webseite besuchen</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="85"/>
+        <location filename="../qml/Pages/About.qml" line="84"/>
         <source>Make a donation</source>
         <translation>Spenden</translation>
     </message>
@@ -261,9 +261,57 @@
 <context>
     <name>MainView</name>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="20"/>
+        <location filename="../qml/Views/MainView.qml" line="32"/>
         <source>About</source>
         <translation>Über</translation>
+    </message>
+    <message>
+        <location filename="../qml/Views/MainView.qml" line="36"/>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <location filename="../qml/Views/MainView.qml" line="49"/>
+        <source>You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.</source>
+        <translation>Sie haben noch keine Datenbank installiert. Um die Datenbank unabhängig von der Anwendung aktualisieren zu können ist diese nicht Teil des Installationspakets. Rufen Sie die Einstellungen auf, um die Datenbank herunter zu laden.</translation>
+    </message>
+</context>
+<context>
+    <name>Settings</name>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="24"/>
+        <source>Check for new database version</source>
+        <translation>Datenbankaktualisierung prüfen</translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="29"/>
+        <source>Download new database version</source>
+        <translation>Neue Datenbank herunterladen</translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="39"/>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="41"/>
+        <source>Database</source>
+        <translation>Datenbank</translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="54"/>
+        <source>Currently there is no database installed. Please use the pully menu to check for new DB version.</source>
+        <translation>Es ist momentan keine Datenbank installiert. Prüfen Sie über das Menü die Verfügbarkeit einer neuen Version.</translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="62"/>
+        <source>Installed database revision: </source>
+        <translation>Installierte Datenbankrevision:</translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="70"/>
+        <source>Available database revision: </source>
+        <translation>Verfügbare Datenbankrevision:</translation>
     </message>
 </context>
 <context>

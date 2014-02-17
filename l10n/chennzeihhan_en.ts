@@ -4,27 +4,27 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/Pages/About.qml" line="20"/>
+        <location filename="../qml/Pages/About.qml" line="19"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="42"/>
+        <location filename="../qml/Pages/About.qml" line="41"/>
         <source>Vehicle registation plates database for Sailfish OS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="67"/>
+        <location filename="../qml/Pages/About.qml" line="66"/>
         <source>Licensed under the &lt;a href=&apos;http://www.gnu.org/licenses/gpl-2.0.en.html&apos;&gt;GNU GPL v2&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="78"/>
+        <location filename="../qml/Pages/About.qml" line="77"/>
         <source>Visit website</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="85"/>
+        <location filename="../qml/Pages/About.qml" line="84"/>
         <source>Make a donation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -263,8 +263,56 @@
 <context>
     <name>MainView</name>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="20"/>
+        <location filename="../qml/Views/MainView.qml" line="32"/>
         <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Views/MainView.qml" line="36"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Views/MainView.qml" line="49"/>
+        <source>You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Settings</name>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="24"/>
+        <source>Check for new database version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="29"/>
+        <source>Download new database version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="39"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="41"/>
+        <source>Database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="54"/>
+        <source>Currently there is no database installed. Please use the pully menu to check for new DB version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="62"/>
+        <source>Installed database revision: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="70"/>
+        <source>Available database revision: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

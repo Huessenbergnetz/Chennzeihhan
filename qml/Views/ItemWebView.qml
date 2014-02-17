@@ -10,7 +10,7 @@ Page {
     allowedOrientations: Orientation.Landscape | Orientation.Portrait
 
     onStatusChanged: {
-        if (status == PageStatus.Active) {
+        if (status === PageStatus.Active) {
             webView.url = itemUrl
         }
     }

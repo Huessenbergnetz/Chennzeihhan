@@ -46,7 +46,7 @@ Page {
 
         ViewPlaceholder {
             enabled: !dataBaseExists
-            text: qsTr("You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions for every modification. Go to the settings to download the database.")
+            text: qsTr("You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.")
         }
     }
 }

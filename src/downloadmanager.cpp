@@ -27,7 +27,6 @@ void DownloadManager::downloadDB()
         return;
     }
 
-//    QUrl url("http://www.buschmann23.de/chennzeihhan-data/carplates.sqlite.gz");
     onlineDBVersion = getOnlineDBVersion();
     QUrl url(dbUrl);
 
@@ -81,6 +80,7 @@ void DownloadManager::downloadDBFinished()
     if (m_process->exitCode() != 0) {
         emit dbDownloadFailed();
         qDebug() << "Failed to decompress DB.";
+        settings.setValue("database/version", 0);
         return;
     }
 

@@ -51,7 +51,7 @@ Page {
                 textFormat: Text.PlainText
                 visible: localDbVersion === 0 && remoteDbVersion === 0 && !getVersionBusy.visible
                 wrapMode: Text.WordWrap
-                text: qsTr("Currently there is no database installed. Please use the pully menu for checking for new DB version.")
+                text: qsTr("Currently there is no database installed. Please use the pully menu to check for new DB version.")
             }
 
             Label {
