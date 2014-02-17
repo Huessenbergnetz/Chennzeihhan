@@ -3,19 +3,20 @@
 
 #include <QObject>
 #include <QtSql>
+#include <QFile>
 
 class DbManager : public QObject
 {
     Q_OBJECT
 public:
     explicit DbManager(QObject *parent = 0);
-
-    bool openDB();
-    bool closeDB();
+    Q_INVOKABLE bool checkDB();
 
 signals:
 
 public slots:
+    bool openDB();
+    bool closeDB();
 
 private:
     QSqlDatabase db;

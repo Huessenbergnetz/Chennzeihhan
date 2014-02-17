@@ -7,10 +7,14 @@
 #include <QQuickView>
 #include <QLocale>
 #include <QTranslator>
+#include <QDir>
+#include <QSettings>
+#include <QDebug>
 
 #include <sailfishapp.h>
 #include "globals.h"
 #include "dbmanager.h"
+#include "downloadmanager.h"
 #include "models/countrymodel.h"
 #include "models/deantecessormodel.h"
 #include "models/itemmodel.h"
@@ -20,10 +24,15 @@ int main(int argc, char *argv[])
 {
     QGuiApplication* app = SailfishApp::application(argc, argv);
 
-    app->setOrganizationName("Buschtrommel");
+    app->setOrganizationName("harbour-chennzeihhan");
     app->setOrganizationDomain("buschmann23.de");
     app->setApplicationName("harbour-chennzeihhan");
     app->setApplicationVersion(VERSION_STRING);
+
+    QSettings::setPath(QSettings::NativeFormat, QSettings::UserScope, QDir::homePath().append(CONFIG_DIR));
+
+    QDir().mkpath(QDir::homePath().append(DATA_DIR));
+
 
     QString locale = QLocale::system().name();
     QTranslator *translator = new QTranslator;
@@ -31,7 +40,11 @@ int main(int argc, char *argv[])
         app->installTranslator(translator);
 
     DbManager dbman;
-    dbman.openDB();
+    dbman.checkDB();
+
+    DownloadManager dlManager;
+
+    QObject::connect(&dlManager, SIGNAL(dbDownloadStarted()), &dbman, SLOT(closeDB()));
 
     CountryModel *countryModel = new CountryModel();
     ItemModel *itemModel = new ItemModel();
@@ -40,6 +53,8 @@ int main(int argc, char *argv[])
 
     QQuickView* view = SailfishApp::createView();
 
+    view->rootContext()->setContextProperty("dbMan", &dbman);
+    view->rootContext()->setContextProperty("dlMan", &dlManager);
     view->rootContext()->setContextProperty("countryModel", countryModel);
     view->rootContext()->setContextProperty("itemModel", itemModel);
     view->rootContext()->setContextProperty("deAntecessorModel", deAntecessorModel);

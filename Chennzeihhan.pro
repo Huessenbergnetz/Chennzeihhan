@@ -9,11 +9,12 @@ SOURCES += \
     src/models/deantecessormodel.cpp \
     src/models/dehelper.cpp \
     src/models/countrymodel.cpp \
-    src/models/itemmodel.cpp
+    src/models/itemmodel.cpp \
+    src/downloadmanager.cpp
 
-datafiles.path = /usr/share/harbour-chennzeihhan/data
-datafiles.files = data/*
-INSTALLS += datafiles
+#datafiles.path = /usr/share/harbour-chennzeihhan/data
+#datafiles.files = data/*
+#INSTALLS += datafiles
 
 translations.path = /usr/share/harbour-chennzeihhan/translations
 translations.files = l10n/*.qm
@@ -47,7 +48,10 @@ OTHER_FILES += \
     harbour-chennzeihhan.png \
     harbour-chennzeihhan.svg \
     qml/ItemViews/ItemEntry.qml \
-    qml/Common/CountryPlate.qml
+    qml/Common/CountryPlate.qml \
+    qml/Pages/Settings.qml \
+    data/database.json \
+    data/carplates.sqlite.gz
 
 HEADERS += \
     src/dbmanager.h \
@@ -55,4 +59,5 @@ HEADERS += \
     src/models/deantecessormodel.h \
     src/models/dehelper.h \
     src/models/countrymodel.h \
-    src/models/itemmodel.h
+    src/models/itemmodel.h \
+    src/downloadmanager.h
