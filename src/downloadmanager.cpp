@@ -98,7 +98,7 @@ void DownloadManager::downloadDBReadyRead()
 
 int DownloadManager::getOnlineDBVersion()
 {
-    QUrl url("https://raw2.github.com/Buschtrommel/Chennzeihhan/master/data/database.json");
+    QUrl url("http://www.buschmann23.de/chennzeihhan-data/database.json");
     int newVersion = 0;
     int oldVersion = getLocalDBVersion();
 
@@ -113,6 +113,8 @@ int DownloadManager::getOnlineDBVersion()
     {
         QVariantMap result;
         result = QJsonDocument::fromJson(reply->readAll()).object().toVariantMap();
+
+        qDebug() << "JSON-Result: " << result;
 
         newVersion = result["version"].toInt();
         dbUrl = result["url"].toString();

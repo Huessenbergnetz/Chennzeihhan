@@ -49,9 +49,7 @@ OTHER_FILES += \
     harbour-chennzeihhan.svg \
     qml/ItemViews/ItemEntry.qml \
     qml/Common/CountryPlate.qml \
-    qml/Pages/Settings.qml \
-    data/database.json \
-    data/carplates.sqlite.gz
+    qml/Pages/Settings.qml
 
 HEADERS += \
     src/dbmanager.h \
