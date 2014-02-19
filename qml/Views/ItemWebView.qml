@@ -15,14 +15,26 @@ Page {
         }
     }
 
+    BusyIndicator {
+        id: loadStatus
+        z: 2
+        anchors { top: parent.top; topMargin: 16; horizontalCenter: parent.horizontalCenter }
+        visible: webView.loading
+        running: visible
+        opacity: visible ? 1 : 0
+        Behavior on opacity { FadeAnimation {} }
+    }
+
     SilicaWebView {
         id: webView
         anchors.fill: parent
 
+        experimental.userAgent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
+
         PullDownMenu {
             MenuItem {
-                text: qsTr("Reload")
-                onClicked: webView.reload()
+                text: webView.loading ? qsTr("Stop loading") : qsTr("Reload")
+                onClicked: webView.loading ? webView.stop() : webView.reload()
             }
             MenuItem {
                 text: qsTr("Open in browser")
