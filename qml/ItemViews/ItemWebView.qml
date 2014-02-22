@@ -6,12 +6,14 @@ Page {
     id: singleWebView
 
     property string itemUrl
+    property string wpLang
+    property string wpName
 
     allowedOrientations: Orientation.Landscape | Orientation.Portrait
 
     onStatusChanged: {
         if (status === PageStatus.Active) {
-            webView.url = itemUrl
+            webView.url = wp.getTranslation(wpLang, wpName)
         }
     }
 

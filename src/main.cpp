@@ -15,6 +15,7 @@
 #include "globals.h"
 #include "dbmanager.h"
 #include "downloadmanager.h"
+#include "wikipedia.h"
 #include "models/countrymodel.h"
 #include "models/deantecessormodel.h"
 #include "models/itemmodel.h"
@@ -41,6 +42,7 @@ int main(int argc, char *argv[])
     dbman.checkDB();
 
     DownloadManager dlManager;
+    Wikipedia wikipedia;
 
     QObject::connect(&dlManager, SIGNAL(dbDownloadStarted()), &dbman, SLOT(closeDB()));
 
@@ -53,6 +55,7 @@ int main(int argc, char *argv[])
 
     view->rootContext()->setContextProperty("dbMan", &dbman);
     view->rootContext()->setContextProperty("dlMan", &dlManager);
+    view->rootContext()->setContextProperty("wp", &wikipedia);
     view->rootContext()->setContextProperty("countryModel", countryModel);
     view->rootContext()->setContextProperty("itemModel", itemModel);
     view->rootContext()->setContextProperty("deAntecessorModel", deAntecessorModel);

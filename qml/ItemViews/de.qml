@@ -63,7 +63,7 @@ Page {
 
     onStatusChanged: {
         if (status == PageStatus.Active && wikipedia !== "") {
-            pageStack.pushAttached(Qt.resolvedUrl("../Views/ItemWebView.qml"), {itemUrl: "http://de.m.wikipedia.org/wiki/" + wikipedia})
+            pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {wpLang: "de", wpName: wikipedia})
         }
     }
 

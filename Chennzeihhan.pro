@@ -1,7 +1,7 @@
 TARGET = harbour-chennzeihhan
 
 CONFIG += sailfishapp
-QT += core sql
+QT += core sql xml
 
 SOURCES += \
     src/main.cpp \
@@ -10,7 +10,8 @@ SOURCES += \
     src/models/dehelper.cpp \
     src/models/countrymodel.cpp \
     src/models/itemmodel.cpp \
-    src/downloadmanager.cpp
+    src/downloadmanager.cpp \
+    src/wikipedia.cpp
 
 #datafiles.path = /usr/share/harbour-chennzeihhan/data
 #datafiles.files = data/*
@@ -37,7 +38,7 @@ OTHER_FILES += \
     l10n/chennzeihhan_en.ts \
     l10n/chennzeihhan_de.ts \
     data/carplates.sqlite \
-    qml/Views/ItemWebView.qml \
+    qml/ItemViews/ItemWebView.qml \
     qml/Delegates/CountryDelegate.qml \
     qml/ItemViews/de.qml \
     qml/ItemViews/ch.qml \
@@ -58,4 +59,5 @@ HEADERS += \
     src/models/dehelper.h \
     src/models/countrymodel.h \
     src/models/itemmodel.h \
-    src/downloadmanager.h
+    src/downloadmanager.h \
+    src/wikipedia.h
