@@ -28,14 +28,165 @@
     </message>
 </context>
 <context>
+    <name>AtHelper</name>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="15"/>
+        <source>Austria</source>
+        <translation>Österreich</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="18"/>
+        <source>Burgenland</source>
+        <translation>Burgenland</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="21"/>
+        <source>Carinthia</source>
+        <translation>Kärnten</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="24"/>
+        <source>Lower Austria</source>
+        <translation>Niederösterreich</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="27"/>
+        <source>Upper Austria</source>
+        <translation>Oberösterreich</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="30"/>
+        <source>Salzburg</source>
+        <translation>Salzburg</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="33"/>
+        <source>Styria</source>
+        <translation>Steiermark</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="36"/>
+        <source>Tyrol</source>
+        <translation>Tirol</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="39"/>
+        <source>Vorarlberg</source>
+        <translation>Vorarlberg</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="42"/>
+        <source>Vienna</source>
+        <translation>Wien</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="45"/>
+        <source>Unknown</source>
+        <translation>Unbekannt</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="60"/>
+        <source>Federal Officials</source>
+        <translation>Oberste Organe der Republik</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="63"/>
+        <source>District of</source>
+        <translation>Bezirk</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="66"/>
+        <source>State of</source>
+        <translation>Bundesland</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="69"/>
+        <source>Political Expositur</source>
+        <translation>Politische Expositur</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="72"/>
+        <source>Federal Railways</source>
+        <translation>Bundesbahn</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="75"/>
+        <source>Diplomatic Corps in</source>
+        <translation>Diplomatisches Korps in</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="78"/>
+        <source>Federal Bus Service</source>
+        <translation>Bundesbusdienst</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="81"/>
+        <source>Postbus</source>
+        <translation>Postbus</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="84"/>
+        <source>Federal Gendarmerie</source>
+        <translation>Bundesgendarmerie</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="87"/>
+        <source>Austrian Armed Forces</source>
+        <translation>Bundesheer</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="90"/>
+        <source>Consul in</source>
+        <translation>Konsul in</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="93"/>
+        <source>Federal Police</source>
+        <translation>Bundespolizei</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="96"/>
+        <source>City of</source>
+        <translation>Stadt</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="99"/>
+        <source>Financial Administration</source>
+        <translation>Finanzverwaltung</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="102"/>
+        <source>Justice Guard</source>
+        <translation>Justizwache</translation>
+    </message>
+    <message>
+        <location filename="../src/models/athelper.cpp" line="105"/>
+        <source>Border Control</source>
+        <translation>Zollwache</translation>
+    </message>
+</context>
+<context>
+    <name>CountriesDelegate</name>
+    <message>
+        <location filename="../qml/Delegates/CountriesDelegate.qml" line="30"/>
+        <source>Not installed</source>
+        <translation>Nicht installiert</translation>
+    </message>
+</context>
+<context>
     <name>CountriesModel</name>
     <message>
-        <location filename="../qml/Models/CountriesModel.qml" line="8"/>
+        <location filename="../qml/Models/CountriesModel.qml" line="9"/>
+        <source>Austria</source>
+        <translation>Österreich</translation>
+    </message>
+    <message>
+        <location filename="../qml/Models/CountriesModel.qml" line="10"/>
         <source>Switzerland</source>
         <translation>Schweiz</translation>
     </message>
     <message>
-        <location filename="../qml/Models/CountriesModel.qml" line="9"/>
+        <location filename="../qml/Models/CountriesModel.qml" line="11"/>
         <source>Germany</source>
         <translation>Deutschland</translation>
     </message>
@@ -56,7 +207,7 @@
 <context>
     <name>CountryModel</name>
     <message>
-        <location filename="../src/models/countrymodel.cpp" line="65"/>
+        <location filename="../src/models/countrymodel.cpp" line="74"/>
         <source>Canton</source>
         <translation>Kanton</translation>
     </message>
@@ -243,22 +394,22 @@
 <context>
     <name>ItemWebView</name>
     <message>
-        <location filename="../qml/Views/ItemWebView.qml" line="36"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="38"/>
         <source>Reload</source>
         <translation>Neu laden</translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemWebView.qml" line="36"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="38"/>
         <source>Stop loading</source>
         <translation>Laden abbrechen</translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemWebView.qml" line="40"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="42"/>
         <source>Open in browser</source>
         <translation>In Browser öffnen</translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemWebView.qml" line="44"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="46"/>
         <source>Back</source>
         <translation>Zurück</translation>
     </message>
@@ -266,19 +417,24 @@
 <context>
     <name>MainView</name>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="32"/>
+        <location filename="../qml/Views/MainView.qml" line="22"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="36"/>
+        <location filename="../qml/Views/MainView.qml" line="26"/>
         <source>Settings</source>
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="49"/>
+        <location filename="../qml/Views/MainView.qml" line="39"/>
         <source>You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.</source>
         <translation>Sie haben noch keine Datenbank installiert. Um die Datenbank unabhängig von der Anwendung aktualisieren zu können ist diese nicht Teil des Installationspakets. Rufen Sie die Einstellungen auf, um die Datenbank herunter zu laden.</translation>
+    </message>
+    <message>
+        <location filename="../qml/Views/MainView.qml" line="53"/>
+        <source>New content available, please update database</source>
+        <translation>Neue Inhalte verfügbar, bitte die Datenbank aktualisieren.</translation>
     </message>
 </context>
 <context>
@@ -317,6 +473,65 @@
         <location filename="../qml/Pages/Settings.qml" line="70"/>
         <source>Available database revision: </source>
         <translation>Verfügbare Datenbankrevision:</translation>
+    </message>
+</context>
+<context>
+    <name>at</name>
+    <message>
+        <location filename="../qml/ItemViews/at.qml" line="58"/>
+        <source>Austria</source>
+        <translation>Österreich</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/at.qml" line="84"/>
+        <source>%1 %2</source>
+        <translation>%1 %2</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/at.qml" line="106"/>
+        <source>Capital</source>
+        <translation>Verwaltungssitz</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/at.qml" line="112"/>
+        <source>Assigend since</source>
+        <translation>Vergeben seit</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/at.qml" line="112"/>
+        <source>Assigned from</source>
+        <translation>Vergeben von</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/at.qml" line="119"/>
+        <source>Optional plate signs</source>
+        <translation>Optionale Kennzeichen</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/at.qml" line="126"/>
+        <source>Sign optional available since</source>
+        <translation>Kennzeichen optional erhältlich seit</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/at.qml" line="138"/>
+        <source>Merged into</source>
+        <translation>Aufgegangen in</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/at.qml" line="141"/>
+        <location filename="../qml/ItemViews/at.qml" line="151"/>
+        <source>%1 - %2 %3</source>
+        <translation>%1 - %2 %3</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/at.qml" line="148"/>
+        <source>Today part of</source>
+        <translation>Heute Teil von</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/at.qml" line="158"/>
+        <source>Includes this old plate signs</source>
+        <translation>Beinhaltet folgende Altzeichen</translation>
     </message>
 </context>
 <context>

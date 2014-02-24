@@ -55,7 +55,7 @@ QVariantMap ItemModel::getAtData(int id)
         if (query.next())
         {
             itemresult["succName"] = query.value(0).toString();
-            itemresult["succType"] = deHelper->getType(query.value(1).toInt());
+            itemresult["succType"] = atHelper->getType(query.value(1).toInt());
             itemresult["succSign"] = query.value(2).toString();
         }
     }
@@ -68,7 +68,7 @@ QVariantMap ItemModel::getAtData(int id)
         if (query.next())
         {
             itemresult["tpoName"] = query.value(0).toString();
-            itemresult["tpoType"] = deHelper->getType(query.value(1).toInt());
+            itemresult["tpoType"] = atHelper->getType(query.value(1).toInt());
             itemresult["tpoSign"] = query.value(2).toString();
         }
     } else {

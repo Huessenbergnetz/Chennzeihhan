@@ -155,7 +155,7 @@ Page {
 
             ItemEntry {
                 id: antecessors
-                header: qsTr("Includes this old districts")
+                header: qsTr("Includes this old plate signs")
                 visible: count > 0
                 icon: "image://theme/icon-m-levels"
                 repeaterModel: antecessorModel

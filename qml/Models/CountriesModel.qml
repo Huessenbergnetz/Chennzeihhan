@@ -2,7 +2,7 @@ import QtQuick 2.0
 
 ListModel {
     id: countriesModel
-    ListElement { name: ""; code: "at"; sign: "A"; dbRevision: 3 }
+    ListElement { name: ""; code: "at"; sign: "A"; dbRevision: 6 }
     ListElement { name: ""; code: "ch"; sign: "CH"; dbRevision: 1 }
     ListElement { name: ""; code: "de"; sign: "D"; dbRevision: 1 }
     Component.onCompleted: {
