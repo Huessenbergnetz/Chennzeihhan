@@ -36,6 +36,7 @@ BackgroundItem {
         width: 140; height: 90
         anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: 25 }
         color: listItem.highlighted ? highlightColor : normalColor
+        borderColor: model.colors ? model.colors : "white"
         text: model.sign
     }
 
