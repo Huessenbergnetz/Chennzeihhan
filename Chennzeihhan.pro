@@ -11,7 +11,9 @@ SOURCES += \
     src/models/countrymodel.cpp \
     src/models/itemmodel.cpp \
     src/downloadmanager.cpp \
-    src/wikipedia.cpp
+    src/wikipedia.cpp \
+    src/models/athelper.cpp \
+    src/models/antecessormodel.cpp
 
 #datafiles.path = /usr/share/harbour-chennzeihhan/data
 #datafiles.files = data/*
@@ -50,7 +52,8 @@ OTHER_FILES += \
     harbour-chennzeihhan.svg \
     qml/ItemViews/ItemEntry.qml \
     qml/Common/CountryPlate.qml \
-    qml/Pages/Settings.qml
+    qml/Pages/Settings.qml \
+    qml/ItemViews/at.qml
 
 HEADERS += \
     src/dbmanager.h \
@@ -60,4 +63,6 @@ HEADERS += \
     src/models/countrymodel.h \
     src/models/itemmodel.h \
     src/downloadmanager.h \
-    src/wikipedia.h
+    src/wikipedia.h \
+    src/models/athelper.h \
+    src/models/antecessormodel.h

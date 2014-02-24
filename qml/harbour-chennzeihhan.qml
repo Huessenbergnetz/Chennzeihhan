@@ -6,6 +6,20 @@ ApplicationWindow
 {
     id: chennzeihhan
 
+    property bool dataBaseExists: dbMan.checkDB()
+    property int installedDbRevision: dlMan.getLocalDBVersion()
+    property int minimumDbRevision: 3
+
+    Connections {
+        target: dlMan
+        onDbDownloadFinished: { checkDbTimer.start(); installedDbRevision = dlMan.getLocalDBVersion() }
+    }
+
+    Timer {
+        id: checkDbTimer; interval: 200; running: false; repeat: false
+        onTriggered: dataBaseExists = dbMan.checkDB()
+    }
+
     initialPage: Component { MainView { } }
     cover: Qt.resolvedUrl("Pages/CoverPage.qml")
 

@@ -2,12 +2,12 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Page {
-    id: deItemView
+    id: atItemView
     objectName: "ItemView"
 
     property int itemId
 
-    property string countryCode: "de"
+    property string countryCode: "at"
 
     property string sign
     property string name
@@ -55,7 +55,7 @@ Page {
 
     Component.onCompleted: {
         getItemData()
-        coverConnector.country = qsTr("Germany")
+        coverConnector.country = qsTr("Austria")
         coverConnector.name = name
         coverConnector.sign = sign
         coverConnector.state = stateLabel.text
@@ -109,7 +109,7 @@ Page {
 
             ItemEntry {
                 id: existenceText
-                header: disbanded === 0 ? qsTr("Existing since") : qsTr("Existed from")
+                header: disbanded === 0 ? qsTr("Assigend since") : qsTr("Assigned from")
                 contentText: disbanded === 0 ? founded : founded + " - " + disbanded
                 icon: "image://theme/icon-s-date"
             }
@@ -140,7 +140,7 @@ Page {
                 icon: "image://theme/icon-s-device-upload"
                 contentText: qsTr("%1 - %2 %3").arg(succSign).arg(succType).arg(succName)
                 clickable: true
-                onClicked: pageStack.replace(Qt.resolvedUrl("de.qml"), {itemId: succId}, PageStackAction.Immediate)
+                onClicked: pageStack.replace(Qt.resolvedUrl("at.qml"), {itemId: succId}, PageStackAction.Immediate)
             }
 
             ItemEntry {
@@ -150,7 +150,7 @@ Page {
                 icon: "image://theme/icon-m-location"
                 contentText: qsTr("%1 - %2 %3").arg(tpoSign).arg(tpoType).arg(tpoName)
                 clickable: true
-                onClicked: pageStack.replace(Qt.resolvedUrl("de.qml"), {itemId: tpoId}, PageStackAction.Immediate)
+                onClicked: pageStack.replace(Qt.resolvedUrl("at.qml"), {itemId: tpoId}, PageStackAction.Immediate)
             }
 
             ItemEntry {
@@ -160,7 +160,7 @@ Page {
                 icon: "image://theme/icon-m-levels"
                 repeaterModel: antecessorModel
                 list: true
-                onModelClicked: pageStack.replace(Qt.resolvedUrl("de.qml"), {itemId: modelId}, PageStackAction.Immediate)
+                onModelClicked: pageStack.replace(Qt.resolvedUrl("at.qml"), {itemId: modelId}, PageStackAction.Immediate)
             }
         }
     }

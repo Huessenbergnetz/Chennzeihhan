@@ -6,6 +6,7 @@
 #include <QVariantMap>
 #include <QStringList>
 #include "dehelper.h"
+#include "athelper.h"
 
 class ItemModel : public QObject
 {
@@ -20,7 +21,9 @@ signals:
 public slots:
 
 private:
+    AtHelper *atHelper;
     DeHelper *deHelper;
+    QVariantMap getAtData(int id);
     QVariantMap getDeData(int id);
     QVariantMap getChData(int id);
 

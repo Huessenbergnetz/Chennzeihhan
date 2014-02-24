@@ -27,7 +27,7 @@ Canvas {
     {
         var ctx = getContext("2d");
         ctx.save();
-        ctx.strokeStyle = bColor;
+        ctx.strokeStyle = "white";
         ctx.lineWidth = 4
 
         createEllipse(ctx, 2, 2, width-4, height-4);

@@ -17,7 +17,7 @@
 #include "downloadmanager.h"
 #include "wikipedia.h"
 #include "models/countrymodel.h"
-#include "models/deantecessormodel.h"
+#include "models/antecessormodel.h"
 #include "models/itemmodel.h"
 
 
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     CountryModel *countryModel = new CountryModel();
     ItemModel *itemModel = new ItemModel();
 
-    DeAntecessorModel *deAntecessorModel = new DeAntecessorModel();
+    AntecessorModel *antecessorModel = new AntecessorModel();
 
     QQuickView* view = SailfishApp::createView();
 
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("wp", &wikipedia);
     view->rootContext()->setContextProperty("countryModel", countryModel);
     view->rootContext()->setContextProperty("itemModel", itemModel);
-    view->rootContext()->setContextProperty("deAntecessorModel", deAntecessorModel);
+    view->rootContext()->setContextProperty("antecessorModel", antecessorModel);
     view->rootContext()->setContextProperty("versionString", VERSION_STRING);
 
     view->setSource(QUrl::fromLocalFile("/usr/share/harbour-chennzeihhan/qml/harbour-chennzeihhan.qml"));

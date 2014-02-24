@@ -40,13 +40,22 @@ QVariant CountryModel::data(const QModelIndex &index, int role) const
         int columnIdx = role - Qt::UserRole - 1;
         QModelIndex modelIndex = this->index(index.row(), columnIdx);
         value = QSqlQueryModel::data(modelIndex, Qt::DisplayRole);
-        if (columnIdx == 3 && countryCode == "de") {
+        if (columnIdx == 3) {
 
-            value = deHelper->getType(value.toInt());
+            if (countryCode == "de") {
+                value = deHelper->getType(value.toInt());
+            } else if (countryCode == "at") {
+                value = atHelper->getType(value.toInt());
+            }
 
-        } else if (columnIdx == 4 && countryCode == "de") {
+        } else if (columnIdx == 4) {
 
-            value = deHelper->getState(value.toInt());
+            if (countryCode == "de") {
+                value = deHelper->getState(value.toInt());
+            } else if (countryCode == "at") {
+                value = atHelper->getState(value.toInt());
+            }
+
         }
     }
 

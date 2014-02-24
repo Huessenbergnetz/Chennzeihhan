@@ -7,21 +7,11 @@ Page {
     id: mainView
     objectName: "MainView"
 
-    property bool dataBaseExists: dbMan.checkDB()
-
-    Connections {
-        target: dlMan
-        onDbDownloadFinished: checkDbTimer.start()
-    }
-
-    Timer {
-        id: checkDbTimer; interval: 200; running: false; repeat: false
-        onTriggered: dataBaseExists = dbMan.checkDB()
-    }
-
     SilicaGridView {
         id: listView
         anchors.fill: parent
+        width: parent.width
+        height: updateInfoPanel.open ? parent.height - updateInfoPanel.height : parent.height
         cellWidth: 180; cellHeight: 150
 
         header: PageHeader { width: listView.width; title: "Chennzeihhan" }
@@ -42,11 +32,38 @@ Page {
 
         model: CountriesModel {}
 
-        delegate: CountriesDelegate { visible: dataBaseExists}
+        delegate: CountriesDelegate {}
 
         ViewPlaceholder {
             enabled: !dataBaseExists
             text: qsTr("You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.")
+        }
+    }
+
+    DockedPanel {
+        id: updateInfoPanel
+        width: parent.width
+        height: Theme.itemSizeExtraLarge + Theme.paddingLarge
+
+        dock: Dock.bottom
+        open: minimumDbRevision > installedDbRevision
+
+        Label {
+            anchors.centerIn: parent
+            text: qsTr("New content available, please update database")
+            width: parent.width
+            wrapMode: Text.WordWrap
+            horizontalAlignment: Text.AlignHCenter
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: pageStack.push(Qt.resolvedUrl("../Pages/Settings.qml"))
+            }
+        }
+
+        Timer {
+            interval: 5000; running: updateInfoPanel.open; repeat: false
+            onTriggered: updateInfoPanel.hide()
         }
     }
 }

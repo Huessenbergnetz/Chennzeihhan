@@ -245,22 +245,22 @@
 <context>
     <name>ItemWebView</name>
     <message>
-        <location filename="../qml/Views/ItemWebView.qml" line="36"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="38"/>
         <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemWebView.qml" line="36"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="38"/>
         <source>Stop loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemWebView.qml" line="40"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="42"/>
         <source>Open in browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/ItemWebView.qml" line="44"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="46"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
