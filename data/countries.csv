@@ -1,0 +1,241 @@
+1;at;A;1;6;1;#E22536,white,#E22536;Austria;Österreiche
+2;af;AFG;0;0;1;black,#B10109,#249301;Afghanistan;Afghanistan
+3;ag;AG;0;0;0;#C11126,black,#C11126;Antigua and Barbuda;Antigua und Barbuda
+4;al;AL;0;0;1;#D81C22;Albania;Albanien
+5;am;AM;0;0;1;#CC0118,#132498,#EBA301;Armenia;Armenien
+6;ad;AND;0;0;1;#1101A0,#FAE001,#C30E36;Andorra;Andorra
+7;ao;ANG;0;0;0;#C11126,black;Angola;Angola
+8;aw;ARU;0;0;0;#457AD9;Aruba;Aruba
+9;au;AUS;0;0;1;#0B0182;Australia;Australien
+10;ps;AUT;0;0;0;black,white,#1D7236;Palestinian territories;Palästinensergebiete
+11;ax;AX;0;0;0;#19469D;Åland Islands;Åland
+12;ai;AXA;0;0;0;#0E1974;Anguilla;Anguilla
+13;az;AZ;0;0;1;#298DBD,#D40131,#2BA85B;Azerbaijan;Aserbaidschan
+14;be;B;0;0;1;black,#F6E039,#E22536;Belgium;Belgien
+15;bd;BD;0;0;1;#196246;Bangladesh;Bangladesch
+16;bb;BDS;0;0;1;#0E1B76,#FAC521,#0E1B76;Barbados;Barbados
+17;bf;BF;0;0;1;#E4272C,#269840;Burkina Faso;Burkina Faso
+18;bg;BG;0;0;1;white,#258E64,#C92417;Bulgaria;Bulgarien
+19;bz;BH;0;0;1;#13347E;Belize;Belize
+20;bt;BHT;0;0;0;#E8AD28,#D63827;Bhutan;Bhutan
+21;ba;BIH;0;0;1;#11118C,#F9C901,#11118C;Bosnia and Herzegovina;Bosnien und Herzegowina
+22;bj;BJ;0;0;1;#207F48,#F7D010,#DD112C;Benin;Benin
+23;bo;BOL;0;0;1;#C82820,#F5E401,#1C712E;Bolivia;Bolivien
+24;br;BR;0;0;1;#259532;Brazil;Brasilien
+25;bh;BRN;0;0;1;white,#C11126,#C11126;Bahrain;Bahrain
+26;bn;BRU;0;0;1;#F3E10D;Brunei;Brunei
+27;bs;BS;0;0;1;#2EA1C3,#F6E039,#2EA1C3;Bahamas;Bahamas
+28;vg;BVI;0;0;1;#0E1974;British Virgin Islands;Britische Jungferninseln
+29;bw;BW;0;0;0;#719FD7,black,#719FD7;Botswana;Botswana
+30;by;BY;0;0;1;#BB2C39,#BB2C39,#4CA04D;Belarus;Weißrussland
+31;bz;BZ;0;0;0;#13347E;Belize;Belize
+32;cu;C;0;0;1;#111D86,white,#111D86,white,#111D86;Cuba;Kuba
+33;cm;CAM;0;0;1;#1E7255,#C11126,#F7D010;Cameroon;Kamerun
+34;ca;CDN;0;0;1;#F50110,white,#F50110;Canada;Kanada
+35;cd;CGO;0;0;1;#286CFF;DR Congo;DR Kongo
+36;ch;CH;1;1;1;#F50110;Switzerland;Schweiz
+37;cn;CHN;0;0;0;#D22617;China;China
+38;ci;CI;0;0;1;#EE7805,white,#279756;Ivory Coast;Elfenbeinküste
+39;lk;CL;0;0;1;#144F3A,#F6540B,#85311D;Sri Lanka;Sri Lanka
+40;cn;CN;0;0;0;#D22617;China;China
+41;co;CO;0;0;1;#F7D010,#132B8A,#C11126,#3C67BE;Colombia;Kolumbien
+42;km;COM;0;0;0;#FAC419,white,#C11126;Comores;Komoren
+43;cr;CR;0;0;1;#0F2076,white,#C11126,white,#0F2076;Costa Rica;Costa Rica
+44;cv;CV;0;0;0;#132B8A;Cape Verde;Kap Verde
+45;cy;CY;0;0;1;white;Cyprus;Zypern
+46;gb;CYM;0;0;0;white,#29A631;Wales (GB); Wales (GB)
+47;cz;CZ;0;0;1;#1B3B75,white,#CA141D;Czech Republic;Tschechien
+48;de;D;1;0;1;black,#D1010C,#FBCD01;Germany;Deutschland
+49;dj;DJI;0;0;0;white,#69A7E4,#2EA823;Djibouti;Dschibuti
+50;dk;DK;0;0;1;#B90A2E;Denmark;Dänemark
+51;do;DOM;0;0;1;#0C2659,#C11126,#0C2659,#C11126;Dominican Republic;Dominikanische Repuplik
+52;bj;DY;0;0;1;#207F48,#F7D010,#DD112C;Benin;Benin
+53;dz;DZ;0;0;1;#175B2E,white;Algeria;Algerien
+54;es;E;0;0;1;#B80B1F,#FAC101,#B80B1F;Spain;Spanien
+55;ke;EAK;0;0;1;black,#AD0108,#175F01;Kenya;Kenia
+56;tz;EAT;0;0;1;#34B131,black,#2D97D9;Tanzania;Tansania
+57;ug;EAU;0;0;1;black,#F8DC01,#CC010B,black,#F8DC01,#CC010B;Uganda;Uganda
+58;ec;EC;0;0;1;#FBDD01,#19419A,#E21B25;Ecuador;Qcuador
+59;gb;ENG;0;0;0;#FFFFFF,#C11124,#FFFFFF;England (GB);England (GB)
+60;er;ER;0;0;1;#2EA823,#DF0134,#457AD9;Eritrea;Eritrea
+61;sv;ES;0;0;1;#1D38A8,white,#1D38A8;El Salvador;El Salvador
+62;ee;EST;0;0;1;#4A83D5,black,white;Estonia;Estland
+63;eg;ET;0;0;1;#C11126,white,black;Egypt;Ägypten
+64;et;ETH;0;0;1;#22822A,#F8DD01,#CE131D;Ethiopia;Äthiopien
+65;fr;F;0;0;1;#11118C,white,#E22536;France;Frankreich
+66;fi;FIN;0;0;1;#FFFFFF,#112B77,#FFFFFF;Finland;Finnland
+67;fj;FJI;0;0;1;#69B6E2;Fiji;Fidschi
+68;li;FL;0;0;1;#0F2076,#C11126;Liechtenstein;Liechtenstein
+69;fo;FO;0;0;1;#FFFFFF;Faroe Islands;Färöer
+70;fm;FSM;0;0;0;#72A8D9;Micronesia;Mikronesien
+71;ga;G;0;0;1;#279756,#F7D010,#3C67BE;Gabon;Gabun
+72;gb;GB;0;0;1;#0E1974,#C2132A,#FFFFFF;United Kingdom;Vereinigtes Königreich
+73;gba;GBA;0;0;1;#FFFFFF;Alderney;Alderney
+74;gg;GBG;0;0;1;#FFFFFF;Guernsey;Guernsey
+75;je;GBJ;0;0;1;#FFFFFF;Jersey;Jersey
+76;gbm;GBM;0;0;1;#C2132A;Isle of Man;Isle of Man
+77;gi;GBZ;0;0;1;#FFFFFF,#FFFFFF,#CE0517;Gibraltar;Gibraltar
+78;gt;GCA;0;0;1;#4C8BCB,#FFFFFF,#4C8BCB;Guatemala;Guatemala
+79;ge;GE;0;0;1;#FFFFFF,#DD112C,#FFFFFF;Georgia;Georgien
+80;gh;GH;0;0;1;#C11126,#F7D010,#196338;Ghana;Ghana
+81;gq;GQ;0;0;0;#2264C9,#419401,#FFFFFF,#D71F1C;Equatorial Guinea;Äquatorialguinea
+82;gr;GR;0;0;1;#2050A7,#FFFFFF;Greece;Griechenland
+83;gt;GT;0;0;1;#4C8BCB,#FFFFFF,#4C8BCB;Guatemala;Guatemala
+84;gw;GUB;0;0;1;#C11126,#F7D010,#269840;Guinea-Bissau;Guinea-Bissau
+85;gn;GUI;0;0;0;#C11126,#F7D010,#248D56;Guinea;Guinea
+86;gy;GUY;0;0;1;#C11126,#F8D62F,#269840;Guyana;Guyana
+87;gw;GW;0;0;0;#C11126,#F7D010,#269840;Guinea-Bissau;Guinea-Bissau
+88;hu;H;0;0;1;#C02639,#FFFFFF,#406745;Hungary;Ungarn
+89;hk;HK;0;0;0;#D22617;Hongkong;Hongkong
+90;jo;HKJ;0;0;0;#C11126,#010101,#FFFFFF,#1D7236;Jordan;Jordanien
+91;hn;HN;0;0;0;#2264CA,#FFFFFF,#2264CA;Honduras;Honduras
+92;hr;HR;0;0;1;#F50110,#FFFFFF,#1C018D;Croatia;Kroatien
+93;it;I;0;0;1;#238B3E,#FFFFFF,#C12733;Italy;Italien
+94;il;IL;0;0;1;#3042BC,#FFFFFF,#3042BC;Israel;Israel
+95;in;IND;0;0;1;#F8932F,#FFFFFF,#258101;India;Indien
+96;ir;IR;0;0;1;#329938,#FFFFFF,#CD010B;Iran;Iran
+97;ie;IRL;0;0;1;#25953F,#FFFFFF,#F77207;Ireland;Irland
+98;iq;IRQ;0;0;1;#C11126,#FFFFFF,#010101;Irag;Irak
+99;is;IS;0;0;1;#132B8E;Iceland;Island
+100;jp;J;0;0;1;#FFFFFF,#AE012B,#FFFFFF;Japan;Japan
+101;jm;JA;0;0;1;#010101,#FAD001,#259532;Jamaica;Jamaika
+102;jo;JOR;0;0;1;#C11126,#010101,#FFFFFF,#1D7236;Jordan;Jordanien
+103;kh;K;0;0;1;#141D99,#D40125,#141D99;Cambodia;Kambodscha
+104;kn;KAN;0;0;0;#269840,#010101,#C11126;Saint Kitts and Nevis;St. Kitts und Nevis
+105;ki;KIR;0;0;0;#C11126,#13347E;Kiribati;Kiribati
+106;gl;KN;0;0;0;#FFFFFF,#C30930;Greenland;Grönland
+107;kp;KP;0;0;0;#19429A,#E21A27,#19429A;North Korea;Nordkorea
+108;kg;KS;0;0;1;#DD112C;Kyrgyzstan;Kirgisistan
+109;sa;KSA;0;0;1;#19642F;Saudi Arabia;Saudi-Arabien
+110;kw;KWT;0;0;1;#010101,#1D7236,#FFFFFF,#C11126;Kuwait;Kuwait
+111;kz;KZ;0;0;1;#2FA6C4;Kazakhstan;Kasachstan
+112;lu;LU;0;0;1;#E22536,#FFFFFF,#2C95DA;Luxembourg;Luxemburg
+113;la;LAO;0;0;1;#C11126,#0C205F,#C11126;Laos;Laos
+114;ly;LAR;0;0;0;#DB0119,#010101,#32983D;Libya;Libyen
+115;lr;LB;0;0;0;#B1072D,#FFFFFF;Liberia;Liberia
+116;ls;LS;0;0;1;#110297,#FFFFFF,#248E3B;Lesotho;Lesotho
+117;lt;LT;0;0;1;#F7B511,#19623D,#B3242B;Lithuania;Litauen
+118;lv;LV;0;0;1;#902B34,#FFFFFF,#902B34;Latvia;Lettland
+119;mt;M;0;0;1;#FFFFFF,#C2132A;Malta;Malta
+120;ma;MA;0;0;1;#B3242B;Morocco;Marokko
+121;my;MAL;0;0;1;#08015D,#C62226,#FFFFFF;Malaysia;Malaysia
+122;mc;MC;0;0;1;#C11126,#FFFFFF;Moncao;Monaco
+123;md;MD;0;0;1;#1737A6,#FBD101,#BF062D;Moldova;Moldawien
+124;mx;MEX;0;0;1;#19603F,#FFFFFF,#C11126;Mexico;Mexiko
+125;mn;MGL;0;0;1;#B7242D,#18458E,#B7242D;Mongolia;Mongolei
+126;mh;MH;0;0;0;#132B8A,#B46D27,#FFFFFF,#132B8A;Marshall Islands;Marshallinseln
+127;mk;MK;0;0;1;#C5010B,#FBE701,#C5010B;Macedonia;Mazedonien
+128;me;MNE;0;0;1;#B60311;Montenegro;Montenegro
+129;mo;MO;0;0;0;#1D7055;Macau;Macao
+130;mz;MOC;0;0;1;#C50F31,#1C685F,#010101,#F8E201;Mozambique;Mosambik
+131;mu;MS;0;0;1;#DF2436,#1C1864,#FBD401,#289F47;Mauritius;Mauritius
+132;mv;MV;0;0;0;#C50F31,#1E7633,#C50F31;Maldives;Malediven
+133;mw;MW;0;0;1;#010101,#C11126,#3B982D;Malawi;Malawi
+134;mm;MYA;0;0;1;#F9C901,#3FAE2B,#DF2436;Myanmar;Myanmar
+135;no;N;0;0;1;#E4272C,#0F2361,#E4272C;Norway;Norwegen
+136;an;NA;0;0;1;#FFFFFF,#D0171F,#111E7E;Netherlands Antilles;Niederländische Antillen
+137;na;NAM;0;0;1;#112B77,#C50F31,#248E3B;Namibia;Namibia
+138;nr;NAU;0;0;1;#0F2076,#726E47,#0F2076;Nauru;Nauru
+139;nc;NC;0;0;0;#1524A5,#E23B32,#248E3B;New Caledonia;Neukaledonien
+140;nc;NCL;0;0;0;#1524A5,#E23B32,#248E3B;New Caledonia;Neukaledonien
+141;ne;NEP;0;0;0;#D01238;Nepal;Nepal
+142;ng;NGR;0;0;1;#207F48,#FFFFFF,#207F48;Nigeria;Nigeria
+143;gb;NI;0;0;0;#FFFFFF,#D21027,#FFFFFF;Northern Ireland (GB);Nordirland (GB)
+144;ni;NIC;0;0;1;#1F57C0,#FFFFFF,#1F57C0;Nicaragua;Nicaragua
+145;nl;NL;0;0;1;#A01B27,#FFFFFF,#253B82;Netherlands;Niederlande
+146;nz;NZ;0;0;1;#0E1974;New Zealand;Neuseeland
+147;om;OM;0;0;0;#FFFFFF,#CF161E,#1E7901;Oman;Oman
+148;pt;P;0;0;1;#175F01,#F50110,#F50110;Portugal;Portugal
+149;pa;PA;0;0;1;#17468A,#FFFFFF,#C50F31;Panama;Panama
+150;pw;PAL;0;0;0;#4FA3D1,#FBDE01,#4FA3D1;Palau;Palau
+151;pe;PE;0;0;1;#CC1124,#FFFFFF,#CC1124;Peru;Peru
+152;pk;PK;0;0;1;#FFFFFF,#0F3C1B,#0F3C1B;Pakistan;Pakistan
+153;pl;PL;0;0;1;#FFFFFF,#D01238;Poland;Polen
+154;pmr;PMR;0;0;0;#D2010C,#25932C,#D2010C;Transnistria;Transnistrien
+155;pg;PNG;0;0;0;#010101,#C21625;Papua New Guinea; Papua-Neuguinea
+156;pr;PR;0;0;0;#1E37EF,#E2010E,#FFFFFF,#E2010E,#FFFFFF,#E2010E;Puerto Rico;Puerto Rico
+157;ps;PS;0;0;0;#000000,#FFFFFF,#1D7236;Palestine;Palästinensergebiete
+158;py;PY;0;0;1;#C82820,#FFFFFF,#1528A0;Paraguay;Paraguay
+159;qa;Q;0;0;1;#FFFFFF,#7F1838,#7F1838;Qatar;Katar
+160;ar;RA;0;0;1;#71A1DB,#FFFFFF,#71A1DB;Argentina;Argentinien
+161;bw;RB;0;0;1;#719FD7,#000000,#719FD7;Botswana;Botswana
+162;tw;RC;0;0;1;#0E018C,#F40110,#F40110;Taiwan;Taiwan
+163;cf;RCA;0;0;1;#112579,#FFFFFF,#C50F31,#339122,#FBCD01;Central African Republic;Zentralafrikanische Republik
+164;cg;RCB;0;0;1;#248E3B,#F7DE40,#D02221;Republic of Congo;Republik Kongo
+165;cl;RCH;0;0;1;#14299E,#FFFFFF,#C82820;Chile;Chile
+166;gn;RG;0;0;1;#C11126,#F7D010,#248D56;Guinea;Guinea
+167;ht;RH;0;0;1;#110297,#C50F31;Haiti;Haiti
+168;id;RI;0;0;1;#C11126,#FFFFFF;Indonesia;Indonesien
+169;mr;RIM;0;0;1;#175B2E;Mauritania;Mauretanien
+170;xk;RKS;0;0;0;#283C9D;Kosovo;Kosovo
+171;lb;RL;0;0;1;#E21B25,#FFFFFF,#E21B25;Lebanon;Libanon
+172;mg;RM;0;0;1;#FFFFFF,#F33730,#1E7633;Madagascar;Madagaskar
+173;ml;RMM;0;0;1;#31B131,#F7D010,#C11126;Mali;Mali
+174;ne;RN;0;0;1;#D54B0F,#FFFFFF,#2DAB23;Niger;Niger
+175;ro;RO;0;0;1;#0F2076,#F7D010,#C11126;Romania;Rumänien
+176;kr;ROK;0;0;1;#FFFFFF,#B90A2E,#102B6F,#FFFFFF;South Korea;Südkorea
+177;uy;ROU;0;0;1;#FFFFFF,#1528A0,#FFFFFF,#1528A0,#FFFFFF;Uruguay;Uruguay
+178;ph;RP;0;0;1;#FFFFFF,#1528A0,#C11126;Philippines;Philippinen
+179;rsk;RS;0;0;0;#D1010C,#132B8A,#FFFFFF;Republika Srpska;Bosnisch-Serbische-Republik
+180;sm;RSM;0;0;1;#FFFFFF,#60ACE1;San Marino;San Marino
+181;tg;RT;0;0;1;#C50F31,#196246,#FBCD01;Togo;Togo
+182;bi;RU;0;0;1;#34B131,#C11126,#34B131;Burundi;Burundi
+183;ro;RUM;0;0;0;#0F2076,#F7D010,#C11126;Romania;Rumänien
+184;ru;RUS;0;0;1;#FFFFFF,#14299E,#C82820;Russia;Russland
+185;rw;RWA;0;0;1;#2C95DA,#F5D101,#255836;Rwanda;Ruanda
+186;se;S;0;0;1;#17468A,#F9C901,#17468A;Sweden;Schweden
+187;gb;SCO;0;0;0;#1E56B6,#FFFFFF,#1E56B6;Scotland (GB);Schottland (GB)
+188;sz;SD;0;0;1;#3F50AF,#D6980D,#A10E13,#D6980D,#3F50AF;Swaziland;Swasiland
+189;sg;SGP;0;0;1;#E22536,#FFFFFF;Singapore;Singapur
+190;sk;SK;0;0;1;#FFFFFF,#1C419A,#E31B26;Slovakia;Slowakei
+191;sl;SLE;0;0;0;#34B131,#FFFFFF,#2163C0;Sierra Leone;Sierra Leone
+192;si;SLO;0;0;1;#FFFFFF,#1C419A,#E31B26;Slovenia;Slowenien
+193;sr;SME;0;0;1;#397638,#A6082B,#397638;Suriname;Suriname
+194;mt;SMOM;0;0;0;#AA272C,#FFFFFF,#AA272C;Sovereign Military Order of Malta;Malteserorden
+195;sn;SN;0;0;1;#207E37,#FAF238,#D71A24;Senegal;Senegal
+196;so;SO;0;0;1;#457AD9;Somalia;Somalia
+197;sb;SOL;0;0;0;#1A41B3,#8F9640,#25542E;Solomon Islands;Salomonen
+198;rs;SRB;0;0;1;#B93138,#18376D,#FFFFFF;Serbia;Serbien
+199;ss;SSD;0;0;1;#1D38A8,#010101,#CE131D,#22822A;South Sudan;Südsudan
+200;st;STP;0;0;0;#C50F31,#2EA823,#FBCD01,#2EA823;São Tomé and Príncipe;São Tomé und Príncipe
+201;sd;SUD;0;0;1;#1B6B24,#C50F31,#FFFFFF,#010101;Sudan;Sudan
+202;sc;SY;0;0;1;#13347E,#F8D74C,#C92527,#FFFFFF,#1D7236;Seychelles;Seychellen
+203;sy;SYR;0;0;1;#C11126,#FFFFFF,#010101;Syria;Syrien
+204;th;T;0;0;1;#E21B25,#FFFFFF,#221948,#FFFFFF,#E21B25;Thailand;Thailand
+205;td;TD;0;0;1;#0B1F5B,#F9C901,#B90A2E;Chad;Tschad
+206;tg;TG;0;0;0;#C50F31,#196246,#FBCD01;Togo;Togo
+207;tj;TJ;0;0;1;#BF010A,#FFFFFF,#175F01;Tajikistan;Tadschikistan
+208;tl;TL;0;0;0;#010101,#F0BD20,#D02221,#D02221;Timor-Leste;Osttimor
+209;tm;TM;0;0;1;#38A85C;Turkmenistan;Turkmenistan
+210;tn;TN;0;0;1;#DB0119;Tunisia;Tunesien
+211;to;TON;0;0;0;#FFFFFF,#B30109,#B30109;Tonga;Tonga
+212;tr;TR;0;0;1;#D70A1B;Turkey;Türkei
+213;tt;TT;0;0;1;#C11126,#C11126,#000000,#C11126,#C11126;Trinidad and Tobago;Trinidad und Tobago
+214;tv;TUV;0;0;0;#598DA9;Tuvalu;Tuvalu
+215;ua;UA;0;0;1;#1C4CB4,#FBD401;Ukraine;Ukraine
+216;ae;UAE;0;0;1;#F50110,#1B6B29,#FFFFFF,#000000;United Arab Emirates;Vereinigte Arabische Emirate
+217;us;USA;0;0;1;#0B1F5B,#FFFFFF,#373265;United States;Vereinigte Staaten von Amerika
+218;uy;UY;0;0;1;#FFFFFF,#1528A0,#FFFFFF,#1528A0,#FFFFFF;Uruguay;Uruguay
+219;uz;UZ;0;0;1;#3EA3BA,#FFFFFF,#34B131;Uzbekistan;Usbekistan
+220;va;V;0;0;1;#FCE101,#FFFFFF;Vatican City;Vatikanstaat
+221;vu;VAN;0;0;0;#000000,#C50F31,#248E3B;Vanuatu;Vanuatu
+222;vg;VG;0;0;1;#0E1974;Virgin Islands;Britische Jungferninseln
+223;vn;VN;0;0;1;#CE231F;Vietnam;Vietnam
+224;vu;VU;0;0;0;#000000,#C50F31,#248E3B;Vanuatu;Vanuatu
+225;gm;WAG;0;0;1;#C11126,#150583,#3A7023;Gambia;Gambia
+226;sl;WAL;0;0;1;#34B131,#FFFFFF,#2163C0;Sierra Leone;Sierra Leone
+227;ng;WAN;0;0;0;#207F48,#FFFFFF,#207F48;Nigeria;Nigeria
+228;ps;WB;0;0;0;#000000,#FFFFFF,#1D7236;West Bank;Westjordanland
+229;dm;WD;0;0;1;#196338;Dominica;Dominica
+230;gd;WG;0;0;1;#B71427,#1E7255,#F7D010;Grenada;Grenada
+231;lc;WL;0;0;1;#6AC3FF;"Saint Lucia;St. Lucia
+232;ws;WS;0;0;1;#0F2076,#C11126,#C11126;Samoa;Samoa
+233;eh;WSA;0;0;0;#B6121D,#000000,#FFFFFF,#1D7236;Western Sahara;Demokratische Arabische Republik Sahara
+234;vc;WV;0;0;1;#2163C0,#F7D010,#279756;Saint Vincent and the Grenadines;St. Vincent und die Grenadinen
+235;ye;YAR;0;0;0;#C11126,#FFFFFF,#000000;Yemen;Jemen
+236;ye;YEM;0;0;1;#C11126,#FFFFFF,#000000;Yemen;Jemen
+237;ve;YV;0;0;1;#FACA01,#0E1974,#C2132A;Venezuela;Venezuela
+238;zm;Z;0;0;1;#288301;Zambia;Sambia
+239;za;ZA;0;0;1;#010101,#1D7245,#D2332F,#11118C;South Africa;Südafrika
+240;cd;ZRE;0;0;0;#286CFF;Congo;DR Kongo
+241;zw;ZW;0;0;1;#378C01,#F3B205,#D93E14,#000000;Zimbabwe;Simbabwe

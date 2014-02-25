@@ -1,7 +1,9 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
-#include <QString>
+#include <QStringList>
+
+extern QStringList tables;
 
 #define DB_PATH "/usr/share/harbour-chennzeihhan/data/carplates.sqlite"
 #define VERSION_STRING "1.1.0"

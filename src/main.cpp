@@ -19,6 +19,7 @@
 #include "models/countrymodel.h"
 #include "models/antecessormodel.h"
 #include "models/itemmodel.h"
+#include "models/countriesmodel.h"
 
 
 int main(int argc, char *argv[])
@@ -46,6 +47,7 @@ int main(int argc, char *argv[])
 
     QObject::connect(&dlManager, SIGNAL(dbDownloadStarted()), &dbman, SLOT(closeDB()));
 
+    CountriesModel *countriesModel = new CountriesModel();
     CountryModel *countryModel = new CountryModel();
     ItemModel *itemModel = new ItemModel();
 
@@ -56,6 +58,7 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("dbMan", &dbman);
     view->rootContext()->setContextProperty("dlMan", &dlManager);
     view->rootContext()->setContextProperty("wp", &wikipedia);
+    view->rootContext()->setContextProperty("countriesModel", countriesModel);
     view->rootContext()->setContextProperty("countryModel", countryModel);
     view->rootContext()->setContextProperty("itemModel", itemModel);
     view->rootContext()->setContextProperty("antecessorModel", antecessorModel);

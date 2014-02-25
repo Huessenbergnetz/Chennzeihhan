@@ -30,7 +30,12 @@ bool DbManager::openDB()
     db.setDatabaseName(QDir::homePath().append(DATA_DIR).append("/carplates.sqlite"));
     db.setConnectOptions("QSQLITE_OPEN_READONLY");
 
-    return db.open();
+    bool dbStatus = db.open();
+
+    if (dbStatus)
+        tables = db.tables(QSql::Tables);
+
+    return dbStatus;
 }
 
 

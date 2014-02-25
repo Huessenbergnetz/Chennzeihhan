@@ -8,7 +8,7 @@ ApplicationWindow
 
     property bool dataBaseExists: dbMan.checkDB()
     property int installedDbRevision: dlMan.getLocalDBVersion()
-    property int minimumDbRevision: 6
+    property int minimumDbRevision: 7
 
     Connections {
         target: dlMan
@@ -17,7 +17,7 @@ ApplicationWindow
 
     Timer {
         id: checkDbTimer; interval: 200; running: false; repeat: false
-        onTriggered: dataBaseExists = dbMan.checkDB()
+        onTriggered: { dataBaseExists = dbMan.checkDB(); countriesModel.refresh() }
     }
 
     initialPage: Component { MainView { } }

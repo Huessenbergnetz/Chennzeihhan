@@ -2,6 +2,9 @@ import QtQuick 2.0
 
 ListModel {
     id: countriesModel
+
+    property variant signs: []
+
     ListElement { name: ""; code: "at"; sign: "A"; type: 1; dbRevision: 6; official: true; colors: "#E22536,white,#E22536" }
     ListElement { name: ""; code: "af"; sign: "AFG"; type: 0; dbRevisin: 0; official: true; colors: "black,#B10109,#249301" }
     ListElement { name: ""; code: "ag"; sign: "AG"; type: 0; dbRevisin: 0; official: false; colors: "#C11126,black,#C11126" }
@@ -49,7 +52,7 @@ ListModel {
     ListElement { name: ""; code: "cy"; sign: "CY"; type: 0; dbRevision: 0; official: true; colors: "white" }
     ListElement { name: ""; code: "gb"; sign: "CYM"; type: 0; dbRevision: 0; official: false; colors: "white,#29A631" }
     ListElement { name: ""; code: "cz"; sign: "CZ"; type: 0; dbRevision: 0; official: true; colors: "#1B3B75,white,#CA141D" }
-    ListElement { name: ""; code: "de"; sign: "D"; type: 0; dbRevision: 0; official: true; colors: "black,#D1010C,#FBCD01" }
+    ListElement { name: ""; code: "de"; sign: "D"; type: 1; dbRevision: 0; official: true; colors: "black,#D1010C,#FBCD01" }
     ListElement { name: ""; code: "dj"; sign: "DJI"; type: 0; dbRevision: 0; official: false; colors: "white,#69A7E4,#2EA823" }
     ListElement { name: ""; code: "dk"; sign: "DK"; type: 0; dbRevision: 0; official: true; colors: "#B90A2E" }
     ListElement { name: ""; code: "do"; sign: "DOM"; type: 0; dbRevision: 0; official: true; colors: "#0C2659,#C11126,#0C2659,#C11126" }
@@ -400,9 +403,6 @@ ListModel {
         countriesModel.get(152).name = qsTr("Poland")
         countriesModel.get(153).name = qsTr("Transnistria")
         countriesModel.get(154).name = qsTr("Papua New Guinea")
-
-
-
         countriesModel.get(155).name = qsTr("Puerto Rico")
         countriesModel.get(156).name = qsTr("Palestine")
         countriesModel.get(157).name = qsTr("Paraguay")
@@ -489,5 +489,28 @@ ListModel {
         countriesModel.get(238).name = qsTr("South Africa")
         countriesModel.get(239).name = qsTr("Congo")
         countriesModel.get(240).name = qsTr("Zimbabwe")
+//        populateSigns()
+    }
+
+
+    function populateSigns() {
+        for (var i = 0; i < count; i++) {
+            signs.push(countriesModel.get(i).sign)
+        }
+    }
+
+
+    function searchSign(text) {
+        var filteredSigns = signs.filter(function (sign) { return sign.indexOf(text) !== -1 })
+        while (count > filteredSigns.length) {
+            remove(filteredSigns.length)
+        }
+        for (var index = 0; index < filteredSigns.length; index++) {
+            if (index < count) {
+                setProperty(index, "sign", filteredSigns[index])
+            } else {
+                append({ "sign": filteredSigns[index] })
+            }
+        }
     }
 }

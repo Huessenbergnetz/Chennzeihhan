@@ -13,7 +13,9 @@ SOURCES += \
     src/downloadmanager.cpp \
     src/wikipedia.cpp \
     src/models/athelper.cpp \
-    src/models/antecessormodel.cpp
+    src/models/antecessormodel.cpp \
+    src/models/countriesmodel.cpp \
+    src/globals.cpp
 
 #datafiles.path = /usr/share/harbour-chennzeihhan/data
 #datafiles.files = data/*
@@ -65,4 +67,5 @@ HEADERS += \
     src/downloadmanager.h \
     src/wikipedia.h \
     src/models/athelper.h \
-    src/models/antecessormodel.h
+    src/models/antecessormodel.h \
+    src/models/countriesmodel.h

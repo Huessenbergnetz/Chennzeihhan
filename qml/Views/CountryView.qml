@@ -49,24 +49,24 @@ Page {
     }
 
     DockedPanel {
-            id: searchPanel
+        id: searchPanel
+        width: parent.width
+        height: searchField.height
+        open: true
+        dock: Dock.Bottom
+
+        SearchField {
+            id: searchField
             width: parent.width
-            height: searchField.height
-            open: true
-            dock: Dock.Bottom
+            placeholderText: qsTr("Search")
+            EnterKey.onClicked: searchField.focus = false
+            EnterKey.iconSource: "image://theme/icon-m-enter-close"
 
-            SearchField {
-                id: searchField
-                width: parent.width
-                placeholderText: qsTr("Search")
-                EnterKey.onClicked: searchField.focus = false
-                EnterKey.iconSource: "image://theme/icon-m-enter-close"
-
-                Binding {
-                    target: countryView
-                    property: "searchString"
-                    value: searchField.text
-                }
+            Binding {
+                target: countryView
+                property: "searchString"
+                value: searchField.text
             }
         }
+    }
 }
