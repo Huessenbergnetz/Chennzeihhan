@@ -16,7 +16,7 @@ public:
 signals:
 
 public slots:
-    void refresh();
+    void refresh(const QString search, int target, int sort);
 
 private:
     const static char* COLUMN_NAMES[];

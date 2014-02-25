@@ -8,22 +8,27 @@ Page {
     objectName: "MainView"
 
     property string searchString
+    property int searchTarget: 0
+    property int sortType: 0
 
-    Component.onCompleted: dataBaseExists ? countriesModel.refresh() : console.log("Database not available")
-    onSearchStringChanged: countriesModel.refresh(searchString)
+    Component.onCompleted: dataBaseExists ? countriesModel.refresh(searchString, searchTarget, sortType) : console.log("Database not available")
+
+    onSearchStringChanged: countriesModel.refresh(searchString, searchTarget, sortType)
+    onSortTypeChanged: countriesModel.refresh(searchString, searchTarget, sortType)
+    onSearchTargetChanged: countriesModel.refresh(searchString, searchTarget, sortType)
+
 
     SilicaGridView {
         id: listView
-        anchors { left: parent.left; right: parent.right; top: parent.top; bottom: parent.bottom; bottomMargin: updateInfoPanel.open ?  updateInfoPanel.height * 1.7 : searchPanel.height * 1.5 }
+        anchors { left: parent.left; right: parent.right; top: parent.top; bottom: parent.bottom; bottomMargin: searchPanel.height * 1.5 }
         cellWidth: 180; cellHeight: 150
         currentIndex: -1
 
         Behavior on anchors.bottomMargin {
-            NumberAnimation { duration: 300; easing.type: Easing.InOutQuad }
+            FadeAnimation {}
         }
 
-        header: PageHeader { width: listView.width; title: "Chennzeihhan" }
-
+        header: PageHeader { width: listView.width; title: "Chennzeihhan"; }
 
         PullDownMenu {
             MenuItem {
@@ -55,40 +60,40 @@ Page {
         VerticalScrollDecorator { flickable: listView }
     }
 
-    DockedPanel {
-        id: updateInfoPanel
-        width: parent.width
-        height: Theme.itemSizeExtraLarge + Theme.paddingLarge
+//    DockedPanel {
+//        id: updateInfoPanel
+//        width: parent.width
+//        height: Theme.itemSizeExtraLarge + Theme.paddingLarge
 
-        dock: Dock.bottom
-//        open: minimumDbRevision > installedDbRevision
-        open: false
-        visible: open
+//        dock: Dock.bottom
+////        open: minimumDbRevision > installedDbRevision
+//        open: false
+//        visible: open
 
-        Label {
-            anchors.centerIn: parent
-            text: qsTr("New content available, please update database")
-            width: parent.width
-            wrapMode: Text.WordWrap
-            horizontalAlignment: Text.AlignHCenter
+//        Label {
+//            anchors.centerIn: parent
+//            text: qsTr("New content available, please update database")
+//            width: parent.width
+//            wrapMode: Text.WordWrap
+//            horizontalAlignment: Text.AlignHCenter
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: pageStack.push(Qt.resolvedUrl("../Pages/Settings.qml"))
-            }
-        }
+//            MouseArea {
+//                anchors.fill: parent
+//                onClicked: pageStack.push(Qt.resolvedUrl("../Pages/Settings.qml"))
+//            }
+//        }
 
-        Timer {
-            interval: 5000; running: updateInfoPanel.open; repeat: false
-            onTriggered: updateInfoPanel.hide()
-        }
-    }
+//        Timer {
+//            interval: 5000; running: updateInfoPanel.open; repeat: false
+//            onTriggered: updateInfoPanel.hide()
+//        }
+//    }
 
     DockedPanel {
         id: searchPanel
         width: parent.width
         height: searchField.height
-        open: !updateInfoPanel.open
+        open: true
         dock: Dock.Bottom
 
         SearchField {

@@ -52,12 +52,46 @@ QVariant CountriesModel::data(const QModelIndex &index, int role) const
 }
 
 
-void CountriesModel::refresh()
+void CountriesModel::refresh(const QString search, int target, int sort)
 {
 
+    QString queryString;
+
     if (tables.contains(lang)) {
-        this->setQuery(QString("SELECT id AS itemId, code, sign, type, official, colors, %1 AS name FROM countries;").arg(lang));
+        queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, %1 AS name FROM countries").arg(lang);
     } else {
-        this->setQuery(QString("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries;"));
+        queryString =  QString("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
     }
+
+
+    if (!search.isEmpty())
+    {
+        QString t_search = search;
+        t_search.prepend("%");
+        t_search.append("%");
+
+        switch(target) {
+        case 1:
+            queryString.append(QString(" WHERE name LIKE \"%1\"").arg(t_search));
+            break;
+        case 2:
+            queryString.append(QString(" WHERE (name LIKE \"%1\") OR (sign LIKE \"%1\")").arg(t_search));
+            break;
+        default:
+            queryString.append(QString(" WHERE sign LIKE \"%1\"").arg(t_search));
+            break;
+        }
+    }
+
+
+    switch(sort) {
+    case 1:
+        queryString.append(" ORDER BY name ASC");
+        break;
+    default:
+        queryString.append(" ORDER BY sign ASC");
+        break;
+    }
+
+    this->setQuery(queryString);
 }
