@@ -14,12 +14,27 @@ Page {
     property string cha: ""
     property int activeRow: 0
 
+    Component.onCompleted: {
+        searchTarget = config.get("display/search", 0)
+        sortType = config.get("display/ordering", 0)
+    }
+
+    Connections {
+        target: config
+        onConfigChanged: {
+            searchTarget = config.get("display/search", 0)
+            searchT.currentIndex = config.get("display/search", 0)
+            sortType = config.get("display/ordering", 0)
+            sortOrdering.currentIndex = config.get("display/ordering", 0)
+        }
+    }
+
 //    Component.onCompleted: dataBaseExists ? countriesModel.refresh(searchString, searchTarget, sortType) : console.log("Database not available")
 
-    onSearchStringChanged: countriesModel.refresh(searchString, searchTarget, sortType)
+    onSearchStringChanged: countriesSearch.refresh(searchString, searchTarget, sortType)
 //    onSortTypeChanged: countriesModel.refresh(searchString, searchTarget, sortType)
     onSortTypeChanged: if (cha !== "") countriesModel.setFirstChar(cha, sortType)
-    onSearchTargetChanged: countriesModel.refresh(searchString, searchTarget, sortType)
+//    onSearchTargetChanged: countriesModel.refresh(searchString, searchTarget, sortType)
 
     function toggleList(c, row)
     {
@@ -41,22 +56,22 @@ Page {
     function closeList(nr) {
         switch(nr){
         case 1:
-            gv1.visible = false
+            gv1.show = false
             break;
         case 2:
-            gv2.visible = false
+            gv2.show = false
             break;
         case 3:
-            gv3.visible = false
+            gv3.show = false
             break;
         case 4:
-            gv4.visible = false
+            gv4.show = false
             break;
         case 5:
-            gv5.visible = false
+            gv5.show = false
             break;
         case 6:
-            gv6.visible = false
+            gv6.show = false
             break;
         default:
             break;
@@ -104,27 +119,27 @@ Page {
         switch(nr){
         case 1:
             gv1.model.setFirstChar(text, sortType)
-            gv1.visible = true
+            gv1.show = true
             break;
         case 2:
             gv2.model.setFirstChar(text, sortType)
-            gv2.visible = true
+            gv2.show = true
             break;
         case 3:
             gv3.model.setFirstChar(text, sortType)
-            gv3.visible = true
+            gv3.show = true
             break;
         case 4:
             gv4.model.setFirstChar(text, sortType)
-            gv4.visible = true
+            gv4.show = true
             break;
         case 5:
             gv5.model.setFirstChar(text, sortType)
-            gv5.visible = true
+            gv5.show = true
             break;
         case 6:
             gv6.model.setFirstChar(text, sortType)
-            gv6.visible = true
+            gv6.show = true
             break;
         default:
             break;
@@ -132,10 +147,11 @@ Page {
     }
 
     SilicaFlickable {
-        PageHeader { title: "Chennzeihhan" }
+        PageHeader { id: pageHeader; title: "Chennzeihhan" }
         anchors.fill: parent
         VerticalScrollDecorator {}
-        contentHeight: favourites.height + chooser.height + sortOrdering.height + 6 * Theme.paddingLarge
+        interactive: searchString === ""
+        contentHeight: searchString === "" ? searchField.height + favourites.height + chooser.height + 6 * Theme.paddingLarge : parent.height
 
         PullDownMenu {
             MenuItem {
@@ -143,13 +159,56 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("../Pages/About.qml"))
             }
             MenuItem {
-                text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("../Pages/Settings.qml"))
-            }
-            MenuItem {
                 text: qsTr("Help/Legend")
                 onClicked: pageStack.push(Qt.resolvedUrl("../Pages/Help.qml"))
             }
+            MenuItem {
+                text: qsTr("Settings")
+                onClicked: pageStack.push(Qt.resolvedUrl("../Pages/Settings.qml"))
+            }
+        }
+
+
+        SearchField {
+            id: searchField
+            visible: dataBaseExists && (installedDbRevision >= minimumDbRevision)
+            anchors { top: pageHeader.bottom; left: parent.left; right: parent.right; }
+            placeholderText: qsTr("Search ...")
+            EnterKey.onClicked: searchField.focus = false
+            EnterKey.iconSource: "image://theme/icon-m-enter-close"
+
+            Binding {
+                target: mainView
+                property: "searchString"
+                value: searchField.text
+                }
+        }
+
+
+        GridView {
+            id: searchView
+
+            function calcHeight(h) {
+                var h1 = h;
+                var h2 = Math.round(h)
+                var h3
+                if (h2 < h1) {
+                    h3 = h2 +1
+                } else {
+                    h3 = h2;
+                }
+                return h3
+            }
+
+            visible: searchString !== ""
+            width: parent.width
+            clip: true
+            anchors { top: searchField.bottom; left: parent.left; right: parent.right; bottom: parent.bottom }
+            delegate: CountriesDelegate{ search: searchString; target: searchTarget}
+            cellWidth: 180; cellHeight: 150
+            model: countriesSearch
+            onCountChanged: console.log(count + " " + height + " " + width)
+            VerticalScrollDecorator { flickable: searchView }
         }
 
         GridView {
@@ -167,9 +226,9 @@ Page {
                 return h3
             }
 
-            visible: count > 0
+            visible: count > 0 && searchString === "" && dataBaseExists && (installedDbRevision >= minimumDbRevision)
             height: visible ? calcHeight(count / 3) * cellHeight : 0
-            anchors { top: parent.top; left: parent.left; right: parent.right; topMargin: 4 * Theme.paddingLarge }
+            anchors { top: searchField.bottom; left: parent.left; right: parent.right }
             delegate: CountriesDelegate{ showBg: false}
             interactive: false
             cellWidth: 180; cellHeight: 150
@@ -184,9 +243,9 @@ Page {
 
         Item {
             id: chooser
-            anchors { top: favourites.visible ? favourites.bottom : parent.top; left: parent.left; right: parent.right; topMargin: favourites.visible ? Theme.paddingLarge : 4 * Theme.paddingLarge }
-            height: row1.height + gv1.height + row2.height + gv2.height + row3.height + gv3.height + row4.height + gv4.height + row5.height + gv5.height + row6.height + gv6.height
-            visible: dataBaseExists && (installedDbRevision >= minimumDbRevision)
+            anchors { top: favourites.visible ? favourites.bottom : searchField.bottom; left: parent.left; right: parent.right; topMargin: Theme.paddingLarge }
+            height: row1.height + gv1.height + row2.height + gv2.height + row3.height + gv3.height + row4.height + gv4.height + row5.height + gv5.height + row6.height + gv6.height + searchSortOptions.height + Theme.paddingLarge
+            visible: dataBaseExists && (installedDbRevision >= minimumDbRevision) && searchString === ""
 
             Row {
                 id: row1
@@ -280,22 +339,41 @@ Page {
                 anchors { left: parent.left; right: parent.right; top: row6.bottom }
             }
 
-        }
+            Row {
+                id: searchSortOptions
+                anchors { left: parent.left; right: parent.right; top: gv6.bottom; topMargin: 20 }
 
-        ComboBox {
-            id: sortOrdering
-            anchors { top: chooser.bottom; topMargin: 20 }
-            width: parent.width
-            label: qsTr("Sorting")
+            ComboBox {
+                id: sortOrdering
+                width: parent.width/2
+                label: qsTr("Sorting")
 
-            currentIndex: mainView.sortType
+                currentIndex: mainView.sortType
 
-            menu: ContextMenu {
-                MenuItem { text: qsTr("Registration codes") }
-                MenuItem { text: qsTr("Country name") }
+                menu: ContextMenu {
+                    MenuItem { text: qsTr("Code") }
+                    MenuItem { text: qsTr("Name") }
+                }
+
+                onCurrentIndexChanged: mainView.sortType = currentIndex
             }
 
-            onCurrentIndexChanged: mainView.sortType = currentIndex
+            ComboBox {
+                id: searchT
+                width: parent.width/2
+                label: qsTr("Search")
+
+                currentIndex: mainView.searchTarget
+
+                menu: ContextMenu {
+                    MenuItem { text: qsTr("Code") }
+                    MenuItem { text: qsTr("Name") }
+                    MenuItem { text: qsTr("Both") }
+                }
+
+                onCurrentIndexChanged: mainView.searchTarget = currentIndex
+            }
+            }
         }
 
         ViewPlaceholder {
@@ -308,102 +386,4 @@ Page {
             text: qsTr("Because of changes in the data models you have to update the database. Please go to the settings to do so. We apologize for the inconvenience.")
         }
     }
-
-
-//    SilicaGridView {
-//        id: listView
-//        anchors { left: parent.left; right: parent.right; top: parent.top; bottom: parent.bottom; bottomMargin: searchPanel.height * 1.5 }
-//        cellWidth: 180; cellHeight: 150
-//        currentIndex: -1
-
-//        Behavior on anchors.bottomMargin {
-//            FadeAnimation {}
-//        }
-
-//        header: PageHeader { width: listView.width; title: "Chennzeihhan"; }
-
-//        PullDownMenu {
-//            MenuItem {
-//                text: qsTr("About")
-//                onClicked: pageStack.push(Qt.resolvedUrl("../Pages/About.qml"))
-//            }
-//            MenuItem {
-//                text: qsTr("Settings")
-//                onClicked: pageStack.push(Qt.resolvedUrl("../Pages/Settings.qml"))
-//            }
-
-//        }
-
-
-//        model: countriesModel
-
-//        delegate: CountriesDelegate { visible: dataBaseExists && (installedDbRevision >= minimumDbRevision) }
-
-//        ViewPlaceholder {
-//            enabled: !dataBaseExists
-//            text: qsTr("You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.")
-//        }
-
-//        ViewPlaceholder {
-//            enabled: dataBaseExists && (installedDbRevision < minimumDbRevision)
-//            text: qsTr("Because of changes in the data models you have to update the database. Please go to the settings to do so. We apologize for the inconvenience.")
-//        }
-
-//        VerticalScrollDecorator { flickable: listView }
-//    }
-
-
-
-
-
-//    DockedPanel {
-//        id: updateInfoPanel
-//        width: parent.width
-//        height: Theme.itemSizeExtraLarge + Theme.paddingLarge
-
-//        dock: Dock.bottom
-////        open: minimumDbRevision > installedDbRevision
-//        open: false
-//        visible: open
-
-//        Label {
-//            anchors.centerIn: parent
-//            text: qsTr("New content available, please update database")
-//            width: parent.width
-//            wrapMode: Text.WordWrap
-//            horizontalAlignment: Text.AlignHCenter
-
-//            MouseArea {
-//                anchors.fill: parent
-//                onClicked: pageStack.push(Qt.resolvedUrl("../Pages/Settings.qml"))
-//            }
-//        }
-
-//        Timer {
-//            interval: 5000; running: updateInfoPanel.open; repeat: false
-//            onTriggered: updateInfoPanel.hide()
-//        }
-//    }
-
-//    DockedPanel {
-//        id: searchPanel
-//        width: parent.width
-//        height: searchField.height
-//        open: true
-//        dock: Dock.Bottom
-
-//        SearchField {
-//            id: searchField
-//            width: parent.width
-//            placeholderText: qsTr("Search")
-//            EnterKey.onClicked: searchField.focus = false
-//            EnterKey.iconSource: "image://theme/icon-m-enter-close"
-
-//            Binding {
-//                target: mainView
-//                property: "searchString"
-//                value: searchField.text
-//            }
-//        }
-//    }
 }

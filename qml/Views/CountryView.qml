@@ -18,7 +18,11 @@ Page {
     onSearchStringChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
     onSearchTargetChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
 
-    Component.onCompleted: countryModel.refresh(code, sortType, searchTarget, searchString)
+    Component.onCompleted: {
+        searchTarget = config.get("display/search", 0)
+        sortType = config.get("display/ordering", 0)
+        countryModel.refresh(code, sortType, searchTarget, searchString)
+    }
 
     SilicaListView {
         id: listView

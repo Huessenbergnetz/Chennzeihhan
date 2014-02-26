@@ -60,7 +60,7 @@ Canvas {
         color: canv.color
         font.bold: true
         font.pixelSize: 50
-        style: Text.PlainText
+        style: Text.RichText
     }
 }
 

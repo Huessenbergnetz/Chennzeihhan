@@ -7,6 +7,11 @@ ListItem {
 
     property alias showBg: bgImage.visible
     property bool fav: config.isFav(model.sign)
+    property string search
+    property int target
+
+    property string name: (target === 1 || target === 2) ? Theme.highlightText(model.name, search, Theme.highlightColor) : model.name
+    property string sign: (target === 0 || target === 2) ? Theme.highlightText(model.sign, search, Theme.secondaryHighlightColor) : model.sign
 
     onClicked: pageStack.push(Qt.resolvedUrl("../Views/CountryView.qml"), {title: model.name, code: model.code})
 
@@ -40,7 +45,7 @@ ListItem {
         anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: 15 }
         color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
         borderColor: model.colors ? model.colors : "white"
-        text: model.sign
+        text: sign
     }
 
     Image {
@@ -65,12 +70,12 @@ ListItem {
         id: itemTitle
         z: 1
         anchors { bottom: parent.bottom; bottomMargin: 5; left: parent.left; leftMargin: Theme.paddingMedium; right: parent.right; rightMargin: Theme.paddingMedium }
-        text: model.name
+        text: name
         color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
         maximumLineCount: 1
         font.pixelSize: Theme.fontSizeTiny
         truncationMode: TruncationMode.Fade
-        textFormat: Text.PlainText
+        textFormat: Text.RichText
         width: parent.width - Theme.paddingLarge
     }
 

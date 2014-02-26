@@ -26,6 +26,7 @@ void Configuration::removeFav(const QString &sign)
     setValue("display/favourites", favs.join(","));
 
     emit favsChanged();
+
 }
 
 
@@ -40,4 +41,20 @@ QStringList Configuration::getFavs()
 bool Configuration::isFav(const QString &sign)
 {
     return value("display/favourites", "").toString().split(",").contains(sign);
+}
+
+
+
+void Configuration::set(const QString &key, const QString &val)
+{
+    setValue(key, val);
+
+    emit configChanged();
+}
+
+
+
+QVariant Configuration::get(const QString &key, const QString &def)
+{
+    return value(key, def);
 }

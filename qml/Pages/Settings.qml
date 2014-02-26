@@ -81,6 +81,39 @@ Page {
                     onDbDownloadFinished: downloadDBProgress.visible = false
                 }
             }
+
+            SectionHeader { text: qsTr("Display") }
+
+            ComboBox {
+                id: sortOrdering
+                width: parent.width
+                label: qsTr("Default ordering")
+
+                currentIndex: config.get("display/ordering", 0)
+
+                menu: ContextMenu {
+                    MenuItem { text: qsTr("Code") }
+                    MenuItem { text: qsTr("Name") }
+                }
+
+                onCurrentIndexChanged: config.set("display/ordering", currentIndex)
+            }
+
+            ComboBox {
+                id: searchTarget
+                width: parent.width
+                label: qsTr("Default search")
+
+                currentIndex: config.get("display/search", 0)
+
+                menu: ContextMenu {
+                    MenuItem { text: qsTr("Code") }
+                    MenuItem { text: qsTr("Name") }
+                    MenuItem { text: qsTr("Both") }
+                }
+
+                onCurrentIndexChanged: config.set("display/search", currentIndex)
+            }
         }
     }
 }
