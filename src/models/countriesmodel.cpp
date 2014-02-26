@@ -1,7 +1,6 @@
 #include "countriesmodel.h"
 #include "../globals.h"
 
-
 const char* CountriesModel::COLUMN_NAMES[] = {
     "itemId",
     "code",
@@ -52,7 +51,7 @@ QVariant CountriesModel::data(const QModelIndex &index, int role) const
 }
 
 
-void CountriesModel::refresh(const QString search, int target, int sort)
+void CountriesModel::refresh(const QString &search, int target, int sort)
 {
 
     QString queryString;
@@ -92,6 +91,74 @@ void CountriesModel::refresh(const QString search, int target, int sort)
         queryString.append(" ORDER BY sign ASC");
         break;
     }
+
+    this->setQuery(queryString);
+}
+
+
+
+void CountriesModel::setFirstChar(const QString &fc, int target)
+{
+    QString queryString;
+
+    if (tables.contains(lang)) {
+        queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, %1 AS name FROM countries").arg(lang);
+    } else {
+        queryString =  QString("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
+    }
+
+    QString t_search = fc;
+//    t_search.prepend("%");
+    t_search.append("%");
+
+    switch(target) {
+    case 1:
+        queryString.append(QString(" WHERE name LIKE \"%1\"").arg(t_search));
+        break;
+    default:
+        queryString.append(QString(" WHERE sign LIKE \"%1\"").arg(t_search));
+        break;
+    }
+
+    switch(target) {
+    case 1:
+        queryString.append(" ORDER BY name ASC");
+        break;
+    default:
+        queryString.append(" ORDER BY sign ASC");
+        break;
+    }
+
+
+    this->setQuery(queryString);
+}
+
+
+
+void CountriesModel::getFavs()
+{
+    QStringList favList = settings.value("display/favourites", "").toString().split(",");
+    QString favs;
+    for (int i = 0; i < favList.size(); ++i) {
+        if (!favList.at(i).isEmpty()) {
+            favs.append("'");
+            favs.append(favList.at(i));
+            favs.append("'");
+            if (i < favList.size()-1)
+            favs.append(",");
+        }
+    }
+
+
+    QString queryString;
+
+    if (tables.contains(lang)) {
+        queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, %1 AS name FROM countries").arg(lang);
+    } else {
+        queryString =  QString("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
+    }
+
+    queryString.append(QString(" WHERE sign IN (%1)").arg(favs));
 
     this->setQuery(queryString);
 }

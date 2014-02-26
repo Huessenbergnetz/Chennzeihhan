@@ -15,7 +15,8 @@ SOURCES += \
     src/models/athelper.cpp \
     src/models/antecessormodel.cpp \
     src/models/countriesmodel.cpp \
-    src/globals.cpp
+    src/globals.cpp \
+    src/configuration.cpp
 
 #datafiles.path = /usr/share/harbour-chennzeihhan/data
 #datafiles.files = data/*
@@ -55,7 +56,10 @@ OTHER_FILES += \
     qml/ItemViews/ItemEntry.qml \
     qml/Common/CountryPlate.qml \
     qml/Pages/Settings.qml \
-    qml/ItemViews/at.qml
+    qml/ItemViews/at.qml \
+    qml/Common/AbcItem.qml \
+    qml/Common/AbcGrid.qml \
+    qml/Pages/Help.qml
 
 HEADERS += \
     src/dbmanager.h \
@@ -68,4 +72,5 @@ HEADERS += \
     src/wikipedia.h \
     src/models/athelper.h \
     src/models/antecessormodel.h \
-    src/models/countriesmodel.h
+    src/models/countriesmodel.h \
+    src/configuration.h

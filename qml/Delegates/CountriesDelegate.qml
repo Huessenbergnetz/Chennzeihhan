@@ -2,24 +2,51 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Common"
 
-BackgroundItem {
+ListItem {
     id: listItem
+
+    property alias showBg: bgImage.visible
+    property bool fav: config.isFav(model.sign)
 
     onClicked: pageStack.push(Qt.resolvedUrl("../Views/CountryView.qml"), {title: model.name, code: model.code})
 
+    onPressAndHold: if (fav) { rmFav() } else { config.setFav(model.sign); fav = true }
+
     width: GridView.view.cellWidth
     height: GridView.view.cellHeight
+    contentHeight: GridView.view.cellHeight
 
     Image {
+        id: bgImage
         z: 0
         anchors.fill: parent
         source: "/usr/share/harbour-chennzeihhan/images/country-background.png"
     }
 
     Image {
+        id: favIcon
+        z: 1
+        anchors { top: parent.top; topMargin: Theme.paddingSmall; left: parent.left; leftMargin: Theme.paddingMedium }
+        source: "image://theme/icon-s-favorite"
+        opacity: fav ? 1 : 0
+        width: 26; height: 26
+        Behavior on opacity { FadeAnimation {} }
+    }
+
+    CountryPlate {
+        id: plate
+        z: 1
+        width: 140; height: 90
+        anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: 15 }
+        color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+        borderColor: model.colors ? model.colors : "white"
+        text: model.sign
+    }
+
+    Image {
         id: official
         z: 1
-        anchors { top: parent.top; topMargin: Theme.paddingMedium; left: parent.left; leftMargin: Theme.paddingMedium }
+        anchors { bottom: itemTitle.top; bottomMargin: Theme.paddingSmall; left: parent.left; leftMargin: Theme.paddingMedium }
         source: "image://theme/icon-s-installed"
         visible: model.official
         width: 26; height: 26
@@ -28,20 +55,10 @@ BackgroundItem {
     Image {
         id: list
         z: 1
-        anchors { top: parent.top; topMargin: Theme.paddingMedium; right: parent.right; rightMargin: Theme.paddingMedium }
+        anchors { bottom: itemTitle.top; bottomMargin: Theme.paddingSmall; right: parent.right; rightMargin: Theme.paddingMedium }
         source: "image://theme/icon-s-group-chat"
         visible: model.type > 0
         width: 26; height: 26
-    }
-
-    CountryPlate {
-        id: plate
-        z: 1
-        width: 140; height: 90
-        anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: 25 }
-        color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
-        borderColor: model.colors ? model.colors : "white"
-        text: model.sign
     }
 
     Label {
@@ -56,4 +73,11 @@ BackgroundItem {
         textFormat: Text.PlainText
         width: parent.width - Theme.paddingLarge
     }
+
+    function rmFav() {
+        remorse.execute(listItem, qsTr("Romving from favourites"), function() {config.removeFav(model.sign); fav = false}, 3000)
+    }
+
+    RemorseItem { id: remorse }
+
 }
