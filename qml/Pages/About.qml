@@ -50,7 +50,7 @@ Page {
             Text {
                 id: copyright
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "© 2014, Buschtrommel"
+                text: "© Sources and Database 2014, Buschtrommel"
                 width: parent.width
                 font.weight: Font.Light
                 wrapMode: Text.WordWrap
@@ -60,12 +60,25 @@ Page {
             }
 
             Text {
-                id: license
+                id: codeLicense
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.weight: Font.Light
-                text: _RICHTEXT_STYLESHEET_PREAMBLE + qsTr("Licensed under the <a href='http://www.gnu.org/licenses/gpl-2.0.en.html'>GNU GPL v2</a>") + _RICHTEXT_STYLESHEET_APPENDIX
+                text: _RICHTEXT_STYLESHEET_PREAMBLE + qsTr("Source code is licensed under the <a href='http://www.gnu.org/licenses/gpl-2.0.en.html'>GNU GPL v2</a>") + _RICHTEXT_STYLESHEET_APPENDIX
                 width: parent.width - 2 * Theme.paddingLarge
                 textFormat: Text.RichText
+                wrapMode: Text.WordWrap
+                color: Theme.primaryColor
+                onLinkActivated: { Qt.openUrlExternally(link) }
+                horizontalAlignment: Text.AlignHCenter
+            }
+            Text {
+                id: dbLicense
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.weight: Font.Light
+                text: _RICHTEXT_STYLESHEET_PREAMBLE + qsTr("Car plates database is licensed under <a href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>") + _RICHTEXT_STYLESHEET_APPENDIX
+                width: parent.width - 2 * Theme.paddingLarge
+                textFormat: Text.RichText
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 color: Theme.primaryColor
                 onLinkActivated: { Qt.openUrlExternally(link) }
                 horizontalAlignment: Text.AlignHCenter
