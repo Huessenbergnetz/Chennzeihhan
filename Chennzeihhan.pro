@@ -37,7 +37,6 @@ OTHER_FILES += \
     harbour-chennzeihhan.desktop \
     rpm/harbour-chennzeihhan.yaml \
     qml/Views/MainView.qml \
-    qml/Models/CountriesModel.qml \
     qml/Delegates/CountriesDelegate.qml \
     qml/Views/CountryView.qml \
     l10n/chennzeihhan_en.ts \
