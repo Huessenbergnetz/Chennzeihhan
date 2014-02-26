@@ -13,6 +13,7 @@ Page {
     property string searchString
     property int searchTarget: 0
     property int sortType: 0
+    property int type
 
     onSortTypeChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
     onSearchStringChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
@@ -32,6 +33,8 @@ Page {
         header: PageHeader { width: listView.width; title: countryView.title }
 
         PullDownMenu {
+            visible: type === 1
+            enabled: type === 1
             MenuItem {
                 text: searchTarget === 0 ? qsTr("Current search: license plate") : searchTarget === 1 ? qsTr("Current search: name") : qsTr("Current search: plate and name")
                 onClicked: searchTarget === 0 ? searchTarget = 1 : searchTarget === 1 ? searchTarget = 2 : searchTarget = 0
@@ -50,13 +53,24 @@ Page {
         VerticalScrollDecorator {}
 
         FancyScroller {}
+
+        ViewPlaceholder {
+            enabled: type === 2
+            text: qsTr("Information to the local breakdown of the vehicle registration plate system in %1 will be part of the premium version.").arg(title)
+        }
+
+        ViewPlaceholder {
+            enabled: type === 0
+            text: qsTr("The vehicle registration plate system of %1 does not use a breakdown into districts, regions or something similar. The premium version will contain further information. ").arg(title)
+        }
     }
 
     DockedPanel {
         id: searchPanel
         width: parent.width
         height: searchField.height
-        open: true
+        open: type === 1
+        visible: open
         dock: Dock.Bottom
 
         SearchField {

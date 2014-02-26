@@ -13,7 +13,7 @@ ListItem {
     property string name: (target === 1 || target === 2) ? Theme.highlightText(model.name, search, Theme.highlightColor) : model.name
     property string sign: (target === 0 || target === 2) ? Theme.highlightText(model.sign, search, Theme.secondaryHighlightColor) : model.sign
 
-    onClicked: pageStack.push(Qt.resolvedUrl("../Views/CountryView.qml"), {title: model.name, code: model.code})
+    onClicked: pageStack.push(Qt.resolvedUrl("../Views/CountryView.qml"), {title: model.name, code: model.code, type: model.type})
 
     onPressAndHold: if (fav) { rmFav() } else { config.setFav(model.sign); fav = true }
 
