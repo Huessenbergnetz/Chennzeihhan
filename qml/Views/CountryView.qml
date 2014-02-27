@@ -6,10 +6,13 @@ import "../Common"
 
 Page {
     id: countryView
+    objectName: "CountryView"
 
     property string title
     property string code
+    property string colors
     property string searchString
+    property string sign
     property int searchTarget: 0
     property int sortType: 0
     property int type
@@ -22,6 +25,9 @@ Page {
         searchTarget = config.get("display/search", 0)
         sortType = config.get("display/ordering", 0)
         countryModel.refresh(code, sortType, searchTarget, searchString)
+        coverConnector.name = title
+        coverConnector.sign = sign
+        coverConnector.colors = colors
     }
 
     SilicaListView {

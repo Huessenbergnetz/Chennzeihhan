@@ -30,13 +30,14 @@ ApplicationWindow
         property string name
         property string sign
         property string state
+        property string colors
         property string mode: "overview"
     }
 
 
     Connections {
         target: pageStack
-        onCurrentPageChanged: { coverConnector.mode = pageStack.currentPage.objectName === "ItemView" ? "item" : "overview" }
+        onCurrentPageChanged: { coverConnector.mode = pageStack.currentPage.objectName === "ItemView" ? "item" : pageStack.currentPage.objectName === "CountryView" ? "country" : "overview" }
     }
 }
 
