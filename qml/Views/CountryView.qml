@@ -25,6 +25,8 @@ Page {
         searchTarget = config.get("display/search", 0)
         sortType = config.get("display/ordering", 0)
         countryModel.refresh(code, sortType, searchTarget, searchString)
+    }
+    onStatusChanged: {
         coverConnector.name = title
         coverConnector.sign = sign
         coverConnector.colors = colors

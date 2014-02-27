@@ -70,7 +70,7 @@ CoverBackground {
             color: "white"
             borderColor: coverConnector.colors
             text: coverConnector.sign
-            onBorderColorChanged: drawEllipse()
+            onBorderColorChanged: requestPaint()
         }
         Label {
             text: coverConnector.name
