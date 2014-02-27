@@ -61,6 +61,7 @@ Page {
         coverConnector.country = qsTr("Austria")
         coverConnector.name = atItemView.name
         coverConnector.sign = atItemView.sign
+        coverConnector.type = atItemView.type
         coverConnector.state = stateLabel.text
         if (status == PageStatus.Active && wikipedia !== "") {
             pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {wpLang: "de", wpName: wikipedia})

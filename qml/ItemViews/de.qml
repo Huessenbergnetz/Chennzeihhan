@@ -64,6 +64,7 @@ Page {
         coverConnector.country = qsTr("Germany")
         coverConnector.name = deItemView.name
         coverConnector.sign = deItemView.sign
+        coverConnector.type = deItemView.type
         coverConnector.state = stateLabel.text
     }
 

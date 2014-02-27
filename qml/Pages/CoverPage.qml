@@ -34,7 +34,17 @@ CoverBackground {
         }
         Label {
             id: name
+            visible: text !== "" && state.text !== name.text
             text: coverConnector.name
+            width: parent.width
+            color: Theme.secondaryColor
+            maximumLineCount: 1
+            truncationMode: TruncationMode.Fade
+        }
+        Label {
+            id: type
+            visible: name.text === "" || state.text === name.text
+            text: coverConnector.type
             width: parent.width
             color: Theme.secondaryColor
             maximumLineCount: 1
@@ -52,6 +62,7 @@ CoverBackground {
         }
         Label {
             id: country
+            visible: text !== state.text
             text: coverConnector.country
             width: parent.width
             color: Theme.secondaryColor

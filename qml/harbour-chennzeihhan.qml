@@ -28,6 +28,7 @@ ApplicationWindow
 
         property string country
         property string name
+        property string type
         property string sign
         property string state
         property string colors
