@@ -34,8 +34,8 @@ Page {
 
     SilicaListView {
         id: listView
-        anchors.fill: parent
-        anchors.bottomMargin: searchPanel.height * 1.5
+        anchors { top: parent.top; left: parent.left; right: parent.right; bottom: type === 1 ? searchField.top : parent.bottom }
+        clip: true
 
         header: PageHeader { width: listView.width; title: countryView.title }
 
@@ -72,26 +72,19 @@ Page {
         }
     }
 
-    DockedPanel {
-        id: searchPanel
+    SearchField {
+        id: searchField
         width: parent.width
-        height: searchField.height
-        open: type === 1
-        visible: open
-        dock: Dock.Bottom
+        anchors { bottom: parent.bottom }
+        visible: type === 1
+        placeholderText: qsTr("Search")
+        EnterKey.onClicked: searchField.focus = false
+        EnterKey.iconSource: "image://theme/icon-m-enter-close"
 
-        SearchField {
-            id: searchField
-            width: parent.width
-            placeholderText: qsTr("Search")
-            EnterKey.onClicked: searchField.focus = false
-            EnterKey.iconSource: "image://theme/icon-m-enter-close"
-
-            Binding {
-                target: countryView
-                property: "searchString"
-                value: searchField.text
-            }
+        Binding {
+            target: countryView
+            property: "searchString"
+            value: searchField.text
         }
     }
 }
