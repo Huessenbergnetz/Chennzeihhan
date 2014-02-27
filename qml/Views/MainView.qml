@@ -206,7 +206,6 @@ Page {
             delegate: CountriesDelegate{ search: searchString; target: searchTarget}
             cellWidth: 180; cellHeight: 150
             model: countriesSearch
-            onCountChanged: console.log(count + " " + height + " " + width)
             VerticalScrollDecorator { flickable: searchView }
         }
 

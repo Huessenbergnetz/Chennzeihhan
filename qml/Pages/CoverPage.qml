@@ -5,6 +5,8 @@ import "../Common"
 
 CoverBackground {
 
+    Component.onCompleted: console.log("Depth: " + pageStack.depth)
+
     CoverPlaceholder {
         visible: coverConnector.mode === "overview"
         text: "Chenn zeihhan"
@@ -16,7 +18,7 @@ CoverBackground {
         visible: coverConnector.mode === "item"
         y: Theme.paddingLarge
         anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge }
-        spacing: 3
+        spacing: 0
         Image {
             source: "/usr/share/icons/hicolor/86x86/apps/harbour-chennzeihhan.png"
             width: 86
@@ -71,6 +73,7 @@ CoverBackground {
             borderColor: coverConnector.colors
             text: coverConnector.sign
             onBorderColorChanged: requestPaint()
+            smooth: true
         }
         Label {
             text: coverConnector.name
@@ -79,6 +82,14 @@ CoverBackground {
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             anchors.centerIn: parent
             horizontalAlignment: Text.AlignHCenter
+        }
+    }
+
+    CoverActionList {
+        enabled: pageStack.depth > 1
+        CoverAction {
+            iconSource: "image://theme/icon-cover-previous"
+            onTriggered: pageStack.navigateBack(PageStackAction.Immediate)
         }
     }
 }
