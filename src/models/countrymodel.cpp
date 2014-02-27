@@ -91,7 +91,7 @@ void CountryModel::refresh(const QString &cc, int sort, int searchTarget, const 
             queryString.append(QString(" WHERE (name LIKE \"%1\") OR (sign LIKE \"%1\")").arg(t_search));
             break;
         default:
-            queryString.append(QString(" WHERE sign LIKE \"%1\"").arg(t_search));
+            queryString.append(QString(" WHERE sign LIKE \"%1\"").arg(t_search.toUpper()));
             break;
         }
     }
