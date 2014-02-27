@@ -70,13 +70,13 @@ CoverBackground {
             width: 140; height: 90
             anchors.horizontalCenter: parent.horizontalCenter
             color: "white"
-            borderColor: coverConnector.colors
-            text: coverConnector.sign
+            borderColor: coverConnector.countryColors
+            text: coverConnector.countrySign
             onBorderColorChanged: requestPaint()
             smooth: true
         }
         Label {
-            text: coverConnector.name
+            text: coverConnector.countryName
             width: parent.width - 2* Theme.paddingLarge
             color: Theme.secondaryColor
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere

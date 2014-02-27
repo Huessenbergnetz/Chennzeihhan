@@ -55,16 +55,16 @@ Page {
 
     Component.onCompleted: {
         getItemData()
-        coverConnector.country = qsTr("Germany")
-        coverConnector.name = name
-        coverConnector.sign = sign
-        coverConnector.state = stateLabel.text
     }
 
     onStatusChanged: {
         if (status == PageStatus.Active && wikipedia !== "") {
             pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {wpLang: "de", wpName: wikipedia})
         }
+        coverConnector.country = qsTr("Germany")
+        coverConnector.name = deItemView.name
+        coverConnector.sign = deItemView.sign
+        coverConnector.state = stateLabel.text
     }
 
     SilicaFlickable {

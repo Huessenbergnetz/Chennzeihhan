@@ -55,13 +55,13 @@ Page {
 
     Component.onCompleted: {
         getItemData()
-        coverConnector.country = qsTr("Austria")
-        coverConnector.name = name
-        coverConnector.sign = sign
-        coverConnector.state = stateLabel.text
     }
 
     onStatusChanged: {
+        coverConnector.country = qsTr("Austria")
+        coverConnector.name = atItemView.name
+        coverConnector.sign = atItemView.sign
+        coverConnector.state = stateLabel.text
         if (status == PageStatus.Active && wikipedia !== "") {
             pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {wpLang: "de", wpName: wikipedia})
         }

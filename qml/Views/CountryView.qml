@@ -27,9 +27,9 @@ Page {
         countryModel.refresh(code, sortType, searchTarget, searchString)
     }
     onStatusChanged: {
-        coverConnector.name = title
-        coverConnector.sign = sign
-        coverConnector.colors = colors
+        coverConnector.countryName = countryView.title
+        coverConnector.countrySign = countryView.sign
+        coverConnector.countryColors = countryView.colors
     }
 
     SilicaListView {

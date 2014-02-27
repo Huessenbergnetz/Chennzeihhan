@@ -31,6 +31,9 @@ ApplicationWindow
         property string sign
         property string state
         property string colors
+        property string countryName
+        property string countrySign
+        property string countryColors
         property string mode: "overview"
     }
 
