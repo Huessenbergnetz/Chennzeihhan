@@ -4,6 +4,13 @@ import "../Common"
 
 CoverBackground {
 
+    Image {
+        source: "/usr/share/harbour-chennzeihhan/images/cover-background.png"
+        x: 0; y: 0; z: -1
+        opacity: 0.1
+        width: parent.width
+    }
+
     CoverPlaceholder {
         visible: coverConnector.mode === "overview"
         text: "Chenn zeihhan"
