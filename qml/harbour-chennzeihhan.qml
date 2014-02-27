@@ -8,7 +8,7 @@ ApplicationWindow
 
     property bool dataBaseExists: dbMan.checkDB()
     property int installedDbRevision: dlMan.getLocalDBVersion()
-    property int minimumDbRevision: 7
+    property int minimumDbRevision: 8
 
     Connections {
         target: dlMan
