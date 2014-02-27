@@ -341,36 +341,36 @@ Page {
                 id: searchSortOptions
                 anchors { left: parent.left; right: parent.right; top: gv6.bottom; topMargin: 20 }
 
-            ComboBox {
-                id: sortOrdering
-                width: parent.width/2
-                label: qsTr("Sorting")
+                ComboBox {
+                    id: sortOrdering
+                    width: parent.width/2
+                    label: qsTr("Sorting")
 
-                currentIndex: mainView.sortType
+                    currentIndex: mainView.sortType
 
-                menu: ContextMenu {
-                    MenuItem { text: qsTr("Code") }
-                    MenuItem { text: qsTr("Name") }
+                    menu: ContextMenu {
+                        MenuItem { text: qsTr("Code") }
+                        MenuItem { text: qsTr("Name") }
+                    }
+
+                    onCurrentIndexChanged: mainView.sortType = currentIndex
                 }
 
-                onCurrentIndexChanged: mainView.sortType = currentIndex
-            }
+                ComboBox {
+                    id: searchT
+                    width: parent.width/2
+                    label: qsTr("Search")
 
-            ComboBox {
-                id: searchT
-                width: parent.width/2
-                label: qsTr("Search")
+                    currentIndex: mainView.searchTarget
 
-                currentIndex: mainView.searchTarget
+                    menu: ContextMenu {
+                        MenuItem { text: qsTr("Code") }
+                        MenuItem { text: qsTr("Name") }
+                        MenuItem { text: qsTr("Both") }
+                    }
 
-                menu: ContextMenu {
-                    MenuItem { text: qsTr("Code") }
-                    MenuItem { text: qsTr("Name") }
-                    MenuItem { text: qsTr("Both") }
+                    onCurrentIndexChanged: mainView.searchTarget = currentIndex
                 }
-
-                onCurrentIndexChanged: mainView.searchTarget = currentIndex
-            }
             }
         }
 

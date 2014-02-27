@@ -4,6 +4,7 @@ import Sailfish.Silica 1.0
 
 Page {
     id: singleWebView
+    objectName: "WikiView"
 
     property string itemUrl
     property string wpLang
@@ -21,7 +22,7 @@ Page {
         id: loadStatus
         z: 2
         anchors { top: parent.top; topMargin: 16; horizontalCenter: parent.horizontalCenter }
-        visible: webView.loading
+        visible: webView.loading && chennzeihhan.applicationActive
         running: visible
         opacity: visible ? 1 : 0
         Behavior on opacity { FadeAnimation {} }
@@ -32,6 +33,9 @@ Page {
         anchors.fill: parent
 
         experimental.userAgent: "Mozilla/5.0 (Maemo; Linux; Jolla; Sailfish; Mobile) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13"
+        experimental.preferences.pluginsEnabled: true
+        experimental.preferences.javascriptEnabled: true
+        experimental.preferences.defaultFontSize: Theme.fontSizeSmall
 
         PullDownMenu {
             MenuItem {
@@ -48,4 +52,25 @@ Page {
             }
         }
     }
+
+//    CoverActionList {
+//            enabled: singleWebView.status === PageStatus.Active
+//            iconBackground: true
+
+//            CoverAction {
+//                iconSource: "image://theme/icon-cover-previous"
+//                onTriggered: pageStack.navigateBack(PageStackAction.Immediate)
+//            }
+
+//            CoverAction {
+//                iconSource: webView.loading ? "image://theme/icon-cover-cancel" : "image://theme/icon-cover-refresh"
+//                onTriggered: {
+//                    if (webView.loading) {
+//                        webView.stop()
+//                    } else {
+//                        webView.reload()
+//                    }
+//                }
+//            }
+//        }
 }

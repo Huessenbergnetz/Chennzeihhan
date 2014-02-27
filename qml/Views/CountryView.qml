@@ -40,8 +40,8 @@ Page {
         header: PageHeader { width: listView.width; title: countryView.title }
 
         PullDownMenu {
-            visible: type === 1
-            enabled: type === 1
+            visible: countryView.type === 1
+            enabled: countryView.type === 1
             MenuItem {
                 text: searchTarget === 0 ? qsTr("Current search: license plate") : searchTarget === 1 ? qsTr("Current search: name") : qsTr("Current search: plate and name")
                 onClicked: searchTarget === 0 ? searchTarget = 1 : searchTarget === 1 ? searchTarget = 2 : searchTarget = 0
@@ -76,7 +76,7 @@ Page {
         id: searchField
         width: parent.width
         anchors { bottom: parent.bottom }
-        visible: type === 1
+        visible: countryView.type === 1
         placeholderText: qsTr("Search")
         EnterKey.onClicked: searchField.focus = false
         EnterKey.iconSource: "image://theme/icon-m-enter-close"

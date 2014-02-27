@@ -10,6 +10,20 @@ ApplicationWindow
     property int installedDbRevision: dlMan.getLocalDBVersion()
     property int minimumDbRevision: 8
 
+
+    function getCoverMode() {
+        switch(pageStack.currentPage.objectName) {
+        case "ItemView":
+            return "item";
+        case "CountryView":
+            return "country"
+        case "WikiView":
+            return "wikipedia"
+        default:
+            return "overview"
+        }
+    }
+
     Connections {
         target: dlMan
         onDbDownloadFinished: { checkDbTimer.start(); installedDbRevision = dlMan.getLocalDBVersion() }
@@ -41,7 +55,7 @@ ApplicationWindow
 
     Connections {
         target: pageStack
-        onCurrentPageChanged: { coverConnector.mode = pageStack.currentPage.objectName === "ItemView" ? "item" : pageStack.currentPage.objectName === "CountryView" ? "country" : "overview" }
+        onCurrentPageChanged: coverConnector.mode = getCoverMode()
     }
 }
 

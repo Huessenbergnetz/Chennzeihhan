@@ -2,10 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Common"
 
-
 CoverBackground {
-
-    Component.onCompleted: console.log("Depth: " + pageStack.depth)
 
     CoverPlaceholder {
         visible: coverConnector.mode === "overview"
@@ -15,7 +12,7 @@ CoverBackground {
 
     Column {
         id: itemInfo
-        visible: coverConnector.mode === "item"
+        visible: coverConnector.mode === "item" || coverConnector.mode === "wikipedia"
         y: Theme.paddingLarge
         anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge }
         spacing: 0
@@ -25,6 +22,15 @@ CoverBackground {
             height: 86
             anchors.horizontalCenter: parent.horizontalCenter
             opacity: 0.4
+            visible: coverConnector.mode !== "wikipedia"
+        }
+        Image {
+            source: "/usr/share/harbour-chennzeihhan/images/wikipedia.png"
+            width: 95
+            height: 86
+            anchors.horizontalCenter: parent.horizontalCenter
+            opacity: 0.4
+            visible: coverConnector.mode === "wikipedia"
         }
         Label {
             id: sign
