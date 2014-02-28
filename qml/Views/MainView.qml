@@ -337,7 +337,7 @@ Page {
                 anchors { left: parent.left; right: parent.right; top: row6.bottom }
             }
 
-            Row {
+            Item {
                 id: searchSortOptions
                 anchors { left: parent.left; right: parent.right; top: gv6.bottom; topMargin: 20 }
 
@@ -345,6 +345,7 @@ Page {
                     id: sortOrdering
                     width: parent.width/2
                     label: qsTr("Sorting")
+                    anchors { left: parent.left; top: parent.top }
 
                     currentIndex: mainView.sortType
 
@@ -360,6 +361,7 @@ Page {
                     id: searchT
                     width: parent.width/2
                     label: qsTr("Search")
+                    anchors { left: sortOrdering.right; top: parent.top }
 
                     currentIndex: mainView.searchTarget
 

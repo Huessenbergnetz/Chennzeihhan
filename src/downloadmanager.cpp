@@ -101,6 +101,9 @@ int DownloadManager::getOnlineDBVersion()
     QUrl url("http://www.buschmann23.de/chennzeihhan-data/database.json");
     int newVersion = 0;
     int oldVersion = getLocalDBVersion();
+    QString changelog = "";
+    QString cSize = "";
+    QString uSize = "";
 
     QNetworkRequest request(url);
     reply = manager.get(request);
@@ -118,8 +121,10 @@ int DownloadManager::getOnlineDBVersion()
 
         newVersion = result["version"].toInt();
         dbUrl = result["url"].toString();
-        dbChangelog = result["changelog"].toString();
-        emit gotDBVersion(oldVersion, newVersion);
+        changelog = result["changelog"].toString();
+        cSize = result["cSize"].toString();
+        uSize = result["uSize"].toString();
+        emit gotDBVersion(oldVersion, newVersion, changelog, cSize, uSize);
     }
     reply->deleteLater();
 
@@ -131,10 +136,4 @@ int DownloadManager::getOnlineDBVersion()
 int DownloadManager::getLocalDBVersion()
 {
     return settings.value("database/version", 0).toInt();
-}
-
-
-QString DownloadManager::getDbChangelog()
-{
-    return dbChangelog;
 }

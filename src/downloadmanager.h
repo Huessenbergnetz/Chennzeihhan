@@ -24,11 +24,10 @@ public:
     Q_INVOKABLE void downloadDB();
     Q_INVOKABLE int getOnlineDBVersion();
     Q_INVOKABLE int getLocalDBVersion();
-    Q_INVOKABLE QString getDbChangelog();
 
 signals:
     void finishedDbDownload();
-    void gotDBVersion(int oldVersion, int newVersion);
+    void gotDBVersion(int oldVersion, int newVersion, QString changelog, QString cSize, QString uSize);
     void failedDBVersion();
     void dbDownloadProgress(int rec, int tot);
     void dbDownloadFinished();
@@ -52,7 +51,6 @@ private:
     int onlineDBVersion;
     QProcess *m_process;
     QString dbUrl;
-    QString dbChangelog;
 
 };
 

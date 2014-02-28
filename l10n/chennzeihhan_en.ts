@@ -204,42 +204,42 @@
 <context>
     <name>CountryView</name>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="39"/>
+        <location filename="../qml/Views/CountryView.qml" line="46"/>
         <source>Current search: license plate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="39"/>
+        <location filename="../qml/Views/CountryView.qml" line="46"/>
         <source>Current search: name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="39"/>
+        <location filename="../qml/Views/CountryView.qml" line="46"/>
         <source>Current search: plate and name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="44"/>
+        <location filename="../qml/Views/CountryView.qml" line="51"/>
         <source>Current order: license plate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="44"/>
+        <location filename="../qml/Views/CountryView.qml" line="51"/>
         <source>Current order: by name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="59"/>
+        <location filename="../qml/Views/CountryView.qml" line="66"/>
         <source>Information to the local breakdown of the vehicle registration plate system in %1 will be part of the premium version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="64"/>
+        <location filename="../qml/Views/CountryView.qml" line="71"/>
         <source>The vehicle registration plate system of %1 does not use a breakdown into districts, regions or something similar. The premium version will contain further information. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="79"/>
+        <location filename="../qml/Views/CountryView.qml" line="80"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
@@ -427,22 +427,22 @@
 <context>
     <name>ItemWebView</name>
     <message>
-        <location filename="../qml/ItemViews/ItemWebView.qml" line="38"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="42"/>
         <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ItemWebView.qml" line="38"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="42"/>
         <source>Stop loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ItemWebView.qml" line="42"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="46"/>
         <source>Open in browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ItemWebView.qml" line="46"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="50"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
@@ -450,59 +450,59 @@
 <context>
     <name>MainView</name>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="158"/>
+        <location filename="../qml/Views/MainView.qml" line="157"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="162"/>
+        <location filename="../qml/Views/MainView.qml" line="161"/>
         <source>Help/Legend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="166"/>
+        <location filename="../qml/Views/MainView.qml" line="165"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="176"/>
+        <location filename="../qml/Views/MainView.qml" line="175"/>
         <source>Search ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="349"/>
+        <location filename="../qml/Views/MainView.qml" line="347"/>
         <source>Sorting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="354"/>
-        <location filename="../qml/Views/MainView.qml" line="369"/>
+        <location filename="../qml/Views/MainView.qml" line="352"/>
+        <location filename="../qml/Views/MainView.qml" line="367"/>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="355"/>
-        <location filename="../qml/Views/MainView.qml" line="370"/>
+        <location filename="../qml/Views/MainView.qml" line="353"/>
+        <location filename="../qml/Views/MainView.qml" line="368"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="364"/>
+        <location filename="../qml/Views/MainView.qml" line="362"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="371"/>
+        <location filename="../qml/Views/MainView.qml" line="369"/>
         <source>Both</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="381"/>
+        <location filename="../qml/Views/MainView.qml" line="379"/>
         <source>You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="386"/>
+        <location filename="../qml/Views/MainView.qml" line="384"/>
         <source>Because of changes in the data models you have to update the database. Please go to the settings to do so. We apologize for the inconvenience.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -536,43 +536,48 @@
     </message>
     <message>
         <location filename="../qml/Pages/Settings.qml" line="62"/>
-        <source>Installed database revision: </source>
+        <source>Installed database revision:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/Settings.qml" line="70"/>
-        <source>Available database revision: </source>
+        <source>Available database revision:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="85"/>
+        <location filename="../qml/Pages/Settings.qml" line="84"/>
+        <source>Changes in this version:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="107"/>
         <source>Display</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="90"/>
+        <location filename="../qml/Pages/Settings.qml" line="112"/>
         <source>Default ordering</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="95"/>
-        <location filename="../qml/Pages/Settings.qml" line="110"/>
+        <location filename="../qml/Pages/Settings.qml" line="117"/>
+        <location filename="../qml/Pages/Settings.qml" line="132"/>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="96"/>
-        <location filename="../qml/Pages/Settings.qml" line="111"/>
+        <location filename="../qml/Pages/Settings.qml" line="118"/>
+        <location filename="../qml/Pages/Settings.qml" line="133"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="105"/>
+        <location filename="../qml/Pages/Settings.qml" line="127"/>
         <source>Default search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="112"/>
+        <location filename="../qml/Pages/Settings.qml" line="134"/>
         <source>Both</source>
         <translation type="unfinished"></translation>
     </message>
@@ -580,58 +585,58 @@
 <context>
     <name>at</name>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="58"/>
+        <location filename="../qml/ItemViews/at.qml" line="61"/>
         <source>Austria</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="84"/>
+        <location filename="../qml/ItemViews/at.qml" line="85"/>
         <source>%1 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="106"/>
+        <location filename="../qml/ItemViews/at.qml" line="107"/>
         <source>Capital</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="112"/>
+        <location filename="../qml/ItemViews/at.qml" line="113"/>
         <source>Assigend since</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="112"/>
+        <location filename="../qml/ItemViews/at.qml" line="113"/>
         <source>Assigned from</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="119"/>
+        <location filename="../qml/ItemViews/at.qml" line="120"/>
         <source>Optional plate signs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="126"/>
+        <location filename="../qml/ItemViews/at.qml" line="127"/>
         <source>Sign optional available since</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="138"/>
+        <location filename="../qml/ItemViews/at.qml" line="139"/>
         <source>Merged into</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="141"/>
-        <location filename="../qml/ItemViews/at.qml" line="151"/>
+        <location filename="../qml/ItemViews/at.qml" line="142"/>
+        <location filename="../qml/ItemViews/at.qml" line="152"/>
         <source>%1 - %2 %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="148"/>
+        <location filename="../qml/ItemViews/at.qml" line="149"/>
         <source>Today part of</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="158"/>
+        <location filename="../qml/ItemViews/at.qml" line="159"/>
         <source>Includes this old plate signs</source>
         <translation type="unfinished"></translation>
     </message>
@@ -639,7 +644,7 @@
 <context>
     <name>ch</name>
     <message>
-        <location filename="../qml/ItemViews/ch.qml" line="28"/>
+        <location filename="../qml/ItemViews/ch.qml" line="31"/>
         <source>Switzerland</source>
         <translation type="unfinished"></translation>
     </message>
@@ -657,58 +662,58 @@
 <context>
     <name>de</name>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="58"/>
+        <location filename="../qml/ItemViews/de.qml" line="64"/>
         <source>Germany</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="84"/>
+        <location filename="../qml/ItemViews/de.qml" line="85"/>
         <source>%1 %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="106"/>
+        <location filename="../qml/ItemViews/de.qml" line="107"/>
         <source>Capital</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="112"/>
+        <location filename="../qml/ItemViews/de.qml" line="113"/>
         <source>Existing since</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="112"/>
+        <location filename="../qml/ItemViews/de.qml" line="113"/>
         <source>Existed from</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="119"/>
+        <location filename="../qml/ItemViews/de.qml" line="120"/>
         <source>Optional plate signs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="126"/>
+        <location filename="../qml/ItemViews/de.qml" line="127"/>
         <source>Sign optional available since</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="138"/>
+        <location filename="../qml/ItemViews/de.qml" line="139"/>
         <source>Merged into</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="141"/>
-        <location filename="../qml/ItemViews/de.qml" line="151"/>
+        <location filename="../qml/ItemViews/de.qml" line="142"/>
+        <location filename="../qml/ItemViews/de.qml" line="152"/>
         <source>%1 - %2 %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="148"/>
+        <location filename="../qml/ItemViews/de.qml" line="149"/>
         <source>Today part of</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="158"/>
+        <location filename="../qml/ItemViews/de.qml" line="159"/>
         <source>Includes this old districts</source>
         <translation type="unfinished"></translation>
     </message>
