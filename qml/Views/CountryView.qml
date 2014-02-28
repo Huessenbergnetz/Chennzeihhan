@@ -43,13 +43,19 @@ Page {
             visible: countryView.type === 1
             enabled: countryView.type === 1
             MenuItem {
-                text: searchTarget === 0 ? qsTr("Current search: license plate") : searchTarget === 1 ? qsTr("Current search: name") : qsTr("Current search: plate and name")
-                onClicked: searchTarget === 0 ? searchTarget = 1 : searchTarget === 1 ? searchTarget = 2 : searchTarget = 0
+                text: searchTarget === 0 ? qsTr("Search Target: Sign") : searchTarget === 1 ? qsTr("Search Target: Name") : qsTr("Search Target: Sign and Name")
+                onClicked: {
+                    var dialog = pageStack.push("../Dialogs/SearchTarget.qml")
+                    dialog.accepted.connect(function() {searchTarget = dialog.searchTarget})
+                }
             }
             MenuItem {
                 id: sorting
-                text: sortType === 0 ? qsTr("Current order: license plate") : qsTr("Current order: by name")
-                onClicked: sortType === 0 ? sortType = 1 : sortType = 0
+                text: sortType === 0 ? qsTr("Sorting: Sign") : qsTr("Sorting: Name")
+                onClicked: {
+                    var dialog = pageStack.push("../Dialogs/Sorting.qml")
+                    dialog.accepted.connect(function() {sortType = dialog.sorting})
+                }
             }
         }
 

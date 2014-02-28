@@ -58,7 +58,9 @@ OTHER_FILES += \
     qml/ItemViews/at.qml \
     qml/Common/AbcItem.qml \
     qml/Common/AbcGrid.qml \
-    qml/Pages/Help.qml
+    qml/Pages/Help.qml \
+    qml/Dialogs/Sorting.qml \
+    qml/Dialogs/SearchTarget.qml
 
 HEADERS += \
     src/dbmanager.h \

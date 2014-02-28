@@ -3,8 +3,6 @@ import "../Delegates"
 
 GridView {
     id: root
-    property alias timer: backToNonOpaque
-    property bool show: false
 
     function calcHeight(h) {
         var h1 = h;
@@ -19,14 +17,11 @@ GridView {
     }
 
     clip: true
-    visible: height > 0
-    height: show ? calcHeight(count / 3) * cellHeight : 0
+    visible: false
+    height: visible ? calcHeight(count / 3) * cellHeight : 0
     anchors { left: parent.left; right: parent.right }
     delegate: CountriesDelegate{}
     interactive: false
     cellWidth: 180; cellHeight: 150
     model: countriesModel
-    Behavior on height { NumberAnimation { duration: 300; easing.type: Easing.InOutQuad } }
-    Behavior on opacity { NumberAnimation { duration: root.opacity === 1 ? 0 : 200; easing.type: Easing.InOutQuad } }
-    Timer { id: backToNonOpaque; interval: 200; onTriggered: root.opacity = 1; }
 }

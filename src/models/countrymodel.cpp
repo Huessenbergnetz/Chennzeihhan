@@ -79,7 +79,7 @@ void CountryModel::refresh(const QString &cc, int sort, int searchTarget, const 
     if (!search.isEmpty())
     {
         QString t_search = search;
-        t_search.prepend("%");
+//        t_search.prepend("%");
         t_search.append("%");
 
         switch(searchTarget)
@@ -88,7 +88,7 @@ void CountryModel::refresh(const QString &cc, int sort, int searchTarget, const 
             queryString.append(QString(" WHERE name LIKE \"%1\"").arg(t_search));
             break;
         case 2:
-            queryString.append(QString(" WHERE (name LIKE \"%1\") OR (sign LIKE \"%1\")").arg(t_search));
+            queryString.append(QString(" WHERE (name LIKE \"%1\") OR (sign LIKE \"%2\")").arg(t_search).arg(t_search.toUpper()));
             break;
         default:
             queryString.append(QString(" WHERE sign LIKE \"%1\"").arg(t_search.toUpper()));
