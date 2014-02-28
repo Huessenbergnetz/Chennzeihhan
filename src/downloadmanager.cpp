@@ -118,6 +118,7 @@ int DownloadManager::getOnlineDBVersion()
 
         newVersion = result["version"].toInt();
         dbUrl = result["url"].toString();
+        dbChangelog = result["changelog"].toString();
         emit gotDBVersion(oldVersion, newVersion);
     }
     reply->deleteLater();
@@ -130,4 +131,10 @@ int DownloadManager::getOnlineDBVersion()
 int DownloadManager::getLocalDBVersion()
 {
     return settings.value("database/version", 0).toInt();
+}
+
+
+QString DownloadManager::getDbChangelog()
+{
+    return dbChangelog;
 }

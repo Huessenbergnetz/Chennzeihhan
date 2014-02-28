@@ -50,7 +50,7 @@ Page {
             Text {
                 id: copyright
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "© Sources and Database 2014, Buschtrommel"
+                text: "© 2014, Buschtrommel"
                 width: parent.width
                 font.weight: Font.Light
                 wrapMode: Text.WordWrap

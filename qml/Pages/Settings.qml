@@ -9,7 +9,7 @@ Page {
 
     Connections {
         target: dlMan
-        onGotDBVersion: { localDbVersion = oldVersion; remoteDbVersion = newVersion; getVersionBusy.running = false }
+        onGotDBVersion: { localDbVersion = oldVersion; remoteDbVersion = newVersion; getVersionBusy.running = false; changelog.text = dlMan.getDbChangelog() }
         onDbDownloadFinished: localDbVersion = dlMan.getLocalDBVersion()
     }
 
@@ -59,7 +59,7 @@ Page {
                 textFormat: Text.PlainText
                 visible: localDbVersion > 0
                 wrapMode: Text.WordWrap
-                text: qsTr("Installed database revision: ") + localDbVersion
+                text: qsTr("Installed database revision:") + " " + localDbVersion
             }
 
             Label {
@@ -67,7 +67,29 @@ Page {
                 textFormat: Text.PlainText
                 visible: remoteDbVersion > 0
                 wrapMode: Text.WordWrap
-                text: qsTr("Available database revision: ") + remoteDbVersion
+                text: qsTr("Available database revision:") + " " + remoteDbVersion
+            }
+
+            Item {
+                width: parent.width
+                height: Theme.paddingLarge
+                visible: remoteDbVersion > 0 && remoteDbVersion > localDbVersion
+            }
+
+            Label {
+                anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge }
+                textFormat: Text.PlainText
+                visible: remoteDbVersion > 0 && remoteDbVersion > localDbVersion && localDbVersion > 0
+                wrapMode: Text.WordWrap
+                text: qsTr("Changes in this version:")
+            }
+
+            Label {
+                id: changelog
+                anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge }
+                textFormat: Text.RichText
+                visible: remoteDbVersion > 0 && remoteDbVersion > localDbVersion && localDbVersion > 0
+                wrapMode: Text.WordWrap
             }
 
             ProgressBar {
