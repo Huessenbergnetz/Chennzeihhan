@@ -475,34 +475,34 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="352"/>
-        <location filename="../qml/Views/MainView.qml" line="367"/>
+        <location filename="../qml/Views/MainView.qml" line="353"/>
+        <location filename="../qml/Views/MainView.qml" line="369"/>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="353"/>
-        <location filename="../qml/Views/MainView.qml" line="368"/>
+        <location filename="../qml/Views/MainView.qml" line="354"/>
+        <location filename="../qml/Views/MainView.qml" line="370"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="362"/>
+        <location filename="../qml/Views/MainView.qml" line="363"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="369"/>
+        <location filename="../qml/Views/MainView.qml" line="371"/>
         <source>Both</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="379"/>
+        <location filename="../qml/Views/MainView.qml" line="381"/>
         <source>You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="384"/>
+        <location filename="../qml/Views/MainView.qml" line="386"/>
         <source>Because of changes in the data models you have to update the database. Please go to the settings to do so. We apologize for the inconvenience.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -510,74 +510,70 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="24"/>
+        <location filename="../qml/Pages/Settings.qml" line="36"/>
         <source>Check for new database version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="29"/>
+        <location filename="../qml/Pages/Settings.qml" line="42"/>
         <source>Download new database version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="39"/>
+        <location filename="../qml/Pages/Settings.qml" line="54"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="41"/>
+        <location filename="../qml/Pages/Settings.qml" line="56"/>
         <source>Database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="54"/>
+        <location filename="../qml/Pages/Settings.qml" line="63"/>
         <source>Currently there is no database installed. Please use the pully menu to check for new DB version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="62"/>
-        <source>Installed database revision:</source>
+        <location filename="../qml/Pages/Settings.qml" line="96"/>
+        <location filename="../qml/Pages/Settings.qml" line="127"/>
+        <source>Rev.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="70"/>
-        <source>Available database revision:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/Pages/Settings.qml" line="84"/>
+        <location filename="../qml/Pages/Settings.qml" line="183"/>
         <source>Changes in this version:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="107"/>
+        <location filename="../qml/Pages/Settings.qml" line="196"/>
         <source>Display</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="112"/>
+        <location filename="../qml/Pages/Settings.qml" line="201"/>
         <source>Default ordering</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="117"/>
-        <location filename="../qml/Pages/Settings.qml" line="132"/>
+        <location filename="../qml/Pages/Settings.qml" line="206"/>
+        <location filename="../qml/Pages/Settings.qml" line="221"/>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="118"/>
-        <location filename="../qml/Pages/Settings.qml" line="133"/>
+        <location filename="../qml/Pages/Settings.qml" line="207"/>
+        <location filename="../qml/Pages/Settings.qml" line="222"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="127"/>
+        <location filename="../qml/Pages/Settings.qml" line="216"/>
         <source>Default search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="134"/>
+        <location filename="../qml/Pages/Settings.qml" line="223"/>
         <source>Both</source>
         <translation type="unfinished"></translation>
     </message>
