@@ -30,7 +30,7 @@
     </message>
     <message>
         <location filename="../qml/Pages/About.qml" line="97"/>
-        <source>Make a donation</source>
+        <source>Changelog</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -169,6 +169,22 @@
     <message>
         <location filename="../src/models/athelper.cpp" line="105"/>
         <source>Border Control</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Changelog</name>
+    <message>
+        <location filename="../qml/Pages/Changelog.qml" line="15"/>
+        <source>Changelog</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ClHeader</name>
+    <message>
+        <location filename="../qml/Pages/ClHeader.qml" line="21"/>
+        <source>Version</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -450,59 +466,59 @@
 <context>
     <name>MainView</name>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="57"/>
+        <location filename="../qml/Views/MainView.qml" line="59"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="61"/>
+        <location filename="../qml/Views/MainView.qml" line="63"/>
         <source>Help/Legend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="65"/>
+        <location filename="../qml/Views/MainView.qml" line="67"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="82"/>
+        <location filename="../qml/Views/MainView.qml" line="87"/>
         <source>Search ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="240"/>
+        <location filename="../qml/Views/MainView.qml" line="245"/>
         <source>Sorting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="245"/>
-        <location filename="../qml/Views/MainView.qml" line="260"/>
+        <location filename="../qml/Views/MainView.qml" line="250"/>
+        <location filename="../qml/Views/MainView.qml" line="265"/>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="246"/>
-        <location filename="../qml/Views/MainView.qml" line="261"/>
+        <location filename="../qml/Views/MainView.qml" line="251"/>
+        <location filename="../qml/Views/MainView.qml" line="266"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="255"/>
+        <location filename="../qml/Views/MainView.qml" line="260"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="262"/>
+        <location filename="../qml/Views/MainView.qml" line="267"/>
         <source>Both</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="299"/>
+        <location filename="../qml/Views/MainView.qml" line="304"/>
         <source>You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="304"/>
+        <location filename="../qml/Views/MainView.qml" line="309"/>
         <source>Because of changes in the data models you have to update the database. Please go to the settings to do so. We apologize for the inconvenience.</source>
         <translation type="unfinished"></translation>
     </message>
