@@ -9,7 +9,7 @@ Page {
 
     SilicaFlickable {
         anchors.fill: parent
-        contentHeight: aboutCol.height
+        contentHeight: aboutCol.height + Theme.paddingLarge
         VerticalScrollDecorator {}
 
         Column {
@@ -89,6 +89,13 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Visit website")
                 onClicked: Qt.openUrlExternally("http://www.buschmann23.de/entwicklung/anwendungen/chennzeihhan/")
+            }
+
+            Button {
+                id: changelog
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Changelog")
+                onClicked: pageStack.push("Changelog.qml")
             }
         }
     }

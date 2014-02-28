@@ -60,7 +60,10 @@ OTHER_FILES += \
     qml/Common/AbcGrid.qml \
     qml/Pages/Help.qml \
     qml/Dialogs/Sorting.qml \
-    qml/Dialogs/SearchTarget.qml
+    qml/Dialogs/SearchTarget.qml \
+    qml/Pages/Changelog.qml \
+    qml/Pages/ClEntry.qml \
+    qml/Pages/ClHeader.qml
 
 HEADERS += \
     src/dbmanager.h \

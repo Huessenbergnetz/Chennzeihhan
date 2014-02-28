@@ -12,6 +12,7 @@ Page {
     property int sortType: 0
     property string cha: ""
     property int activeRow: 0
+    property bool updated: true
     property bool showMainContent: dataBaseExists && (installedDbRevision >= minimumDbRevision) && searchString === ""
 
     Component.onCompleted: {
@@ -51,6 +52,7 @@ Page {
         VerticalScrollDecorator {}
         interactive: searchString === ""
         contentHeight: contentCol.height
+        clip: true
 
         PullDownMenu {
             MenuItem {
@@ -74,6 +76,9 @@ Page {
             move: Transition { NumberAnimation { properties: "y"; easing.type: Easing.InOutQuad } }
             add: Transition { AddAnimation {} }
             PageHeader { id: pageHeader; title: "Chennzeihhan" }
+            Behavior on height {
+                        NumberAnimation { duration: 300; easing.type: Easing.InOutQuad }
+                    }
 
             SearchField {
                 id: searchField
