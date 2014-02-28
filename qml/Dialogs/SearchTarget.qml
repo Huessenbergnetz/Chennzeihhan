@@ -19,7 +19,7 @@ Page {
             Label {
                 id: signLabel
                 anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge; verticalCenter: parent.verticalCenter }
-                text: qsTr("Sign")
+                text: qsTr("Code")
             }
             onClicked: { searchTarget = 0; name = signLabel.text; root.accepted(); pageStack.pop() }
         }
@@ -43,7 +43,7 @@ Page {
             Label {
                 id: bothLabel
                 anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge; verticalCenter: parent.verticalCenter }
-                text: qsTr("Sign and Name")
+                text: qsTr("Code and Name")
             }
             onClicked: { searchTarget = 2; name = bothLabel.text; root.accepted(); pageStack.pop() }
         }

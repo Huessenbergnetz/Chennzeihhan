@@ -205,41 +205,41 @@
     <name>CountryView</name>
     <message>
         <location filename="../qml/Views/CountryView.qml" line="46"/>
-        <source>Current search: license plate</source>
+        <source>Search: Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Views/CountryView.qml" line="46"/>
-        <source>Current search: name</source>
+        <source>Search: Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Views/CountryView.qml" line="46"/>
-        <source>Current search: plate and name</source>
+        <source>Search: Code and Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="51"/>
-        <source>Current order: license plate</source>
+        <location filename="../qml/Views/CountryView.qml" line="54"/>
+        <source>Sorting: Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="51"/>
-        <source>Current order: by name</source>
+        <location filename="../qml/Views/CountryView.qml" line="54"/>
+        <source>Sorting: Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="66"/>
+        <location filename="../qml/Views/CountryView.qml" line="72"/>
         <source>Information to the local breakdown of the vehicle registration plate system in %1 will be part of the premium version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="71"/>
+        <location filename="../qml/Views/CountryView.qml" line="77"/>
         <source>The vehicle registration plate system of %1 does not use a breakdown into districts, regions or something similar. The premium version will contain further information. </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="80"/>
+        <location filename="../qml/Views/CountryView.qml" line="86"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
@@ -450,60 +450,83 @@
 <context>
     <name>MainView</name>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="157"/>
+        <location filename="../qml/Views/MainView.qml" line="57"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="161"/>
+        <location filename="../qml/Views/MainView.qml" line="61"/>
         <source>Help/Legend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="165"/>
+        <location filename="../qml/Views/MainView.qml" line="65"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="175"/>
+        <location filename="../qml/Views/MainView.qml" line="82"/>
         <source>Search ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="347"/>
+        <location filename="../qml/Views/MainView.qml" line="240"/>
         <source>Sorting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="353"/>
-        <location filename="../qml/Views/MainView.qml" line="369"/>
+        <location filename="../qml/Views/MainView.qml" line="245"/>
+        <location filename="../qml/Views/MainView.qml" line="260"/>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="354"/>
-        <location filename="../qml/Views/MainView.qml" line="370"/>
+        <location filename="../qml/Views/MainView.qml" line="246"/>
+        <location filename="../qml/Views/MainView.qml" line="261"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="363"/>
+        <location filename="../qml/Views/MainView.qml" line="255"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="371"/>
+        <location filename="../qml/Views/MainView.qml" line="262"/>
         <source>Both</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="381"/>
+        <location filename="../qml/Views/MainView.qml" line="299"/>
         <source>You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="386"/>
+        <location filename="../qml/Views/MainView.qml" line="304"/>
         <source>Because of changes in the data models you have to update the database. Please go to the settings to do so. We apologize for the inconvenience.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SearchTarget</name>
+    <message>
+        <location filename="../qml/Dialogs/SearchTarget.qml" line="13"/>
+        <source>Search Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Dialogs/SearchTarget.qml" line="22"/>
+        <source>Code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Dialogs/SearchTarget.qml" line="46"/>
+        <source>Code and Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Dialogs/SearchTarget.qml" line="34"/>
+        <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -575,6 +598,24 @@
     <message>
         <location filename="../qml/Pages/Settings.qml" line="223"/>
         <source>Both</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Sorting</name>
+    <message>
+        <location filename="../qml/Dialogs/Sorting.qml" line="13"/>
+        <source>Sorting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Dialogs/Sorting.qml" line="22"/>
+        <source>Code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Dialogs/Sorting.qml" line="34"/>
+        <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

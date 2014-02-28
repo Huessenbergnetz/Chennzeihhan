@@ -19,7 +19,7 @@ Page {
             Label {
                 id: signLabel
                 anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge; verticalCenter: parent.verticalCenter }
-                text: qsTr("Sign")
+                text: qsTr("Code")
             }
             onClicked: { sorting = 0; name = signLabel.text; root.accepted(); pageStack.pop() }
         }
