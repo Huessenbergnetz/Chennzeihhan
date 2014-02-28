@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 
 Canvas {
     id: canv
+    renderStrategy: Canvas.Threaded
 
     property string color: "white"
     property alias text: signText.text
