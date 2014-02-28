@@ -90,13 +90,6 @@ Page {
                 text: qsTr("Visit website")
                 onClicked: Qt.openUrlExternally("http://www.buschmann23.de/entwicklung/anwendungen/chennzeihhan/")
             }
-
-            Button {
-                id: donationLink
-                anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("Make a donation")
-                onClicked: Qt.openUrlExternally("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B2HKSUP3P4UR6")
-            }
         }
     }
 }
