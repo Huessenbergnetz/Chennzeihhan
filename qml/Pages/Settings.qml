@@ -25,9 +25,9 @@ Page {
     }
 
     SilicaFlickable {
-        id: singleItem
+        id: settingsFlick
         anchors.fill: parent
-        contentHeight: settingsCol.height
+        contentHeight: settingsCol.height + displayCol.height
         VerticalScrollDecorator {}
 
         PullDownMenu {
@@ -192,6 +192,14 @@ Page {
                 wrapMode: Text.WordWrap
                 color: Theme.primaryColor
             }
+        }
+
+        Column {
+            id: displayCol
+            width: parent.width
+            y: settingsCol.y + settingsCol.height + 5
+            spacing: 5
+            Behavior on y { NumberAnimation { properties: "y"; easing.type: Easing.InOutQuad } }
 
             SectionHeader { text: qsTr("Display") }
 
