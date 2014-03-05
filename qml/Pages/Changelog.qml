@@ -4,6 +4,9 @@ import Sailfish.Silica 1.0
 Page {
     id: about
 
+    property string _RICHTEXT_STYLESHEET_PREAMBLE: "<html><style>a { text-decoration: none; color: '" + Theme.secondaryHighlightColor + "' }</style><body>";
+    property string _RICHTEXT_STYLESHEET_APPENDIX: "</body></html>";
+
     SilicaFlickable {
         anchors.fill: parent
         contentHeight: aboutCol.height + Theme.paddingLarge
@@ -17,8 +20,26 @@ Page {
             add: Transition { AddAnimation {} }
 
             ClHeader {
+                version: "1.2.1"
+                time: 1393622012000
+                onExpand: v121.visible = !v121.visible
+            }
+
+            ClEntry {
+                id: v121
+                text: _RICHTEXT_STYLESHEET_PREAMBLE + "<ul>
+                        <li>Changed: application cover displays more information and has some actions</li>
+                        <li>Changed: improve Wikipedia webview</li>
+                        <li>Changed: redesigned database update in settings</li>
+                        <li>New: added changelog page to about page</li>
+                        <li>Fixed: start searching with fist letter, fixing <a href='https://github.com/Buschtrommel/Chennzeihhan/issues/1'>issue #1</la></li>
+                    </ul>" + _RICHTEXT_STYLESHEET_APPENDIX
+            }
+
+
+            ClHeader {
                 version: "1.2.0"
-                time: 1393459966000
+                time: 1393373566000
                 onExpand: v120.visible = !v120.visible
             }
 

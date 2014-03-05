@@ -9,4 +9,5 @@ Text {
     color: Theme.primaryColor
     wrapMode: Text.WordWrap
     font.pixelSize: Theme.fontSizeSmall
+    onLinkActivated: { Qt.openUrlExternally(link) }
 }
