@@ -39,6 +39,21 @@ Page {
             add: Transition { AddAnimation {} }
 
             ClHeader {
+                version: "1.2.2"
+                time: 1394113343000
+                onExpand: v122.visible = !v122.visible
+            }
+
+            ClEntry {
+                id: v122
+                text: "<ul>
+                        <li>Fixed: overlapping animations in the settings</li>
+                        <li>Fixed: try to improve main/countries view performance</li>
+                        <li>Fixed: prevent deleting favourite, when other deletion is in progress</li>
+                      </ul>"
+            }
+
+            ClHeader {
                 version: "1.2.1"
                 time: 1393622012000
                 onExpand: v121.visible = !v121.visible
