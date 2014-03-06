@@ -1,0 +1,31 @@
+Version 1.2.2, 2013-03-06 14:42:00 +0100
+
+* Fixed: overlapping animations in the settings
+* Fixed: try to improve main/countries view performance
+
+Version 1.2.1, 2014-02-28 22:13:00 +0100
+
+* Changed: application cover displays more information and has some actions
+* Changed: improve Wikipedia webview
+* Changed: redesigned database update in settings
+* New: added changelog page to about page
+* Fixed: start searching with first letter, fixing issue #1
+
+Version 1.2.0, 2014-02-26 01:12:00 +0100
+
+* NEW: international vehicle registration codes
+* NEW: Austrian vehicle registration codes
+* NEW: favourites for faster access to countries
+* NEW: colored international signs
+* NEW: laod localized Wikipedia page if available, English as first fallback, otherwise native language
+* Changed: redesigned starting page
+
+Version 1.1.0, 2014-02-17 19:13:00 +0100
+
+* NEW: database is not part of application package anymore, therefore it can be updated seperately
+* Changed: visual improvements
+* Fixed: user data paths according to Jolla harbour rules
+
+Version 1.0.0, 2014-02-12 16:17:00 +0100
+
+* initial version
