@@ -178,10 +178,8 @@ Page {
                 anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge }
                 textFormat: Text.PlainText
                 visible: remoteDbVersion > 0 && remoteDbVersion > localDbVersion && localDbVersion > 0
-                opacity: visible ? 1 : 0
                 wrapMode: Text.WordWrap
                 text: qsTr("Changes in this version:")
-                Behavior on opacity { FadeAnimation {} }
             }
 
             Text {

@@ -9,6 +9,7 @@ ApplicationWindow
     property bool dataBaseExists: dbMan.checkDB()
     property int installedDbRevision: dlMan.getLocalDBVersion()
     property int minimumDbRevision: 8
+    property bool inOperation: false
 
 
     function getCoverMode() {
@@ -27,6 +28,11 @@ ApplicationWindow
     Connections {
         target: dlMan
         onDbDownloadFinished: { checkDbTimer.start(); installedDbRevision = dlMan.getLocalDBVersion() }
+    }
+
+    Connections {
+        target: config
+        onFavsChanged: inOperation = false
     }
 
     Timer {

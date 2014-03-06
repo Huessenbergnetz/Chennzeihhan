@@ -37,13 +37,8 @@ Page {
 
     function toggleList(c, row)
     {
-        if (cha === c) {
-            activeRow = 0
-            cha = ""
-        } else {
-            activeRow = row
-            cha = c
-        }
+        activeRow = (cha === c) ? 0 : row;
+        cha = (cha === c) ? "" : c;
     }
 
     SilicaFlickable {
@@ -130,17 +125,11 @@ Page {
                 visible: favourites.visible
             }
 
-
-            Row {
+            AbcRow {
                 id: row1
-                height: 108
-                anchors { left: parent.left; right: parent.right }
-                visible: showMainContent
-                AbcItem { text: "A"; showBg: cha !== text; onClicked: toggleList(text, 1) }
-                AbcItem { text: "B"; showBg: cha !== text; onClicked: toggleList(text, 1) }
-                AbcItem { text: "C"; showBg: cha !== text; onClicked: toggleList(text, 1) }
-                AbcItem { text: "D"; showBg: cha !== text; onClicked: toggleList(text, 1) }
-                AbcItem { text: "E"; showBg: cha !== text; onClicked: toggleList(text, 1) }
+                cha: mainView.cha
+                onClicked: toggleList(txt, 1)
+                cont: ["A", "B", "C", "D", "E"]
             }
 
             AbcGrid {
@@ -149,16 +138,11 @@ Page {
                 visible: activeRow === 1 && showMainContent
             }
 
-            Row {
+            AbcRow {
                 id: row2
-                height: 108
-                anchors { left: parent.left; right: parent.right }
-                visible: showMainContent
-                AbcItem { text: "F"; showBg: cha !== text; onClicked: toggleList(text, 2) }
-                AbcItem { text: "G"; showBg: cha !== text; onClicked: toggleList(text, 2) }
-                AbcItem { text: "H"; showBg: cha !== text; onClicked: toggleList(text, 2) }
-                AbcItem { text: "I"; showBg: cha !== text; onClicked: toggleList(text, 2) }
-                AbcItem { text: "J"; showBg: cha !== text; onClicked: toggleList(text, 2) }
+                cha: mainView.cha
+                onClicked: toggleList(txt, 2)
+                cont: ["F", "G", "H", "I", "J"]
             }
 
             AbcGrid {
@@ -167,16 +151,11 @@ Page {
                 visible: activeRow === 2 && showMainContent
             }
 
-            Row {
+            AbcRow {
                 id: row3
-                height: 108
-                anchors { left: parent.left; right: parent.right }
-                visible: showMainContent
-                AbcItem { text: "K"; showBg: cha !== text; onClicked: toggleList(text, 3) }
-                AbcItem { text: "L"; showBg: cha !== text; onClicked: toggleList(text, 3) }
-                AbcItem { text: "M"; showBg: cha !== text; onClicked: toggleList(text, 3) }
-                AbcItem { text: "N"; showBg: cha !== text; onClicked: toggleList(text, 3) }
-                AbcItem { text: "O"; showBg: cha !== text; onClicked: toggleList(text, 3) }
+                cha: mainView.cha
+                onClicked: toggleList(txt, 3)
+                cont: ["K", "L", "M", "N", "O"]
             }
 
             AbcGrid {
@@ -185,16 +164,11 @@ Page {
                 visible: activeRow === 3 && showMainContent
             }
 
-            Row {
+            AbcRow {
                 id: row4
-                height: 108
-                anchors { left: parent.left; right: parent.right }
-                visible: showMainContent
-                AbcItem { text: "P"; showBg: cha !== text; onClicked: toggleList(text, 4) }
-                AbcItem { text: "Q"; showBg: cha !== text; onClicked: toggleList(text, 4) }
-                AbcItem { text: "R"; showBg: cha !== text; onClicked: toggleList(text, 4) }
-                AbcItem { text: "S"; showBg: cha !== text; onClicked: toggleList(text, 4) }
-                AbcItem { text: "T"; showBg: cha !== text; onClicked: toggleList(text, 4) }
+                cha: mainView.cha
+                onClicked: toggleList(txt, 4)
+                cont: ["P", "Q", "R", "S", "T"]
             }
 
             AbcGrid {
@@ -203,16 +177,12 @@ Page {
                 visible: activeRow === 4 && showMainContent
             }
 
-            Row {
+
+            AbcRow {
                 id: row5
-                height: 108
-                anchors { left: parent.left; right: parent.right }
-                visible: showMainContent
-                AbcItem { text: "U"; showBg: cha !== text; onClicked: toggleList(text, 5) }
-                AbcItem { text: "V"; showBg: cha !== text; onClicked: toggleList(text, 5) }
-                AbcItem { text: "W"; showBg: cha !== text; onClicked: toggleList(text, 5) }
-                AbcItem { text: "X"; showBg: cha !== text; onClicked: toggleList(text, 5) }
-                AbcItem { text: "Y"; showBg: cha !== text; onClicked: toggleList(text, 5) }
+                cha: mainView.cha
+                onClicked: toggleList(txt, 5)
+                cont: ["U", "V", "W", "X", "Y"]
             }
 
             AbcGrid {
@@ -221,12 +191,12 @@ Page {
                 visible: activeRow === 5 && showMainContent
             }
 
-            Row {
+
+            AbcRow {
                 id: row6
-                height: 108
-                anchors { left: parent.left; right: parent.right }
-                visible: showMainContent
-                AbcItem { text: "Z"; showBg: cha !== text; onClicked: toggleList(text, 6) }
+                cha: mainView.cha
+                onClicked: toggleList(txt, 6)
+                cont: ["Z"]
             }
 
             AbcGrid {

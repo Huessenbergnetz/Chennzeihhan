@@ -63,7 +63,8 @@ OTHER_FILES += \
     qml/Dialogs/SearchTarget.qml \
     qml/Pages/Changelog.qml \
     qml/Pages/ClEntry.qml \
-    qml/Pages/ClHeader.qml
+    qml/Pages/ClHeader.qml \
+    qml/Common/AbcRow.qml
 
 HEADERS += \
     src/dbmanager.h \

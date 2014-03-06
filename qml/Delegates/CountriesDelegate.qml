@@ -15,11 +15,16 @@ ListItem {
 
     onClicked: pageStack.push(Qt.resolvedUrl("../Views/CountryView.qml"), {title: model.name, code: model.code, type: model.type, colors: model.colors, sign: model.sign}, coverConnector.colors = model.colors)
 
-    onPressAndHold: if (fav) { rmFav() } else { config.setFav(model.sign); fav = true }
+    onPressAndHold: if (!inOperation) { if (fav) { chennzeihhan.inOperation = true; rmFav() } else { config.setFav(model.sign); fav = true } }
 
     width: GridView.view.cellWidth
     height: GridView.view.cellHeight
     contentHeight: GridView.view.cellHeight
+
+    Connections {
+        target: config
+        onFavsChanged: listItem.fav = config.isFav(model.sign)
+    }
 
     Image {
         id: bgImage
@@ -80,7 +85,7 @@ ListItem {
     }
 
     function rmFav() {
-        remorse.execute(listItem, qsTr("Romving from favourites"), function() {config.removeFav(model.sign); fav = false}, 3000)
+        remorse.execute(listItem, qsTr("Romving from favourites"), function() {config.removeFav(model.sign); fav = false }, 3000)
     }
 
     RemorseItem { id: remorse }
