@@ -38,6 +38,18 @@ Page {
             move: Transition { NumberAnimation { properties: "y"; easing.type: Easing.InOutQuad } }
             add: Transition { AddAnimation {} }
 
+
+            ClHeader {
+                version: "1.2.3"
+                time: 1394198331000
+                onExpand: v123.visible = !v123.visible
+            }
+
+            ClEntry {
+                id: v123
+                text: "<ul><li>Fixed: when no database was installed, alphabet rows were overlaying the information</li></ul>"
+            }
+
             ClHeader {
                 version: "1.2.2"
                 time: 1394113343000
