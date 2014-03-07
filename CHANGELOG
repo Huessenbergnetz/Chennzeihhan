@@ -1,4 +1,8 @@
-Version 1.2.2, 2013-03-06 14:42:00 +0100
+Version 1.2.3, 2014-03-07 14:18:00 +0100
+
+* Fixed: when no database was installed, alphabet rows were overlaying the information
+
+Version 1.2.2, 2014-03-06 14:42:00 +0100
 
 * Fixed: overlapping animations in the settings
 * Fixed: try to improve main/countries view performance
