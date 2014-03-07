@@ -146,6 +146,7 @@ Page {
 
             AbcRow {
                 id: row1
+                visible: showMainContent
                 cha: mainView.cha
                 onClicked: toggleList(txt, 1)
                 cont: ["A", "B", "C", "D", "E"]
@@ -159,6 +160,7 @@ Page {
 
             AbcRow {
                 id: row2
+                visible: showMainContent
                 cha: mainView.cha
                 onClicked: toggleList(txt, 2)
                 cont: ["F", "G", "H", "I", "J"]
@@ -172,6 +174,7 @@ Page {
 
             AbcRow {
                 id: row3
+                visible: showMainContent
                 cha: mainView.cha
                 onClicked: toggleList(txt, 3)
                 cont: ["K", "L", "M", "N", "O"]
@@ -185,6 +188,7 @@ Page {
 
             AbcRow {
                 id: row4
+                visible: showMainContent
                 cha: mainView.cha
                 onClicked: toggleList(txt, 4)
                 cont: ["P", "Q", "R", "S", "T"]
@@ -199,6 +203,7 @@ Page {
 
             AbcRow {
                 id: row5
+                visible: showMainContent
                 cha: mainView.cha
                 onClicked: toggleList(txt, 5)
                 cont: ["U", "V", "W", "X", "Y"]
@@ -213,6 +218,7 @@ Page {
 
             AbcRow {
                 id: row6
+                visible: showMainContent
                 cha: mainView.cha
                 onClicked: toggleList(txt, 6)
                 cont: ["Z"]
@@ -227,6 +233,7 @@ Page {
             Row {
                 id: searchSortOptions
                 anchors { left: parent.left; right: parent.right }
+                visible: dataBaseExists && (installedDbRevision >= minimumDbRevision)
 
                 ComboBox {
                     id: sortOrdering
