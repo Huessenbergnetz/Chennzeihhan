@@ -25,6 +25,7 @@ const char* CountryModel::COLUMN_NAMES[] = {
     "name",
     "type",
     "state",
+    "closed",
     NULL
 };
 
@@ -90,9 +91,9 @@ void CountryModel::refresh(const QString &cc, int sort, int searchTarget, const 
     QString queryString;
 
     if (cc == "ch") {
-        queryString = QString("SELECT id AS itemId, sign, name, '%1' AS type, '' AS state FROM ch").arg(tr("Canton"));
+        queryString = QString("SELECT id AS itemId, sign, name, '%1' AS type, '' AS state, '' AS closed FROM ch").arg(tr("Canton"));
     } else {
-        queryString = QString("SELECT id AS itemId, sign, name, type, state FROM %1").arg(cc);
+        queryString = QString("SELECT id AS itemId, sign, name, type, state, closed FROM %1").arg(cc);
     }
 
     if (!search.isEmpty())

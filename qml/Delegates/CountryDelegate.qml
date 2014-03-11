@@ -67,11 +67,23 @@ ListItem {
                 width: parent.width
             }
 
-            Text {
-                text: model.state ? qsTr("%1 - %2").arg(sign).arg(model.state) : sign
-                color: listItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
-                textFormat: Text.RichText
-                font.pixelSize: Theme.fontSizeSmall
+            Row {
+                width: parent.width
+
+                Text {
+                    text: model.state ? qsTr("%1 - %2").arg(sign).arg(model.state) : sign
+                    color: listItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                    textFormat: Text.RichText
+                    font.pixelSize: Theme.fontSizeSmall
+                    width: parent.width - closedIcon.width
+                }
+
+                Image {
+                    id: closedIcon
+                    visible: model.closed
+                    width: Theme.fontSizeSmall; height: Theme.fontSizeSmall
+                    source: "image://theme/icon-s-timer"
+                }
             }
         }
     }

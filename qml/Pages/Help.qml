@@ -102,6 +102,27 @@ Page {
                 }
             }
 
+            Row {
+                id: closedRow
+                anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge }
+                spacing: 8
+
+                Image {
+                    id: closedIco
+                    width: Theme.fontSizeSmall; height: Theme.fontSizeSmall;
+                    smooth: true
+                    source: "image://theme/icon-s-timer"
+                }
+
+                Label {
+                    id: closedDesc
+                    width: parent.width - systemIco.width
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    text: qsTr("This district does not exist anymore but it can be, that the old code is still used by registered vehicles or that the old code is now optional available for the successor district.")
+                }
+            }
+
             SectionHeader { text: qsTr("Help") }
 
             Text {

@@ -107,6 +107,6 @@ ListItem {
         remorse.execute(listItem, qsTr("Romving from favourites"), function() {config.removeFav(model.sign); fav = false }, 3000)
     }
 
-    RemorseItem { id: remorse }
+    RemorseItem { id: remorse; onCanceled: chennzeihhan.inOperation = false }
 
 }
