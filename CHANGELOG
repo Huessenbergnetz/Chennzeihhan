@@ -1,3 +1,8 @@
+Version 1.2.5, 2014-03-12 17:13:00 +0100
+
+* Fixed: loading of abc grid after first DB installation
+* Fixed: minor UI glitches in settings
+
 Version 1.2.4, 2014-03-12 16:18:59 +0100
 
 * New: icon to indicate disbanded districts in the district list of a country

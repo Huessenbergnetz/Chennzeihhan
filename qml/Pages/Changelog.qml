@@ -40,6 +40,20 @@ Page {
 
 
             ClHeader {
+                version: "1.2.5"
+                time: 1394640787000
+                onExpand: v125.visible = !v125.visible
+            }
+
+            ClEntry {
+                id: v125
+                text: "<ul>
+                        <li>Fixed: loading of abc grid after first DB installation</li>
+                        <li>Fixed: minor UI glitches in settings</li>
+                      </ul>"
+            }
+
+            ClHeader {
                 version: "1.2.4"
                 time: 1394637539000
                 onExpand: v124.visible = !v124.visible
