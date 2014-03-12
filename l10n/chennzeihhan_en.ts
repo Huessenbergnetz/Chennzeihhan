@@ -471,59 +471,59 @@
 <context>
     <name>MainView</name>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="68"/>
+        <location filename="../qml/Views/MainView.qml" line="78"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="72"/>
+        <location filename="../qml/Views/MainView.qml" line="82"/>
         <source>Help/Legend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="76"/>
+        <location filename="../qml/Views/MainView.qml" line="86"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="96"/>
+        <location filename="../qml/Views/MainView.qml" line="106"/>
         <source>Search ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="187"/>
+        <location filename="../qml/Views/MainView.qml" line="197"/>
         <source>Sorting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="192"/>
-        <location filename="../qml/Views/MainView.qml" line="207"/>
+        <location filename="../qml/Views/MainView.qml" line="202"/>
+        <location filename="../qml/Views/MainView.qml" line="217"/>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="193"/>
-        <location filename="../qml/Views/MainView.qml" line="208"/>
+        <location filename="../qml/Views/MainView.qml" line="203"/>
+        <location filename="../qml/Views/MainView.qml" line="218"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="202"/>
+        <location filename="../qml/Views/MainView.qml" line="212"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="209"/>
+        <location filename="../qml/Views/MainView.qml" line="219"/>
         <source>Both</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="234"/>
+        <location filename="../qml/Views/MainView.qml" line="244"/>
         <source>You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="239"/>
+        <location filename="../qml/Views/MainView.qml" line="249"/>
         <source>Because of changes in the data models you have to update the database. Please go to the settings to do so. We apologize for the inconvenience.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -579,45 +579,45 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="115"/>
-        <location filename="../qml/Pages/Settings.qml" line="146"/>
+        <location filename="../qml/Pages/Settings.qml" line="130"/>
+        <location filename="../qml/Pages/Settings.qml" line="148"/>
         <source>Rev.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="201"/>
+        <location filename="../qml/Pages/Settings.qml" line="203"/>
         <source>Changes in this version:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="221"/>
+        <location filename="../qml/Pages/Settings.qml" line="223"/>
         <source>Display</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="226"/>
+        <location filename="../qml/Pages/Settings.qml" line="228"/>
         <source>Default ordering</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="231"/>
-        <location filename="../qml/Pages/Settings.qml" line="246"/>
+        <location filename="../qml/Pages/Settings.qml" line="233"/>
+        <location filename="../qml/Pages/Settings.qml" line="248"/>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="232"/>
-        <location filename="../qml/Pages/Settings.qml" line="247"/>
+        <location filename="../qml/Pages/Settings.qml" line="234"/>
+        <location filename="../qml/Pages/Settings.qml" line="249"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="241"/>
+        <location filename="../qml/Pages/Settings.qml" line="243"/>
         <source>Default search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="248"/>
+        <location filename="../qml/Pages/Settings.qml" line="250"/>
         <source>Both</source>
         <translation type="unfinished"></translation>
     </message>
