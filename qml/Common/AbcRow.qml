@@ -46,7 +46,7 @@ Item  {
 
     ListModel {
         id: listModel
-        property variant characters: cont
+        property variant characters: root.cont
 
         function fill() {
             for (var index = 0; index < characters.length; index++) {

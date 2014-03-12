@@ -31,12 +31,13 @@ Page {
     property int sortType: 0
     property string cha: ""
     property int activeRow: 0
-    property bool updated: true
     property bool showMainContent: dataBaseExists && (installedDbRevision >= minimumDbRevision) && searchString === ""
+    property variant abc
 
     Component.onCompleted: {
         searchTarget = config.get("display/search", 0)
         sortType = config.get("display/ordering", 0)
+        abc = abcModel.getAbc(sortType)
     }
 
     Connections {
@@ -50,15 +51,9 @@ Page {
     }
 
     onSearchStringChanged: countriesSearch.refresh(searchString, searchTarget, sortType)
-    onSortTypeChanged: if (cha !== "") { countriesModel.setFirstChar(cha, sortType) } else if (searchString !== "") { countriesSearch.refresh(searchString, searchTarget, sortType) }
+    onSortTypeChanged: { abc = abcModel.getAbc(sortType); if (cha !== "") { countriesModel.setFirstChar(cha, sortType) } else if (searchString !== "") { countriesSearch.refresh(searchString, searchTarget, sortType) } }
     onSearchTargetChanged: if (searchString !== "") countriesSearch.refresh(searchString, searchTarget, sortType)
     onChaChanged: countriesModel.setFirstChar(cha, sortType)
-
-    function toggleList(c, row)
-    {
-        activeRow = (cha === c) ? 0 : row;
-        cha = (cha === c) ? "" : c;
-    }
 
     SilicaFlickable {
         id: flick
@@ -111,21 +106,8 @@ Page {
 
             GridView {
                 id: favourites
-
-                function calcHeight(h) {
-                    var h1 = h;
-                    var h2 = Math.round(h)
-                    var h3
-                    if (h2 < h1) {
-                        h3 = h2 +1
-                    } else {
-                        h3 = h2;
-                    }
-                    return h3
-                }
-
                 visible: count > 0 && showMainContent
-                height: visible ? calcHeight(count / 3) * cellHeight : 0
+                height: visible ? Math.ceil(count / 3) * cellHeight : 0
                 anchors { left: parent.left; right: parent.right }
                 delegate: CountriesDelegate{ showBg: false}
                 interactive: false
@@ -144,91 +126,55 @@ Page {
                 visible: favourites.visible
             }
 
-            AbcRow {
-                id: row1
+            Item {
+                id: abcGrid
                 visible: showMainContent
-                cha: mainView.cha
-                onClicked: toggleList(txt, 1)
-                cont: ["A", "B", "C", "D", "E"]
-            }
 
-            AbcGrid {
-                id: gv1
+                property int steps: 5
+                property int count: mainView.abc.length
+                property int cols: Math.ceil(count/steps)
+
                 anchors { left: parent.left; right: parent.right }
-                visible: activeRow === 1 && showMainContent
+                height: col.height
+
+                Column {
+                    id: col
+                    anchors { left: parent.left; right: parent.right }
+                    move: Transition { NumberAnimation { properties: "y"; easing.type: Easing.InOutQuad } }
+                    add: Transition { AddAnimation {} }
+                    Repeater {
+                        id: colRep
+                        model: abcGrid.cols
+                        anchors { left: parent.left; right: parent.right }
+                        Item {
+                            id: rowBase
+                            anchors { left: parent.left; right: parent.right }
+                            height: row.height + grid.height
+                            property int rowNumber: model.index+1
+                            AbcRow {
+                                id: row
+                                z: 2
+                                cha: mainView.cha
+                                cont: mainView.abc.slice(model.index * 5, (model.index+1) * 5)
+                                onClicked: {
+                                    mainView.activeRow = (mainView.cha === txt) ? 0 : rowBase.rowNumber;
+                                    mainView.cha = (mainView.cha === txt) ? "" : txt;
+                                }
+                            }
+                            SignGrid {
+                                id: grid
+                                z: 1
+                                clip: true
+                                anchors { top: row.bottom; left: parent.left; right: parent.right }
+                                visible: rowBase.rowNumber === mainView.activeRow
+                                opacity: visible ? 1 : 0
+                                Behavior on opacity { FadeAnimation{} }
+                            }
+                        }
+                    }
+                }
             }
 
-            AbcRow {
-                id: row2
-                visible: showMainContent
-                cha: mainView.cha
-                onClicked: toggleList(txt, 2)
-                cont: ["F", "G", "H", "I", "J"]
-            }
-
-            AbcGrid {
-                id: gv2
-                anchors { left: parent.left; right: parent.right }
-                visible: activeRow === 2 && showMainContent
-            }
-
-            AbcRow {
-                id: row3
-                visible: showMainContent
-                cha: mainView.cha
-                onClicked: toggleList(txt, 3)
-                cont: ["K", "L", "M", "N", "O"]
-            }
-
-            AbcGrid {
-                id: gv3
-                anchors { left: parent.left; right: parent.right }
-                visible: activeRow === 3 && showMainContent
-            }
-
-            AbcRow {
-                id: row4
-                visible: showMainContent
-                cha: mainView.cha
-                onClicked: toggleList(txt, 4)
-                cont: ["P", "Q", "R", "S", "T"]
-            }
-
-            AbcGrid {
-                id: gv4
-                anchors { left: parent.left; right: parent.right }
-                visible: activeRow === 4 && showMainContent
-            }
-
-
-            AbcRow {
-                id: row5
-                visible: showMainContent
-                cha: mainView.cha
-                onClicked: toggleList(txt, 5)
-                cont: ["U", "V", "W", "X", "Y"]
-            }
-
-            AbcGrid {
-                id: gv5
-                anchors { left: parent.left; right: parent.right }
-                visible: activeRow === 5 && showMainContent
-            }
-
-
-            AbcRow {
-                id: row6
-                visible: showMainContent
-                cha: mainView.cha
-                onClicked: toggleList(txt, 6)
-                cont: ["Z"]
-            }
-
-            AbcGrid {
-                id: gv6
-                anchors { left: parent.left; right: parent.right }
-                visible: activeRow === 6 && showMainContent
-            }
 
             Row {
                 id: searchSortOptions
@@ -238,7 +184,7 @@ Page {
                 ComboBox {
                     id: sortOrdering
                     width: parent.width/2
-                    label: qsTr("Sorting")
+                    label: qsTr("Sorting") + "          "
 
                     currentIndex: mainView.sortType
 
@@ -253,7 +199,7 @@ Page {
                 ComboBox {
                     id: searchT
                     width: parent.width/2
-                    label: qsTr("Search")
+                    label: qsTr("Search") + "          "
 
                     currentIndex: mainView.searchTarget
 
@@ -269,18 +215,6 @@ Page {
 
             GridView {
                 id: searchView
-
-                function calcHeight(h) {
-                    var h1 = h;
-                    var h2 = Math.round(h)
-                    var h3
-                    if (h2 < h1) {
-                        h3 = h2 +1
-                    } else {
-                        h3 = h2;
-                    }
-                    return h3
-                }
 
                 visible: searchString !== ""
                 width: parent.width

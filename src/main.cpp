@@ -67,6 +67,7 @@ int main(int argc, char *argv[])
     CountriesModel *countriesModel = new CountriesModel();
     CountriesModel *countriesSearch = new CountriesModel();
     CountriesModel *countriesFavourites = new CountriesModel();
+    CountriesModel *abcModel = new CountriesModel();
     CountryModel *countryModel = new CountryModel();
     ItemModel *itemModel = new ItemModel();
 
@@ -82,6 +83,7 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("countriesFavourites", countriesFavourites);
     view->rootContext()->setContextProperty("countriesSearch", countriesSearch);
     view->rootContext()->setContextProperty("countryModel", countryModel);
+    view->rootContext()->setContextProperty("abcModel", abcModel);
     view->rootContext()->setContextProperty("itemModel", itemModel);
     view->rootContext()->setContextProperty("antecessorModel", antecessorModel);
     view->rootContext()->setContextProperty("versionString", VERSION_STRING);

@@ -78,14 +78,13 @@ void CountriesModel::refresh(const QString &search, int target, int sort)
     if (tables.contains(lang)) {
         queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, %1 AS name FROM countries").arg(lang);
     } else {
-        queryString =  QString("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
+        queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
     }
 
 
     if (!search.isEmpty())
     {
         QString t_search = search;
-//        t_search.prepend("%");
         t_search.append("%");
 
         switch(target) {
@@ -123,19 +122,15 @@ void CountriesModel::setFirstChar(const QString &fc, int target)
     if (tables.contains(lang)) {
         queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, %1 AS name FROM countries").arg(lang);
     } else {
-        queryString =  QString("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
+        queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
     }
-
-    QString t_search = fc;
-//    t_search.prepend("%");
-    t_search.append("%");
 
     switch(target) {
     case 1:
-        queryString.append(QString(" WHERE name LIKE \"%1\"").arg(t_search));
+        queryString.append(QString(" WHERE name LIKE \"%1%\"").arg(fc));
         break;
     default:
-        queryString.append(QString(" WHERE sign LIKE \"%1\"").arg(t_search));
+        queryString.append(QString(" WHERE sign LIKE \"%1%\"").arg(fc));
         break;
     }
 
@@ -174,10 +169,35 @@ void CountriesModel::getFavs()
     if (tables.contains(lang)) {
         queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, %1 AS name FROM countries").arg(lang);
     } else {
-        queryString =  QString("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
+        queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
     }
 
     queryString.append(QString(" WHERE sign IN (%1)").arg(favs));
 
     this->setQuery(queryString);
+}
+
+
+QStringList CountriesModel::getAbc(int sort)
+{
+
+    QString subString;
+    QStringList result;
+
+    switch(sort) {
+    case 1:
+        subString = tables.contains(lang) ? lang : "en";
+        break;
+    default:
+        subString = "sign";
+        break;
+    }
+
+    QSqlQuery query(QString("SELECT DISTINCT SUBSTR(%1, 1, 1) AS c FROM countries ORDER BY c ASC").arg(subString));
+    query.exec();
+    while (query.next()) {
+        result << query.value(0).toString();
+    }
+
+    return result;
 }

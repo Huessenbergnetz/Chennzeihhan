@@ -2,8 +2,10 @@
 #define COUNTRIESMODEL_H
 
 #include <QSqlQueryModel>
+#include <QSqlQuery>
 #include <QSettings>
 #include <QLocale>
+#include <QStringList>
 
 class CountriesModel : public QSqlQueryModel
 {
@@ -20,6 +22,7 @@ public slots:
     void refresh(const QString &search, int target, int sort);
     void setFirstChar(const QString &fc, int target);
     void getFavs();
+    QStringList getAbc(int sort);
 
 private:
     const static char* COLUMN_NAMES[];

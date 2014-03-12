@@ -119,7 +119,7 @@ Page {
                     width: parent.width - systemIco.width
                     wrapMode: Text.WordWrap
                     font.pixelSize: Theme.fontSizeSmall
-                    text: qsTr("This district does not exist anymore but it can be, that the old code is still used by registered vehicles or that the old code is now optional available for the successor district.")
+                    text: qsTr("This district does not exist anymore but the code may be still in use by old registered vehicles or is now optionally available for the successor district.")
                 }
             }
 
