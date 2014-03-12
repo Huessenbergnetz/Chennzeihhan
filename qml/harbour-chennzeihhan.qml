@@ -56,7 +56,7 @@ ApplicationWindow
 
     Timer {
         id: checkDbTimer; interval: 200; running: false; repeat: false
-        onTriggered: { dataBaseExists = dbMan.checkDB(); countriesModel.refresh() }
+        onTriggered: { dataBaseExists = dbMan.checkDB() }
     }
 
     initialPage: Component { MainView { } }

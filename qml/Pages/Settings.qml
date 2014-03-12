@@ -77,7 +77,7 @@ Page {
             Label {
                 anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge }
                 textFormat: Text.PlainText
-                visible: localDbVersion === 0 && remoteDbVersion === 0 && !getVersionBusy.visible
+                visible: localDbVersion === 0 && remoteDbVersion === 0 && !checkingDBVersion
                 wrapMode: Text.WordWrap
                 text: qsTr("Currently there is no database installed. Please use the pully menu to check for new DB version.")
             }
@@ -96,12 +96,27 @@ Page {
                 }
             }
 
+            Item {
+                visible: settings.checkingDBVersion
+                width: parent.width
+                height: checkingDbBI.height
+
+                BusyIndicator {
+                    id: checkingDbBI
+                    anchors.centerIn: parent
+                    size: BusyIndicatorSize.Medium
+                    running: visible
+                    visible: settings.checkingDBVersion
+                }
+            }
+
             Row {
                 anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge }
-                visible: (localDbVersion > 0 || remoteDbVersion > 0) && !downloadDBProgress.visible
+                visible: (localDbVersion > 0 || remoteDbVersion > 0) && !downloadDBProgress.visible && !settings.checkingDBVersion
                 add: Transition { AddAnimation {} }
 
                 Column {
+                    id: localDbCol
                     width: parent.width / 4
 
                     Image {
@@ -115,19 +130,6 @@ Page {
                         text: qsTr("Rev.") + " " + localDbVersion
                         anchors.horizontalCenter: parent.horizontalCenter
                         color: Theme.primaryColor
-                    }
-                }
-
-                Item {
-                    visible: checkingDBVersion
-                    width: parent.width - parent.width/4
-                    height: parent.height
-
-                    BusyIndicator {
-                        anchors.centerIn: parent
-                        id: checkingDbBI
-                        size: BusyIndicatorSize.Medium
-                        running: checkingDBVersion
                     }
                 }
 

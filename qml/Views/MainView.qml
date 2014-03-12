@@ -50,6 +50,16 @@ Page {
         }
     }
 
+    Connections {
+        target: dlMan
+        onDbDownloadFinished: { checkDbTimer.start(); installedDbRevision = dlMan.getLocalDBVersion() }
+    }
+
+    Timer {
+        id: checkDbTimer; interval: 220; running: false; repeat: false
+        onTriggered: { abc = abcModel.getAbc(sortType) }
+    }
+
     onSearchStringChanged: countriesSearch.refresh(searchString, searchTarget, sortType)
     onSortTypeChanged: { abc = abcModel.getAbc(sortType); if (cha !== "") { countriesModel.setFirstChar(cha, sortType) } else if (searchString !== "") { countriesSearch.refresh(searchString, searchTarget, sortType) } }
     onSearchTargetChanged: if (searchString !== "") countriesSearch.refresh(searchString, searchTarget, sortType)
