@@ -40,6 +40,22 @@ Page {
 
 
             ClHeader {
+                version: "1.2.4"
+                time: 1394637539000
+                onExpand: v124.visible = !v124.visible
+            }
+
+            ClEntry {
+                id: v124
+                text: "<ul>
+                        <li>New: icon to indicate disbanded districts in the district list of a country</li>
+                        <li>Fixed: operation status on favourites was not cleared after canceling the deletion</li>
+                        <li>Fixed: non ASCII characters were not shown in the alphabetical grid</li>
+                        <li>Fixed: minor UI glitches</li>
+                      </ul>"
+            }
+
+            ClHeader {
                 version: "1.2.3"
                 time: 1394198331000
                 onExpand: v123.visible = !v123.visible
