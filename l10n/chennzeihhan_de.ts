@@ -2,32 +2,37 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/Pages/About.qml" line="38"/>
+        <location filename="../qml/Pages/About.qml" line="45"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="60"/>
+        <location filename="../qml/Pages/About.qml" line="72"/>
         <source>Vehicle registation plates database for Sailfish OS</source>
         <translation>Kfz-Kennzeichendatenbank für Sailfish OS</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="85"/>
+        <location filename="../qml/Pages/About.qml" line="88"/>
+        <source>Licenses</source>
+        <translation>Lizenzen</translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/About.qml" line="92"/>
         <source>Source code is licensed under the &lt;a href=&apos;http://www.gnu.org/licenses/gpl-2.0.en.html&apos;&gt;GNU GPL v2&lt;/a&gt;</source>
         <translation>Quellcode ist lizenziert unter der &lt;a href=&apos;http://www.gnu.org/licenses/gpl-2.0.en.html&apos;&gt;GNU GPL v2&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="97"/>
+        <location filename="../qml/Pages/About.qml" line="101"/>
         <source>Car plates database is licensed under &lt;a href=&apos;http://creativecommons.org/licenses/by-nc-sa/4.0/&apos;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International&lt;/a&gt;</source>
         <translation>Kennzeichendatenbank ist lizenziert unter &lt;a href=&apos;http://creativecommons.org/licenses/by-nc-sa/4.0/&apos;&gt;Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../qml/Pages/About.qml" line="109"/>
-        <source>Visit website</source>
-        <translation>Webseite besuchen</translation>
+        <source>Contact</source>
+        <translation>Kontakt</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="116"/>
+        <location filename="../qml/Pages/About.qml" line="36"/>
         <source>Changelog</source>
         <translation>Änderungsprotokoll</translation>
     </message>
@@ -469,59 +474,59 @@
 <context>
     <name>MainView</name>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="68"/>
+        <location filename="../qml/Views/MainView.qml" line="78"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="72"/>
+        <location filename="../qml/Views/MainView.qml" line="82"/>
         <source>Help/Legend</source>
         <translation>Hilfe/Legende</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="76"/>
+        <location filename="../qml/Views/MainView.qml" line="86"/>
         <source>Settings</source>
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="96"/>
+        <location filename="../qml/Views/MainView.qml" line="106"/>
         <source>Search ...</source>
         <translation>Suche ...</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="187"/>
+        <location filename="../qml/Views/MainView.qml" line="197"/>
         <source>Sorting</source>
         <translation>Sortierung</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="192"/>
-        <location filename="../qml/Views/MainView.qml" line="207"/>
+        <location filename="../qml/Views/MainView.qml" line="202"/>
+        <location filename="../qml/Views/MainView.qml" line="217"/>
         <source>Code</source>
         <translation>Zeichen</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="193"/>
-        <location filename="../qml/Views/MainView.qml" line="208"/>
+        <location filename="../qml/Views/MainView.qml" line="203"/>
+        <location filename="../qml/Views/MainView.qml" line="218"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="202"/>
+        <location filename="../qml/Views/MainView.qml" line="212"/>
         <source>Search</source>
         <translation>Suche</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="209"/>
+        <location filename="../qml/Views/MainView.qml" line="219"/>
         <source>Both</source>
         <translation>Beides</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="234"/>
+        <location filename="../qml/Views/MainView.qml" line="244"/>
         <source>You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.</source>
         <translation>Sie haben noch keine Datenbank installiert. Um die Datenbank unabhängig von der Anwendung aktualisieren zu können ist diese nicht Teil des Installationspakets. Rufen Sie die Einstellungen auf, um die Datenbank herunter zu laden.</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="239"/>
+        <location filename="../qml/Views/MainView.qml" line="249"/>
         <source>Because of changes in the data models you have to update the database. Please go to the settings to do so. We apologize for the inconvenience.</source>
         <translation>Auf Grund von Änderungen in den Datenmodellen müssen Sie die Datenbank aktualisieren. Rufen Sie dafür bitte die Einstellungen auf.</translation>
     </message>
@@ -577,45 +582,45 @@
         <translation>Es ist momentan keine Datenbank installiert. Prüfen Sie über das Menü die Verfügbarkeit einer neuen Version.</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="115"/>
-        <location filename="../qml/Pages/Settings.qml" line="146"/>
+        <location filename="../qml/Pages/Settings.qml" line="130"/>
+        <location filename="../qml/Pages/Settings.qml" line="148"/>
         <source>Rev.</source>
         <translation>Rev.</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="201"/>
+        <location filename="../qml/Pages/Settings.qml" line="203"/>
         <source>Changes in this version:</source>
         <translation>Änderungen in dieser Version:</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="221"/>
+        <location filename="../qml/Pages/Settings.qml" line="223"/>
         <source>Display</source>
         <translation>Anzeige</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="226"/>
+        <location filename="../qml/Pages/Settings.qml" line="228"/>
         <source>Default ordering</source>
         <translation>Standardsortierung</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="231"/>
-        <location filename="../qml/Pages/Settings.qml" line="246"/>
+        <location filename="../qml/Pages/Settings.qml" line="233"/>
+        <location filename="../qml/Pages/Settings.qml" line="248"/>
         <source>Code</source>
         <translation>Zeichen</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="232"/>
-        <location filename="../qml/Pages/Settings.qml" line="247"/>
+        <location filename="../qml/Pages/Settings.qml" line="234"/>
+        <location filename="../qml/Pages/Settings.qml" line="249"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="241"/>
+        <location filename="../qml/Pages/Settings.qml" line="243"/>
         <source>Default search</source>
         <translation>Standardsuche</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="248"/>
+        <location filename="../qml/Pages/Settings.qml" line="250"/>
         <source>Both</source>
         <translation>Beides</translation>
     </message>

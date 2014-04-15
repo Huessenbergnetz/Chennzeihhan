@@ -122,7 +122,7 @@ Page {
                         <li>Changed: improve Wikipedia webview</li>
                         <li>Changed: redesigned database update in settings</li>
                         <li>New: added changelog page to about page</li>
-                        <li>Fixed: start searching with first letter, fixing <a href='https://github.com/Buschtrommel/Chennzeihhan/issues/1'>issue #1</la></li>
+                        <li>Fixed: start searching with first letter, fixing <a href='https://github.com/Buschtrommel/Chennzeihhan/issues/1'>issue #1</a></li>
                     </ul>" + _RICHTEXT_STYLESHEET_APPENDIX
             }
 

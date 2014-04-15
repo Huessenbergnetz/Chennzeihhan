@@ -4,32 +4,37 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/Pages/About.qml" line="38"/>
+        <location filename="../qml/Pages/About.qml" line="45"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="60"/>
+        <location filename="../qml/Pages/About.qml" line="72"/>
         <source>Vehicle registation plates database for Sailfish OS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="85"/>
+        <location filename="../qml/Pages/About.qml" line="88"/>
+        <source>Licenses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/About.qml" line="92"/>
         <source>Source code is licensed under the &lt;a href=&apos;http://www.gnu.org/licenses/gpl-2.0.en.html&apos;&gt;GNU GPL v2&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="97"/>
+        <location filename="../qml/Pages/About.qml" line="101"/>
         <source>Car plates database is licensed under &lt;a href=&apos;http://creativecommons.org/licenses/by-nc-sa/4.0/&apos;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/About.qml" line="109"/>
-        <source>Visit website</source>
+        <source>Contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="116"/>
+        <location filename="../qml/Pages/About.qml" line="36"/>
         <source>Changelog</source>
         <translation type="unfinished"></translation>
     </message>
