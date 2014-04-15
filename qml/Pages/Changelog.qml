@@ -40,6 +40,20 @@ Page {
 
 
             ClHeader {
+                version: "1.2.6"
+                time: 1394640787000
+                onExpand: v126.visible = !v126.visible
+            }
+
+            ClEntry {
+                id: v126
+                text: "<ul>
+                        <li>Changed: nicer about page</li>
+                      </ul>"
+            }
+
+
+            ClHeader {
                 version: "1.2.5"
                 time: 1394640787000
                 onExpand: v125.visible = !v125.visible

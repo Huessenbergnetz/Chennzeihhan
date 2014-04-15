@@ -28,93 +28,112 @@ Page {
 
     SilicaFlickable {
         anchors.fill: parent
-        contentHeight: aboutCol.height + Theme.paddingLarge
+        contentHeight: aboutCol.height + imgCol.height + Theme.paddingLarge
         VerticalScrollDecorator {}
 
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("Changelog")
+                onClicked: pageStack.push("Changelog.qml")
+            }
+        }
+
         Column {
-            id: aboutCol
+            id: imgCol
             anchors { left: parent.left; right: parent.right }
             spacing: 5
             PageHeader { title: qsTr("About") }
 
             Image {
-                anchors.horizontalCenter: parent.horizontalCenter
                 visible: true
-                width: 256
-                height: 256
-                sourceSize.width: 256
-                sourceSize.height: 256
-                source: "/usr/share/harbour-chennzeihhan/images/harbour-chennzeihhan-256.png"
+                width: parent.width
+                sourceSize.width: 540
+                sourceSize.height: 270
+                source: "/usr/share/harbour-chennzeihhan/images/banner.png"
             }
+
+        }
+
+        Column {
+            id: aboutCol
+            anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingLarge; top: imgCol.bottom; topMargin: 10 }
+            spacing: 5
 
             Label {
                 id: labelName
-                anchors.horizontalCenter: parent.horizontalCenter
                 textFormat: Text.PlainText
+                font.pixelSize: Theme.fontSizeLarge
+                color: Theme.highlightColor
                 text: "Chennzeihhan " + versionString
             }
 
             Text {
                 id: description
-                anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("Vehicle registation plates database for Sailfish OS")
-                width: parent.width - 2 * Theme.paddingLarge
-                font.weight: Font.Light
+                text:qsTr("Vehicle registation plates database for Sailfish OS")
+                width: parent.width
                 wrapMode: Text.WordWrap
                 textFormat: Text.PlainText
-                color: Theme.primaryColor
-                horizontalAlignment: Text.AlignHCenter
+                color: Theme.secondaryHighlightColor
             }
 
             Text {
                 id: copyright
-                anchors.horizontalCenter: parent.horizontalCenter
                 text: "© 2014, Buschtrommel"
                 width: parent.width
-                font.weight: Font.Light
                 wrapMode: Text.WordWrap
                 textFormat: Text.PlainText
                 color: Theme.primaryColor
-                horizontalAlignment: Text.AlignHCenter
             }
+
+            SectionHeader  { text: qsTr("Licenses") }
 
             Text {
                 id: codeLicense
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.weight: Font.Light
                 text: _RICHTEXT_STYLESHEET_PREAMBLE + qsTr("Source code is licensed under the <a href='http://www.gnu.org/licenses/gpl-2.0.en.html'>GNU GPL v2</a>") + _RICHTEXT_STYLESHEET_APPENDIX
-                width: parent.width - 2 * Theme.paddingLarge
+                width: parent.width - Theme.paddingLarge
                 textFormat: Text.RichText
                 wrapMode: Text.WordWrap
                 color: Theme.primaryColor
                 onLinkActivated: { Qt.openUrlExternally(link) }
-                horizontalAlignment: Text.AlignHCenter
             }
             Text {
                 id: dbLicense
-                anchors.horizontalCenter: parent.horizontalCenter
-                font.weight: Font.Light
                 text: _RICHTEXT_STYLESHEET_PREAMBLE + qsTr("Car plates database is licensed under <a href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>") + _RICHTEXT_STYLESHEET_APPENDIX
-                width: parent.width - 2 * Theme.paddingLarge
+                width: parent.width - Theme.paddingLarge
                 textFormat: Text.RichText
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 color: Theme.primaryColor
                 onLinkActivated: { Qt.openUrlExternally(link) }
-                horizontalAlignment: Text.AlignHCenter
             }
 
-            Button {
-                id: websiteLink
-                anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("Visit website")
-                onClicked: Qt.openUrlExternally("http://www.buschmann23.de/entwicklung/anwendungen/chennzeihhan/")
+            SectionHeader { text: qsTr("Contact") }
+
+            Text {
+                id: address
+                text: "Buschtrommel<br>Matthias Fehring<br>Engelhardstraße 32<br>81369 München<br>Deutschland"
+                width: parent.width
+                wrapMode: Text.WordWrap
+                textFormat: Text.StyledText
+                color: Theme.primaryColor
+                font.pixelSize: Theme.fontSizeSmall
             }
 
-            Button {
-                id: changelog
-                anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("Changelog")
-                onClicked: pageStack.push("Changelog.qml")
+            Text {
+                id: email
+                text: _RICHTEXT_STYLESHEET_PREAMBLE + "<a href='mailto:kontakt@buschmann23.de'>kontakt@buschmann23.de</a>" + _RICHTEXT_STYLESHEET_APPENDIX
+                color: Theme.primaryColor
+                font.pixelSize: Theme.fontSizeSmall
+                textFormat: Text.RichText
+                onLinkActivated: Qt.openUrlExternally(link)
+            }
+
+            Text {
+                id: website
+                text: _RICHTEXT_STYLESHEET_PREAMBLE + "<a href='http://www.buschmann23.de/entwicklung/anwendungen/chennzeihhan/'>http://http://www.buschmann23.de/.../chennzeihhan/</a>" + _RICHTEXT_STYLESHEET_APPENDIX
+                color: Theme.primaryColor
+                font.pixelSize: Theme.fontSizeSmall
+                textFormat: Text.RichText
+                onLinkActivated: Qt.openUrlExternally(link)
             }
         }
     }

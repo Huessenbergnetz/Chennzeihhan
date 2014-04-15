@@ -18,10 +18,6 @@ SOURCES += \
     src/globals.cpp \
     src/configuration.cpp
 
-#datafiles.path = /usr/share/harbour-chennzeihhan/data
-#datafiles.files = data/*
-#INSTALLS += datafiles
-
 translations.path = /usr/share/harbour-chennzeihhan/translations
 translations.files = l10n/*.qm
 INSTALLS += translations
