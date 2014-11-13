@@ -42,7 +42,6 @@ OTHER_FILES += \
     qml/Delegates/CountryDelegate.qml \
     qml/ItemViews/de.qml \
     qml/ItemViews/ch.qml \
-    qml/Common/FancyScroller.qml \
     qml/Pages/CoverPage.qml \
     qml/Pages/About.qml \
     images/harbour-chennzeihhan-256.png \

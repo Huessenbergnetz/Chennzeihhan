@@ -84,8 +84,6 @@ Page {
 
         VerticalScrollDecorator {}
 
-        FancyScroller {}
-
         ViewPlaceholder {
             enabled: type === 2
             text: qsTr("Information to the local breakdown of the vehicle registration plate system in %1 will be part of the premium version.").arg(title)
