@@ -150,6 +150,7 @@ Page {
                 color: Theme.primaryColor
                 font.pixelSize: Theme.fontSizeSmall
                 visible: appLicense
+                wrapMode: Text.WordWrap
             }
        }
 

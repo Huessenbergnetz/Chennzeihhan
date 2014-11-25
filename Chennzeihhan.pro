@@ -55,11 +55,18 @@ OTHER_FILES += \
     qml/Pages/Help.qml \
     qml/Dialogs/Sorting.qml \
     qml/Dialogs/SearchTarget.qml \
-    qml/Pages/Changelog.qml \
-    qml/Pages/ClEntry.qml \
-    qml/Pages/ClHeader.qml \
     qml/Common/AbcRow.qml \
-    qml/Common/SignGrid.qml
+    qml/Common/SignGrid.qml \
+    qml/BTComponents/AboutPage.qml \
+    qml/BTComponents/Changelog.qml \
+    qml/BTComponents/ChangelogDelegate.qml \
+    qml/BTComponents/ComboBoxList.qml \
+    qml/BTComponents/Contributors.qml \
+    qml/BTComponents/ContributorsDelegate.qml \
+    qml/BTComponents/FirstStartInfo.qml \
+    qml/BTComponents/PaypalChooser.qml \
+    qml/Models/ContributorsModel.qml \
+    qml/Models/ChangelogModel.qml
 
 HEADERS += \
     src/dbmanager.h \

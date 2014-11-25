@@ -1,6 +1,7 @@
 /*
-    Chennzeihhan - Vehicle Registration Code Database for SailfishOS
+    BTComponents - QML components shared between various Buschtrommel projects
     Copyright (C) 2014  Buschtrommel/Matthias Fehring
+    Contact: Matthias Fehring <kontakt@buschmann23.de>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,15 +19,27 @@
 */
 
 import QtQuick 2.0
-import Sailfish.Silica 1.0
 
-Text {
-    visible: false
-    clip: true
-    anchors { left: parent.left; right: parent.right; rightMargin: Theme.paddingLarge }
-    textFormat: Text.RichText
-    color: Theme.primaryColor
-    wrapMode: Text.WordWrap
-    font.pixelSize: Theme.fontSizeSmall
-    onLinkActivated: { Qt.openUrlExternally(link) }
+ListModel {
+    ListElement {
+        name: "Matthias Fehring (Buschmann)"
+        role: QT_TR_NOOP("Main developer, Chennzeihhan creator")
+        section: QT_TR_NOOP("Author")
+        image: "buschmann.png"
+        website: "http://www.buschmann23.de"
+        twitter: "buschmann23"
+        github: "buschmann23"
+    }
+
+    ListElement {
+        name: "Giuseppe Pignataro"
+        role: QT_TR_NOOP("Italian translation")
+        section: QT_TR_NOOP("Thanks to")
+    }
+
+    ListElement {
+        name: "Heimen Stoffels"
+        role: QT_TR_NOOP("Dutch (Netherlands) translation")
+        section: QT_TR_NOOP("Thanks to")
+    }
 }
