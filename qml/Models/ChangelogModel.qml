@@ -35,7 +35,8 @@ ListModel {
         date: 1415835700000
         entries: [
             ListElement { type: 0; issue: ""; description: "using BTComponents, improved About, Changelog and Contributors page" },
-            ListElement { type: 0; issue: ""; description: "Dutch (Netherlands) translation by Heimen Stoffel"},
+            ListElement { type: 0; issue: ""; description: "Dutch (Netherlands) translation by Heimen Stoffel" },
+            ListElement { type: 0; issue: ""; description: "choose application language in the settings" },
             ListElement { type: 1; issue: ""; description: "removed FancyScroller, not used anymore" },
             ListElement { type: 1; issue: ""; description: "translation updates" }
         ]

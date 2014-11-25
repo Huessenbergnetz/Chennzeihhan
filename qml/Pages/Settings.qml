@@ -252,6 +252,26 @@ Page {
 
                 onCurrentIndexChanged: config.set("display/search", currentIndex)
             }
+
+            SectionHeader { text: qsTr("Display language") }
+
+            LanguageChooser {
+                id: langChooser
+                anchors { left: parent.left; right: parent.right }
+                label: qsTr("Language")
+                choosenValue: config.get("display/language", "C")
+                textChoosen: languageModel.getLanguageName(choosenValue)
+                onChoosenValueChanged: config.set("display/language", choosenValue)
+            }
+
+            Text {
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingLarge; rightMargin: Theme.paddingLarge }
+                text: qsTr("Changing the display language is only applied after a restart of the application.")
+                wrapMode: Text.WordWrap
+                color: Theme.secondaryColor
+                textFormat: Text.PlainText
+                font.pixelSize: Theme.fontSizeSmall
+            }
         }
     }
 }

@@ -36,6 +36,7 @@
 #include "models/antecessormodel.h"
 #include "models/itemmodel.h"
 #include "models/countriesmodel.h"
+#include "models/languagemodelfilter.h"
 
 
 int main(int argc, char *argv[])
@@ -49,18 +50,24 @@ int main(int argc, char *argv[])
 
     QDir().mkpath(QDir::homePath().append(DATA_DIR));
 
-
-    QString locale = QLocale::system().name();
-    QTranslator *translator = new QTranslator;
-    if ((translator->load("chennzeihhan_"+locale, "/usr/share/harbour-chennzeihhan/translations")))
-        app->installTranslator(translator);
-
     DbManager dbman;
     dbman.checkDB();
 
     DownloadManager dlManager;
     Wikipedia wikipedia;
-    Configuration config;
+
+    Configuration *config = new Configuration;
+
+    QString locale = config->get("display/language", "C").toString();
+
+    if (locale == "C") {
+        locale = QLocale::system().name();
+    }
+
+    QTranslator *translator = new QTranslator;
+    if ((translator->load("chennzeihhan_"+locale, "/usr/share/harbour-chennzeihhan/translations")))
+        app->installTranslator(translator);
+
 
     QObject::connect(&dlManager, SIGNAL(dbDownloadStarted()), &dbman, SLOT(closeDB()));
 
@@ -70,6 +77,7 @@ int main(int argc, char *argv[])
     CountriesModel *abcModel = new CountriesModel();
     CountryModel *countryModel = new CountryModel();
     ItemModel *itemModel = new ItemModel();
+    LanguageModelFilter *languageModel = new LanguageModelFilter;
 
     AntecessorModel *antecessorModel = new AntecessorModel();
 
@@ -78,7 +86,7 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("dbMan", &dbman);
     view->rootContext()->setContextProperty("dlMan", &dlManager);
     view->rootContext()->setContextProperty("wp", &wikipedia);
-    view->rootContext()->setContextProperty("config", &config);
+    view->rootContext()->setContextProperty("config", config);
     view->rootContext()->setContextProperty("countriesModel", countriesModel);
     view->rootContext()->setContextProperty("countriesFavourites", countriesFavourites);
     view->rootContext()->setContextProperty("countriesSearch", countriesSearch);
@@ -86,6 +94,7 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("abcModel", abcModel);
     view->rootContext()->setContextProperty("itemModel", itemModel);
     view->rootContext()->setContextProperty("antecessorModel", antecessorModel);
+    view->rootContext()->setContextProperty("languageModel", languageModel);
     view->rootContext()->setContextProperty("versionString", VERSION_STRING);
     view->rootContext()->setContextProperty("versionInt", VERSION);
 

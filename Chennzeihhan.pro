@@ -16,7 +16,9 @@ SOURCES += \
     src/models/antecessormodel.cpp \
     src/models/countriesmodel.cpp \
     src/globals.cpp \
-    src/configuration.cpp
+    src/configuration.cpp \
+    src/models/languagemodel.cpp \
+    src/models/languagemodelfilter.cpp
 
 translations.path = /usr/share/harbour-chennzeihhan/translations
 translations.files = l10n/*.qm
@@ -66,7 +68,8 @@ OTHER_FILES += \
     qml/BTComponents/FirstStartInfo.qml \
     qml/BTComponents/PaypalChooser.qml \
     qml/Models/ContributorsModel.qml \
-    qml/Models/ChangelogModel.qml
+    qml/Models/ChangelogModel.qml \
+    qml/Pages/LanguageChooser.qml
 
 HEADERS += \
     src/dbmanager.h \
@@ -80,4 +83,6 @@ HEADERS += \
     src/models/athelper.h \
     src/models/antecessormodel.h \
     src/models/countriesmodel.h \
-    src/configuration.h
+    src/configuration.h \
+    src/models/languagemodel.h \
+    src/models/languagemodelfilter.h
