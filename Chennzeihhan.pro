@@ -37,16 +37,12 @@ OTHER_FILES += \
     qml/Views/MainView.qml \
     qml/Delegates/CountriesDelegate.qml \
     qml/Views/CountryView.qml \
-    l10n/chennzeihhan_en.ts \
-    l10n/chennzeihhan_de.ts \
-    data/carplates.sqlite \
     qml/ItemViews/ItemWebView.qml \
     qml/Delegates/CountryDelegate.qml \
     qml/ItemViews/de.qml \
     qml/ItemViews/ch.qml \
     qml/Pages/CoverPage.qml \
     qml/Pages/About.qml \
-    images/harbour-chennzeihhan-256.png \
     harbour-chennzeihhan.png \
     harbour-chennzeihhan.svg \
     qml/ItemViews/ItemEntry.qml \
