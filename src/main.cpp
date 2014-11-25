@@ -87,6 +87,7 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("itemModel", itemModel);
     view->rootContext()->setContextProperty("antecessorModel", antecessorModel);
     view->rootContext()->setContextProperty("versionString", VERSION_STRING);
+    view->rootContext()->setContextProperty("versionInt", VERSION);
 
     view->setSource(QUrl::fromLocalFile("/usr/share/harbour-chennzeihhan/qml/harbour-chennzeihhan.qml"));
     view->show();

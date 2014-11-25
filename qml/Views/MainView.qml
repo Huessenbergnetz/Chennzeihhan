@@ -21,6 +21,8 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Delegates"
 import "../Common"
+import "../BTComponents"
+import "../Models"
 
 Page {
     id: mainView
@@ -33,6 +35,17 @@ Page {
     property int activeRow: 0
     property bool showMainContent: dataBaseExists && (installedDbRevision >= minimumDbRevision) && searchString === ""
     property variant abc
+
+    FirstStartInfo {
+        visible: config.get("system/version", 0) < versionInt
+        name: "Chennzeihhan"
+        version: versionString
+        helpPage: "../Pages/Help.qml"
+        description: qsTr("Chennzeihhan (old high german for Kennzeichen/registration plate) is an offline database for vehicle registration plates that can find the district of the vehicle plate. It covers currently more than 1200 international and local codes from Austria, Germany and Switzerland.")
+        changeLogModel: ChangelogModel {}
+        changeLogTracker: "https://github.com/Buschtrommel/Chennzeihhan/issues/"
+        onClicked: config.set("system/version", versionInt)
+    }
 
     Component.onCompleted: {
         searchTarget = config.get("display/search", 0)
