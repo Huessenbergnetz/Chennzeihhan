@@ -1,3 +1,11 @@
+Version 1.2.6, 2014-11-26 13:59:00 +0100
+
+* NEW: using BTComponents, improved About, Changelog, Contributors pages
+* NEW: Dutch (Netherlands) translation by Heimen Stoffels
+* NEW: choose application language in the settings
+* Changed: removed FancyScroller, not used anymore
+* Improved: translation updates
+
 Version 1.2.5, 2014-03-12 17:13:00 +0100
 
 * Fixed: loading of abc grid after first DB installation
