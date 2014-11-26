@@ -32,7 +32,7 @@ ListModel {
 
     ListElement {
         version: "1.2.6"
-        date: 1415835700000
+        date: 1417006768000
         entries: [
             ListElement { type: 0; issue: ""; description: "using BTComponents, improved About, Changelog and Contributors page" },
             ListElement { type: 0; issue: ""; description: "Dutch (Netherlands) translation by Heimen Stoffel" },
