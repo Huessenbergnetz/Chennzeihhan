@@ -9,17 +9,17 @@
     <message>
         <location filename="../qml/Pages/About.qml" line="33"/>
         <source>Source code is licensed under the &lt;a href=&apos;http://www.gnu.org/licenses/gpl-2.0.en.html&apos;&gt;GNU GPL v2&lt;/a&gt;.&lt;br /&gt;Car plates database is licensed under &lt;a href=&apos;http://creativecommons.org/licenses/by-nc-sa/4.0/&apos;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation>Broncode is gelicenseerd onder de &lt;a href=&apos;http://www.gnu.org/licenses/gpl-2.0.en.html&apos;&gt;GNU GPL v2&lt;/a&gt;-licentie.&lt;br /&gt;De kenteken-database is gelicenseerd onder de &lt;a href=&apos;http://creativecommons.org/licenses/by-nc-sa/4.0/&apos;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../qml/Pages/About.qml" line="48"/>
         <source>Munich</source>
-        <translation type="unfinished"/>
+        <translation>München</translation>
     </message>
     <message>
         <location filename="../qml/Pages/About.qml" line="49"/>
         <source>Germany</source>
-        <translation type="unfinished"/>
+        <translation>Duitsland</translation>
     </message>
 </context>
 <context>
@@ -27,52 +27,52 @@
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="77"/>
         <source>Homepage</source>
-        <translation type="unfinished"/>
+        <translation>Website</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="82"/>
         <source>Privacy Policy</source>
-        <translation type="unfinished"/>
+        <translation>Privacyovereenkomst</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="87"/>
         <source>Changelog</source>
-        <translation type="unfinished"/>
+        <translation>Wijzigingslog</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="92"/>
         <source>Contributors</source>
-        <translation type="unfinished"/>
+        <translation>Bijdragers</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="102"/>
         <source>About</source>
-        <translation type="unfinished"/>
+        <translation>Over</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="161"/>
         <source>Contact</source>
-        <translation type="unfinished"/>
+        <translation>Contact</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="245"/>
         <source>Contribute</source>
-        <translation type="unfinished"/>
+        <translation>Bijdragen</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="253"/>
         <source>Translate</source>
-        <translation type="unfinished"/>
+        <translation>Vertalen</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="260"/>
         <source>Report bugs</source>
-        <translation type="unfinished"/>
+        <translation>Bugs rapporteren</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="283"/>
         <source>3rd party licenses</source>
-        <translation type="unfinished"/>
+        <translation>Licenties van derde partijen</translation>
     </message>
 </context>
 <context>
@@ -223,22 +223,22 @@
     <message>
         <location filename="../qml/BTComponents/Changelog.qml" line="62"/>
         <source>New</source>
-        <translation type="unfinished"/>
+        <translation>Nieuw</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/Changelog.qml" line="81"/>
         <source>Improved</source>
-        <translation type="unfinished"/>
+        <translation>Verbeterd</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/Changelog.qml" line="100"/>
         <source>Fixed</source>
-        <translation type="unfinished"/>
+        <translation>Opgelost</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/Changelog.qml" line="119"/>
         <source>Note</source>
-        <translation type="unfinished"/>
+        <translation>Noot</translation>
     </message>
 </context>
 <context>
@@ -246,7 +246,7 @@
     <message>
         <location filename="../qml/BTComponents/Contributors.qml" line="34"/>
         <source>Contributors</source>
-        <translation type="unfinished"/>
+        <translation>Bijdragers</translation>
     </message>
 </context>
 <context>
@@ -254,12 +254,12 @@
     <message>
         <location filename="../qml/BTComponents/ContributorsDelegate.qml" line="127"/>
         <source>Website</source>
-        <translation type="unfinished"/>
+        <translation>Website</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/ContributorsDelegate.qml" line="152"/>
         <source>Sina Weibo</source>
-        <translation type="unfinished"/>
+        <translation>Sina Weibo</translation>
     </message>
 </context>
 <context>
@@ -267,28 +267,28 @@
     <message>
         <location filename="../qml/Models/ContributorsModel.qml" line="26"/>
         <source>Main developer, Chennzeihhan creator</source>
-        <translation type="unfinished"/>
+        <translation>Hoofdontwikkelaar, Chennzeihhan-bedenker</translation>
     </message>
     <message>
         <location filename="../qml/Models/ContributorsModel.qml" line="27"/>
         <source>Author</source>
-        <translation type="unfinished"/>
+        <translation>Auteur</translation>
     </message>
     <message>
         <location filename="../qml/Models/ContributorsModel.qml" line="36"/>
         <source>Italian translation</source>
-        <translation type="unfinished"/>
+        <translation>Italiaanse vertaling</translation>
     </message>
     <message>
         <location filename="../qml/Models/ContributorsModel.qml" line="37"/>
         <location filename="../qml/Models/ContributorsModel.qml" line="43"/>
         <source>Thanks to</source>
-        <translation type="unfinished"/>
+        <translation>Bedankt aan</translation>
     </message>
     <message>
         <location filename="../qml/Models/ContributorsModel.qml" line="42"/>
         <source>Dutch (Netherlands) translation</source>
-        <translation type="unfinished"/>
+        <translation>Nederlandse (Nederland) vertaling</translation>
     </message>
 </context>
 <context>
@@ -507,22 +507,22 @@
         <location filename="../qml/BTComponents/FirstStartInfo.qml" line="76"/>
         <source>Welcome to %1 %2</source>
         <comment>First is app name, second is version number</comment>
-        <translation type="unfinished"/>
+        <translation>Welkom bij %1 %2</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/FirstStartInfo.qml" line="91"/>
         <source>Last changes</source>
-        <translation type="unfinished"/>
+        <translation>Nieuwste wijzigingen</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/FirstStartInfo.qml" line="154"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation>Hulp</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/FirstStartInfo.qml" line="160"/>
         <source>Close</source>
-        <translation type="unfinished"/>
+        <translation>Sluiten</translation>
     </message>
 </context>
 <context>
@@ -600,7 +600,7 @@
     <message>
         <location filename="../qml/Pages/LanguageChooser.qml" line="91"/>
         <source>Search</source>
-        <translation type="unfinished"/>
+        <translation>Zoeken</translation>
     </message>
 </context>
 <context>
@@ -608,27 +608,27 @@
     <message>
         <location filename="../src/models/languagemodel.cpp" line="59"/>
         <source>System default</source>
-        <translation type="unfinished"/>
+        <translation>Systeemstandaard</translation>
     </message>
     <message>
         <location filename="../src/models/languagemodel.cpp" line="60"/>
         <source>English</source>
-        <translation type="unfinished"/>
+        <translation>Engels</translation>
     </message>
     <message>
         <location filename="../src/models/languagemodel.cpp" line="61"/>
         <source>German</source>
-        <translation type="unfinished"/>
+        <translation>Duitsland</translation>
     </message>
     <message>
         <location filename="../src/models/languagemodel.cpp" line="62"/>
         <source>Italian</source>
-        <translation type="unfinished"/>
+        <translation>Italiaans</translation>
     </message>
     <message>
         <location filename="../src/models/languagemodel.cpp" line="63"/>
         <source>Dutch (Netherlands)</source>
-        <translation type="unfinished"/>
+        <translation>Nederlands (Nederland)</translation>
     </message>
 </context>
 <context>
@@ -636,7 +636,7 @@
     <message>
         <location filename="../qml/Views/MainView.qml" line="44"/>
         <source>Chennzeihhan (old high german for Kennzeichen/registration plate) is an offline database for vehicle registration plates that can find the district of the vehicle plate. It covers currently more than 1200 international and local codes from Austria, Germany and Switzerland.</source>
-        <translation type="unfinished"/>
+        <translation>Chennzeihhan (oud-Hoogduits voor &quot;Kenteken/Registratieplaat&quot;) is een offline-database voor kentekens van motorvoertuigen die het district van de plaathouder kan vinden. Het bevat momenteel meer dan 1200 internationale en lokale codes van Oostenrijk, Duitsland en Zwitserland.</translation>
     </message>
     <message>
         <location filename="../qml/Views/MainView.qml" line="91"/>
@@ -701,122 +701,122 @@
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="127"/>
         <source>Currency</source>
-        <translation type="unfinished"/>
+        <translation>Munteenheid</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="128"/>
         <source>Euro</source>
-        <translation type="unfinished"/>
+        <translation>Eur</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="129"/>
         <source>US Dollar</source>
-        <translation type="unfinished"/>
+        <translation>Amerikaanse Dollar</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="130"/>
         <source>Australian Dollar</source>
-        <translation type="unfinished"/>
+        <translation>Australische Dollar</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="131"/>
         <source>Brazilian Real</source>
-        <translation type="unfinished"/>
+        <translation>Braziliaanse Reaal</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="132"/>
         <source>Pound Sterling</source>
-        <translation type="unfinished"/>
+        <translation>Pond</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="133"/>
         <source>Danish Krone</source>
-        <translation type="unfinished"/>
+        <translation>Deense Kroo</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="134"/>
         <source>Hong Kong Dollar</source>
-        <translation type="unfinished"/>
+        <translation>Hong Kong Dollar</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="135"/>
         <source>Israel New Shekel</source>
-        <translation type="unfinished"/>
+        <translation>Israëlische Nieuwe Schenkel</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="136"/>
         <source>Japanese Yen</source>
-        <translation type="unfinished"/>
+        <translation>Japanse Yen</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="137"/>
         <source>Canadian Dollar</source>
-        <translation type="unfinished"/>
+        <translation>Canadese Dollar</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="138"/>
         <source>Mexican Peso</source>
-        <translation type="unfinished"/>
+        <translation>Mexicaanse Peso</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="139"/>
         <source>New Taiwan Dollar</source>
-        <translation type="unfinished"/>
+        <translation>Nieuwe Taiwanese Dollar</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="140"/>
         <source>New Zealand Dollar</source>
-        <translation type="unfinished"/>
+        <translation>Nieuw-Zeelandse Dollar</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="141"/>
         <source>Norwegian Krone</source>
-        <translation type="unfinished"/>
+        <translation>Noorse Kroo</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="142"/>
         <source>Philippine Peso</source>
-        <translation type="unfinished"/>
+        <translation>Filipijnse Peso</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="143"/>
         <source>Polish Zloty</source>
-        <translation type="unfinished"/>
+        <translation>Poolse Zloty</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="144"/>
         <source>Russian Ruble</source>
-        <translation type="unfinished"/>
+        <translation>Russische Roebel</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="145"/>
         <source>Swedish Krone</source>
-        <translation type="unfinished"/>
+        <translation>Zweedse Kroo</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="146"/>
         <source>Swiss Franc</source>
-        <translation type="unfinished"/>
+        <translation>Zwitserse Frank</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="147"/>
         <source>Singapore Dollar</source>
-        <translation type="unfinished"/>
+        <translation>Singapoerese Dollar</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="148"/>
         <source>Thai Baht</source>
-        <translation type="unfinished"/>
+        <translation>Thaise Baht</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="149"/>
         <source>Czech Koruna</source>
-        <translation type="unfinished"/>
+        <translation>Tjechische Kroon</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="150"/>
         <source>Hungarian Forint</source>
-        <translation type="unfinished"/>
+        <translation>Hongaarse Florijn</translation>
     </message>
 </context>
 <context>
@@ -915,17 +915,17 @@
     <message>
         <location filename="../qml/Pages/Settings.qml" line="256"/>
         <source>Display language</source>
-        <translation type="unfinished"/>
+        <translation>Weergavetaal</translation>
     </message>
     <message>
         <location filename="../qml/Pages/Settings.qml" line="261"/>
         <source>Language</source>
-        <translation type="unfinished"/>
+        <translation>Taal</translation>
     </message>
     <message>
         <location filename="../qml/Pages/Settings.qml" line="269"/>
         <source>Changing the display language is only applied after a restart of the application.</source>
-        <translation type="unfinished"/>
+        <translation>Het wijzigen van de weergavetaal vereist een herstart van de applicatie.</translation>
     </message>
 </context>
 <context>
