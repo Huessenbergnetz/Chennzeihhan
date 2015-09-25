@@ -37,7 +37,7 @@ Page {
 
             Label {
                 id: signLabel
-                anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge; verticalCenter: parent.verticalCenter }
+                anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                 text: qsTr("Code")
             }
             onClicked: { searchTarget = 0; name = signLabel.text; root.accepted(); pageStack.pop() }
@@ -49,7 +49,7 @@ Page {
 
             Label {
                 id: nameLabel
-                anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge; verticalCenter: parent.verticalCenter }
+                anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                 text: qsTr("Name")
             }
             onClicked: { searchTarget = 1; name = signLabel.text; root.accepted(); pageStack.pop() }
@@ -61,7 +61,7 @@ Page {
 
             Label {
                 id: bothLabel
-                anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge; verticalCenter: parent.verticalCenter }
+                anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                 text: qsTr("Code and Name")
             }
             onClicked: { searchTarget = 2; name = bothLabel.text; root.accepted(); pageStack.pop() }

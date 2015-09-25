@@ -75,7 +75,7 @@ Page {
             SectionHeader { text: qsTr("Database") }
 
             Label {
-                anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge }
+                anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin }
                 textFormat: Text.PlainText
                 visible: localDbVersion === 0 && remoteDbVersion === 0 && !checkingDBVersion
                 wrapMode: Text.WordWrap
@@ -111,7 +111,7 @@ Page {
             }
 
             Row {
-                anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge }
+                anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin }
                 visible: (localDbVersion > 0 || remoteDbVersion > 0) && !downloadDBProgress.visible && !settings.checkingDBVersion
                 add: Transition { AddAnimation {} }
 
@@ -196,7 +196,7 @@ Page {
             }
 
             Label {
-                anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge }
+                anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin }
                 textFormat: Text.PlainText
                 visible: remoteDbVersion > 0 && remoteDbVersion > localDbVersion && localDbVersion > 0
                 wrapMode: Text.WordWrap
@@ -205,7 +205,7 @@ Page {
 
             Text {
                 id: changelogText
-                anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge }
+                anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin }
                 textFormat: Text.RichText
                 visible: remoteDbVersion > 0 && remoteDbVersion > localDbVersion && localDbVersion > 0
                 wrapMode: Text.WordWrap
@@ -265,7 +265,7 @@ Page {
             }
 
             Text {
-                anchors { left: parent.left; right: parent.right; leftMargin: Theme.paddingLarge; rightMargin: Theme.paddingLarge }
+                anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
                 text: qsTr("Changing the display language is only applied after a restart of the application.")
                 wrapMode: Text.WordWrap
                 color: Theme.secondaryColor

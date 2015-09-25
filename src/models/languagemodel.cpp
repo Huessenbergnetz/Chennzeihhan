@@ -20,6 +20,7 @@ QHash<int, QByteArray> LanguageModel::roleNames() const {
 
 int LanguageModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent)
     return m_langs.size();
 }
 
