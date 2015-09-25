@@ -62,17 +62,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/BTComponents/AboutPage.qml" line="253"/>
+        <location filename="../qml/BTComponents/AboutPage.qml" line="254"/>
         <source>Translate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/BTComponents/AboutPage.qml" line="260"/>
+        <location filename="../qml/BTComponents/AboutPage.qml" line="261"/>
         <source>Report bugs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/BTComponents/AboutPage.qml" line="283"/>
+        <location filename="../qml/BTComponents/AboutPage.qml" line="284"/>
         <source>3rd party licenses</source>
         <translation type="unfinished"></translation>
     </message>
@@ -517,12 +517,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/BTComponents/FirstStartInfo.qml" line="154"/>
+        <location filename="../qml/BTComponents/FirstStartInfo.qml" line="155"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/BTComponents/FirstStartInfo.qml" line="160"/>
+        <location filename="../qml/BTComponents/FirstStartInfo.qml" line="161"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
@@ -608,27 +608,27 @@
 <context>
     <name>LanguageModel</name>
     <message>
-        <location filename="../src/models/languagemodel.cpp" line="59"/>
+        <location filename="../src/models/languagemodel.cpp" line="60"/>
         <source>System default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/languagemodel.cpp" line="60"/>
+        <location filename="../src/models/languagemodel.cpp" line="61"/>
         <source>English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/languagemodel.cpp" line="61"/>
+        <location filename="../src/models/languagemodel.cpp" line="62"/>
         <source>German</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/languagemodel.cpp" line="62"/>
+        <location filename="../src/models/languagemodel.cpp" line="63"/>
         <source>Italian</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/languagemodel.cpp" line="63"/>
+        <location filename="../src/models/languagemodel.cpp" line="64"/>
         <source>Dutch (Netherlands)</source>
         <translation type="unfinished"></translation>
     </message>
