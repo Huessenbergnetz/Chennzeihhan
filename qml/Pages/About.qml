@@ -29,7 +29,7 @@ AboutPage {
     appDescription: qsTr("Vehicle registation plates database for Sailfish OS")
     appHomepage: "http://www.buschmann23.de/entwicklung/anwendungen/chennzeihhan/"
     appCover: "/usr/share/harbour-chennzeihhan/images/banner.png"
-    appCopyright: "© 2014, Buschtrommel"
+    appCopyright: "© 2014-2015, Buschtrommel"
     appLicense: qsTr("Source code is licensed under the <a href='http://www.gnu.org/licenses/gpl-2.0.en.html'>GNU GPL v2</a>.<br />Car plates database is licensed under <a href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.")
 
     changelogModel: ChangelogModel {}
