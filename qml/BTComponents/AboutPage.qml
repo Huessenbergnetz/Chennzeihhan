@@ -112,7 +112,7 @@ Page {
 
        Column {
            id: aboutCol
-           anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; top: imgCol.bottom; topMargin: Theme.paddingMedium }
+           anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin; top: imgCol.bottom; topMargin: Theme.paddingMedium }
            spacing: Theme.paddingSmall
 
             Label {
@@ -246,7 +246,7 @@ Page {
 
             Row {
                 id: contributeRow
-                width: parent.width - Theme.horizontalPageMargin
+                width: parent.width - Theme.horizontalPageMargin - spacing
                 spacing: Theme.paddingMedium
 
                 Button {
