@@ -26,7 +26,9 @@
 #include <QSettings>
 #include <QDebug>
 
+#ifndef CLAZY
 #include <sailfishapp.h>
+#endif
 #include "globals.h"
 #include "dbmanager.h"
 #include "downloadmanager.h"
@@ -41,7 +43,11 @@
 
 int main(int argc, char *argv[])
 {
+#ifndef CLAZY
     QGuiApplication* app = SailfishApp::application(argc, argv);
+#else
+    QGuiApplication* app = new QGuiApplication(argc, argv);
+#endif
 
     app->setOrganizationName("harbour-chennzeihhan");
     app->setOrganizationDomain("buschmann23.de");
@@ -81,7 +87,11 @@ int main(int argc, char *argv[])
 
     AntecessorModel *antecessorModel = new AntecessorModel();
 
+#ifndef CLAZY
     QQuickView* view = SailfishApp::createView();
+#else
+    QQuickView* view = new QQuickView;
+#endif
 
     view->rootContext()->setContextProperty("dbMan", &dbman);
     view->rootContext()->setContextProperty("dlMan", &dlManager);

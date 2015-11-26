@@ -22,7 +22,7 @@ signals:
 public slots:
 
 private:
-    QMap<QString, QString> reqTranslations(const QString &langCode, const QString &entry, const QString &cont = "");
+    QMap<QString, QString> reqTranslations(const QString &langCode, const QString &entry, const QString &cont = QString());
     QNetworkAccessManager manager;
     QNetworkReply *reply;
 

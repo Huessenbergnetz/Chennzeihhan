@@ -123,7 +123,7 @@ QString DeHelper::getType(int type)
         value = tr("Officials of the");
         break;
     default:
-        value = "";
+        value = QStringLiteral("");
         break;
     }
 
@@ -135,7 +135,7 @@ QString DeHelper::getType(int type)
 bool DeHelper::isValid(const QString &assign, int closed)
 {
 
-    if (assign.contains("-") || closed > 0)
+    if (assign.contains('-') || closed > 0)
     {
         return false;
     } else {

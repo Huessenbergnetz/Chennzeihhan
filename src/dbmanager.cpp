@@ -44,10 +44,10 @@ bool DbManager::checkDB()
 
 bool DbManager::openDB()
 {
-    db = QSqlDatabase::addDatabase("QSQLITE");
+    db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"));
 
     db.setDatabaseName(QDir::homePath().append(DATA_DIR).append("/carplates.sqlite"));
-    db.setConnectOptions("QSQLITE_OPEN_READONLY");
+    db.setConnectOptions(QStringLiteral("QSQLITE_OPEN_READONLY"));
 
     bool dbStatus = db.open();
 
