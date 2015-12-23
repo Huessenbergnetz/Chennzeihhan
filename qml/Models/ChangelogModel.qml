@@ -26,9 +26,17 @@
   3 - Note
 */
 
-import QtQuick 2.0
+import QtQuick 2.2
 
 ListModel {
+
+    ListElement {
+        version: "1.2.7"
+        date: 1443201404000
+        entries: [
+            ListElement { type: 1; issue: ""; description: "adopt to some changes in Sailfish OS 1.1.9.28" }
+        ]
+    }
 
     ListElement {
         version: "1.2.6"

@@ -124,7 +124,7 @@ QString AtHelper::getType(int type)
         value = tr("Border Control");
         break;
     default:
-        value = "";
+        value = QStringLiteral("");
         break;
     }
 

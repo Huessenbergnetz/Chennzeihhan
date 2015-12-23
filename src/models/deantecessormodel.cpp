@@ -73,5 +73,5 @@ QVariant DeAntecessorModel::data(const QModelIndex &index, int role) const
 
 void DeAntecessorModel::refresh(int successor)
 {
-    this->setQuery(QString("SELECT id AS itemId, sign, name, type FROM de WHERE successor = %1").arg(successor));
+    this->setQuery(QStringLiteral("SELECT id AS itemId, sign, name, type FROM de WHERE successor = %1").arg(successor));
 }

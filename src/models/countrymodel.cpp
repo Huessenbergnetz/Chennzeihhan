@@ -62,17 +62,17 @@ QVariant CountryModel::data(const QModelIndex &index, int role) const
         value = QSqlQueryModel::data(modelIndex, Qt::DisplayRole);
         if (columnIdx == 3) {
 
-            if (countryCode == "de") {
+            if (countryCode == QLatin1String("de")) {
                 value = deHelper->getType(value.toInt());
-            } else if (countryCode == "at") {
+            } else if (countryCode == QLatin1String("at")) {
                 value = atHelper->getType(value.toInt());
             }
 
         } else if (columnIdx == 4) {
 
-            if (countryCode == "de") {
+            if (countryCode == QLatin1String("de")) {
                 value = deHelper->getState(value.toInt());
-            } else if (countryCode == "at") {
+            } else if (countryCode == QLatin1String("at")) {
                 value = atHelper->getState(value.toInt());
             }
 
@@ -90,10 +90,10 @@ void CountryModel::refresh(const QString &cc, int sort, int searchTarget, const 
 
     QString queryString;
 
-    if (cc == "ch") {
-        queryString = QString("SELECT id AS itemId, sign, name, '%1' AS type, '' AS state, '' AS closed FROM ch").arg(tr("Canton"));
+    if (cc == QLatin1String("ch")) {
+        queryString = QStringLiteral("SELECT id AS itemId, sign, name, '%1' AS type, '' AS state, '' AS closed FROM ch").arg(tr("Canton"));
     } else {
-        queryString = QString("SELECT id AS itemId, sign, name, type, state, closed FROM %1").arg(cc);
+        queryString = QStringLiteral("SELECT id AS itemId, sign, name, type, state, closed FROM %1").arg(cc);
     }
 
     if (!search.isEmpty())
@@ -105,13 +105,13 @@ void CountryModel::refresh(const QString &cc, int sort, int searchTarget, const 
         switch(searchTarget)
         {
         case 1:
-            queryString.append(QString(" WHERE name LIKE \"%1\"").arg(t_search));
+            queryString.append(QStringLiteral(" WHERE name LIKE \"%1\"").arg(t_search));
             break;
         case 2:
-            queryString.append(QString(" WHERE (name LIKE \"%1\") OR (sign LIKE \"%2\")").arg(t_search).arg(t_search.toUpper()));
+            queryString.append(QStringLiteral(" WHERE (name LIKE \"%1\") OR (sign LIKE \"%2\")").arg(t_search, t_search.toUpper()));
             break;
         default:
-            queryString.append(QString(" WHERE sign LIKE \"%1\"").arg(t_search.toUpper()));
+            queryString.append(QStringLiteral(" WHERE sign LIKE \"%1\"").arg(t_search.toUpper()));
             break;
         }
     }

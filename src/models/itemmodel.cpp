@@ -34,6 +34,8 @@ QVariantMap ItemModel::getItemData(const QString &cc, int id)
         return getChData(id);
     } else if (cc == "at") {
         return getAtData(id);
+    } else {
+        return QVariantMap();
     }
 }
 
