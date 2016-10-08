@@ -608,28 +608,8 @@
 <context>
     <name>LanguageModel</name>
     <message>
-        <location filename="../src/models/languagemodel.cpp" line="60"/>
+        <location filename="../src/models/languagemodel.cpp" line="106"/>
         <source>System default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/languagemodel.cpp" line="61"/>
-        <source>English</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/languagemodel.cpp" line="62"/>
-        <source>German</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/languagemodel.cpp" line="63"/>
-        <source>Italian</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/languagemodel.cpp" line="64"/>
-        <source>Dutch (Netherlands)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -847,75 +827,75 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="55"/>
+        <location filename="../qml/Pages/Settings.qml" line="56"/>
         <source>Check for new database version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="61"/>
+        <location filename="../qml/Pages/Settings.qml" line="62"/>
         <source>Download new database version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="73"/>
+        <location filename="../qml/Pages/Settings.qml" line="74"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="75"/>
+        <location filename="../qml/Pages/Settings.qml" line="76"/>
         <source>Database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="82"/>
+        <location filename="../qml/Pages/Settings.qml" line="83"/>
         <source>Currently there is no database installed. Please use the pully menu to check for new DB version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="130"/>
-        <location filename="../qml/Pages/Settings.qml" line="148"/>
+        <location filename="../qml/Pages/Settings.qml" line="131"/>
+        <location filename="../qml/Pages/Settings.qml" line="149"/>
         <source>Rev.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="203"/>
+        <location filename="../qml/Pages/Settings.qml" line="204"/>
         <source>Changes in this version:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="223"/>
+        <location filename="../qml/Pages/Settings.qml" line="224"/>
         <source>Display</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="228"/>
+        <location filename="../qml/Pages/Settings.qml" line="229"/>
         <source>Default ordering</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/Pages/Settings.qml" line="233"/>
-        <location filename="../qml/Pages/Settings.qml" line="248"/>
-        <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/Settings.qml" line="234"/>
         <location filename="../qml/Pages/Settings.qml" line="249"/>
+        <source>Code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="235"/>
+        <location filename="../qml/Pages/Settings.qml" line="250"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="243"/>
+        <location filename="../qml/Pages/Settings.qml" line="244"/>
         <source>Default search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="250"/>
+        <location filename="../qml/Pages/Settings.qml" line="251"/>
         <source>Both</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="256"/>
+        <location filename="../qml/Pages/Settings.qml" line="257"/>
         <source>Display language</source>
         <translation type="unfinished"></translation>
     </message>
@@ -925,7 +905,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="269"/>
+        <location filename="../qml/Pages/Settings.qml" line="262"/>
         <source>Changing the display language is only applied after a restart of the application.</source>
         <translation type="unfinished"></translation>
     </message>
