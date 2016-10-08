@@ -11,12 +11,10 @@ class CountriesModel : public QSqlQueryModel
 {
     Q_OBJECT
 public:
-    explicit CountriesModel(QObject *parent = 0);
+    explicit CountriesModel(QObject *parent = nullptr);
 
     QVariant data(const QModelIndex &index, int role) const;
     QHash<int,QByteArray> roleNames() const;
-
-signals:
 
 public slots:
     void refresh(const QString &search, int target, int sort);

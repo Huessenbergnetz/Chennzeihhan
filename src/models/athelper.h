@@ -7,15 +7,10 @@ class AtHelper : public QObject
 {
     Q_OBJECT
 public:
-    explicit AtHelper(QObject *parent = 0);
+    explicit AtHelper(QObject *parent = nullptr);
 
     QString getState(int state);
     QString getType(int type);
-
-signals:
-
-public slots:
-
 };
 
 #endif // ATHELPER_H

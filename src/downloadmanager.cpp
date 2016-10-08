@@ -25,6 +25,7 @@
 #include <QEventLoop>
 #include <QDir>
 #include <QUrl>
+#include <QNetworkRequest>
 #ifdef QT_DEBUG
 #include <QDebug>
 #endif
@@ -114,7 +115,7 @@ void DownloadManager::downloadDBFinished()
     m_process->start(QStringLiteral("gzip"), QStringList({QStringLiteral("-d"), m_dbCacheFileName}));
 
 #ifdef QT_DEBUG
-    qDebug() << m_process->program() << args;
+    qDebug() << m_process->program() << m_process->arguments();
 #endif
 
     if (m_process->exitCode() != 0) {

@@ -4,7 +4,6 @@
 #include <QObject>
 #include <QFile>
 #include <QNetworkAccessManager>
-#include <QNetworkRequest>
 #include <QSettings>
 #include "globals.h"
 
@@ -15,7 +14,7 @@ class DownloadManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit DownloadManager(QObject *parent = 0);
+    explicit DownloadManager(QObject *parent = nullptr);
 
     Q_INVOKABLE void downloadDB();
     Q_INVOKABLE int getOnlineDBVersion();
@@ -23,7 +22,7 @@ public:
 
 signals:
     void finishedDbDownload();
-    void gotDBVersion(int oldVersion, int newVersion, QString changelog, QString cSize, QString uSize);
+    void gotDBVersion(int oldVersion, int newVersion, const QString &changelog, const QString &cSize, const QString &uSize);
     void failedDBVersion();
     void dbDownloadProgress(int rec, int tot);
     void dbDownloadFinished();

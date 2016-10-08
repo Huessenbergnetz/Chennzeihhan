@@ -18,7 +18,16 @@
 */
 
 #include "wikipedia.h"
+#include <QNetworkReply>
+#include <QLocale>
+#include <QEventLoop>
+#include <QDomDocument>
+#include <QDomNodeList>
+#include <QUrlQuery>
+#include <QSettings>
+#ifdef QT_DEBUG
 #include <QDebug>
+#endif
 
 Wikipedia::Wikipedia(QObject *parent) :
     QObject(parent)
@@ -26,39 +35,56 @@ Wikipedia::Wikipedia(QObject *parent) :
 }
 
 
-QString Wikipedia::getTranslation(const QString &langCode, const QString &entry)
+QUrl Wikipedia::getTranslation(const QString &langCode, const QString &entry)
 {
-    QString lang = QLocale::system().name().left(2);
+    QSettings s;
+    QString lang = s.value(QStringLiteral("display/language")).toString().left(2).toLower();
+    if (lang.isEmpty() || (lang == QLatin1String("c"))) {
+        lang = QLocale::system().name().left(2);
+    }
 
-    QString wpURL;
+//    QString lang = QLocale::system().name().left(2);
+
+    QUrl wpURL;
+    wpURL.setScheme(QStringLiteral("https"));
+
 
     if (lang == langCode) {
-        wpURL = "http://" + langCode + ".wikipedia.org/wiki/" + entry;
+        wpURL.setHost(QStringLiteral("%1.wikipedia.org").arg(langCode));
+        wpURL.setPath(QStringLiteral("/wiki/%1").arg(entry));
     } else {
 
         QString enFallback;
 
         QMap<QString, QString> interWiki = reqTranslations(langCode, entry);
-        if (interWiki.contains("en"))
-            enFallback = interWiki.value("en");
+        if (interWiki.contains(QStringLiteral("en"))) {
+            enFallback = interWiki.value(QStringLiteral("en"));
+        }
 
-        while (!interWiki.contains(lang) && interWiki["cont"] != "") {
+        while (!interWiki.contains(lang) && (interWiki[QStringLiteral("cont")] != QStringLiteral(""))) {
 
-            interWiki = reqTranslations(langCode, entry, interWiki["cont"]);
+            interWiki = reqTranslations(langCode, entry, interWiki[QStringLiteral("cont")]);
 
-            if (interWiki.contains("en"))
-                enFallback = interWiki.value("en");
+            if (interWiki.contains(QStringLiteral("en"))) {
+                enFallback = interWiki.value(QStringLiteral("en"));
+            }
         }
 
         if (interWiki.contains(lang)) {
-            wpURL = "http://" + lang + ".wikipedia.org/wiki/" + interWiki[lang];
+            wpURL.setHost(QStringLiteral("%1.wikipedia.org").arg(lang));
+            wpURL.setPath(QStringLiteral("/wiki/%1").arg(interWiki[lang]));
         } else if (!enFallback.isEmpty()) {
-            wpURL = "http://en.wikipedia.org/wiki/" + enFallback;
+            wpURL.setHost(QStringLiteral("en.wikipedia.org"));
+            wpURL.setPath(QStringLiteral("/wiki/%1").arg(enFallback));
         } else {
-            wpURL = "http://" + langCode + ".wikipedia.org/wiki/" + entry;
+            wpURL.setHost(QStringLiteral("%1.wikipedia.org").arg(langCode));
+            wpURL.setPath(QStringLiteral("/wiki/%1").arg(entry));
         }
 
+#ifdef QT_DEBUG
         qDebug() << "Wikipedia URL: " << wpURL;
+#endif
+
     }
 
     return wpURL;
@@ -71,18 +97,27 @@ QMap<QString, QString> Wikipedia::reqTranslations(const QString &langCode, const
 {
     QMap<QString, QString> result;
 
-    QString query = "http://" + langCode + ".wikipedia.org/w/api.php?action=query&titles=" + entry + "&prop=langlinks&format=xml";
+    QUrlQuery uq;
+    uq.addQueryItem(QStringLiteral("action"), QStringLiteral("query"));
+    uq.addQueryItem(QStringLiteral("titles"), entry);
+    uq.addQueryItem(QStringLiteral("prop"), QStringLiteral("langlinks"));
+    uq.addQueryItem(QStringLiteral("format"), QStringLiteral("xml"));
+    if (!cont.isEmpty()) {
+        uq.addQueryItem(QStringLiteral("llcontinue"), cont);
+    }
 
-    if (!cont.isEmpty())
-        query.append("&llcontinue=").append(cont);
+    QUrl url;
+    url.setScheme(QStringLiteral("https"));
+    url.setHost(QStringLiteral("%1.wikipedia.org").arg(langCode));
+    url.setPath(QStringLiteral("/w/api.php"));
+    url.setQuery(uq);
 
-    QUrl url(query);
 
     QNetworkRequest request(url);
     reply = manager.get(request);
 
     QEventLoop dlLoop;
-    connect(reply, SIGNAL(finished()), &dlLoop, SLOT(quit()));
+    connect(reply, &QNetworkReply::finished, &dlLoop, &QEventLoop::quit);
     dlLoop.exec();
 
     if (reply->error() == QNetworkReply::NoError)
@@ -90,18 +125,18 @@ QMap<QString, QString> Wikipedia::reqTranslations(const QString &langCode, const
         QDomDocument wpResult;
         wpResult.setContent(reply->readAll());
 
-        QDomNodeList lls = wpResult.elementsByTagName("ll");
+        QDomNodeList lls = wpResult.elementsByTagName(QStringLiteral("ll"));
 
         for (int i = 0; i < lls.length(); ++i) {
-            result[lls.item(i).toElement().attribute("lang")] = lls.item(i).toElement().text();
+            result[lls.item(i).toElement().attribute(QStringLiteral("lang"))] = lls.item(i).toElement().text();
         }
 
-        QDomNodeList cont = wpResult.elementsByTagName("query-continue");
+        QDomNodeList cont = wpResult.elementsByTagName(QStringLiteral("query-continue"));
 
         if (!cont.isEmpty()) {
-            result["cont"] = cont.item(0).firstChildElement().attribute("llcontinue");
+            result[QStringLiteral("cont")] = cont.item(0).firstChildElement().attribute(QStringLiteral("llcontinue"));
         } else {
-            result["cont"] = "";
+            result[QStringLiteral("cont")] = QStringLiteral("");
         }
     }
     reply->deleteLater();

@@ -9,12 +9,10 @@ class AntecessorModel : public QSqlQueryModel
 {
     Q_OBJECT
 public:
-    explicit AntecessorModel(QObject *parent = 0);
+    explicit AntecessorModel(QObject *parent = nullptr);
 
     QVariant data(const QModelIndex &index, int role) const;
     QHash<int,QByteArray> roleNames() const;
-
-signals:
 
 public slots:
     void refresh(const QString &cc, int successor);

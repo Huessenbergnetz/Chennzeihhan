@@ -59,17 +59,17 @@ QVariant AntecessorModel::data(const QModelIndex &index, int role) const
         value = QSqlQueryModel::data(modelIndex, Qt::DisplayRole);
         if (columnIdx == 3) {
 
-            if (countryCode == "at") {
+            if (countryCode == QLatin1String("at")) {
                 value = atHelper->getType(value.toInt());
-            } else if (countryCode == "de") {
+            } else if (countryCode == QLatin1String("de")) {
                 value = deHelper->getType(value.toInt());
             }
 
         } else if (columnIdx == 4) {
 
-            if (countryCode == "at") {
+            if (countryCode == QLatin1String("at")) {
                 value = atHelper->getState(value.toInt());
-            } else if (countryCode == "de") {
+            } else if (countryCode == QLatin1String("de")) {
                 value = deHelper->getState(value.toInt());
             }
         }
@@ -84,7 +84,5 @@ void AntecessorModel::refresh(const QString &cc, int successor)
 {
     countryCode = cc;
 
-    this->setQuery(QString("SELECT id AS itemId, sign, name, type FROM %1 WHERE successor = %2").arg(cc).arg(successor));
-
-//    this->setQuery(QString("SELECT id AS itemId, sign, name, type FROM de WHERE successor = %1").arg(successor));
+    this->setQuery(QStringLiteral("SELECT id AS itemId, sign, name, type FROM %1 WHERE successor = %2").arg(cc, successor));
 }

@@ -9,7 +9,7 @@ class DeAntecessorModel : public QSqlQueryModel
 {
     Q_OBJECT
 public:
-    explicit DeAntecessorModel(QObject *parent = 0);
+    explicit DeAntecessorModel(QObject *parent = nullptr);
 
     QVariant data(const QModelIndex &index, int role) const;
     QHash<int,QByteArray> roleNames() const;

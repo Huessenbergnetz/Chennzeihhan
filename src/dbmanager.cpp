@@ -19,7 +19,8 @@
 
 #include "dbmanager.h"
 #include "globals.h"
-#include <QDebug>
+#include <QFile>
+#include <QDir>
 
 DbManager::DbManager(QObject *parent) :
     QObject(parent)
@@ -29,16 +30,12 @@ DbManager::DbManager(QObject *parent) :
 
 bool DbManager::checkDB()
 {
-    bool ret;
-    QFile dbFile(QDir::homePath().append(DATA_DIR).append("/carplates.sqlite"));
-    if (dbFile.exists())
-    {
-        ret = openDB();
+    QFile dbFile(QDir::homePath().append(QLatin1String(DATA_DIR)).append(QLatin1String("/carplates.sqlite")));
+    if (dbFile.exists()) {
+        return openDB();
     } else {
-        ret = false;
+        return false;
     }
-
-    return ret;
 }
 
 
@@ -46,13 +43,14 @@ bool DbManager::openDB()
 {
     db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"));
 
-    db.setDatabaseName(QDir::homePath().append(DATA_DIR).append("/carplates.sqlite"));
+    db.setDatabaseName(QDir::homePath().append(QLatin1String(DATA_DIR)).append(QLatin1String("/carplates.sqlite")));
     db.setConnectOptions(QStringLiteral("QSQLITE_OPEN_READONLY"));
 
     bool dbStatus = db.open();
 
-    if (dbStatus)
+    if (dbStatus) {
         tables = db.tables(QSql::Tables);
+    }
 
     return dbStatus;
 }
@@ -60,7 +58,8 @@ bool DbManager::openDB()
 
 bool DbManager::closeDB()
 {
-    if (db.isOpen())
+    if (db.isOpen()) {
         db.close();
+    }
     return true;
 }

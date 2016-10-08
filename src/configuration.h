@@ -9,7 +9,7 @@ class Configuration : public QSettings
 {
     Q_OBJECT
 public:
-    explicit Configuration(QObject *parent = 0);
+    explicit Configuration(QObject *parent = nullptr);
     Q_INVOKABLE void setFav(const QString &sign);
     Q_INVOKABLE QStringList getFavs();
     Q_INVOKABLE void removeFav(const QString &sign);
@@ -20,11 +20,6 @@ public:
 signals:
     void favsChanged();
     void configChanged();
-
-public slots:
-
-private:
-
 };
 
 #endif // CONFIGURATION_H

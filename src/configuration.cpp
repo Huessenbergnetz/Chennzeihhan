@@ -26,9 +26,9 @@ Configuration::Configuration(QObject *parent) :
 
 void Configuration::setFav(const QString &sign)
 {
-    QStringList favs = value("display/favourites", "").toString().split(",");
+    QStringList favs = value(QStringLiteral("display/favourites")).toString().split(QChar(','));
     favs.append(sign);
-    setValue("display/favourites", favs.join(","));
+    setValue(QStringLiteral("display/favourites"), favs.join(QChar(',')));
 
     emit favsChanged();
 }
@@ -37,12 +37,13 @@ void Configuration::setFav(const QString &sign)
 
 void Configuration::removeFav(const QString &sign)
 {
-    QStringList favs = value("display/favourites", "").toString().split(",");
+    QStringList favs = value(QStringLiteral("display/favourites")).toString().split(QChar(','));
 
-    if (favs.contains(sign))
+    if (favs.contains(sign)) {
         favs.removeOne(sign);
+    }
 
-    setValue("display/favourites", favs.join(","));
+    setValue(QStringLiteral("display/favourites"), favs.join(QChar(',')));
 
     emit favsChanged();
 
@@ -52,14 +53,14 @@ void Configuration::removeFav(const QString &sign)
 
 QStringList Configuration::getFavs()
 {
-    return value("display/favourites", "").toString().split(",");
+    return value(QStringLiteral("display/favourites")).toString().split(QChar(','));
 }
 
 
 
 bool Configuration::isFav(const QString &sign)
 {
-    return value("display/favourites", "").toString().split(",").contains(sign);
+    return value(QStringLiteral("display/favourites")).toString().split(QChar(',')).contains(sign);
 }
 
 

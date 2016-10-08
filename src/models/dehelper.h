@@ -7,16 +7,11 @@ class DeHelper : public QObject
 {
     Q_OBJECT
 public:
-    explicit DeHelper(QObject *parent = 0);
+    explicit DeHelper(QObject *parent = nullptr);
 
     QString getState(int state);
     QString getType(int type);
     bool isValid(const QString &assign, int closed);
-
-signals:
-
-public slots:
-
 };
 
 #endif // DEHELPER_H

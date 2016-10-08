@@ -2,17 +2,14 @@
 #define DBMANAGER_H
 
 #include <QObject>
-#include <QtSql>
-#include <QFile>
+#include <QSqlDatabase>
 
 class DbManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit DbManager(QObject *parent = 0);
+    explicit DbManager(QObject *parent = nullptr);
     Q_INVOKABLE bool checkDB();
-
-signals:
 
 public slots:
     bool openDB();

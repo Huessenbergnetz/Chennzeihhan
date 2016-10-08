@@ -76,26 +76,26 @@ void CountriesModel::refresh(const QString &search, int target, int sort)
     QString queryString;
 
     if (tables.contains(lang)) {
-        queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, %1 AS name FROM countries").arg(lang);
+        queryString = QStringLiteral("SELECT id AS itemId, code, sign, type, official, colors, %1 AS name FROM countries").arg(lang);
     } else {
-        queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
+        queryString = QStringLiteral("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
     }
 
 
     if (!search.isEmpty())
     {
         QString t_search = search;
-        t_search.append("%");
+        t_search.append(QLatin1String("%"));
 
         switch(target) {
         case 1:
-            queryString.append(QString(" WHERE name LIKE \"%1\"").arg(t_search.prepend("%")));
+            queryString.append(QStringLiteral(" WHERE name LIKE \"%1\"").arg(t_search.prepend("%")));
             break;
         case 2:
-            queryString.append(QString(" WHERE (name LIKE \"%1\") OR (sign LIKE \"%2\")").arg(t_search.prepend("%")).arg(t_search));
+            queryString.append(QStringLiteral(" WHERE (name LIKE \"%1\") OR (sign LIKE \"%2\")").arg(t_search.prepend(QLatin1String("%")), t_search));
             break;
         default:
-            queryString.append(QString(" WHERE sign LIKE \"%1\"").arg(t_search));
+            queryString.append(QStringLiteral(" WHERE sign LIKE \"%1\"").arg(t_search));
             break;
         }
     }
@@ -103,10 +103,10 @@ void CountriesModel::refresh(const QString &search, int target, int sort)
 
     switch(sort) {
     case 1:
-        queryString.append(" ORDER BY name ASC");
+        queryString.append(QLatin1String(" ORDER BY name ASC"));
         break;
     default:
-        queryString.append(" ORDER BY sign ASC");
+        queryString.append(QLatin1String(" ORDER BY sign ASC"));
         break;
     }
 
@@ -120,26 +120,26 @@ void CountriesModel::setFirstChar(const QString &fc, int target)
     QString queryString;
 
     if (tables.contains(lang)) {
-        queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, %1 AS name FROM countries").arg(lang);
+        queryString = QStringLiteral("SELECT id AS itemId, code, sign, type, official, colors, %1 AS name FROM countries").arg(lang);
     } else {
-        queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
+        queryString = QStringLiteral("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
     }
 
     switch(target) {
     case 1:
-        queryString.append(QString(" WHERE name LIKE \"%1%\"").arg(fc));
+        queryString.append(QStringLiteral(" WHERE name LIKE \"%1%\"").arg(fc));
         break;
     default:
-        queryString.append(QString(" WHERE sign LIKE \"%1%\"").arg(fc));
+        queryString.append(QStringLiteral(" WHERE sign LIKE \"%1%\"").arg(fc));
         break;
     }
 
     switch(target) {
     case 1:
-        queryString.append(" ORDER BY name ASC");
+        queryString.append(QLatin1String(" ORDER BY name ASC"));
         break;
     default:
-        queryString.append(" ORDER BY sign ASC");
+        queryString.append(QLatin1String(" ORDER BY sign ASC"));
         break;
     }
 
@@ -151,28 +151,28 @@ void CountriesModel::setFirstChar(const QString &fc, int target)
 
 void CountriesModel::getFavs()
 {
-    QStringList favList = settings.value("display/favourites", "").toString().split(",");
+    const QStringList favList = settings.value(QStringLiteral("display/favourites")).toString().split(QChar(','));
     QString favs;
-    for (int i = 0; i < favList.size(); ++i) {
-        if (!favList.at(i).isEmpty()) {
-            favs.append("'");
-            favs.append(favList.at(i));
-            favs.append("'");
-            if (i < favList.size()-1)
-            favs.append(",");
+    if (!favList.isEmpty()) {
+        for (const QString &f : favList) {
+            favs.append(QLatin1String("'"));
+            favs.append(f);
+            favs.append(QLatin1String("'"));
+            favs.append(QLatin1String(","));
         }
+        favs.chop(1);
     }
 
 
     QString queryString;
 
     if (tables.contains(lang)) {
-        queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, %1 AS name FROM countries").arg(lang);
+        queryString = QStringLiteral("SELECT id AS itemId, code, sign, type, official, colors, %1 AS name FROM countries").arg(lang);
     } else {
-        queryString = QString("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
+        queryString = QStringLiteral("SELECT id AS itemId, code, sign, type, official, colors, en AS name FROM countries");
     }
 
-    queryString.append(QString(" WHERE sign IN (%1)").arg(favs));
+    queryString.append(QStringLiteral(" WHERE sign IN (%1)").arg(favs));
 
     this->setQuery(queryString);
 }
@@ -186,14 +186,14 @@ QStringList CountriesModel::getAbc(int sort)
 
     switch(sort) {
     case 1:
-        subString = tables.contains(lang) ? lang : "en";
+        subString = tables.contains(lang) ? lang : QStringLiteral("en");
         break;
     default:
-        subString = "sign";
+        subString = QStringLiteral("sign");
         break;
     }
 
-    QSqlQuery query(QString("SELECT DISTINCT SUBSTR(%1, 1, 1) AS c FROM countries ORDER BY c ASC").arg(subString));
+    QSqlQuery query(QStringLiteral("SELECT DISTINCT SUBSTR(%1, 1, 1) AS c FROM countries ORDER BY c ASC").arg(subString));
     query.exec();
     while (query.next()) {
         result << query.value(0).toString();

@@ -18,6 +18,8 @@
 */
 
 #include "itemmodel.h"
+#include "dehelper.h"
+#include "athelper.h"
 #include <QDebug>
 
 ItemModel::ItemModel(QObject *parent) :
@@ -44,6 +46,7 @@ QVariantMap ItemModel::getAtData(int id)
 {
     QVariantMap itemresult;
     QSqlQuery query;
+    AtHelper atHelper;
     query.exec(QString("SELECT id, sign, name, capital, type, state, assigned, successor, admin, closed, optional, wikipedia, coa FROM at WHERE id = %1").arg(id));
 
     if (query.next())
@@ -52,8 +55,8 @@ QVariantMap ItemModel::getAtData(int id)
         itemresult["sign"] = query.value(1).toString();
         itemresult["name"] = query.value(2).toString();
         itemresult["capital"] = query.value(3).toString();
-        itemresult["type"] = atHelper->getType(query.value(4).toInt());
-        itemresult["state"] = atHelper->getState(query.value(5).toInt());
+        itemresult["type"] = atHelper.getType(query.value(4).toInt());
+        itemresult["state"] = atHelper.getState(query.value(5).toInt());
         itemresult["founded"] = query.value(6).toInt();
         itemresult["disbanded"] = query.value(9).toInt();
         itemresult["optional"] = query.value(10).toInt();
@@ -76,7 +79,7 @@ QVariantMap ItemModel::getAtData(int id)
         if (query.next())
         {
             itemresult["succName"] = query.value(0).toString();
-            itemresult["succType"] = atHelper->getType(query.value(1).toInt());
+            itemresult["succType"] = atHelper.getType(query.value(1).toInt());
             itemresult["succSign"] = query.value(2).toString();
         }
     }
@@ -89,7 +92,7 @@ QVariantMap ItemModel::getAtData(int id)
         if (query.next())
         {
             itemresult["tpoName"] = query.value(0).toString();
-            itemresult["tpoType"] = atHelper->getType(query.value(1).toInt());
+            itemresult["tpoType"] = atHelper.getType(query.value(1).toInt());
             itemresult["tpoSign"] = query.value(2).toString();
         }
     } else {
@@ -156,6 +159,7 @@ QVariantMap ItemModel::getChData(int id)
 
 QVariantMap ItemModel::getDeData(int id)
 {
+    DeHelper deHelper;
     QVariantMap itemresult;
     QSqlQuery query;
     query.exec(QString("SELECT id, sign, name, capitol, type, state, assign, successor, admin, closed, optional, wikipedia, coa FROM de WHERE id = %1").arg(id));
@@ -166,8 +170,8 @@ QVariantMap ItemModel::getDeData(int id)
         itemresult["sign"] = query.value(1).toString();
         itemresult["name"] = query.value(2).toString();
         itemresult["capital"] = query.value(3).toString();
-        itemresult["type"] = deHelper->getType(query.value(4).toInt());
-        itemresult["state"] = deHelper->getState(query.value(5).toInt());
+        itemresult["type"] = deHelper.getType(query.value(4).toInt());
+        itemresult["state"] = deHelper.getState(query.value(5).toInt());
         itemresult["founded"] = query.value(6).toInt();
         itemresult["disbanded"] = query.value(9).toInt();
         itemresult["optional"] = query.value(10).toInt();
@@ -190,7 +194,7 @@ QVariantMap ItemModel::getDeData(int id)
         if (query.next())
         {
             itemresult["succName"] = query.value(0).toString();
-            itemresult["succType"] = deHelper->getType(query.value(1).toInt());
+            itemresult["succType"] = deHelper.getType(query.value(1).toInt());
             itemresult["succSign"] = query.value(2).toString();
         }
     }
@@ -203,7 +207,7 @@ QVariantMap ItemModel::getDeData(int id)
         if (query.next())
         {
             itemresult["tpoName"] = query.value(0).toString();
-            itemresult["tpoType"] = deHelper->getType(query.value(1).toInt());
+            itemresult["tpoType"] = deHelper.getType(query.value(1).toInt());
             itemresult["tpoSign"] = query.value(2).toString();
         }
     } else {

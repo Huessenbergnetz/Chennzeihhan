@@ -10,7 +10,7 @@ class CountryModel : public QSqlQueryModel
 {
     Q_OBJECT
 public:
-    explicit CountryModel(QObject *parent = 0);
+    explicit CountryModel(QObject *parent = nullptr);
 
     QVariant data(const QModelIndex &index, int role) const;
     QHash<int,QByteArray> roleNames() const;

@@ -3,23 +3,17 @@
 
 #include <QObject>
 #include <QNetworkAccessManager>
-#include <QNetworkReply>
-#include <QLocale>
-#include <QEventLoop>
-#include <QDomDocument>
-#include <QDomNodeList>
+#include <QUrl>
+
+class QNetworkReply;
 
 class Wikipedia : public QObject
 {
     Q_OBJECT
 public:
-    explicit Wikipedia(QObject *parent = 0);
+    explicit Wikipedia(QObject *parent = nullptr);
 
-    Q_INVOKABLE QString getTranslation(const QString &langCode, const QString &entry);
-
-signals:
-
-public slots:
+    Q_INVOKABLE QUrl getTranslation(const QString &langCode, const QString &entry);
 
 private:
     QMap<QString, QString> reqTranslations(const QString &langCode, const QString &entry, const QString &cont = QString());
