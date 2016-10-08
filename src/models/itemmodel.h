@@ -2,9 +2,7 @@
 #define ITEMMODEL_H
 
 #include <QObject>
-#include <QSqlQuery>
 #include <QVariantMap>
-#include <QStringList>
 
 class ItemModel : public QObject
 {

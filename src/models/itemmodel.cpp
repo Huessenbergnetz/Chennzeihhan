@@ -20,7 +20,8 @@
 #include "itemmodel.h"
 #include "dehelper.h"
 #include "athelper.h"
-#include <QDebug>
+#include <QSqlQuery>
+#include <QStringList>
 
 ItemModel::ItemModel(QObject *parent) :
     QObject(parent)
@@ -30,11 +31,11 @@ ItemModel::ItemModel(QObject *parent) :
 
 QVariantMap ItemModel::getItemData(const QString &cc, int id)
 {
-    if (cc == "de") {
+    if (cc == QLatin1String("de")) {
         return getDeData(id);
-    } else if (cc == "ch") {
+    } else if (cc == QLatin1String("ch")) {
         return getChData(id);
-    } else if (cc == "at") {
+    } else if (cc == QLatin1String("at")) {
         return getAtData(id);
     } else {
         return QVariantMap();
@@ -47,65 +48,65 @@ QVariantMap ItemModel::getAtData(int id)
     QVariantMap itemresult;
     QSqlQuery query;
     AtHelper atHelper;
-    query.exec(QString("SELECT id, sign, name, capital, type, state, assigned, successor, admin, closed, optional, wikipedia, coa FROM at WHERE id = %1").arg(id));
+    query.exec(QStringLiteral("SELECT id, sign, name, capital, type, state, assigned, successor, admin, closed, optional, wikipedia, coa FROM at WHERE id = %1").arg(id));
 
     if (query.next())
     {
-        itemresult["itemId"] = query.value(0).toInt();
-        itemresult["sign"] = query.value(1).toString();
-        itemresult["name"] = query.value(2).toString();
-        itemresult["capital"] = query.value(3).toString();
-        itemresult["type"] = atHelper.getType(query.value(4).toInt());
-        itemresult["state"] = atHelper.getState(query.value(5).toInt());
-        itemresult["founded"] = query.value(6).toInt();
-        itemresult["disbanded"] = query.value(9).toInt();
-        itemresult["optional"] = query.value(10).toInt();
-        itemresult["wikipedia"] = query.value(11).toString();
-        itemresult["succId"] = query.value(7).toInt(); // id of the district it was merged in
-        itemresult["succName"] = "";
-        itemresult["succType"] = "";
-        itemresult["succSign"] = "";
-        itemresult["tpoId"] = query.value(8).toInt(); // id of the the current district it is part of
-        itemresult["tpoName"] = "";
-        itemresult["tpoType"] = "";
-        itemresult["tpoSign"] = "";
-        itemresult["optionalSigns"] = "";
-        itemresult["coa"] = query.value(12).toString();
+        itemresult[QStringLiteral("itemId")] = query.value(0).toInt();
+        itemresult[QStringLiteral("sign")] = query.value(1).toString();
+        itemresult[QStringLiteral("name")] = query.value(2).toString();
+        itemresult[QStringLiteral("capital")] = query.value(3).toString();
+        itemresult[QStringLiteral("type")] = atHelper.getType(query.value(4).toInt());
+        itemresult[QStringLiteral("state")] = atHelper.getState(query.value(5).toInt());
+        itemresult[QStringLiteral("founded")] = query.value(6).toInt();
+        itemresult[QStringLiteral("disbanded")] = query.value(9).toInt();
+        itemresult[QStringLiteral("optional")] = query.value(10).toInt();
+        itemresult[QStringLiteral("wikipedia")] = query.value(11).toString();
+        itemresult[QStringLiteral("succId")] = query.value(7).toInt(); // id of the district it was merged in
+        itemresult[QStringLiteral("succName")] = QStringLiteral("");
+        itemresult[QStringLiteral("succType")] = QStringLiteral("");
+        itemresult[QStringLiteral("succSign")] = QStringLiteral("");
+        itemresult[QStringLiteral("tpoId")] = query.value(8).toInt(); // id of the the current district it is part of
+        itemresult[QStringLiteral("tpoName")] = QStringLiteral("");
+        itemresult[QStringLiteral("tpoType")] = QStringLiteral("");
+        itemresult[QStringLiteral("tpoSign")] = QStringLiteral("");
+        itemresult[QStringLiteral("optionalSigns")] = QStringLiteral("");
+        itemresult[QStringLiteral("coa")] = query.value(12).toString();
     }
 
-    if (itemresult["succId"].toInt() != 0)
+    if (itemresult[QStringLiteral("succId")].toInt() != 0)
     {
-        query.exec(QString("SELECT name, type, sign FROM at WHERE id = %1").arg(itemresult["succId"].toInt()));
+        query.exec(QStringLiteral("SELECT name, type, sign FROM at WHERE id = %1").arg(itemresult[QStringLiteral("succId")].toInt()));
         if (query.next())
         {
-            itemresult["succName"] = query.value(0).toString();
-            itemresult["succType"] = atHelper.getType(query.value(1).toInt());
-            itemresult["succSign"] = query.value(2).toString();
+            itemresult[QStringLiteral("succName")] = query.value(0).toString();
+            itemresult[QStringLiteral("succType")] = atHelper.getType(query.value(1).toInt());
+            itemresult[QStringLiteral("succSign")] = query.value(2).toString();
         }
     }
 
 
     // check if district today belongs to another district than it was first merged into
-    if (itemresult["succId"] != itemresult["tpoId"] && itemresult["tpoId"].toInt() != 0)
+    if (itemresult[QStringLiteral("succId")] != itemresult[QStringLiteral("tpoId")] && itemresult[QStringLiteral("tpoId")].toInt() != 0)
     {
-        query.exec(QString("SELECT name, type, sign FROM at WHERE id = %1").arg(itemresult["tpoId"].toInt()));
+        query.exec(QStringLiteral("SELECT name, type, sign FROM at WHERE id = %1").arg(itemresult[QStringLiteral("tpoId")].toInt()));
         if (query.next())
         {
-            itemresult["tpoName"] = query.value(0).toString();
-            itemresult["tpoType"] = atHelper.getType(query.value(1).toInt());
-            itemresult["tpoSign"] = query.value(2).toString();
+            itemresult[QStringLiteral("tpoName")] = query.value(0).toString();
+            itemresult[QStringLiteral("tpoType")] = atHelper.getType(query.value(1).toInt());
+            itemresult[QStringLiteral("tpoSign")] = query.value(2).toString();
         }
     } else {
-        itemresult["tpoId"] = 0;
+        itemresult[QStringLiteral("tpoId")] = 0;
     }
 
-    if (itemresult["disbanded"].toInt() == 0)
+    if (itemresult[QStringLiteral("disbanded")].toInt() == 0)
     {
 
         QStringList optSigns;
         QList<int> subOptSignIds;
         QList<int> subSubOptSignIds;
-        query.exec(QString("SELECT id, sign FROM at WHERE successor = %1 AND optional > 0").arg(itemresult["itemId"].toInt()));
+        query.exec(QStringLiteral("SELECT id, sign FROM at WHERE successor = %1 AND optional > 0").arg(itemresult[QStringLiteral("itemId")].toInt()));
         while (query.next()) {
             subOptSignIds << query.value(0).toInt();
             optSigns << query.value(1).toString();
@@ -113,7 +114,7 @@ QVariantMap ItemModel::getAtData(int id)
 
         for (int i = 0; i < subOptSignIds.size(); ++i)
         {
-            query.exec(QString("SELECT id, sign FROM at WHERE successor = %1 AND optional > 0").arg(subOptSignIds.at(i)));
+            query.exec(QStringLiteral("SELECT id, sign FROM at WHERE successor = %1 AND optional > 0").arg(subOptSignIds.at(i)));
             while (query.next()) {
                 subSubOptSignIds << query.value(0).toInt();
                 optSigns << query.value(1).toString();
@@ -122,14 +123,14 @@ QVariantMap ItemModel::getAtData(int id)
 
         for (int i = 0; i < subSubOptSignIds.size(); ++i)
         {
-            query.exec(QString("SELECT sign FROM at WHERE successor = %1 AND optional > 0").arg(subSubOptSignIds.at(i)));
+            query.exec(QStringLiteral("SELECT sign FROM at WHERE successor = %1 AND optional > 0").arg(subSubOptSignIds.at(i)));
             while (query.next()) {
                 optSigns << query.value(0).toString();
             }
         }
 
         if (!optSigns.isEmpty())
-            itemresult["optionalSigns"] = optSigns.join(", ");
+            itemresult[QStringLiteral("optionalSigns")] = optSigns.join(QStringLiteral(", "));
 
     }
 
@@ -141,16 +142,16 @@ QVariantMap ItemModel::getChData(int id)
 {
     QVariantMap itemresult;
     QSqlQuery query;
-    query.exec(QString("SELECT id, sign, name, capital, wikipedia, coa FROM ch WHERE id = %1").arg(id));
+    query.exec(QStringLiteral("SELECT id, sign, name, capital, wikipedia, coa FROM ch WHERE id = %1").arg(id));
 
     if (query.next())
     {
-        itemresult["itemId"] = query.value(0).toInt();
-        itemresult["sign"] = query.value(1).toString();
-        itemresult["name"] = query.value(2).toString();
-        itemresult["capital"] = query.value(3).toString();
-        itemresult["wikipedia"] = query.value(4).toString();
-        itemresult["coa"] = query.value(5).toString();
+        itemresult[QStringLiteral("itemId")] = query.value(0).toInt();
+        itemresult[QStringLiteral("sign")] = query.value(1).toString();
+        itemresult[QStringLiteral("name")] = query.value(2).toString();
+        itemresult[QStringLiteral("capital")] = query.value(3).toString();
+        itemresult[QStringLiteral("wikipedia")] = query.value(4).toString();
+        itemresult[QStringLiteral("coa")] = query.value(5).toString();
     }
 
     return itemresult;
@@ -162,65 +163,65 @@ QVariantMap ItemModel::getDeData(int id)
     DeHelper deHelper;
     QVariantMap itemresult;
     QSqlQuery query;
-    query.exec(QString("SELECT id, sign, name, capitol, type, state, assign, successor, admin, closed, optional, wikipedia, coa FROM de WHERE id = %1").arg(id));
+    query.exec(QStringLiteral("SELECT id, sign, name, capitol, type, state, assign, successor, admin, closed, optional, wikipedia, coa FROM de WHERE id = %1").arg(id));
 
     if (query.next())
     {
-        itemresult["itemId"] = query.value(0).toInt();
-        itemresult["sign"] = query.value(1).toString();
-        itemresult["name"] = query.value(2).toString();
-        itemresult["capital"] = query.value(3).toString();
-        itemresult["type"] = deHelper.getType(query.value(4).toInt());
-        itemresult["state"] = deHelper.getState(query.value(5).toInt());
-        itemresult["founded"] = query.value(6).toInt();
-        itemresult["disbanded"] = query.value(9).toInt();
-        itemresult["optional"] = query.value(10).toInt();
-        itemresult["wikipedia"] = query.value(11).toString();
-        itemresult["succId"] = query.value(7).toInt(); // id of the district it was merged in
-        itemresult["succName"] = "";
-        itemresult["succType"] = "";
-        itemresult["succSign"] = "";
-        itemresult["tpoId"] = query.value(8).toInt(); // id of the the current district it is part of
-        itemresult["tpoName"] = "";
-        itemresult["tpoType"] = "";
-        itemresult["tpoSign"] = "";
-        itemresult["optionalSigns"] = "";
-        itemresult["coa"] = query.value(12).toString();
+        itemresult[QStringLiteral("itemId")] = query.value(0).toInt();
+        itemresult[QStringLiteral("sign")] = query.value(1).toString();
+        itemresult[QStringLiteral("name")] = query.value(2).toString();
+        itemresult[QStringLiteral("capital")] = query.value(3).toString();
+        itemresult[QStringLiteral("type")] = deHelper.getType(query.value(4).toInt());
+        itemresult[QStringLiteral("state")] = deHelper.getState(query.value(5).toInt());
+        itemresult[QStringLiteral("founded")] = query.value(6).toInt();
+        itemresult[QStringLiteral("disbanded")] = query.value(9).toInt();
+        itemresult[QStringLiteral("optional")] = query.value(10).toInt();
+        itemresult[QStringLiteral("wikipedia")] = query.value(11).toString();
+        itemresult[QStringLiteral("succId")] = query.value(7).toInt(); // id of the district it was merged in
+        itemresult[QStringLiteral("succName")] = QStringLiteral("");
+        itemresult[QStringLiteral("succType")] = QStringLiteral("");
+        itemresult[QStringLiteral("succSign")] = QStringLiteral("");
+        itemresult[QStringLiteral("tpoId")] = query.value(8).toInt(); // id of the the current district it is part of
+        itemresult[QStringLiteral("tpoName")] = QStringLiteral("");
+        itemresult[QStringLiteral("tpoType")] = QStringLiteral("");
+        itemresult[QStringLiteral("tpoSign")] = QStringLiteral("");
+        itemresult[QStringLiteral("optionalSigns")] = QStringLiteral("");
+        itemresult[QStringLiteral("coa")] = query.value(12).toString();
     }
 
-    if (itemresult["succId"].toInt() != 0)
+    if (itemresult[QStringLiteral("succId")].toInt() != 0)
     {
-        query.exec(QString("SELECT name, type, sign FROM de WHERE id = %1").arg(itemresult["succId"].toInt()));
+        query.exec(QStringLiteral("SELECT name, type, sign FROM de WHERE id = %1").arg(itemresult[QStringLiteral("succId")].toInt()));
         if (query.next())
         {
-            itemresult["succName"] = query.value(0).toString();
-            itemresult["succType"] = deHelper.getType(query.value(1).toInt());
-            itemresult["succSign"] = query.value(2).toString();
+            itemresult[QStringLiteral("succName")] = query.value(0).toString();
+            itemresult[QStringLiteral("succType")] = deHelper.getType(query.value(1).toInt());
+            itemresult[QStringLiteral("succSign")] = query.value(2).toString();
         }
     }
 
 
     // check if district today belongs to another district than it was first merged into
-    if (itemresult["succId"] != itemresult["tpoId"] && itemresult["tpoId"].toInt() != 0)
+    if (itemresult[QStringLiteral("succId")] != itemresult[QStringLiteral("tpoId")] && itemresult[QStringLiteral("tpoId")].toInt() != 0)
     {
-        query.exec(QString("SELECT name, type, sign FROM de WHERE id = %1").arg(itemresult["tpoId"].toInt()));
+        query.exec(QStringLiteral("SELECT name, type, sign FROM de WHERE id = %1").arg(itemresult[QStringLiteral("tpoId")].toInt()));
         if (query.next())
         {
-            itemresult["tpoName"] = query.value(0).toString();
-            itemresult["tpoType"] = deHelper.getType(query.value(1).toInt());
-            itemresult["tpoSign"] = query.value(2).toString();
+            itemresult[QStringLiteral("tpoName")] = query.value(0).toString();
+            itemresult[QStringLiteral("tpoType")] = deHelper.getType(query.value(1).toInt());
+            itemresult[QStringLiteral("tpoSign")] = query.value(2).toString();
         }
     } else {
-        itemresult["tpoId"] = 0;
+        itemresult[QStringLiteral("tpoId")] = 0;
     }
 
-    if (itemresult["disbanded"].toInt() == 0)
+    if (itemresult[QStringLiteral("disbanded")].toInt() == 0)
     {
 
         QStringList optSigns;
         QList<int> subOptSignIds;
         QList<int> subSubOptSignIds;
-        query.exec(QString("SELECT id, sign FROM de WHERE successor = %1 AND optional > 0").arg(itemresult["itemId"].toInt()));
+        query.exec(QStringLiteral("SELECT id, sign FROM de WHERE successor = %1 AND optional > 0").arg(itemresult[QStringLiteral("itemId")].toInt()));
         while (query.next()) {
             subOptSignIds << query.value(0).toInt();
             optSigns << query.value(1).toString();
@@ -228,7 +229,7 @@ QVariantMap ItemModel::getDeData(int id)
 
         for (int i = 0; i < subOptSignIds.size(); ++i)
         {
-            query.exec(QString("SELECT id, sign FROM de WHERE successor = %1 AND optional > 0").arg(subOptSignIds.at(i)));
+            query.exec(QStringLiteral("SELECT id, sign FROM de WHERE successor = %1 AND optional > 0").arg(subOptSignIds.at(i)));
             while (query.next()) {
                 subSubOptSignIds << query.value(0).toInt();
                 optSigns << query.value(1).toString();
@@ -237,14 +238,14 @@ QVariantMap ItemModel::getDeData(int id)
 
         for (int i = 0; i < subSubOptSignIds.size(); ++i)
         {
-            query.exec(QString("SELECT sign FROM de WHERE successor = %1 AND optional > 0").arg(subSubOptSignIds.at(i)));
+            query.exec(QStringLiteral("SELECT sign FROM de WHERE successor = %1 AND optional > 0").arg(subSubOptSignIds.at(i)));
             while (query.next()) {
                 optSigns << query.value(0).toString();
             }
         }
 
         if (!optSigns.isEmpty())
-            itemresult["optionalSigns"] = optSigns.join(", ");
+            itemresult[QStringLiteral("optionalSigns")] = optSigns.join(QStringLiteral(", "));
 
     }
 
