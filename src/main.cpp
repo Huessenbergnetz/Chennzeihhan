@@ -49,10 +49,10 @@ int main(int argc, char *argv[])
     QGuiApplication* app = new QGuiApplication(argc, argv);
 #endif
 
-    app->setOrganizationName("harbour-chennzeihhan");
-    app->setOrganizationDomain("buschmann23.de");
-    app->setApplicationName("harbour-chennzeihhan");
-    app->setApplicationVersion(VERSION_STRING);
+    app->setOrganizationName(QStringLiteral("harbour-chennzeihhan"));
+    app->setOrganizationDomain(QStringLiteral("buschmann23.de"));
+    app->setApplicationName(QStringLiteral("harbour-chennzeihhan"));
+    app->setApplicationVersion(QStringLiteral(VERSION_STRING));
 
     QDir().mkpath(QDir::homePath().append(DATA_DIR));
 
@@ -64,15 +64,18 @@ int main(int argc, char *argv[])
 
     Configuration *config = new Configuration;
 
-    QString locale = config->get("display/language", "C").toString();
+    QString locale = config->get(QStringLiteral("display/language"), QStringLiteral("C")).toString();
 
-    if (locale == "C") {
+    if (locale == QLatin1String("C")) {
         locale = QLocale::system().name();
     }
 
+#ifndef CLAZY
     QTranslator *translator = new QTranslator;
-    if ((translator->load("chennzeihhan_"+locale, "/usr/share/harbour-chennzeihhan/translations")))
+    if (translator->load("chennzeihhan_"+locale, SailfishApp::pathTo(QStringLiteral("translations")).toString(QUrl::RemoveScheme))) {
         app->installTranslator(translator);
+    }
+#endif
 
 
     QObject::connect(&dlManager, SIGNAL(dbDownloadStarted()), &dbman, SLOT(closeDB()));
@@ -93,22 +96,26 @@ int main(int argc, char *argv[])
     QQuickView* view = new QQuickView;
 #endif
 
-    view->rootContext()->setContextProperty("dbMan", &dbman);
-    view->rootContext()->setContextProperty("dlMan", &dlManager);
-    view->rootContext()->setContextProperty("wp", &wikipedia);
-    view->rootContext()->setContextProperty("config", config);
-    view->rootContext()->setContextProperty("countriesModel", countriesModel);
-    view->rootContext()->setContextProperty("countriesFavourites", countriesFavourites);
-    view->rootContext()->setContextProperty("countriesSearch", countriesSearch);
-    view->rootContext()->setContextProperty("countryModel", countryModel);
-    view->rootContext()->setContextProperty("abcModel", abcModel);
-    view->rootContext()->setContextProperty("itemModel", itemModel);
-    view->rootContext()->setContextProperty("antecessorModel", antecessorModel);
-    view->rootContext()->setContextProperty("languageModel", languageModel);
-    view->rootContext()->setContextProperty("versionString", VERSION_STRING);
-    view->rootContext()->setContextProperty("versionInt", VERSION);
+    view->rootContext()->setContextProperty(QStringLiteral("dbMan"), &dbman);
+    view->rootContext()->setContextProperty(QStringLiteral("dlMan"), &dlManager);
+    view->rootContext()->setContextProperty(QStringLiteral("wp"), &wikipedia);
+    view->rootContext()->setContextProperty(QStringLiteral("config"), config);
+    view->rootContext()->setContextProperty(QStringLiteral("countriesModel"), countriesModel);
+    view->rootContext()->setContextProperty(QStringLiteral("countriesFavourites"), countriesFavourites);
+    view->rootContext()->setContextProperty(QStringLiteral("countriesSearch"), countriesSearch);
+    view->rootContext()->setContextProperty(QStringLiteral("countryModel"), countryModel);
+    view->rootContext()->setContextProperty(QStringLiteral("abcModel"), abcModel);
+    view->rootContext()->setContextProperty(QStringLiteral("itemModel"), itemModel);
+    view->rootContext()->setContextProperty(QStringLiteral("antecessorModel"), antecessorModel);
+    view->rootContext()->setContextProperty(QStringLiteral("languageModel"), languageModel);
+    view->rootContext()->setContextProperty(QStringLiteral("versionString"), VERSION_STRING);
+    view->rootContext()->setContextProperty(QStringLiteral("versionInt"), VERSION);
 
-    view->setSource(QUrl::fromLocalFile("/usr/share/harbour-chennzeihhan/qml/harbour-chennzeihhan.qml"));
+#ifndef CLAZY
+    view->setSource(SailfishApp::pathTo(QStringLiteral("qml/harbour-chennzeihhan.qml")));
+#endif
+
+//    view->setSource(QUrl::fromLocalFile(QStringLiteral("/usr/share/harbour-chennzeihhan/qml/harbour-chennzeihhan.qml")));
     view->show();
 
     return app->exec();
