@@ -18,8 +18,7 @@ SOURCES += \
     src/models/countriesmodel.cpp \
     src/globals.cpp \
     src/configuration.cpp \
-    src/models/languagemodel.cpp \
-    src/models/languagemodelfilter.cpp
+    src/models/languagemodel.cpp
 
 translations.path = /usr/share/harbour-chennzeihhan/translations
 translations.files = l10n/*.qm
@@ -81,5 +80,4 @@ HEADERS += \
     src/models/antecessormodel.h \
     src/models/countriesmodel.h \
     src/configuration.h \
-    src/models/languagemodel.h \
-    src/models/languagemodelfilter.h
+    src/models/languagemodel.h

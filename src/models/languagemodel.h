@@ -1,34 +1,73 @@
 #ifndef LANGUAGEMODEL_H
 #define LANGUAGEMODEL_H
 
+#include <QObject>
 #include <QAbstractListModel>
-#include <QHash>
+#include <QStringList>
 
+/*!
+ * \brief Contains information about support UI language.
+ */
+struct Language {
+    QString code;   /**< Language code in form language_Country */
+    QString name;   /**< Language display name */
+};
+
+/*!
+ * \brief Model containing available UI languages.
+ * \todo Move to BT_SFOS_Components and make the model suitable for every project.
+ */
 class LanguageModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
-    explicit LanguageModel(QObject *parent = 0);
+    /*!
+     * \brief Constructs a new LanguageModel.
+     */
+    explicit LanguageModel(QObject *parent = nullptr);
 
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
-    int rowCount(const QModelIndex &parent = QModelIndex()) const;
-    QHash<int, QByteArray> roleNames() const;
-    QModelIndex index(int row, int column = 0, const QModelIndex &parent = QModelIndex()) const;
+    /*!
+     * \brief Destroys the LanguageModel and all model items.
+     */
+    ~LanguageModel();
 
-    static const int ValueRole;
-    static const int NameRole;
+    /*!
+     * \brief The model roles.
+     *
+     * For access from QML, use the enum name starting lowercase.
+     */
+    enum Roles {
+        Code = Qt::UserRole + 1,    /**< Langauge code in form lang_Country */
+        Name                        /**< Language display name */
+    };
 
-    QString getLanguageName(const QString &langCode);
+    int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE Q_DECL_FINAL;
+    QModelIndex index(int row, int column = 0, const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE Q_DECL_FINAL;
+    QHash<int, QByteArray> roleNames() const Q_DECL_OVERRIDE Q_DECL_FINAL;
+    QVariant data(const QModelIndex &index, int role = Qt::UserRole) const Q_DECL_OVERRIDE Q_DECL_FINAL;
 
-signals:
-
-public slots:
+    /*!
+     * \brief Returns the index of the language identified by \a langCode.
+     */
+    Q_INVOKABLE int findIndex(const QString &langCode) const;
 
 private:
-    QList<QString> m_langs;
-    QHash<QString, QString> m_langCode;
+    QList<Language*> m_langs;
+
+    /*!
+     * \brief Clears the model data and deletes any entry.
+     */
+    void clear();
+
+
+    /*!
+     * \brief Initializes the model data.
+     *
+     * This is called directly in the constructor.
+     */
     void init();
 
+    const QStringList m_supportedLangs;
 };
 
 #endif // LANGUAGEMODEL_H

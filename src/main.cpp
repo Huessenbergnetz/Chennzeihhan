@@ -24,7 +24,14 @@
 #include <QTranslator>
 #include <QDir>
 #include <QSettings>
-#include <QDebug>
+
+#ifdef QT_QML_DEBUG
+#include <QtQuick>
+#endif
+
+#ifdef QT_DEBUG
+#include <QtDebug>
+#endif
 
 #ifndef CLAZY
 #include <sailfishapp.h>
@@ -38,7 +45,7 @@
 #include "models/antecessormodel.h"
 #include "models/itemmodel.h"
 #include "models/countriesmodel.h"
-#include "models/languagemodelfilter.h"
+#include "models/languagemodel.h"
 
 
 int main(int argc, char *argv[])
@@ -54,7 +61,7 @@ int main(int argc, char *argv[])
     app->setApplicationName(QStringLiteral("harbour-chennzeihhan"));
     app->setApplicationVersion(QStringLiteral(VERSION_STRING));
 
-    QDir().mkpath(QDir::homePath().append(DATA_DIR));
+    QDir().mkpath(QDir::homePath().append(QLatin1String(DATA_DIR)));
 
     DbManager dbman;
     dbman.checkDB();
@@ -66,9 +73,19 @@ int main(int argc, char *argv[])
 
     QString locale = config->get(QStringLiteral("display/language"), QStringLiteral("C")).toString();
 
+#ifdef QT_DEBUG
+    qDebug() << "Stored locale code:" << locale;
+#endif
+
     if (locale == QLatin1String("C")) {
         locale = QLocale::system().name();
+    } else {
+        QLocale::setDefault(QLocale(locale));
     }
+
+#ifdef QT_DEBUG
+    qDebug() << "Loading locale:" << locale;
+#endif
 
 #ifndef CLAZY
     QTranslator *translator = new QTranslator;
@@ -78,7 +95,10 @@ int main(int argc, char *argv[])
 #endif
 
 
-    QObject::connect(&dlManager, SIGNAL(dbDownloadStarted()), &dbman, SLOT(closeDB()));
+    qmlRegisterType<LanguageModel>("harbour.chennzeihhan", 1, 0, "LanguageModel");
+
+
+    QObject::connect(&dlManager, &DownloadManager::dbDownloadStarted, &dbman, &DbManager::closeDB);
 
     CountriesModel *countriesModel = new CountriesModel();
     CountriesModel *countriesSearch = new CountriesModel();
@@ -86,7 +106,6 @@ int main(int argc, char *argv[])
     CountriesModel *abcModel = new CountriesModel();
     CountryModel *countryModel = new CountryModel();
     ItemModel *itemModel = new ItemModel();
-    LanguageModelFilter *languageModel = new LanguageModelFilter;
 
     AntecessorModel *antecessorModel = new AntecessorModel();
 
@@ -107,15 +126,13 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty(QStringLiteral("abcModel"), abcModel);
     view->rootContext()->setContextProperty(QStringLiteral("itemModel"), itemModel);
     view->rootContext()->setContextProperty(QStringLiteral("antecessorModel"), antecessorModel);
-    view->rootContext()->setContextProperty(QStringLiteral("languageModel"), languageModel);
-    view->rootContext()->setContextProperty(QStringLiteral("versionString"), VERSION_STRING);
+    view->rootContext()->setContextProperty(QStringLiteral("versionString"), QStringLiteral(VERSION_STRING));
     view->rootContext()->setContextProperty(QStringLiteral("versionInt"), VERSION);
 
 #ifndef CLAZY
     view->setSource(SailfishApp::pathTo(QStringLiteral("qml/harbour-chennzeihhan.qml")));
 #endif
 
-//    view->setSource(QUrl::fromLocalFile(QStringLiteral("/usr/share/harbour-chennzeihhan/qml/harbour-chennzeihhan.qml")));
     view->show();
 
     return app->exec();

@@ -19,6 +19,7 @@
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
+import harbour.chennzeihhan 1.0
 
 Page {
     id: settings
@@ -255,23 +256,38 @@ Page {
 
             SectionHeader { text: qsTr("Display language") }
 
-            LanguageChooser {
-                id: langChooser
-                anchors { left: parent.left; right: parent.right }
+            ComboBox {
+                id: langChoser
                 label: qsTr("Language")
-                choosenValue: config.get("display/language", "C")
-                textChoosen: languageModel.getLanguageName(choosenValue)
-                onChoosenValueChanged: config.set("display/language", choosenValue)
+                description: qsTr("Changing the display language is only applied after a restart of the application.")
+                width: parent.width
+                menu: ContextMenu {
+                    Repeater {
+                        model: LanguageModel { id: langModel }
+                        MenuItem { text: model.name; readonly property string value: model.code }
+                    }
+                }
+                onCurrentIndexChanged: { if (currentItem) { config.set("display/language", currentItem.value) } }
+                currentIndex: langModel.findIndex(config.get("display/language", "C"))
             }
 
-            Text {
-                anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
-                text: qsTr("Changing the display language is only applied after a restart of the application.")
-                wrapMode: Text.WordWrap
-                color: Theme.secondaryColor
-                textFormat: Text.PlainText
-                font.pixelSize: Theme.fontSizeSmall
-            }
+//            LanguageChooser {
+//                id: langChooser
+//                anchors { left: parent.left; right: parent.right }
+//                label: qsTr("Language")
+//                choosenValue: config.get("display/language", "C")
+//                textChoosen: languageModel.getLanguageName(choosenValue)
+//                onChoosenValueChanged: config.set("display/language", choosenValue)
+//            }
+
+//            Text {
+//                anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
+//                text: qsTr("Changing the display language is only applied after a restart of the application.")
+//                wrapMode: Text.WordWrap
+//                color: Theme.secondaryColor
+//                textFormat: Text.PlainText
+//                font.pixelSize: Theme.fontSizeSmall
+//            }
         }
     }
 }

@@ -1,71 +1,146 @@
 #include "languagemodel.h"
-
-const int LanguageModel::NameRole = Qt::UserRole + 1;
-const int LanguageModel::ValueRole = Qt::UserRole + 2;
+#include <QLocale>
+#include <algorithm>
 
 LanguageModel::LanguageModel(QObject *parent) :
-    QAbstractListModel(parent)
+    QAbstractListModel(parent), m_supportedLangs({QStringLiteral("en_GB"), QStringLiteral("de"), QStringLiteral("it"), QStringLiteral("nl_NL")})
 {
     init();
 }
 
 
-QHash<int, QByteArray> LanguageModel::roleNames() const {
+
+LanguageModel::~LanguageModel()
+{
+    qDeleteAll(m_langs);
+    m_langs.clear();
+}
+
+
+
+QHash<int, QByteArray> LanguageModel::roleNames() const
+{
     QHash<int, QByteArray> roles = QAbstractItemModel::roleNames();
-    roles.insert(NameRole, QByteArray("name"));
-    roles.insert(ValueRole, QByteArray("value"));
+    roles.insert(Code, QByteArrayLiteral("code"));
+    roles.insert(Name, QByteArrayLiteral("name"));
     return roles;
 }
+
 
 
 int LanguageModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
-    return m_langs.size();
+    return m_langs.count();
 }
+
+
+
+QModelIndex LanguageModel::index(int row, int column, const QModelIndex &parent) const
+{
+    if (!hasIndex(row, column, parent)) {
+        return QModelIndex();
+    }
+
+    return createIndex(row, column);
+}
+
 
 
 QVariant LanguageModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid())
+    if (!index.isValid()) {
         return QVariant();
+    }
 
-    if (index.row() > rowCount()-1)
+    if (index.row() > (rowCount()-1)) {
         return QVariant();
+    }
 
-    QString value = m_langs.at(index.row());
+    Language *l = m_langs.at(index.row());
+
     switch(role) {
-    case NameRole:
-        return QVariant::fromValue(m_langCode[value]);
-    case ValueRole:
-        return QVariant::fromValue(value);
+    case Code:
+        return QVariant::fromValue(l->code);
+    case Name:
+        return QVariant::fromValue(l->name);
     default:
         return QVariant();
     }
 }
 
 
-QModelIndex LanguageModel::index(int row, int column, const QModelIndex &parent) const
-{
-    if (!hasIndex(row, column, parent))
-             return QModelIndex();
 
-    return createIndex(row, column);
+bool langLessThan(Language *a, Language *b)
+{
+    return (a->name < b->name);
 }
+
 
 
 void LanguageModel::init()
 {
-    m_langs << "C" << "en_GB" << "de" << "it" << "nl_NL";
-    m_langCode["C"] = tr("System default");
-    m_langCode["en_GB"] = tr("English");
-    m_langCode["de"] = tr("German");
-    m_langCode["it"] = tr("Italian");
-    m_langCode["nl_NL"] = tr("Dutch (Netherlands)");
+    clear();
+
+    if (m_supportedLangs.isEmpty()) {
+        return;
+    }
+
+    beginInsertRows(QModelIndex(), 0, m_supportedLangs.count()-1);
+
+    Q_FOREACH(const QString &lang, m_supportedLangs) {
+        QLocale locale(lang);
+        Language *l = new Language;
+        l->code = lang;
+        l->name = locale.nativeLanguageName();
+        l->name.append(QLatin1String(" ("));
+        l->name.append(QLocale::languageToString(locale.language()));
+        l->name.append(QLatin1String(")"));
+        m_langs.append(l);
+    }
+
+    std::sort(m_langs.begin(), m_langs.end(), langLessThan);
+
+    Language *defLang = new Language;
+    defLang->code = QStringLiteral("C");
+    defLang->name = tr("System default");
+    m_langs.prepend(defLang);
+
+    endInsertRows();
 }
 
 
-QString LanguageModel::getLanguageName(const QString &langCode)
+
+void LanguageModel::clear()
 {
-    return m_langCode[langCode];
+    if (rowCount() == 0) {
+        return;
+    }
+
+    beginRemoveRows(QModelIndex(), 0, rowCount()-1);
+
+    qDeleteAll(m_langs);
+    m_langs.clear();
+
+    endRemoveRows();
+}
+
+
+
+int LanguageModel::findIndex(const QString &langCode) const
+{
+    if (rowCount() == 0) {
+        return -1;
+    }
+
+    int idx = -1;
+
+    for (int i = 0; i < m_langs.count(); ++i) {
+        if (m_langs.at(i)->code == langCode) {
+            idx = i;
+            break;
+        }
+    }
+
+    return idx;
 }
