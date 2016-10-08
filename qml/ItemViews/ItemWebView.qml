@@ -71,25 +71,4 @@ Page {
             }
         }
     }
-
-//    CoverActionList {
-//            enabled: singleWebView.status === PageStatus.Active
-//            iconBackground: true
-
-//            CoverAction {
-//                iconSource: "image://theme/icon-cover-previous"
-//                onTriggered: pageStack.navigateBack(PageStackAction.Immediate)
-//            }
-
-//            CoverAction {
-//                iconSource: webView.loading ? "image://theme/icon-cover-cancel" : "image://theme/icon-cover-refresh"
-//                onTriggered: {
-//                    if (webView.loading) {
-//                        webView.stop()
-//                    } else {
-//                        webView.reload()
-//                    }
-//                }
-//            }
-//        }
 }
