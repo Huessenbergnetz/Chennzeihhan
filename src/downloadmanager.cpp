@@ -18,15 +18,22 @@
 */
 
 #include "downloadmanager.h"
+#include <QNetworkReply>
+#include <QProcess>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QEventLoop>
+#include <QDir>
+#include <QUrl>
+#ifdef QT_DEBUG
 #include <QDebug>
+#endif
 
 DownloadManager::DownloadManager(QObject *parent) :
-    QObject(parent), m_process(new QProcess(this))
+    QObject(parent), m_dbCacheFileName(QDir::homePath()), m_dbFileName(QDir::homePath()), m_process(new QProcess(this))
 {
-    dbCacheFileName = QDir::homePath();
-    dbCacheFileName.append(DATA_DIR).append("/carplates.sqlite.gz");
-    dbFileName = QDir::homePath();
-    dbFileName.append(DATA_DIR).append("/carplates.sqlite");
+    m_dbCacheFileName.append(QLatin1String(DATA_DIR)).append(QLatin1String("/carplates.sqlite.gz"));
+    m_dbFileName.append(QLatin1String(DATA_DIR)).append(QLatin1String("/carplates.sqlite"));
 }
 
 
@@ -34,14 +41,15 @@ void DownloadManager::downloadDB()
 {
     emit dbDownloadStarted();
 
-    dbCacheFile.setFileName(dbCacheFileName);
+    dbCacheFile.setFileName(m_dbCacheFileName);
 
-    if (dbCacheFile.exists())
+    if (dbCacheFile.exists()) {
         dbCacheFile.remove();
+    }
 
     if (!dbCacheFile.open(QIODevice::WriteOnly))
     {
-        qDebug() << "Can not open cache file.";
+        qCritical("Can not open cache file.");
         emit dbDownloadFailed();
         return;
     }
@@ -50,14 +58,16 @@ void DownloadManager::downloadDB()
     QUrl url(dbUrl);
 
     if (onlineDBVersion > 0) {
+#ifdef QT_DEBUG
         qDebug() << "Start downloading database";
+#endif
         QNetworkRequest request(url);
         reply = manager.get(request);
-        connect(reply, SIGNAL(downloadProgress(qint64,qint64)), this, SLOT(downloadDBProgress(qint64,qint64)));
-        connect(reply, SIGNAL(finished()), this, SLOT(downloadDBFinished()));
-        connect(reply, SIGNAL(readyRead()), this, SLOT(downloadDBReadyRead()));
+        connect(reply, &QNetworkReply::downloadProgress, this, &DownloadManager::downloadDBProgress);
+        connect(reply, &QNetworkReply::finished, this, &DownloadManager::downloadDBFinished);
+        connect(reply, &QNetworkReply::readyRead, this, &DownloadManager::downloadDBReadyRead);
     } else {
-        qDebug() << "Can not retrieve DB info file.";
+        qCritical("Can not retrieve DB info file.");
         emit dbDownloadFailed();
     }
 
@@ -66,44 +76,55 @@ void DownloadManager::downloadDB()
 
 void DownloadManager::downloadDBProgress(qint64 bytesReceived, qint64 bytesTotal)
 {
+#ifdef QT_DEBUG
     qDebug() << "Downloadprogress: " << bytesReceived << "/" << bytesTotal;
+#endif
     emit dbDownloadProgress((int)bytesReceived, (int)bytesTotal);
 }
 
 
 void DownloadManager::downloadDBFinished()
 {
+#ifdef QT_DEBUG
     qDebug() << "Finished downloading DB.";
+#endif
 
     dbCacheFile.close();
     reply->deleteLater();
 
     QFile dbFile;
-    dbFile.setFileName(dbFileName);
+    dbFile.setFileName(m_dbFileName);
     if (dbFile.exists())
     {
+#ifdef QT_DEBUG
         qDebug() << "Removing existing DB file.";
+#endif
         if (!dbFile.remove())
         {
             emit dbDownloadFailed();
-            qDebug() << "Failed to remove current DB file.";
+            qCritical("Failed to remove current DB file.");
             return;
         }
     }
 
+#ifdef QT_DEBUG
     qDebug() << "Decompressing downloaded DB.";
-    QStringList args;
-    args << "-d" << dbCacheFileName;
-    m_process->start("gzip", args);
+#endif
+
+    m_process->start(QStringLiteral("gzip"), QStringList({QStringLiteral("-d"), m_dbCacheFileName}));
+
+#ifdef QT_DEBUG
+    qDebug() << m_process->program() << args;
+#endif
 
     if (m_process->exitCode() != 0) {
         emit dbDownloadFailed();
-        qDebug() << "Failed to decompress DB.";
-        settings.setValue("database/version", 0);
+        qCritical("Failed to decompress DB.");
+        settings.setValue(QStringLiteral("database/version"), 0);
         return;
     }
 
-    settings.setValue("database/version", onlineDBVersion);
+    settings.setValue(QStringLiteral("database/version"), onlineDBVersion);
 
     emit dbDownloadFinished();
 
@@ -117,33 +138,26 @@ void DownloadManager::downloadDBReadyRead()
 
 int DownloadManager::getOnlineDBVersion()
 {
-    QUrl url("http://www.buschmann23.de/chennzeihhan-data/database.json");
     int newVersion = 0;
-    int oldVersion = getLocalDBVersion();
-    QString changelog = "";
-    QString cSize = "";
-    QString uSize = "";
 
-    QNetworkRequest request(url);
+    QNetworkRequest request(QUrl(QStringLiteral("https://www.buschmann23.de/chennzeihhan-data/database.json")));
     reply = manager.get(request);
 
     QEventLoop dlLoop;
-    connect(reply, SIGNAL(finished()), &dlLoop, SLOT(quit()));
+    connect(reply, &QNetworkReply::finished, &dlLoop, &QEventLoop::quit);
     dlLoop.exec();
 
     if (reply->error() == QNetworkReply::NoError)
     {
-        QVariantMap result;
-        result = QJsonDocument::fromJson(reply->readAll()).object().toVariantMap();
+        QJsonObject result = QJsonDocument::fromJson(reply->readAll()).object();
 
+#ifdef QT_DEBUG
         qDebug() << "JSON-Result: " << result;
+#endif
 
-        newVersion = result["version"].toInt();
-        dbUrl = result["url"].toString();
-        changelog = result["changelog"].toString();
-        cSize = result["cSize"].toString();
-        uSize = result["uSize"].toString();
-        emit gotDBVersion(oldVersion, newVersion, changelog, cSize, uSize);
+        newVersion = result.value(QStringLiteral("version")).toInt();
+        dbUrl = result.value(QStringLiteral("url")).toString();
+        emit gotDBVersion(getLocalDBVersion(), newVersion, result.value(QStringLiteral("changelog")).toString(), result.value(QStringLiteral("cSize")).toString(), result.value(QStringLiteral("uSize")).toString());
     }
     reply->deleteLater();
 
@@ -154,5 +168,5 @@ int DownloadManager::getOnlineDBVersion()
 
 int DownloadManager::getLocalDBVersion()
 {
-    return settings.value("database/version", 0).toInt();
+    return settings.value(QStringLiteral("database/version"), 0).toInt();
 }

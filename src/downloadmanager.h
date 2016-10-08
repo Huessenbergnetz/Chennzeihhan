@@ -3,17 +3,13 @@
 
 #include <QObject>
 #include <QFile>
-#include <QDir>
-#include <QUrl>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
-#include <QNetworkReply>
 #include <QSettings>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QEventLoop>
-#include <QProcess>
 #include "globals.h"
+
+class QNetworkReply;
+class QProcess;
 
 class DownloadManager : public QObject
 {
@@ -45,8 +41,8 @@ private:
     QNetworkAccessManager manager;
     QNetworkReply *reply;
     QFile dbCacheFile;
-    QString dbCacheFileName;
-    QString dbFileName;
+    QString m_dbCacheFileName;
+    QString m_dbFileName;
     QSettings settings;
     int onlineDBVersion;
     QProcess *m_process;

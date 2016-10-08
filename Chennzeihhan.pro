@@ -1,6 +1,7 @@
 TARGET = harbour-chennzeihhan
 
 CONFIG += sailfishapp
+CONFIG += c++11
 QT += sql xml
 
 SOURCES += \
