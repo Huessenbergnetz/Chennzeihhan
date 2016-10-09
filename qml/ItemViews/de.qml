@@ -19,89 +19,51 @@
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
+import harbour.chennzeihhan 1.0
 
 Page {
     id: deItemView
     objectName: "ItemView"
 
-    property int itemId
-
-    property string countryCode: "de"
-
-    property string sign
-    property string name
-    property string capitol
-    property string type
-    property string state
-    property int founded
-    property int disbanded
-    property int optional
-    property int succId  // data for the successor
-    property string succName
-    property string succType
-    property string succSign
-    property int tpoId // data for the district it is part of today if it is not the same as successor
-    property string tpoName
-    property string tpoType
-    property string tpoSign
-    property string optSigns
-    property string wikipedia
-
-    function getItemData()
-    {
-        var itemData = itemModel.getItemData(countryCode, itemId);
-        sign = itemData["sign"];
-        name = itemData["name"];
-        capitalText.contentText = itemData["capital"];
-        type = itemData["type"];
-        stateLabel.text = itemData["state"];
-        founded = itemData["founded"];
-        disbanded = itemData["disbanded"];
-        optionalText.contentText = itemData["optional"];
-        succId = itemData["succId"];
-        succName = itemData["succName"];
-        succType = itemData["succType"];
-        succSign = itemData["succSign"];
-        tpoId = itemData["tpoId"];
-        tpoName = itemData["tpoName"];
-        tpoType = itemData["tpoType"];
-        tpoSign = itemData["tpoSign"];
-        optSignsText.contentText = itemData["optionalSigns"];
-        wikipedia = itemData["wikipedia"];
-
-        antecessorModel.refresh(countryCode, itemId)
+    DeItem {
+        id: deItem
     }
 
-    Component.onCompleted: {
-        getItemData()
-    }
+    property alias itemId: deItem.id
 
     onStatusChanged: {
-        if (status == PageStatus.Active && wikipedia !== "") {
-            pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {wpLang: "de", wpName: wikipedia})
+        if (status == PageStatus.Active && deItem.wikipedia !== "") {
+            pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {wpLang: "de", wpName: deItem.wikipedia})
         }
         coverConnector.country = qsTr("Germany")
-        coverConnector.name = deItemView.name
-        coverConnector.sign = deItemView.sign
-        coverConnector.type = deItemView.type
-        coverConnector.state = stateLabel.text
+        coverConnector.name = deItem.name
+        coverConnector.sign = deItem.sign
+        coverConnector.type = deItem.type
+        coverConnector.state = deItem.state
+    }
+
+    BusyIndicator {
+        visible: deItem.inOperation
+        running: visible
+        size: BusyIndicatorSize.Large
+        anchors.centerIn: parent
     }
 
     SilicaFlickable {
         id: singleItem
-        PageHeader { title: sign }
+        PageHeader { id: pHeader; title: deItem.sign }
         anchors.fill: parent
         VerticalScrollDecorator {}
         contentHeight: headerCol.height + contentCol.height + listCol.height + Theme.paddingLarge
 
-
         Column {
             id: headerCol
+            visible: !deItem.inOperation
             anchors { top: parent.top; left: parent.left; right: parent.right; topMargin: 4 * Theme.paddingLarge; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
 
             Label {
                 id: nameLabel
-                text: qsTr("%1 %2").arg(type).arg(name)
+                text: qsTr("%1 %2").arg(deItem.type).arg(deItem.name)
                 textFormat: Text.PlainText
                 color: Theme.highlightColor
                 width: parent.width
@@ -112,6 +74,7 @@ Page {
                 id: stateLabel
                 textFormat: Text.PlainText
                 color: Theme.highlightColor
+                text: deItem.state
             }
         }
 
@@ -120,57 +83,62 @@ Page {
             id: contentCol
             anchors { top: headerCol.bottom; left: parent.left; right: parent.right; topMargin: Theme.paddingLarge; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
             spacing:Theme.paddingLarge
+            visible: !deItem.inOperation
 
             ItemEntry {
                 id: capitalText
                 header: qsTr("Capital")
                 icon: "image://theme/icon-s-task"
+                contentText: deItem.capital
             }
 
             ItemEntry {
                 id: existenceText
-                header: disbanded === 0 ? qsTr("Existing since") : qsTr("Existed from")
-                contentText: disbanded === 0 ? founded : founded + " - " + disbanded
+                header: deItem.disbanded === 0 ? qsTr("Existing since") : qsTr("Existed from")
+                contentText: deItem.disbanded === 0 ? deItem.founded : deItem.founded + " - " + deItem.disbanded
                 icon: "image://theme/icon-s-date"
             }
 
             ItemEntry {
                 id: optSignsText
                 header: qsTr("Optional plate signs")
-                visible: contentText !== ""
+                visible: deItem.optionalSigns !== ""
                 icon: "image://theme/icon-l-share"
+                contentText: deItem.optionalSigns
             }
 
             ItemEntry {
                 id: optionalText
                 header: qsTr("Sign optional available since")
-                visible: contentText !== "0"
+                visible: deItem.optional
                 icon: "image://theme/icon-m-refresh"
+                contentText: deItem.optional
             }
         }
 
         Column {
             id: listCol
             anchors { top: contentCol.bottom; left: parent.left; right: parent.right; topMargin: Theme.paddingLarge; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
+            visible: !deItem.inOperation
 
             ItemEntry {
                 id: mergedText
                 header: qsTr("Merged into")
-                visible: succId !== 0
+                visible: deItem.successorId !== 0
                 icon: "image://theme/icon-s-device-upload"
-                contentText: qsTr("%1 - %2 %3").arg(succSign).arg(succType).arg(succName)
+                contentText: deItem.successor
                 clickable: true
-                onClicked: pageStack.replace(Qt.resolvedUrl("de.qml"), {itemId: succId}, PageStackAction.Immediate)
+                onClicked: deItem.id = deItem.successorId
             }
 
             ItemEntry {
                 id: todayPartOfText
                 header: qsTr("Today part of")
-                visible: tpoId !== 0
+                visible: deItem.tpoId !== 0 && deItem.tpoId !== deItem.successorId
                 icon: "image://theme/icon-m-location"
-                contentText: qsTr("%1 - %2 %3").arg(tpoSign).arg(tpoType).arg(tpoName)
+                contentText: deItem.tpo
                 clickable: true
-                onClicked: pageStack.replace(Qt.resolvedUrl("de.qml"), {itemId: tpoId}, PageStackAction.Immediate)
+                onClicked: deItem.id = deItem.tpoId
             }
 
             ItemEntry {
@@ -178,9 +146,9 @@ Page {
                 header: qsTr("Includes this old districts")
                 visible: count > 0
                 icon: "image://theme/icon-m-levels"
-                repeaterModel: antecessorModel
+                repeaterModel: deItem.antecessors
                 list: true
-                onModelClicked: pageStack.replace(Qt.resolvedUrl("de.qml"), {itemId: modelId}, PageStackAction.Immediate)
+                onModelClicked: deItem.id = modelId
             }
         }
     }

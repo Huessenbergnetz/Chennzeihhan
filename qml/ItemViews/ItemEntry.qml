@@ -106,14 +106,15 @@ Item {
             delegate: BackgroundItem {
                 height: Theme.itemSizeExtraSmall
                 anchors.left: rep.left
-                anchors.leftMargin: -Theme.paddingLarge
+                anchors.leftMargin: -Theme.horizontalPageMargin
                 anchors.right: rep.right
-                anchors.rightMargin: -Theme.paddingLarge
+                anchors.rightMargin: -Theme.horizontalPageMargin
                 Label {
                     id: succOfText
                     width: parent.width
                     maximumLineCount: 1
                     truncationMode: TruncationMode.Fade
+                    //: 1 - the carplate sign, 2 - the district type, 3 - the district name
                     text: qsTr("%1 - %2 %3").arg(model.sign).arg(model.type).arg(model.name)
                     font.pixelSize: Theme.fontSizeSmall
                     color: parent.highlighted ? Theme.highlightColor : Theme.primaryColor
@@ -123,7 +124,7 @@ Item {
                     anchors.leftMargin: Theme.paddingLarge
                     anchors.rightMargin: Theme.paddingLarge
                 }
-                onClicked: root.modelClicked(model.itemId)
+                onClicked: root.modelClicked(model.id)
             }
         }
     }

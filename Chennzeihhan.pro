@@ -7,7 +7,6 @@ QT += sql xml
 SOURCES += \
     src/main.cpp \
     src/dbmanager.cpp \
-    src/models/deantecessormodel.cpp \
     src/models/dehelper.cpp \
     src/models/countrymodel.cpp \
     src/models/itemmodel.cpp \
@@ -18,7 +17,11 @@ SOURCES += \
     src/models/countriesmodel.cpp \
     src/globals.cpp \
     src/configuration.cpp \
-    src/models/languagemodel.cpp
+    src/models/languagemodel.cpp \
+    src/models/item.cpp \
+    src/models/simpleitemmodel.cpp \
+    src/models/extendeditem.cpp \
+    src/models/deitem.cpp
 
 translations.path = /usr/share/harbour-chennzeihhan/translations
 translations.files = l10n/*.qm
@@ -70,7 +73,6 @@ OTHER_FILES += \
 HEADERS += \
     src/dbmanager.h \
     src/globals.h \
-    src/models/deantecessormodel.h \
     src/models/dehelper.h \
     src/models/countrymodel.h \
     src/models/itemmodel.h \
@@ -80,4 +82,9 @@ HEADERS += \
     src/models/antecessormodel.h \
     src/models/countriesmodel.h \
     src/configuration.h \
-    src/models/languagemodel.h
+    src/models/languagemodel.h \
+    src/models/item.h \
+    src/models/simpleitemmodel.h \
+    src/models/simpleitem.h \
+    src/models/extendeditem.h \
+    src/models/deitem.h

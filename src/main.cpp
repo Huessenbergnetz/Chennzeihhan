@@ -46,6 +46,8 @@
 #include "models/itemmodel.h"
 #include "models/countriesmodel.h"
 #include "models/languagemodel.h"
+#include "models/simpleitemmodel.h"
+#include "models/deitem.h"
 
 
 int main(int argc, char *argv[])
@@ -96,6 +98,8 @@ int main(int argc, char *argv[])
 
 
     qmlRegisterType<LanguageModel>("harbour.chennzeihhan", 1, 0, "LanguageModel");
+    qmlRegisterUncreatableType<SimpleItemModel>("harbour.chennzeihhan", 1, 0, "SimpleItemModel", QStringLiteral("You can not create a SimpleItemModel component."));
+    qmlRegisterType<DeItem>("harbour.chennzeihhan", 1, 0, "DeItem");
 
 
     QObject::connect(&dlManager, &DownloadManager::dbDownloadStarted, &dbman, &DbManager::closeDB);
