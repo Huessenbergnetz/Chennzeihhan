@@ -78,144 +78,6 @@
     </message>
 </context>
 <context>
-    <name>AtHelper</name>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="34"/>
-        <source>Austria</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="37"/>
-        <source>Burgenland</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="40"/>
-        <source>Carinthia</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="43"/>
-        <source>Lower Austria</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="46"/>
-        <source>Upper Austria</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="49"/>
-        <source>Salzburg</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="52"/>
-        <source>Styria</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="55"/>
-        <source>Tyrol</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="58"/>
-        <source>Vorarlberg</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="61"/>
-        <source>Vienna</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="64"/>
-        <source>Unknown</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="79"/>
-        <source>Federal Officials</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="82"/>
-        <source>District of</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="85"/>
-        <source>State of</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="88"/>
-        <source>Political Expositur</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="91"/>
-        <source>Federal Railways</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="94"/>
-        <source>Diplomatic Corps in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="97"/>
-        <source>Federal Bus Service</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="100"/>
-        <source>Postbus</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="103"/>
-        <source>Federal Gendarmerie</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="106"/>
-        <source>Austrian Armed Forces</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="109"/>
-        <source>Consul in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="112"/>
-        <source>Federal Police</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="115"/>
-        <source>City of</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="118"/>
-        <source>Financial Administration</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="121"/>
-        <source>Justice Guard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/models/athelper.cpp" line="124"/>
-        <source>Border Control</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>AtItem</name>
     <message>
         <location filename="../src/models/atitem.cpp" line="6"/>
@@ -687,142 +549,1365 @@
         <comment>Austria</comment>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>DeHelper</name>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="34"/>
-        <source>Baden-WÃ¼rttemberg</source>
+        <location filename="../data/dbstrings.h" line="59"/>
+        <source>Austria</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="37"/>
-        <source>Bavaria</source>
+        <location filename="../data/dbstrings.h" line="60"/>
+        <source>Afghanistan</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="40"/>
-        <source>Berlin</source>
+        <location filename="../data/dbstrings.h" line="61"/>
+        <source>Antigua and Barbuda</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="43"/>
-        <source>Brandenburg</source>
+        <location filename="../data/dbstrings.h" line="62"/>
+        <source>Albania</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="46"/>
-        <source>Bremen</source>
+        <location filename="../data/dbstrings.h" line="63"/>
+        <source>Armenia</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="49"/>
-        <source>Hamburg</source>
+        <location filename="../data/dbstrings.h" line="64"/>
+        <source>Andorra</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="52"/>
-        <source>Hesse</source>
+        <location filename="../data/dbstrings.h" line="65"/>
+        <source>Angola</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="55"/>
-        <source>Lower Saxony</source>
+        <location filename="../data/dbstrings.h" line="66"/>
+        <source>Aruba</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="58"/>
-        <source>Mecklenburg-Vorpommern</source>
+        <location filename="../data/dbstrings.h" line="67"/>
+        <source>Australia</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="61"/>
-        <source>North Rhine-Westphalia</source>
+        <location filename="../data/dbstrings.h" line="68"/>
+        <source>Palestinian territories</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="64"/>
-        <source>Rhineland-Palatinate</source>
+        <location filename="../data/dbstrings.h" line="69"/>
+        <source>Ãland Islands</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="67"/>
-        <source>Saarland</source>
+        <location filename="../data/dbstrings.h" line="70"/>
+        <source>Anguilla</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="70"/>
-        <source>Saxony</source>
+        <location filename="../data/dbstrings.h" line="71"/>
+        <source>Azerbaijan</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="73"/>
-        <source>Saxony-Anhalt</source>
+        <location filename="../data/dbstrings.h" line="72"/>
+        <source>Belgium</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="76"/>
-        <source>Schleswig-Holstein</source>
+        <location filename="../data/dbstrings.h" line="73"/>
+        <source>Bangladesh</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="79"/>
-        <source>Thuringia</source>
+        <location filename="../data/dbstrings.h" line="74"/>
+        <source>Barbados</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="82"/>
+        <location filename="../data/dbstrings.h" line="75"/>
+        <source>Burkina Faso</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="76"/>
+        <source>Bulgaria</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="77"/>
+        <location filename="../data/dbstrings.h" line="89"/>
+        <source>Belize</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="78"/>
+        <source>Bhutan</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="79"/>
+        <source>Bosnia and Herzegovina</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="80"/>
+        <location filename="../data/dbstrings.h" line="110"/>
+        <source>Benin</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="81"/>
+        <source>Bolivia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="82"/>
+        <source>Brazil</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="83"/>
+        <source>Bahrain</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="84"/>
+        <source>Brunei</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="85"/>
+        <source>Bahamas</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="86"/>
+        <source>British Virgin Islands</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="87"/>
+        <location filename="../data/dbstrings.h" line="219"/>
+        <source>Botswana</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="88"/>
+        <source>Belarus</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="90"/>
+        <source>Cuba</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="91"/>
+        <source>Cameroon</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="92"/>
+        <source>Canada</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="93"/>
+        <location filename="../data/dbstrings.h" line="298"/>
+        <source>Congo-Kinshasa</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="94"/>
+        <source>Switzerland</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="95"/>
+        <location filename="../data/dbstrings.h" line="98"/>
+        <source>China</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="96"/>
+        <source>Ivory Coast</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="97"/>
+        <source>Sri Lanka</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="99"/>
+        <source>Colombia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="100"/>
+        <source>Comores</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="101"/>
+        <source>Costa Rica</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="102"/>
+        <source>Cape Verde</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="103"/>
+        <source>Cyprus</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="104"/>
+        <source>Wales (GB)</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="105"/>
+        <source>Czech Republic</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="106"/>
         <source>Germany</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="85"/>
-        <source>Unknown</source>
+        <location filename="../data/dbstrings.h" line="107"/>
+        <source>Djibouti</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="99"/>
-        <source>City and District of</source>
+        <location filename="../data/dbstrings.h" line="108"/>
+        <source>Denmark</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="102"/>
-        <source>District of</source>
+        <location filename="../data/dbstrings.h" line="109"/>
+        <source>Dominican Republic</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="105"/>
-        <source>City of</source>
+        <location filename="../data/dbstrings.h" line="111"/>
+        <source>Algeria</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="108"/>
-        <source>Cities region</source>
+        <location filename="../data/dbstrings.h" line="112"/>
+        <source>Spain</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="111"/>
-        <source>Region of</source>
+        <location filename="../data/dbstrings.h" line="113"/>
+        <source>Kenya</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="114"/>
-        <source>Regional association of</source>
+        <location filename="../data/dbstrings.h" line="114"/>
+        <source>Tanzania</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="117"/>
-        <source>Official cars</source>
+        <location filename="../data/dbstrings.h" line="115"/>
+        <source>Uganda</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="120"/>
-        <source>Members of the</source>
+        <location filename="../data/dbstrings.h" line="116"/>
+        <source>Ecuador</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/dehelper.cpp" line="123"/>
-        <source>Officials of the</source>
+        <location filename="../data/dbstrings.h" line="117"/>
+        <source>England (GB)</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="118"/>
+        <source>Eritrea</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="119"/>
+        <source>El Salvador</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="120"/>
+        <source>Estonia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="121"/>
+        <source>Egypt</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="122"/>
+        <source>Ethiopia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="123"/>
+        <source>France</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="124"/>
+        <source>Finland</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="125"/>
+        <source>Fiji</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="126"/>
+        <source>Liechtenstein</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="127"/>
+        <source>Faroe Islands</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="128"/>
+        <source>Micronesia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="129"/>
+        <source>Gabon</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="130"/>
+        <source>United Kingdom</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="131"/>
+        <source>Alderney</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="132"/>
+        <source>Guernsey</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="133"/>
+        <source>Jersey</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="134"/>
+        <source>Isle of Man</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="135"/>
+        <source>Gibraltar</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="136"/>
+        <location filename="../data/dbstrings.h" line="141"/>
+        <source>Guatemala</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="137"/>
+        <source>Georgia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="138"/>
+        <source>Ghana</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="139"/>
+        <source>Equatorial Guinea</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="140"/>
+        <source>Greece</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="142"/>
+        <location filename="../data/dbstrings.h" line="145"/>
+        <source>Guinea-Bissau</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="143"/>
+        <location filename="../data/dbstrings.h" line="224"/>
+        <source>Guinea</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="144"/>
+        <source>Guyana</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="146"/>
+        <source>Hungary</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="147"/>
+        <source>Hongkong</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="148"/>
+        <location filename="../data/dbstrings.h" line="160"/>
+        <source>Jordan</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="149"/>
+        <source>Honduras</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="150"/>
+        <source>Croatia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="151"/>
+        <source>Italy</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="152"/>
+        <source>Israel</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="153"/>
+        <source>India</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="154"/>
+        <source>Iran</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="155"/>
+        <source>Ireland</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="156"/>
+        <source>Irag</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="157"/>
+        <source>Iceland</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="158"/>
+        <source>Japan</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="159"/>
+        <source>Jamaica</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="161"/>
+        <source>Cambodia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="162"/>
+        <source>Saint Kitts and Nevis</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="163"/>
+        <source>Kiribati</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="164"/>
+        <source>Greenland</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="165"/>
+        <source>North Korea</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="166"/>
+        <source>Kyrgyzstan</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="167"/>
+        <source>Saudi Arabia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="168"/>
+        <source>Kuwait</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="169"/>
+        <source>Kazakhstan</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="170"/>
+        <source>Laos</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="171"/>
+        <source>Libya</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="172"/>
+        <source>Liberia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="173"/>
+        <source>Lesotho</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="174"/>
+        <source>Lithuania</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="175"/>
+        <source>Luxembourg</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="176"/>
+        <source>Latvia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="177"/>
+        <source>Malta</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="178"/>
+        <source>Morocco</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="179"/>
+        <source>Malaysia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="180"/>
+        <source>Moncao</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="181"/>
+        <source>Moldova</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="182"/>
+        <source>Mexico</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="183"/>
+        <source>Mongolia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="184"/>
+        <source>Marshall Islands</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="185"/>
+        <source>Macedonia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="186"/>
+        <source>Montenegro</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="187"/>
+        <source>Macau</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="188"/>
+        <source>Mozambique</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="189"/>
+        <source>Mauritius</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="190"/>
+        <source>Maldives</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="191"/>
+        <source>Malawi</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="192"/>
+        <source>Myanmar</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="193"/>
+        <source>Norway</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="194"/>
+        <source>Netherlands Antilles</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="195"/>
+        <source>Namibia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="196"/>
+        <source>Nauru</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="197"/>
+        <location filename="../data/dbstrings.h" line="198"/>
+        <source>New Caledonia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="199"/>
+        <source>Nepal</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="200"/>
+        <location filename="../data/dbstrings.h" line="285"/>
+        <source>Nigeria</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="201"/>
+        <source>Northern Ireland (GB)</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="202"/>
+        <source>Nicaragua</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="203"/>
+        <source>Netherlands</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="204"/>
+        <source>New Zealand</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="205"/>
+        <source>Oman</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="206"/>
+        <source>Portugal</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="207"/>
+        <source>Panama</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="208"/>
+        <source>Palau</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="209"/>
+        <source>Peru</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="210"/>
+        <source>Pakistan</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="211"/>
+        <source>Poland</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="212"/>
+        <source>Transnistria</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="213"/>
+        <source>Papua New Guinea</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="214"/>
+        <source>Puerto Rico</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="215"/>
+        <source>Palestine</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="216"/>
+        <source>Paraguay</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="217"/>
+        <source>Qatar</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="218"/>
+        <source>Argentina</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="220"/>
+        <source>Taiwan</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="221"/>
+        <source>Central African Republic</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="222"/>
+        <source>Congo-Brazzaville</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="223"/>
+        <source>Chile</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="225"/>
+        <source>Haiti</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="226"/>
+        <source>Indonesia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="227"/>
+        <source>Mauritania</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="228"/>
+        <source>Kosovo</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="229"/>
+        <source>Lebanon</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="230"/>
+        <source>Madagascar</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="231"/>
+        <source>Mali</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="232"/>
+        <source>Niger</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="233"/>
+        <location filename="../data/dbstrings.h" line="241"/>
+        <source>Romania</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="234"/>
+        <source>South Korea</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="235"/>
+        <location filename="../data/dbstrings.h" line="276"/>
+        <source>Uruguay</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="236"/>
+        <source>Philippines</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="237"/>
+        <source>Republika Srpska</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="238"/>
+        <source>San Marino</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="239"/>
+        <location filename="../data/dbstrings.h" line="264"/>
+        <source>Togo</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="240"/>
+        <source>Burundi</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="242"/>
+        <source>Russia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="243"/>
+        <source>Rwanda</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="244"/>
+        <source>Sweden</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="245"/>
+        <source>Scotland (GB)</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="246"/>
+        <source>Swaziland</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="247"/>
+        <source>Singapore</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="248"/>
+        <source>Slovakia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="249"/>
+        <location filename="../data/dbstrings.h" line="284"/>
+        <source>Sierra Leone</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="250"/>
+        <source>Slovenia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="251"/>
+        <source>Suriname</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="252"/>
+        <source>Sovereign Military Order of Malta</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="253"/>
+        <source>Senegal</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="254"/>
+        <source>Somalia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="255"/>
+        <source>Solomon Islands</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="256"/>
+        <source>Serbia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="257"/>
+        <source>South Sudan</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="258"/>
+        <source>SÃ£o TomÃ© and PrÃ­ncipe</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="259"/>
+        <source>Sudan</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="260"/>
+        <source>Seychelles</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="261"/>
+        <source>Syria</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="262"/>
+        <source>Thailand</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="263"/>
+        <source>Chad</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="265"/>
+        <source>Tajikistan</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="266"/>
+        <source>Timor-Leste</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="267"/>
+        <source>Turkmenistan</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="268"/>
+        <source>Tunisia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="269"/>
+        <source>Tonga</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="270"/>
+        <source>Turkey</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="271"/>
+        <source>Trinidad and Tobago</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="272"/>
+        <source>Tuvalu</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="273"/>
+        <source>Ukraine</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="274"/>
+        <source>United Arab Emirates</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="275"/>
+        <source>United States</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="277"/>
+        <source>Uzbekistan</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="278"/>
+        <source>Vatican City</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="279"/>
+        <location filename="../data/dbstrings.h" line="282"/>
+        <source>Vanuatu</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="280"/>
+        <source>Virgin Islands</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="281"/>
+        <source>Vietnam</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="283"/>
+        <source>Gambia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="286"/>
+        <source>West Bank</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="287"/>
+        <source>Dominica</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="288"/>
+        <source>Grenada</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="289"/>
+        <source>Saint Lucia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="290"/>
+        <source>Samoa</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="291"/>
+        <source>Western Sahara</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="292"/>
+        <source>Saint Vincent and the Grenadines</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="293"/>
+        <location filename="../data/dbstrings.h" line="294"/>
+        <source>Yemen</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="295"/>
+        <source>Venezuela</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="296"/>
+        <source>Zambia</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="297"/>
+        <source>South Africa</source>
+        <comment>Countries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="299"/>
+        <source>Zimbabwe</source>
+        <comment>Countries</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>

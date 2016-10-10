@@ -15,6 +15,8 @@ sqlite3 -list carplates.sqlite "SELECT DISTINCT state FROM at WHERE state != '';
 
 sqlite3 -list carplates.sqlite "SELECT DISTINCT type FROM at WHERE type != '';" | sed 's/^\(.*\)/    QT_TRANSLATE_NOOP3("DBStrings", "\1", "Austria");/' >> dbstrings.h
 
+sqlite3 -list carplates.sqlite "SELECT en FROM countries;" | sed 's/^\(.*\)/    QT_TRANSLATE_NOOP3("DBStrings", "\1", "Countries");/' >> dbstrings.h
+
 echo "
 };
 #endif // DBSTRINGS_H" >> dbstrings.h 
