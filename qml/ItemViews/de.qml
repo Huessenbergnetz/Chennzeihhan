@@ -21,135 +21,37 @@ import QtQuick 2.2
 import Sailfish.Silica 1.0
 import harbour.chennzeihhan 1.0
 
-Page {
+ExtendedItemView {
     id: deItemView
     objectName: "ItemView"
 
     DeItem {
         id: deItem
+        coverConnector: cc
     }
 
     property alias itemId: deItem.id
 
-    onStatusChanged: {
-        if (status == PageStatus.Active && deItem.wikipedia !== "") {
-            pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {wpLang: "de", wpName: deItem.wikipedia})
-        }
-        coverConnector.country = qsTr("Germany")
-        coverConnector.name = deItem.name
-        coverConnector.sign = deItem.sign
-        coverConnector.type = deItem.type
-        coverConnector.state = deItem.state
-    }
+    sign: deItem.sign
+    //: the first one is the district type, the second is the district name
+    name: qsTr("%1 %2").arg(deItem.type).arg(deItem.name)
+    state: deItem.state
+    capital: deItem.capital
+    disbanded: deItem.disbanded
+    founded: deItem.founded
+    optional: deItem.optional
+    optionalSigns: deItem.optionalSigns
+    antecessors: deItem.antecessors
+    successorId: deItem.successorId
+    successor: deItem.successor
+    tpoId: deItem.tpoId
+    tpo: deItem.tpo
+    wikipedia: deItem.wikipedia
+    wikipediaLang: "de"
+    inOperation: deItem.inOperation
 
-    BusyIndicator {
-        visible: deItem.inOperation
-        running: visible
-        size: BusyIndicatorSize.Large
-        anchors.centerIn: parent
-    }
-
-    SilicaFlickable {
-        id: singleItem
-        PageHeader { id: pHeader; title: deItem.sign }
-        anchors.fill: parent
-        VerticalScrollDecorator {}
-        contentHeight: headerCol.height + contentCol.height + listCol.height + Theme.paddingLarge
-
-        Column {
-            id: headerCol
-            visible: !deItem.inOperation
-            anchors { top: parent.top; left: parent.left; right: parent.right; topMargin: 4 * Theme.paddingLarge; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
-
-            Label {
-                id: nameLabel
-                text: qsTr("%1 %2").arg(deItem.type).arg(deItem.name)
-                textFormat: Text.PlainText
-                color: Theme.highlightColor
-                width: parent.width
-                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-            }
-
-            Label {
-                id: stateLabel
-                textFormat: Text.PlainText
-                color: Theme.highlightColor
-                text: deItem.state
-            }
-        }
-
-
-        Column {
-            id: contentCol
-            anchors { top: headerCol.bottom; left: parent.left; right: parent.right; topMargin: Theme.paddingLarge; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
-            spacing:Theme.paddingLarge
-            visible: !deItem.inOperation
-
-            ItemEntry {
-                id: capitalText
-                header: qsTr("Capital")
-                icon: "image://theme/icon-s-task"
-                contentText: deItem.capital
-            }
-
-            ItemEntry {
-                id: existenceText
-                header: deItem.disbanded === 0 ? qsTr("Existing since") : qsTr("Existed from")
-                contentText: deItem.disbanded === 0 ? deItem.founded : deItem.founded + " - " + deItem.disbanded
-                icon: "image://theme/icon-s-date"
-            }
-
-            ItemEntry {
-                id: optSignsText
-                header: qsTr("Optional plate signs")
-                visible: deItem.optionalSigns !== ""
-                icon: "image://theme/icon-l-share"
-                contentText: deItem.optionalSigns
-            }
-
-            ItemEntry {
-                id: optionalText
-                header: qsTr("Sign optional available since")
-                visible: deItem.optional
-                icon: "image://theme/icon-m-refresh"
-                contentText: deItem.optional
-            }
-        }
-
-        Column {
-            id: listCol
-            anchors { top: contentCol.bottom; left: parent.left; right: parent.right; topMargin: Theme.paddingLarge; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
-            visible: !deItem.inOperation
-
-            ItemEntry {
-                id: mergedText
-                header: qsTr("Merged into")
-                visible: deItem.successorId !== 0
-                icon: "image://theme/icon-s-device-upload"
-                contentText: deItem.successor
-                clickable: true
-                onClicked: deItem.id = deItem.successorId
-            }
-
-            ItemEntry {
-                id: todayPartOfText
-                header: qsTr("Today part of")
-                visible: deItem.tpoId !== 0 && deItem.tpoId !== deItem.successorId
-                icon: "image://theme/icon-m-location"
-                contentText: deItem.tpo
-                clickable: true
-                onClicked: deItem.id = deItem.tpoId
-            }
-
-            ItemEntry {
-                id: antecessors
-                header: qsTr("Includes this old districts")
-                visible: count > 0
-                icon: "image://theme/icon-m-levels"
-                repeaterModel: deItem.antecessors
-                list: true
-                onModelClicked: deItem.id = modelId
-            }
-        }
-    }
+    onSuccessorClicked: deItem.id = succId
+    onTpoClicked: deItem.id = tpoId
+    onAntecessorClicked: deItem.id = anteId
 }
+

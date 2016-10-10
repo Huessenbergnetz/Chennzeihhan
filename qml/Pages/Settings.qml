@@ -25,7 +25,7 @@ Page {
     id: settings
 
     property bool checkingDBVersion: false
-    property int localDbVersion: dlMan.getLocalDBVersion()
+    property int localDbVersion: config.databaseVersion
     property int remoteDbVersion: 0
 
     Connections {
@@ -228,14 +228,16 @@ Page {
                 width: parent.width
                 label: qsTr("Default ordering")
 
-                currentIndex: config.get("display/ordering", 0)
+//                currentIndex: config.get("display/ordering", 0)
+                currentIndex: config.defaultOrderTarget
 
                 menu: ContextMenu {
                     MenuItem { text: qsTr("Code") }
                     MenuItem { text: qsTr("Name") }
                 }
 
-                onCurrentIndexChanged: config.set("display/ordering", currentIndex)
+//                onCurrentIndexChanged: config.set("display/ordering", currentIndex)
+                onCurrentIndexChanged: config.defaultOrderTarget = currentIndex
             }
 
             ComboBox {
@@ -243,7 +245,8 @@ Page {
                 width: parent.width
                 label: qsTr("Default search")
 
-                currentIndex: config.get("display/search", 0)
+//                currentIndex: config.get("display/search", 0)
+                currentIndex: config.defaultSearchTarget
 
                 menu: ContextMenu {
                     MenuItem { text: qsTr("Code") }
@@ -251,7 +254,8 @@ Page {
                     MenuItem { text: qsTr("Both") }
                 }
 
-                onCurrentIndexChanged: config.set("display/search", currentIndex)
+//                onCurrentIndexChanged: config.set("display/search", currentIndex)
+                onCurrentIndexChanged: config.defaultSearchTarget = currentIndex
             }
 
             SectionHeader { text: qsTr("Display language") }
@@ -267,27 +271,9 @@ Page {
                         MenuItem { text: model.name; readonly property string value: model.code }
                     }
                 }
-                onCurrentIndexChanged: { if (currentItem) { config.set("display/language", currentItem.value) } }
-                currentIndex: langModel.findIndex(config.get("display/language", "C"))
+                onCurrentIndexChanged: { if (currentItem) { config.displayLanguage = currentItem.value } }
+                currentIndex: langModel.findIndex(config.displayLanguage)
             }
-
-//            LanguageChooser {
-//                id: langChooser
-//                anchors { left: parent.left; right: parent.right }
-//                label: qsTr("Language")
-//                choosenValue: config.get("display/language", "C")
-//                textChoosen: languageModel.getLanguageName(choosenValue)
-//                onChoosenValueChanged: config.set("display/language", choosenValue)
-//            }
-
-//            Text {
-//                anchors { left: parent.left; right: parent.right; leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin }
-//                text: qsTr("Changing the display language is only applied after a restart of the application.")
-//                wrapMode: Text.WordWrap
-//                color: Theme.secondaryColor
-//                textFormat: Text.PlainText
-//                font.pixelSize: Theme.fontSizeSmall
-//            }
         }
     }
 }

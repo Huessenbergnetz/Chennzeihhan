@@ -1,7 +1,10 @@
 #include "extendeditem.h"
 #include "simpleitemmodel.h"
+#include <QVariant>
+#include <QSqlQuery>
 #ifdef QT_DEBUG
 #include <QtDebug>
+#include <QSqlError>
 #endif
 
 /*!
@@ -187,3 +190,103 @@ void ExtendedItem::clear()
     emit optionalSignsChanged(m_optionalSigns);
 }
 
+
+
+
+
+void ExtendedItem::query()
+{
+    QSqlQuery q;
+    if (!q.exec(QStringLiteral("SELECT sign, name, capital, type, state, assigned, successor, admin, closed, optional, wikipedia, coa FROM %1 WHERE id = %2").arg(countryCode()).arg(id()))) {
+        qCritical("Failed to perform query: %s", qPrintable(q.lastError().text()));
+        setInOperation(false);
+        return;
+    }
+
+    if (q.next()) {
+        setSign(q.value(0).toString());
+        setName(q.value(1).toString());
+        setCapital(q.value(2).toString());
+        setType(q.value(3).toString());
+        setState(q.value(4).toString());
+        setFounded(q.value(5).toUInt());
+        setSuccessorId(q.value(6).toUInt());
+        setTpoId(q.value(7).toUInt());
+        setDisbanded(q.value(8).toUInt());
+        setOptional(q.value(9).toUInt());
+        setWikipedia(q.value(10).toString());
+        setCoa(q.value(11).toString());
+    }
+
+    if (successorId() > 0) {
+        if (!q.exec(QStringLiteral("SELECT name, type, sign FROM %1 WHERE id = %2").arg(countryCode()).arg(successorId()))) {
+            qWarning("Failed to perform query: %s", qPrintable(q.lastError().text()));
+        } else if (q.next()) {
+            //: 1 - the carplate sign, 2 - the district type, 3 - the district name
+            setSuccessor(tr("%1 - %2 %3").arg(q.value(2).toString(), q.value(1).toString(), q.value(0).toString()));
+        }
+    }
+
+    if ((tpoId() > 0) && (successorId() != tpoId())) {
+        if (!q.exec(QStringLiteral("SELECT name, type, sign FROM %1 WHERE id = %2").arg(countryCode()).arg(tpoId()))) {
+            qWarning("Failed to perform query: %s", qPrintable(q.lastError().text()));
+        } else if (q.next()) {
+            //: 1 - the carplate sign, 2 - the district type, 3 - the district name
+            setTpo(tr("%1 - %2 %3").arg(q.value(2).toString(), q.value(1).toString(), q.value(0).toString()));
+        }
+    }
+
+    if (disbanded() == 0) {
+        QStringList optSigns;
+        QList<int> subOptSignIds;
+        QList<int> subSubOptSignIds;
+        if (q.exec(QStringLiteral("SELECT id, sign FROM %1 WHERE successor = %2 AND optional > 0").arg(countryCode()).arg(id()))) {
+            while (q.next()) {
+                subOptSignIds << q.value(0).toInt();
+                optSigns << q.value(1).toString();
+            }
+
+            for (int i = 0; i < subOptSignIds.size(); ++i)
+            {
+                if (q.exec(QStringLiteral("SELECT id, sign FROM %1 WHERE successor = %2 AND optional > 0").arg(countryCode()).arg(subOptSignIds.at(i)))) {
+                    while (q.next()) {
+                        subSubOptSignIds << q.value(0).toInt();
+                        optSigns << q.value(1).toString();
+                    }
+                } else {
+                    qWarning("Failed to perform query: %s", qPrintable(q.lastError().text()));
+                }
+            }
+
+            for (int i = 0; i < subSubOptSignIds.size(); ++i)
+            {
+                if (q.exec(QStringLiteral("SELECT sign FROM %1 WHERE successor = %2 AND optional > 0").arg(countryCode()).arg(subSubOptSignIds.at(i)))) {
+                    while (q.next()) {
+                        optSigns << q.value(0).toString();
+                    }
+                } else {
+                    qWarning("Failed to perform query: %s", qPrintable(q.lastError().text()));
+                }
+            }
+
+            if (!optSigns.isEmpty()) {
+                setOptionalSigns(optSigns.join(QStringLiteral(", ")));
+            }
+
+        } else {
+            qWarning("Failed to perform query: %s", qPrintable(q.lastError().text()));
+        }
+    }
+
+    if (q.exec(QStringLiteral("SELECT id AS itemId, name, type, sign FROM %1 WHERE successor = %2").arg(countryCode()).arg(id()))) {
+        QList<SimpleItem*> l;
+        while (q.next()) {
+            l.append(new SimpleItem(q.value(0).toUInt(), q.value(1).toString(), q.value(2).toString(), q.value(3).toString()));
+        }
+        if (!l.isEmpty() && antecessors()) {
+            antecessors()->addItems(l);
+        }
+    } else {
+        qWarning("Failed to perform query: %s", qPrintable(q.lastError().text()));
+    }
+}

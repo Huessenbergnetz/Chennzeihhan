@@ -13,7 +13,6 @@ SOURCES += \
     src/downloadmanager.cpp \
     src/wikipedia.cpp \
     src/models/athelper.cpp \
-    src/models/antecessormodel.cpp \
     src/models/countriesmodel.cpp \
     src/globals.cpp \
     src/configuration.cpp \
@@ -21,7 +20,11 @@ SOURCES += \
     src/models/item.cpp \
     src/models/simpleitemmodel.cpp \
     src/models/extendeditem.cpp \
-    src/models/deitem.cpp
+    src/models/deitem.cpp \
+    src/coverconnector.cpp \
+    src/models/chitem.cpp \
+    src/models/atitem.cpp \
+    src/models/countrymodelfilter.cpp
 
 translations.path = /usr/share/harbour-chennzeihhan/translations
 translations.files = l10n/*.qm
@@ -79,7 +82,6 @@ HEADERS += \
     src/downloadmanager.h \
     src/wikipedia.h \
     src/models/athelper.h \
-    src/models/antecessormodel.h \
     src/models/countriesmodel.h \
     src/configuration.h \
     src/models/languagemodel.h \
@@ -87,4 +89,12 @@ HEADERS += \
     src/models/simpleitemmodel.h \
     src/models/simpleitem.h \
     src/models/extendeditem.h \
-    src/models/deitem.h
+    src/models/deitem.h \
+    src/coverconnector.h \
+    src/models/chitem.h \
+    src/models/atitem.h \
+    src/models/countrymodelfilter.h
+
+DISTFILES += \
+    qml/ItemViews/SimpleItemView.qml \
+    qml/ItemViews/ExtendedItemView.qml

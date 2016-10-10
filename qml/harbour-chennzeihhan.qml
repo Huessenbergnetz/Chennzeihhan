@@ -19,6 +19,7 @@
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
+import harbour.chennzeihhan 1.0
 import "Views"
 
 ApplicationWindow
@@ -34,13 +35,17 @@ ApplicationWindow
     function getCoverMode() {
         switch(pageStack.currentPage.objectName) {
         case "ItemView":
-            return "item";
+//            return "item";
+            return CoverConnector.Item
         case "CountryView":
-            return "country"
+//            return "country"
+            return CoverConnector.Country
         case "WikiView":
-            return "wikipedia"
+//            return "wikipedia"
+            return CoverConnector.Wikipedia
         default:
-            return "overview"
+//            return "overview"
+            return CoverConnector.Overview
         }
     }
 
@@ -62,25 +67,25 @@ ApplicationWindow
     initialPage: Component { MainView { } }
     cover: Qt.resolvedUrl("Pages/CoverPage.qml")
 
-    QtObject {
-        id: coverConnector
+//    QtObject {
+//        id: coverConnector
 
-        property string country
-        property string name
-        property string type
-        property string sign
-        property string state
-        property string colors
-        property string countryName
-        property string countrySign
-        property string countryColors
-        property string mode: "overview"
-    }
+//        property string country
+//        property string name
+//        property string type
+//        property string sign
+//        property string state
+//        property string colors
+//        property string countryName
+//        property string countrySign
+//        property string countryColors
+//        property string mode: "overview"
+//    }
 
 
     Connections {
         target: pageStack
-        onCurrentPageChanged: coverConnector.mode = getCoverMode()
+        onCurrentPageChanged: cc.mode = getCoverMode()
     }
 }
 

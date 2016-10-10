@@ -19,13 +19,13 @@
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
+import harbour.chennzeihhan 1.0
 
 Page {
     id: root
-    property int sorting
-    property string name
 
-    signal accepted()
+    property CountryModel cm: null
+
 
     Column {
         anchors.fill: parent
@@ -40,7 +40,7 @@ Page {
                 anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                 text: qsTr("Code")
             }
-            onClicked: { sorting = 0; name = signLabel.text; root.accepted(); pageStack.pop() }
+            onClicked: { if (cm) { cm.sortTarget = CountryModel.Code }; pageStack.pop() }
         }
 
         BackgroundItem {
@@ -52,7 +52,7 @@ Page {
                 anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                 text: qsTr("Name")
             }
-            onClicked: { sorting = 1; name = signLabel.text; root.accepted(); pageStack.pop() }
+            onClicked: { if (cm) { cm.sortTarget = CountryModel.Name }; pageStack.pop() }
         }
     }
 }

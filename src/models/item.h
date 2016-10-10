@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+class CoverConnector;
+
 /*!
  * \brief The Item class.
  */
@@ -23,6 +25,7 @@ class Item : public QObject
     Q_PROPERTY(uint id READ id WRITE setId NOTIFY idChanged)
     Q_PROPERTY(QString countryCode READ countryCode CONSTANT)
     Q_PROPERTY(QString countryName READ countryName CONSTANT)
+    Q_PROPERTY(CoverConnector *coverConnector READ coverConnector WRITE setCoverConnector NOTIFY coverConnectorChanged)
 public:
     explicit Item(QObject *parent = nullptr);
     ~Item();
@@ -41,9 +44,10 @@ public:
     uint id() const;
     QString countryCode() const;
     QString countryName() const;
+    CoverConnector *coverConnector() const;
 
     void setId(uint nId);
-
+    void setCoverConnector(CoverConnector *nCoverConnector);
 
 signals:
     void signChanged(const QString &sign);
@@ -58,6 +62,7 @@ signals:
     void coaChanged(const QString &coa);
     void inOperationChanged(bool inOperation);
     void idChanged(uint id);
+    void coverConnectorChanged(CoverConnector *coverConnector);
 
 protected:
     void setSign(const QString &nSign);
@@ -73,8 +78,9 @@ protected:
     void setInOperation(bool nInOperation);
     void setCountryCode(const QString &cc);
     void setCountryName(const QString &cn);
+    CoverConnector *m_coverConnector;
 
-    virtual void query() = 0;
+    virtual void query();
     virtual void clear();
 
 private:

@@ -19,6 +19,7 @@
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
+import harbour.chennzeihhan 1.0
 import "../Common"
 
 CoverBackground {
@@ -31,14 +32,14 @@ CoverBackground {
     }
 
     CoverPlaceholder {
-        visible: coverConnector.mode === "overview"
+        visible: cc.mode === CoverConnector.Overview
         text: "Chenn zeihhan"
         icon.source: "/usr/share/icons/hicolor/86x86/apps/harbour-chennzeihhan.png"
     }
 
     Column {
         id: itemInfo
-        visible: coverConnector.mode === "item" || coverConnector.mode === "wikipedia"
+        visible: cc.mode === CoverConnector.Item || cc.mode === CoverConnector.Wikipedia
         y: Theme.paddingLarge
         anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge }
         spacing: 0
@@ -48,7 +49,7 @@ CoverBackground {
             height: 86
             anchors.horizontalCenter: parent.horizontalCenter
             opacity: 0.4
-            visible: coverConnector.mode !== "wikipedia"
+            visible: cc.mode !== CoverConnector.Wikipedia
         }
         Image {
             source: "/usr/share/harbour-chennzeihhan/images/wikipedia.png"
@@ -56,18 +57,18 @@ CoverBackground {
             height: 86
             anchors.horizontalCenter: parent.horizontalCenter
             opacity: 0.4
-            visible: coverConnector.mode === "wikipedia"
+            visible: cc.mode === CoverConnector.Wikipedia
         }
         Label {
             id: sign
-            text: coverConnector.sign
+            text: cc.sign
             font.pixelSize: Theme.fontSizeHuge
             anchors.horizontalCenter: parent.horizontalCenter
         }
         Label {
             id: name
             visible: text !== "" && state.text !== name.text
-            text: coverConnector.name
+            text: cc.name
             width: parent.width
             color: Theme.secondaryColor
             maximumLineCount: 1
@@ -76,7 +77,7 @@ CoverBackground {
         Label {
             id: type
             visible: name.text === "" || state.text === name.text
-            text: coverConnector.type
+            text: cc.type
             width: parent.width
             color: Theme.secondaryColor
             maximumLineCount: 1
@@ -84,7 +85,7 @@ CoverBackground {
         }
         Label {
             id: state
-            text: coverConnector.state
+            text: cc.state
             visible: text !== ""
             width: parent.width
             color: Theme.secondaryColor
@@ -95,7 +96,7 @@ CoverBackground {
         Label {
             id: country
             visible: text !== state.text
-            text: coverConnector.country
+            text: cc.country
             width: parent.width
             color: Theme.secondaryColor
             maximumLineCount: 1
@@ -106,20 +107,20 @@ CoverBackground {
 
     Item {
         id: countryInfo
-        visible: coverConnector.mode === "country"
+        visible: cc.mode === CoverConnector.Country
         anchors.fill: parent
         CountryPlate {
             y: Theme.paddingLarge
             width: 140; height: 90
             anchors.horizontalCenter: parent.horizontalCenter
             color: "white"
-            borderColor: coverConnector.countryColors
-            text: coverConnector.countrySign
+            borderColor: cc.countryColors
+            text: cc.countrySign
             onBorderColorChanged: requestPaint()
             smooth: true
         }
         Label {
-            text: coverConnector.countryName
+            text: cc.countryName
             width: parent.width - 2* Theme.paddingLarge
             color: Theme.secondaryColor
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere

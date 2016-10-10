@@ -21,34 +21,37 @@ import QtQuick 2.2
 import Sailfish.Silica 1.0
 import "../Delegates"
 import "../Common"
-
+import harbour.chennzeihhan 1.0
 
 Page {
     id: countryView
     objectName: "CountryView"
 
     property string title
-    property string code
+//    property string code
+    property alias code: countryModel.countryCode
     property string colors
     property string searchString
     property string sign
-    property int searchTarget: 0
-    property int sortType: 0
+//    property int searchTarget: CountryModel.Code
+//    property int sortType: CountryModel.Code
     property int type
 
-    onSortTypeChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
-    onSearchStringChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
-    onSearchTargetChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
+//    onSortTypeChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
+//    onSearchStringChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
+//    onSearchTargetChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
 
     Component.onCompleted: {
-        searchTarget = config.get("display/search", 0)
-        sortType = config.get("display/ordering", 0)
-        countryModel.refresh(code, sortType, searchTarget, searchString)
+//        searchTarget = config.get("display/search", CountryModel.Code)
+//        sortType = config.get("display/ordering", CountryModel.Code)
+//        countryModel.refresh(code, sortType, searchTarget, searchString)
     }
     onStatusChanged: {
-        coverConnector.countryName = countryView.title
-        coverConnector.countrySign = countryView.sign
-        coverConnector.countryColors = countryView.colors
+        cc.countryName = countryView.title
+        cc.countrySign = countryView.sign
+//        coverConnector.countryName = countryView.title
+//        coverConnector.countrySign = countryView.sign
+//        coverConnector.countryColors = countryView.colors
     }
 
     SilicaListView {
@@ -62,25 +65,24 @@ Page {
             visible: countryView.type === 1
             enabled: countryView.type === 1
             MenuItem {
-                text: searchTarget === 0 ? qsTr("Search: Code") : searchTarget === 1 ? qsTr("Search: Name") : qsTr("Search: Code and Name")
+                text: countryModel.searchTarget === CountryModel.Code ? qsTr("Search: Code") : countryModel.searchTarget === CountryModel.Name ? qsTr("Search: Name") : qsTr("Search: Code and Name")
                 onClicked: {
-                    var dialog = pageStack.push("../Dialogs/SearchTarget.qml")
-                    dialog.accepted.connect(function() {searchTarget = dialog.searchTarget})
+                    pageStack.push("../Dialogs/SearchTarget.qml", {cm: countryModel})
                 }
             }
             MenuItem {
                 id: sorting
-                text: sortType === 0 ? qsTr("Sorting: Code") : qsTr("Sorting: Name")
+                text: countryModel.sortTarget === CountryModel.Code ? qsTr("Sorting: Code") : qsTr("Sorting: Name")
                 onClicked: {
-                    var dialog = pageStack.push("../Dialogs/Sorting.qml")
-                    dialog.accepted.connect(function() {sortType = dialog.sorting})
+                    pageStack.push("../Dialogs/Sorting.qml", {cm: countryModel})
                 }
             }
         }
 
-        delegate: CountryDelegate { countryCode: code; search: searchString; target: searchTarget }
+        delegate: CountryDelegate { countryCode: countryModel.countryCode; search: countryModel.search; target: countryModel.searchTarget }
 
-        model: countryModel
+//        model: countryModel
+        model: CountryModel { id: countryModel; searchTarget: config.defaultSearchTarget; sortTarget: config.defaultOrderTarget }
 
         VerticalScrollDecorator {}
 
@@ -105,8 +107,8 @@ Page {
         EnterKey.iconSource: "image://theme/icon-m-enter-close"
 
         Binding {
-            target: countryView
-            property: "searchString"
+            target: countryModel
+            property: "search"
             value: searchField.text
         }
     }

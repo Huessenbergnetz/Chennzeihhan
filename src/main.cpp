@@ -41,13 +41,16 @@
 #include "downloadmanager.h"
 #include "wikipedia.h"
 #include "configuration.h"
+#include "coverconnector.h"
 #include "models/countrymodel.h"
-#include "models/antecessormodel.h"
 #include "models/itemmodel.h"
 #include "models/countriesmodel.h"
 #include "models/languagemodel.h"
 #include "models/simpleitemmodel.h"
+#include "models/atitem.h"
+#include "models/chitem.h"
 #include "models/deitem.h"
+#include "models/countrymodelfilter.h"
 
 
 int main(int argc, char *argv[])
@@ -70,6 +73,7 @@ int main(int argc, char *argv[])
 
     DownloadManager dlManager;
     Wikipedia wikipedia;
+    CoverConnector cc;
 
     Configuration *config = new Configuration;
 
@@ -98,7 +102,12 @@ int main(int argc, char *argv[])
 
 
     qmlRegisterType<LanguageModel>("harbour.chennzeihhan", 1, 0, "LanguageModel");
+    qmlRegisterType<CountryModelFilter>("harbour.chennzeihhan", 1, 0, "CountryModel");
     qmlRegisterUncreatableType<SimpleItemModel>("harbour.chennzeihhan", 1, 0, "SimpleItemModel", QStringLiteral("You can not create a SimpleItemModel component."));
+    qmlRegisterUncreatableType<CoverConnector>("harbour.chennzeihhan", 1, 0, "CoverConnector", QStringLiteral("You can not create a CoverConnector component."));
+    qmlRegisterUncreatableType<Configuration>("harbour.chennzeihhan", 1, 0, "Configuration", QStringLiteral("You can not create a Configuration component."));
+    qmlRegisterType<AtItem>("harbour.chennzeihhan", 1, 0, "AtItem");
+    qmlRegisterType<ChItem>("harbour.chennzeihhan", 1, 0, "ChItem");
     qmlRegisterType<DeItem>("harbour.chennzeihhan", 1, 0, "DeItem");
 
 
@@ -108,10 +117,9 @@ int main(int argc, char *argv[])
     CountriesModel *countriesSearch = new CountriesModel();
     CountriesModel *countriesFavourites = new CountriesModel();
     CountriesModel *abcModel = new CountriesModel();
-    CountryModel *countryModel = new CountryModel();
     ItemModel *itemModel = new ItemModel();
 
-    AntecessorModel *antecessorModel = new AntecessorModel();
+//    AntecessorModel *antecessorModel = new AntecessorModel();
 
 #ifndef CLAZY
     QQuickView* view = SailfishApp::createView();
@@ -126,10 +134,10 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty(QStringLiteral("countriesModel"), countriesModel);
     view->rootContext()->setContextProperty(QStringLiteral("countriesFavourites"), countriesFavourites);
     view->rootContext()->setContextProperty(QStringLiteral("countriesSearch"), countriesSearch);
-    view->rootContext()->setContextProperty(QStringLiteral("countryModel"), countryModel);
     view->rootContext()->setContextProperty(QStringLiteral("abcModel"), abcModel);
     view->rootContext()->setContextProperty(QStringLiteral("itemModel"), itemModel);
-    view->rootContext()->setContextProperty(QStringLiteral("antecessorModel"), antecessorModel);
+//    view->rootContext()->setContextProperty(QStringLiteral("antecessorModel"), antecessorModel);
+    view->rootContext()->setContextProperty(QStringLiteral("cc"), &cc);
     view->rootContext()->setContextProperty(QStringLiteral("versionString"), QStringLiteral(VERSION_STRING));
     view->rootContext()->setContextProperty(QStringLiteral("versionInt"), VERSION);
 

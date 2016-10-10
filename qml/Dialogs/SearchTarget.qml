@@ -19,13 +19,12 @@
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
+import harbour.chennzeihhan 1.0
 
 Page {
     id: root
-    property int searchTarget
-    property string name
 
-    signal accepted()
+    property CountryModel cm: null
 
     Column {
         anchors.fill: parent
@@ -40,7 +39,7 @@ Page {
                 anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                 text: qsTr("Code")
             }
-            onClicked: { searchTarget = 0; name = signLabel.text; root.accepted(); pageStack.pop() }
+            onClicked: { if (cm) {cm.searchTarget = CountryModel.Code}; pageStack.pop() }
         }
 
         BackgroundItem {
@@ -52,7 +51,7 @@ Page {
                 anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                 text: qsTr("Name")
             }
-            onClicked: { searchTarget = 1; name = signLabel.text; root.accepted(); pageStack.pop() }
+            onClicked: { if (cm) {cm.searchTarget = CountryModel.Name}; pageStack.pop() }
         }
 
         BackgroundItem {
@@ -64,7 +63,7 @@ Page {
                 anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                 text: qsTr("Code and Name")
             }
-            onClicked: { searchTarget = 2; name = bothLabel.text; root.accepted(); pageStack.pop() }
+            onClicked: { if (cm) {cm.searchTarget = CountryModel.Both}; pageStack.pop() }
         }
     }
 }

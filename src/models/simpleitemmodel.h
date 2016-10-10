@@ -16,7 +16,9 @@ public:
         Id = Qt::UserRole + 1,
         Name,
         Type,
-        Sign
+        Sign,
+        State,
+        Closed
     };
 
     /*!

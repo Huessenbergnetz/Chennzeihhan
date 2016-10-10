@@ -45,6 +45,7 @@ protected:
     void setOptionalSigns(const QString &nOptionalSigns);
 
     void clear();
+    void query();
 
 private:
     Q_DISABLE_COPY(ExtendedItem)

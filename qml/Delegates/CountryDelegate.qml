@@ -19,6 +19,7 @@
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
+import harbour.chennzeihhan 1.0
 
 ListItem {
     id: listItem
@@ -27,12 +28,12 @@ ListItem {
     property string search
     property int target
 
-    property string name: (target === 1 || target === 2) ? Theme.highlightText(model.name, search, Theme.highlightColor) : model.name
-    property string sign: (target === 0 || target === 2) ? Theme.highlightText(model.sign, search, Theme.secondaryHighlightColor) : model.sign
+    property string name: (target === CountryModel.Name || target === CountryModel.Both) ? Theme.highlightText(model.name, search, Theme.highlightColor) : model.name
+    property string sign: (target === CountryModel.Code || target === CountryModel.Both) ? Theme.highlightText(model.sign, search, Theme.secondaryHighlightColor) : model.sign
 
     contentHeight: Theme.itemSizeMedium
 
-    onClicked: pageStack.push(Qt.resolvedUrl("../ItemViews/"+ countryCode + ".qml"), {itemId: model.itemId})
+    onClicked: pageStack.push(Qt.resolvedUrl("../ItemViews/"+ countryCode + ".qml"), {itemId: model.id})
 
     ListView.onAdd: AddAnimation { target: listItem }
 

@@ -42,6 +42,8 @@ QHash<int, QByteArray> SimpleItemModel::roleNames() const
     roles.insert(Name, QByteArrayLiteral("name"));
     roles.insert(Type, QByteArrayLiteral("type"));
     roles.insert(Sign, QByteArrayLiteral("sign"));
+    roles.insert(State, QByteArrayLiteral("state"));
+    roles.insert(Closed, QByteArrayLiteral("closed"));
     return roles;
 }
 
@@ -78,6 +80,10 @@ QVariant SimpleItemModel::data(const QModelIndex &index, int role) const
         return QVariant::fromValue(si->type);
     case Sign:
         return QVariant::fromValue(si->sign);
+    case State:
+        return QVariant::fromValue(si->state);
+    case Closed:
+        return QVariant::fromValue(si->closed);
     default:
         return QVariant();
     }

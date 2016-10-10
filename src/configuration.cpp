@@ -18,15 +18,22 @@
 */
 
 #include "configuration.h"
+#ifdef QT_DEBUG
+#include <QtDebug>
+#endif
 
 Configuration::Configuration(QObject *parent) :
     QSettings(parent)
 {
+    m_defaultSearchTarget = (CountryModelFilter::Target)value(QStringLiteral("display/search"), 0).toInt();
+    m_defaultOrderTarget = (CountryModelFilter::Target)value(QStringLiteral("display/ordering"), 0).toInt();
+    m_displayLanguage = value(QStringLiteral("display/language"), QStringLiteral("C")).toString();
+    m_databaseVersion = value(QStringLiteral("database/version"), 0).toUInt();
 }
 
 void Configuration::setFav(const QString &sign)
 {
-    QStringList favs = value(QStringLiteral("display/favourites")).toString().split(QChar(','));
+    QStringList favs = value(QStringLiteral("display/favourites")).toString().split(QChar(','), QString::SkipEmptyParts);
     favs.append(sign);
     setValue(QStringLiteral("display/favourites"), favs.join(QChar(',')));
 
@@ -37,7 +44,7 @@ void Configuration::setFav(const QString &sign)
 
 void Configuration::removeFav(const QString &sign)
 {
-    QStringList favs = value(QStringLiteral("display/favourites")).toString().split(QChar(','));
+    QStringList favs = value(QStringLiteral("display/favourites")).toString().split(QChar(','), QString::SkipEmptyParts);
 
     if (favs.contains(sign)) {
         favs.removeOne(sign);
@@ -53,14 +60,14 @@ void Configuration::removeFav(const QString &sign)
 
 QStringList Configuration::getFavs()
 {
-    return value(QStringLiteral("display/favourites")).toString().split(QChar(','));
+    return value(QStringLiteral("display/favourites")).toString().split(QChar(','), QString::SkipEmptyParts);
 }
 
 
 
 bool Configuration::isFav(const QString &sign)
 {
-    return value(QStringLiteral("display/favourites")).toString().split(QChar(',')).contains(sign);
+    return value(QStringLiteral("display/favourites")).toString().split(QChar(','), QString::SkipEmptyParts).contains(sign);
 }
 
 
@@ -77,4 +84,115 @@ void Configuration::set(const QString &key, const QString &val)
 QVariant Configuration::get(const QString &key, const QString &def)
 {
     return value(key, def);
+}
+
+
+
+/*!
+ * \property Configuration::defaultSearchTarget
+ * \brief The default search target.
+ *
+ * \par Access functions:
+ * <TABLE><TR><TD>CountryModelFilter::Target</TD><TD>defaultSearchTarget() const</TD></TR><TR><TD>void</TD><TD>setDefaultSearchTarget(Target nDefaultSearchTarget)</TD></TR></TABLE>
+ * \par Notifier signal:
+ * <TABLE><TR><TD>void</TD><TD>defaultSearchTargetChanged(CountryModelFilter::Target defaultSearchTarget)</TD></TR></TABLE>
+ */
+
+
+CountryModelFilter::Target Configuration::defaultSearchTarget() const { return m_defaultSearchTarget; }
+
+void Configuration::setDefaultSearchTarget(CountryModelFilter::Target nDefaultSearchTarget)
+{
+    if (nDefaultSearchTarget != m_defaultSearchTarget) {
+        m_defaultSearchTarget = nDefaultSearchTarget;
+#ifdef QT_DEBUG
+        qDebug() << "Changed defaultSearchTarget to" << m_defaultSearchTarget;
+#endif
+        setValue(QStringLiteral("display/search"), (int)m_defaultSearchTarget);
+        emit defaultSearchTargetChanged(defaultSearchTarget());
+    }
+}
+
+
+
+
+/*!
+ * \property Configuration::defaultOrderTarget
+ * \brief Thew default order target.
+ *
+ * \par Access functions:
+ * <TABLE><TR><TD>CountryModelFilter::Target</TD><TD>defaultOrderTarget() const</TD></TR><TR><TD>void</TD><TD>setDefaultOrderTarget(Target nDefaultOrderTarget)</TD></TR></TABLE>
+ * \par Notifier signal:
+ * <TABLE><TR><TD>void</TD><TD>defaultOrderTargetChanged(CountryModelFilter::Target defaultOrderTarget)</TD></TR></TABLE>
+ */
+
+
+CountryModelFilter::Target Configuration::defaultOrderTarget() const { return m_defaultOrderTarget; }
+
+void Configuration::setDefaultOrderTarget(CountryModelFilter::Target nDefaultOrderTarget)
+{
+    if (nDefaultOrderTarget != m_defaultOrderTarget) {
+        m_defaultOrderTarget = nDefaultOrderTarget;
+#ifdef QT_DEBUG
+        qDebug() << "Changed defaultOrderTarget to" << m_defaultOrderTarget;
+#endif
+        setValue(QStringLiteral("display/ordering"), (int)m_defaultOrderTarget);
+        emit defaultOrderTargetChanged(defaultOrderTarget());
+    }
+}
+
+
+
+
+/*!
+ * \property Configuration::displayLanguage
+ * \brief The display language of the app.
+ *
+ * \par Access functions:
+ * <TABLE><TR><TD>QString</TD><TD>displayLanguage() const</TD></TR><TR><TD>void</TD><TD>setDisplayLanguage(const QString &nDisplayLanguage)</TD></TR></TABLE>
+ * \par Notifier signal:
+ * <TABLE><TR><TD>void</TD><TD>displayLanguageChanged(const QString &displayLanguage)</TD></TR></TABLE>
+ */
+
+
+QString Configuration::displayLanguage() const { return m_displayLanguage; }
+
+void Configuration::setDisplayLanguage(const QString &nDisplayLanguage)
+{
+    if (nDisplayLanguage != m_displayLanguage) {
+        m_displayLanguage = nDisplayLanguage;
+#ifdef QT_DEBUG
+        qDebug() << "Changed displayLanguage to" << m_displayLanguage;
+#endif
+        setValue(QStringLiteral("display/language"), m_displayLanguage);
+        emit displayLanguageChanged(displayLanguage());
+    }
+}
+
+
+
+
+/*!
+ * \property Configuration::databaseVersion
+ * \brief The currently installed database version.
+ *
+ * \par Access functions:
+ * <TABLE><TR><TD>uint</TD><TD>databaseVersion() const</TD></TR><TR><TD>void</TD><TD>setDatabaseVersion(uint nDatabaseVersion)</TD></TR></TABLE>
+ * \par Notifier signal:
+ * <TABLE><TR><TD>void</TD><TD>databaseVersionChanged(uint databaseVersion)</TD></TR></TABLE>
+ */
+
+
+uint Configuration::databaseVersion() const { return m_databaseVersion; }
+
+void Configuration::setDatabaseVersion(uint nDatabaseVersion)
+{
+    if (nDatabaseVersion != m_databaseVersion) {
+        m_databaseVersion = nDatabaseVersion;
+#ifdef QT_DEBUG
+        qDebug() << "Changed databaseVersion to" << m_databaseVersion;
+#endif
+        setValue(QStringLiteral("database/version"), m_databaseVersion);
+        emit databaseVersionChanged(databaseVersion());
+    }
 }

@@ -1,6 +1,9 @@
 #include "item.h"
+#include "../coverconnector.h"
+#include <QSqlQuery>
 #ifdef QT_DEBUG
 #include <QtDebug>
+#include <QSqlError>
 #endif
 
 /*!
@@ -14,6 +17,7 @@ Item::Item(QObject *parent) :
     m_optional = 0;
     m_inOperation = false;
     m_id = 0;
+    m_coverConnector = nullptr;
 }
 
 
@@ -46,6 +50,9 @@ void Item::setSign(const QString &nSign)
         qDebug() << "Changed sign to" << m_sign;
 #endif
         emit signChanged(sign());
+        if (m_coverConnector) {
+            m_coverConnector->setSign(m_sign);
+        }
     }
 }
 
@@ -73,6 +80,9 @@ void Item::setName(const QString &nName)
         qDebug() << "Changed name to" << m_name;
 #endif
         emit nameChanged(name());
+        if (m_coverConnector) {
+            m_coverConnector->setName(m_name);
+        }
     }
 }
 
@@ -127,6 +137,9 @@ void Item::setType(const QString &nType)
         qDebug() << "Changed type to" << m_type;
 #endif
         emit typeChanged(type());
+        if (m_coverConnector) {
+            m_coverConnector->setType(m_type);
+        }
     }
 }
 
@@ -154,6 +167,9 @@ void Item::setState(const QString &nState)
         qDebug() << "Changed state to" << m_state;
 #endif
         emit stateChanged(state());
+        if (m_coverConnector) {
+            m_coverConnector->setState(m_state);
+        }
     }
 }
 
@@ -373,7 +389,40 @@ void Item::setCountryCode(const QString &cc) { m_countryCode = cc; }
 
 QString Item::countryName() const { return m_countryName; }
 
-void Item::setCountryName(const QString &cn) { m_countryName = cn; }
+void Item::setCountryName(const QString &cn) { m_countryName = cn; if (coverConnector()) {coverConnector()->setCountry(cn);} }
+
+
+
+/*!
+ * \property Item::coverConnector
+ * \brief Pointer to a covver connector object.
+ *
+ * \par Access functions:
+ * <TABLE><TR><TD>CoverConnector*</TD><TD>coverConnector() const</TD></TR><TR><TD>void</TD><TD>setCoverConnector(CoverConnector *nCoverConnector)</TD></TR></TABLE>
+ * \par Notifier signal:
+ * <TABLE><TR><TD>void</TD><TD>coverConnectorChanged(CoverConnector *coverConnector)</TD></TR></TABLE>
+ */
+
+
+CoverConnector *Item::coverConnector() const { return m_coverConnector; }
+
+void Item::setCoverConnector(CoverConnector *nCoverConnector)
+{
+    if (nCoverConnector != m_coverConnector) {
+        m_coverConnector = nCoverConnector;
+#ifdef QT_DEBUG
+        qDebug() << "Changed coverConnector to" << m_coverConnector;
+#endif
+        emit coverConnectorChanged(coverConnector());
+        if (m_coverConnector) {
+            m_coverConnector->setCountry(countryName());
+            m_coverConnector->setName(name());
+            m_coverConnector->setType(type());
+            m_coverConnector->setSign(sign());
+            m_coverConnector->setState(state());
+        }
+    }
+}
 
 
 
@@ -399,4 +448,28 @@ void Item::clear()
     emit wikipediaChanged(m_wikipedia);
     m_coa.clear();
     emit coaChanged(m_coa);
+}
+
+
+
+void Item::query()
+{
+    if ((id() <= 0) || countryCode().isEmpty()) {
+        return;
+    }
+
+    QSqlQuery q;
+    if (q.exec(QStringLiteral("SELECT sign, name, capital, wikipedia, coa FROM %1 WHERE id = %2").arg(countryCode()).arg(id()))) {
+
+        if (q.next()) {
+            setSign(q.value(0).toString());
+            setName(q.value(1).toString());
+            setCapital(q.value(2).toString());
+            setWikipedia(q.value(3).toString());
+            setCoa(q.value(4).toString());
+        }
+
+    } else {
+        qCritical("Failed to perform query: %s", qPrintable(q.lastError().text()));
+    }
 }
