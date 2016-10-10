@@ -40,7 +40,7 @@ Page {
                 anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                 text: qsTr("Code")
             }
-            onClicked: { if (cm) { cm.sortTarget = CountryModel.Code }; pageStack.pop() }
+            onClicked: { if (cm) { cm.sortTarget = Chennzeihhan.Code }; pageStack.pop() }
         }
 
         BackgroundItem {
@@ -52,7 +52,7 @@ Page {
                 anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                 text: qsTr("Name")
             }
-            onClicked: { if (cm) { cm.sortTarget = CountryModel.Name }; pageStack.pop() }
+            onClicked: { if (cm) { cm.sortTarget = Chennzeihhan.Name }; pageStack.pop() }
         }
     }
 }

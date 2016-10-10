@@ -3,9 +3,9 @@
 #include <QCoreApplication>
 #include <QVariant>
 #include <QSqlQuery>
+#include <QSqlError>
 #ifdef QT_DEBUG
 #include <QtDebug>
-#include <QSqlError>
 #endif
 
 /*!

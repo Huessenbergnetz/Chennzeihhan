@@ -28,24 +28,11 @@ Page {
     objectName: "CountryView"
 
     property string title
-//    property string code
     property alias code: countryModel.countryCode
     property string colors
-    property string searchString
     property string sign
-//    property int searchTarget: CountryModel.Code
-//    property int sortType: CountryModel.Code
     property int type
 
-//    onSortTypeChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
-//    onSearchStringChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
-//    onSearchTargetChanged: countryModel.refresh(code, sortType, searchTarget, searchString)
-
-    Component.onCompleted: {
-//        searchTarget = config.get("display/search", CountryModel.Code)
-//        sortType = config.get("display/ordering", CountryModel.Code)
-//        countryModel.refresh(code, sortType, searchTarget, searchString)
-    }
     onStatusChanged: {
         cc.countryName = countryView.title
         cc.countrySign = countryView.sign
@@ -65,14 +52,14 @@ Page {
             visible: countryView.type === 1
             enabled: countryView.type === 1
             MenuItem {
-                text: countryModel.searchTarget === CountryModel.Code ? qsTr("Search: Code") : countryModel.searchTarget === CountryModel.Name ? qsTr("Search: Name") : qsTr("Search: Code and Name")
+                text: countryModel.searchTarget === Chennzeihhan.Code ? qsTr("Search: Code") : countryModel.searchTarget === Chennzeihhan.Name ? qsTr("Search: Name") : qsTr("Search: Code and Name")
                 onClicked: {
                     pageStack.push("../Dialogs/SearchTarget.qml", {cm: countryModel})
                 }
             }
             MenuItem {
                 id: sorting
-                text: countryModel.sortTarget === CountryModel.Code ? qsTr("Sorting: Code") : qsTr("Sorting: Name")
+                text: countryModel.sortTarget === Chennzeihhan.Code ? qsTr("Sorting: Code") : qsTr("Sorting: Name")
                 onClicked: {
                     pageStack.push("../Dialogs/Sorting.qml", {cm: countryModel})
                 }
@@ -81,7 +68,6 @@ Page {
 
         delegate: CountryDelegate { countryCode: countryModel.countryCode; search: countryModel.search; target: countryModel.searchTarget }
 
-//        model: countryModel
         model: CountryModel { id: countryModel; searchTarget: config.defaultSearchTarget; sortTarget: config.defaultOrderTarget }
 
         VerticalScrollDecorator {}

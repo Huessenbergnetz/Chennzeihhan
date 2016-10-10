@@ -25,8 +25,8 @@
 Configuration::Configuration(QObject *parent) :
     QSettings(parent)
 {
-    m_defaultSearchTarget = (CountryModelFilter::Target)value(QStringLiteral("display/search"), 0).toInt();
-    m_defaultOrderTarget = (CountryModelFilter::Target)value(QStringLiteral("display/ordering"), 0).toInt();
+    m_defaultSearchTarget = (Chennzeihhan::Target)value(QStringLiteral("display/search"), 0).toInt();
+    m_defaultOrderTarget = (Chennzeihhan::Target)value(QStringLiteral("display/ordering"), 0).toInt();
     m_displayLanguage = value(QStringLiteral("display/language"), QStringLiteral("C")).toString();
     m_databaseVersion = value(QStringLiteral("database/version"), 0).toUInt();
 }
@@ -93,15 +93,15 @@ QVariant Configuration::get(const QString &key, const QString &def)
  * \brief The default search target.
  *
  * \par Access functions:
- * <TABLE><TR><TD>CountryModelFilter::Target</TD><TD>defaultSearchTarget() const</TD></TR><TR><TD>void</TD><TD>setDefaultSearchTarget(Target nDefaultSearchTarget)</TD></TR></TABLE>
+ * <TABLE><TR><TD>Chennzeihhan::Target</TD><TD>defaultSearchTarget() const</TD></TR><TR><TD>void</TD><TD>setDefaultSearchTarget(Chennzeihhan::Target nDefaultSearchTarget)</TD></TR></TABLE>
  * \par Notifier signal:
- * <TABLE><TR><TD>void</TD><TD>defaultSearchTargetChanged(CountryModelFilter::Target defaultSearchTarget)</TD></TR></TABLE>
+ * <TABLE><TR><TD>void</TD><TD>defaultSearchTargetChanged(Chennzeihhan::Target defaultSearchTarget)</TD></TR></TABLE>
  */
 
 
-CountryModelFilter::Target Configuration::defaultSearchTarget() const { return m_defaultSearchTarget; }
+Chennzeihhan::Target Configuration::defaultSearchTarget() const { return m_defaultSearchTarget; }
 
-void Configuration::setDefaultSearchTarget(CountryModelFilter::Target nDefaultSearchTarget)
+void Configuration::setDefaultSearchTarget(Chennzeihhan::Target nDefaultSearchTarget)
 {
     if (nDefaultSearchTarget != m_defaultSearchTarget) {
         m_defaultSearchTarget = nDefaultSearchTarget;
@@ -121,15 +121,15 @@ void Configuration::setDefaultSearchTarget(CountryModelFilter::Target nDefaultSe
  * \brief Thew default order target.
  *
  * \par Access functions:
- * <TABLE><TR><TD>CountryModelFilter::Target</TD><TD>defaultOrderTarget() const</TD></TR><TR><TD>void</TD><TD>setDefaultOrderTarget(Target nDefaultOrderTarget)</TD></TR></TABLE>
+ * <TABLE><TR><TD>Chennzeihhan::Target</TD><TD>defaultOrderTarget() const</TD></TR><TR><TD>void</TD><TD>setDefaultOrderTarget(Chennzeihhan::Target nDefaultOrderTarget)</TD></TR></TABLE>
  * \par Notifier signal:
- * <TABLE><TR><TD>void</TD><TD>defaultOrderTargetChanged(CountryModelFilter::Target defaultOrderTarget)</TD></TR></TABLE>
+ * <TABLE><TR><TD>void</TD><TD>defaultOrderTargetChanged(Chennzeihhan::Target defaultOrderTarget)</TD></TR></TABLE>
  */
 
 
-CountryModelFilter::Target Configuration::defaultOrderTarget() const { return m_defaultOrderTarget; }
+Chennzeihhan::Target Configuration::defaultOrderTarget() const { return m_defaultOrderTarget; }
 
-void Configuration::setDefaultOrderTarget(CountryModelFilter::Target nDefaultOrderTarget)
+void Configuration::setDefaultOrderTarget(Chennzeihhan::Target nDefaultOrderTarget)
 {
     if (nDefaultOrderTarget != m_defaultOrderTarget) {
         m_defaultOrderTarget = nDefaultOrderTarget;
@@ -195,4 +195,11 @@ void Configuration::setDatabaseVersion(uint nDatabaseVersion)
         setValue(QStringLiteral("database/version"), m_databaseVersion);
         emit databaseVersionChanged(databaseVersion());
     }
+}
+
+
+
+uint Configuration::minimumDbVersion() const
+{
+    return MIN_DB_VERSION;
 }

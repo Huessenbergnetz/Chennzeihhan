@@ -21,7 +21,8 @@ SOURCES += \
     src/coverconnector.cpp \
     src/models/chitem.cpp \
     src/models/atitem.cpp \
-    src/models/countrymodelfilter.cpp
+    src/models/countrymodelfilter.cpp \
+    src/models/alphabetmodel.cpp
 
 translations.path = /usr/share/harbour-chennzeihhan/translations
 translations.files = l10n/*.qm
@@ -52,12 +53,9 @@ OTHER_FILES += \
     qml/Common/CountryPlate.qml \
     qml/Pages/Settings.qml \
     qml/ItemViews/at.qml \
-    qml/Common/AbcItem.qml \
     qml/Pages/Help.qml \
     qml/Dialogs/Sorting.qml \
     qml/Dialogs/SearchTarget.qml \
-    qml/Common/AbcRow.qml \
-    qml/Common/SignGrid.qml \
     qml/BTComponents/AboutPage.qml \
     qml/BTComponents/Changelog.qml \
     qml/BTComponents/ChangelogDelegate.qml \
@@ -87,7 +85,8 @@ HEADERS += \
     src/coverconnector.h \
     src/models/chitem.h \
     src/models/atitem.h \
-    src/models/countrymodelfilter.h
+    src/models/countrymodelfilter.h \
+    src/models/alphabetmodel.h
 
 DISTFILES += \
     qml/ItemViews/SimpleItemView.qml \

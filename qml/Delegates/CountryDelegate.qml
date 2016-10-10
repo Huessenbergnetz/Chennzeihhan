@@ -28,8 +28,8 @@ ListItem {
     property string search
     property int target
 
-    property string name: (target === CountryModel.Name || target === CountryModel.Both) ? Theme.highlightText(model.name, search, Theme.highlightColor) : model.name
-    property string sign: (target === CountryModel.Code || target === CountryModel.Both) ? Theme.highlightText(model.sign, search, Theme.secondaryHighlightColor) : model.sign
+    property string name: (target === Chennzeihhan.Name || target === Chennzeihhan.Both) ? Theme.highlightText(model.name, search, Theme.highlightColor) : model.name
+    property string sign: (target === Chennzeihhan.Code || target === Chennzeihhan.Both) ? Theme.highlightText(model.sign, search, Theme.secondaryHighlightColor) : model.sign
 
     contentHeight: Theme.itemSizeMedium
 

@@ -21,6 +21,9 @@
 #include "globals.h"
 #include <QFile>
 #include <QDir>
+#ifdef QT_DEBUG
+#include <QtDebug>
+#endif
 
 DbManager::DbManager(QObject *parent) :
     QObject(parent)
@@ -30,12 +33,17 @@ DbManager::DbManager(QObject *parent) :
 
 bool DbManager::checkDB()
 {
+    bool exists;
     QFile dbFile(QDir::homePath().append(QLatin1String(DATA_DIR)).append(QLatin1String("/carplates.sqlite")));
     if (dbFile.exists()) {
-        return openDB();
+        exists = openDB();
     } else {
-        return false;
+        exists = false;
     }
+
+    setDbExists(exists);
+
+    return exists;
 }
 
 
@@ -59,7 +67,33 @@ bool DbManager::openDB()
 bool DbManager::closeDB()
 {
     if (db.isOpen()) {
+        setDbExists(false);
         db.close();
     }
     return true;
+}
+
+
+/*!
+ * \property DbManager::dbExists
+ * \brief Returns true if the database file exists and the database is open.
+ *
+ * \par Access functions:
+ * <TABLE><TR><TD>bool</TD><TD>dbExists() const</TD></TR><TR><TD>void</TD><TD>setDbExists(bool nDbExists)</TD></TR></TABLE>
+ * \par Notifier signal:
+ * <TABLE><TR><TD>void</TD><TD>dbExistsChanged(bool dbExists)</TD></TR></TABLE>
+ */
+
+
+bool DbManager::dbExists() const { return m_dbExists; }
+
+void DbManager::setDbExists(bool nDbExists)
+{
+    if (nDbExists != m_dbExists) {
+        m_dbExists = nDbExists;
+#ifdef QT_DEBUG
+        qDebug() << "Changed dbExists to" << m_dbExists;
+#endif
+        emit dbExistsChanged(dbExists());
+    }
 }

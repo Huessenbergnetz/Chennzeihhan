@@ -39,7 +39,7 @@ Page {
                 anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                 text: qsTr("Code")
             }
-            onClicked: { if (cm) {cm.searchTarget = CountryModel.Code}; pageStack.pop() }
+            onClicked: { if (cm) {cm.searchTarget = Chennzeihhan.Code}; pageStack.pop() }
         }
 
         BackgroundItem {
@@ -51,7 +51,7 @@ Page {
                 anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                 text: qsTr("Name")
             }
-            onClicked: { if (cm) {cm.searchTarget = CountryModel.Name}; pageStack.pop() }
+            onClicked: { if (cm) {cm.searchTarget = Chennzeihhan.Name}; pageStack.pop() }
         }
 
         BackgroundItem {
@@ -63,7 +63,7 @@ Page {
                 anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin; verticalCenter: parent.verticalCenter }
                 text: qsTr("Code and Name")
             }
-            onClicked: { if (cm) {cm.searchTarget = CountryModel.Both}; pageStack.pop() }
+            onClicked: { if (cm) {cm.searchTarget = Chennzeihhan.Both}; pageStack.pop() }
         }
     }
 }

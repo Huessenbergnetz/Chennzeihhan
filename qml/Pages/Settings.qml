@@ -24,14 +24,11 @@ import harbour.chennzeihhan 1.0
 Page {
     id: settings
 
-    property bool checkingDBVersion: false
-    property int localDbVersion: config.databaseVersion
-    property int remoteDbVersion: 0
-
-    Connections {
-        target: dlMan
-        onGotDBVersion: { localDbVersion = oldVersion; remoteDbVersion = newVersion; changelogText.text = changelog; dlSize.text = cSize; instSize.text = uSize; checkingDBVersion = false }
-        onDbDownloadFinished: localDbVersion = dlMan.getLocalDBVersion()
+    DownloadManager {
+        id: dlMan
+        configuration: config
+        dbManager: dbMan
+        onDbDownloadProgress: { downloadDBProgress.progressValue = rec; downloadDBProgress.maximumValue = tot }
     }
 
     Timer {
@@ -54,13 +51,13 @@ Page {
             id: pulley
             MenuItem {
                 text: qsTr("Check for new database version")
-                enabled: !checkingDBVersion
-                visible: (localDbVersion === remoteDbVersion) || remoteDbVersion === 0
-                onClicked: { checkingDBVersion = true; checkUpdateTimer.restart() }
+                enabled: !dlMan.checkingVersion
+                visible: (config.databaseVersion === dlMan.availableVersion) || dlMan.availableVersion === 0
+                onClicked: { checkUpdateTimer.restart() }
             }
             MenuItem {
                 text: qsTr("Download new database version")
-                visible: (remoteDbVersion > localDbVersion)
+                visible: (dlMan.availableVersion > config.databaseVersion) && !dlMan.inOperation
                 onClicked: { visible = false; downloadDBProgress.visible = true; downloadDbTimer.restart() }
             }
         }
@@ -78,7 +75,7 @@ Page {
             Label {
                 anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin }
                 textFormat: Text.PlainText
-                visible: localDbVersion === 0 && remoteDbVersion === 0 && !checkingDBVersion
+                visible: config.databaseVersion === 0 && dlMan.availableVersion === 0 && !dlMan.inOperation
                 wrapMode: Text.WordWrap
                 text: qsTr("Currently there is no database installed. Please use the pully menu to check for new DB version.")
             }
@@ -86,19 +83,13 @@ Page {
             ProgressBar {
                 id: downloadDBProgress
                 anchors { left: parent.left; right: parent.right }
-                visible: false
+                visible: dlMan.inOperation
                 minimumValue: 0
                 indeterminate: maximumValue === 1.0
-                Connections {
-                    target: dlMan
-                    onDbDownloadProgress: { downloadDBProgress.progressValue = rec; downloadDBProgress.maximumValue = tot}
-                    onDbDownloadFailed: { downloadDBProgress.visible = false }
-                    onDbDownloadFinished: downloadDBProgress.visible = false
-                }
             }
 
             Item {
-                visible: settings.checkingDBVersion
+                visible: dlMan.checkingVersion
                 width: parent.width
                 height: checkingDbBI.height
 
@@ -107,13 +98,13 @@ Page {
                     anchors.centerIn: parent
                     size: BusyIndicatorSize.Medium
                     running: visible
-                    visible: settings.checkingDBVersion
+                    visible: dlMan.checkingVersion
                 }
             }
 
             Row {
                 anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin }
-                visible: (localDbVersion > 0 || remoteDbVersion > 0) && !downloadDBProgress.visible && !settings.checkingDBVersion
+                visible: (config.databaseVersion > 0 || dlMan.availableVersion > 0) && !dlMan.checkingVersion && !dlMan.inOperation
                 add: Transition { AddAnimation {} }
 
                 Column {
@@ -128,7 +119,7 @@ Page {
 
                     Text {
                         textFormat: Text.PlainText
-                        text: qsTr("Rev.") + " " + localDbVersion
+                        text: qsTr("Rev.") + " " + config.databaseVersion
                         anchors.horizontalCenter: parent.horizontalCenter
                         color: Theme.primaryColor
                     }
@@ -136,7 +127,7 @@ Page {
 
                 Column {
                     width: parent.width / 4
-                    visible: !checkingDbBI.visible && remoteDbVersion > 0 ? 1 : 0
+                    visible: dlMan.availableVersion > 0
 
                     Image {
                         width: 64; height: 64
@@ -146,15 +137,15 @@ Page {
 
                     Text {
                         textFormat: Text.PlainText
-                        text: qsTr("Rev.") + " " + remoteDbVersion
+                        text: qsTr("Rev.") + " " + dlMan.availableVersion
                         anchors.horizontalCenter: parent.horizontalCenter
-                        color: remoteDbVersion > localDbVersion ? Theme.highlightColor : Theme.primaryColor
+                        color: dlMan.availableVersion > config.databaseVersion ? Theme.highlightColor : Theme.primaryColor
                     }
                 }
 
                 Column {
                     width: parent.width / 4
-                    visible: !checkingDbBI.visible && remoteDbVersion > 0 ? 1 : 0
+                    visible: dlMan.availableVersion > 0
 
                     Image {
                         width: 64; height: 64
@@ -167,12 +158,13 @@ Page {
                         textFormat: Text.PlainText
                         anchors.horizontalCenter: parent.horizontalCenter
                         color: Theme.primaryColor
+                        text: dlMan.downloadSize
                     }
                 }
 
                 Column {
                     width: parent.width / 4
-                    visible: !checkingDbBI.visible && remoteDbVersion > 0 ? 1 : 0
+                    visible: dlMan.availableVersion > 0
 
                     Image {
                         width: 64; height: 64
@@ -186,6 +178,7 @@ Page {
                         textFormat: Text.PlainText
                         anchors.horizontalCenter: parent.horizontalCenter
                         color: Theme.primaryColor
+                        text: dlMan.installedSize
                     }
                 }
             }
@@ -193,13 +186,13 @@ Page {
             Item {
                 width: parent.width
                 height: Theme.paddingLarge
-                visible: remoteDbVersion > 0 && remoteDbVersion > localDbVersion && localDbVersion > 0
+                visible: dlMan.availableVersion > 0 && dlMan.availableVersion > config.databaseVersion && config.databaseVersion > 0
             }
 
             Label {
                 anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin }
                 textFormat: Text.PlainText
-                visible: remoteDbVersion > 0 && remoteDbVersion > localDbVersion && localDbVersion > 0
+                visible: dlMan.availableVersion > 0 && dlMan.availableVersion > config.databaseVersion && config.databaseVersion > 0
                 wrapMode: Text.WordWrap
                 text: qsTr("Changes in this version:")
             }
@@ -208,9 +201,10 @@ Page {
                 id: changelogText
                 anchors { left: parent.left; leftMargin: Theme.horizontalPageMargin; right: parent.right; rightMargin: Theme.horizontalPageMargin }
                 textFormat: Text.RichText
-                visible: remoteDbVersion > 0 && remoteDbVersion > localDbVersion && localDbVersion > 0
+                visible: dlMan.availableVersion > 0 && dlMan.availableVersion > config.databaseVersion && config.databaseVersion > 0
                 wrapMode: Text.WordWrap
                 color: Theme.primaryColor
+                text: dlMan.changelog
             }
         }
 
@@ -228,7 +222,6 @@ Page {
                 width: parent.width
                 label: qsTr("Default ordering")
 
-//                currentIndex: config.get("display/ordering", 0)
                 currentIndex: config.defaultOrderTarget
 
                 menu: ContextMenu {
@@ -236,7 +229,6 @@ Page {
                     MenuItem { text: qsTr("Name") }
                 }
 
-//                onCurrentIndexChanged: config.set("display/ordering", currentIndex)
                 onCurrentIndexChanged: config.defaultOrderTarget = currentIndex
             }
 
@@ -245,7 +237,6 @@ Page {
                 width: parent.width
                 label: qsTr("Default search")
 
-//                currentIndex: config.get("display/search", 0)
                 currentIndex: config.defaultSearchTarget
 
                 menu: ContextMenu {
@@ -254,7 +245,6 @@ Page {
                     MenuItem { text: qsTr("Both") }
                 }
 
-//                onCurrentIndexChanged: config.set("display/search", currentIndex)
                 onCurrentIndexChanged: config.defaultSearchTarget = currentIndex
             }
 

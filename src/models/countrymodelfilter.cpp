@@ -7,8 +7,8 @@
 
 CountryModelFilter::CountryModelFilter(QObject *parent) : QSortFilterProxyModel(parent), m_timer(new QTimer(this)), m_cm(new CountryModel(this))
 {
-    m_searchTarget = Code;
-    m_sortTarget = Code;
+    m_searchTarget = Chennzeihhan::Code;
+    m_sortTarget = Chennzeihhan::Code;
     m_timer->setSingleShot(true);
     m_timer->setInterval(300);
     m_timer->setTimerType(Qt::PreciseTimer);
@@ -56,15 +56,15 @@ void CountryModelFilter::setSearch(const QString &nSearch)
  * \brief The search target.
  *
  * \par Access functions:
- * <TABLE><TR><TD>Target</TD><TD>searchTarget() const</TD></TR><TR><TD>void</TD><TD>setSearchTarget(Target nSearchTarget)</TD></TR></TABLE>
+ * <TABLE><TR><TD>Chennzeihhan::Target</TD><TD>searchTarget() const</TD></TR><TR><TD>void</TD><TD>setSearchTarget(Chennzeihhan::Target nSearchTarget)</TD></TR></TABLE>
  * \par Notifier signal:
- * <TABLE><TR><TD>void</TD><TD>searchTargetChanged(Target searchTarget)</TD></TR></TABLE>
+ * <TABLE><TR><TD>void</TD><TD>searchTargetChanged(Chennzeihhan::Target searchTarget)</TD></TR></TABLE>
  */
 
 
-CountryModelFilter::Target CountryModelFilter::searchTarget() const { return m_searchTarget; }
+Chennzeihhan::Target CountryModelFilter::searchTarget() const { return m_searchTarget; }
 
-void CountryModelFilter::setSearchTarget(Target nSearchTarget)
+void CountryModelFilter::setSearchTarget(Chennzeihhan::Target nSearchTarget)
 {
     if (nSearchTarget != m_searchTarget) {
         m_searchTarget = nSearchTarget;
@@ -87,15 +87,15 @@ void CountryModelFilter::setSearchTarget(Target nSearchTarget)
  * \brief The sort target.
  *
  * \par Access functions:
- * <TABLE><TR><TD>Target</TD><TD>sortTarget() const</TD></TR><TR><TD>void</TD><TD>setSortTarget(Target nSortTarget)</TD></TR></TABLE>
+ * <TABLE><TR><TD>Chennzeihhan::Target</TD><TD>sortTarget() const</TD></TR><TR><TD>void</TD><TD>setSortTarget(Chennzeihhan::Target nSortTarget)</TD></TR></TABLE>
  * \par Notifier signal:
- * <TABLE><TR><TD>void</TD><TD>sortTargetChanged(Target sortTarget)</TD></TR></TABLE>
+ * <TABLE><TR><TD>void</TD><TD>sortTargetChanged(Chennzeihhan::Target sortTarget)</TD></TR></TABLE>
  */
 
 
-CountryModelFilter::Target CountryModelFilter::sortTarget() const { return m_sortTarget; }
+Chennzeihhan::Target CountryModelFilter::sortTarget() const { return m_sortTarget; }
 
-void CountryModelFilter::setSortTarget(Target nSortTarget)
+void CountryModelFilter::setSortTarget(Chennzeihhan::Target nSortTarget)
 {
     if (nSortTarget != m_sortTarget) {
         m_sortTarget = nSortTarget;
@@ -103,7 +103,7 @@ void CountryModelFilter::setSortTarget(Target nSortTarget)
         qDebug() << "Changed sortTarget to" << m_sortTarget;
 #endif
         emit sortTargetChanged(sortTarget());
-        if (m_sortTarget == Code) {
+        if (m_sortTarget == Chennzeihhan::Code) {
             setSortRole(CountryModel::Sign);
         } else {
             setSortRole(CountryModel::Name);
@@ -173,9 +173,9 @@ bool CountryModelFilter::filterAcceptsRow(int source_row, const QModelIndex &sou
     QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
 
     switch(searchTarget()) {
-    case Code:
+    case Chennzeihhan::Code:
         return sourceModel()->data(index, CountryModel::Sign).toString().contains(search(), Qt::CaseInsensitive);
-    case Name:
+    case Chennzeihhan::Name:
         return sourceModel()->data(index, CountryModel::Name).toString().contains(search(), Qt::CaseInsensitive);
     default:
         return (sourceModel()->data(index, CountryModel::Sign).toString().contains(search(), Qt::CaseInsensitive) && sourceModel()->data(index, CountryModel::Name).toString().contains(search(), Qt::CaseInsensitive));

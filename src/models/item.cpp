@@ -1,9 +1,10 @@
 #include "item.h"
 #include "../coverconnector.h"
 #include <QSqlQuery>
+#include <QVariant>
+#include <QSqlError>
 #ifdef QT_DEBUG
 #include <QtDebug>
-#include <QSqlError>
 #endif
 
 /*!

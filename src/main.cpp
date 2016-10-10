@@ -50,6 +50,7 @@
 #include "models/chitem.h"
 #include "models/deitem.h"
 #include "models/countrymodelfilter.h"
+#include "models/alphabetmodel.h"
 
 
 int main(int argc, char *argv[])
@@ -70,13 +71,11 @@ int main(int argc, char *argv[])
     DbManager dbman;
     dbman.checkDB();
 
-    DownloadManager dlManager;
-//    Wikipedia wikipedia;
     CoverConnector cc;
 
-    Configuration *config = new Configuration;
+    Configuration config;
 
-    QString locale = config->get(QStringLiteral("display/language"), QStringLiteral("C")).toString();
+    QString locale = config.displayLanguage();
 
 #ifdef QT_DEBUG
     qDebug() << "Stored locale code:" << locale;
@@ -93,7 +92,7 @@ int main(int argc, char *argv[])
 #endif
 
 #ifndef CLAZY
-    QTranslator *translator = new QTranslator;
+    QTranslator *translator = new QTranslator(app);
     if (translator->load("chennzeihhan_"+locale, SailfishApp::pathTo(QStringLiteral("translations")).toString(QUrl::RemoveScheme))) {
         app->installTranslator(translator);
     }
@@ -103,20 +102,22 @@ int main(int argc, char *argv[])
     qmlRegisterType<LanguageModel>("harbour.chennzeihhan", 1, 0, "LanguageModel");
     qmlRegisterType<CountryModelFilter>("harbour.chennzeihhan", 1, 0, "CountryModel");
     qmlRegisterType<Wikipedia>("harbour.chennzeihhan", 1, 0, "Wikipedia");
+    qmlRegisterType<DownloadManager>("harbour.chennzeihhan", 1, 0, "DownloadManager");
+    qmlRegisterUncreatableType<Chennzeihhan>("harbour.chennzeihhan", 1, 0, "Chennzeihhan", QStringLiteral("You can not create a Chennzeihhan component."));
     qmlRegisterUncreatableType<SimpleItemModel>("harbour.chennzeihhan", 1, 0, "SimpleItemModel", QStringLiteral("You can not create a SimpleItemModel component."));
     qmlRegisterUncreatableType<CoverConnector>("harbour.chennzeihhan", 1, 0, "CoverConnector", QStringLiteral("You can not create a CoverConnector component."));
     qmlRegisterUncreatableType<Configuration>("harbour.chennzeihhan", 1, 0, "Configuration", QStringLiteral("You can not create a Configuration component."));
+    qmlRegisterUncreatableType<DbManager>("harbour.chennzeihhan", 1, 0, "DbManager", QStringLiteral("You can not create a DbManager component."));
+    qmlRegisterType<AlphabetModel>("harbour.chennzeihhan", 1, 0, "AlphabetModel");
     qmlRegisterType<AtItem>("harbour.chennzeihhan", 1, 0, "AtItem");
     qmlRegisterType<ChItem>("harbour.chennzeihhan", 1, 0, "ChItem");
     qmlRegisterType<DeItem>("harbour.chennzeihhan", 1, 0, "DeItem");
 
 
-    QObject::connect(&dlManager, &DownloadManager::dbDownloadStarted, &dbman, &DbManager::closeDB);
-
     CountriesModel *countriesModel = new CountriesModel();
     CountriesModel *countriesSearch = new CountriesModel();
     CountriesModel *countriesFavourites = new CountriesModel();
-    CountriesModel *abcModel = new CountriesModel();
+//    CountriesModel *abcModel = new CountriesModel();
 
 #ifndef CLAZY
     QQuickView* view = SailfishApp::createView();
@@ -125,13 +126,11 @@ int main(int argc, char *argv[])
 #endif
 
     view->rootContext()->setContextProperty(QStringLiteral("dbMan"), &dbman);
-    view->rootContext()->setContextProperty(QStringLiteral("dlMan"), &dlManager);
-//    view->rootContext()->setContextProperty(QStringLiteral("wp"), &wikipedia);
-    view->rootContext()->setContextProperty(QStringLiteral("config"), config);
+    view->rootContext()->setContextProperty(QStringLiteral("config"), &config);
     view->rootContext()->setContextProperty(QStringLiteral("countriesModel"), countriesModel);
     view->rootContext()->setContextProperty(QStringLiteral("countriesFavourites"), countriesFavourites);
     view->rootContext()->setContextProperty(QStringLiteral("countriesSearch"), countriesSearch);
-    view->rootContext()->setContextProperty(QStringLiteral("abcModel"), abcModel);
+//    view->rootContext()->setContextProperty(QStringLiteral("abcModel"), abcModel);
     view->rootContext()->setContextProperty(QStringLiteral("cc"), &cc);
     view->rootContext()->setContextProperty(QStringLiteral("versionString"), QStringLiteral(VERSION_STRING));
     view->rootContext()->setContextProperty(QStringLiteral("versionInt"), VERSION);

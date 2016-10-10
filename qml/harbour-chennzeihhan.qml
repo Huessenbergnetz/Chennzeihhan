@@ -26,32 +26,19 @@ ApplicationWindow
 {
     id: chennzeihhan
 
-    property bool dataBaseExists: dbMan.checkDB()
-    property int installedDbRevision: dlMan.getLocalDBVersion()
-    property int minimumDbRevision: 8
     property bool inOperation: false
-
 
     function getCoverMode() {
         switch(pageStack.currentPage.objectName) {
         case "ItemView":
-//            return "item";
             return CoverConnector.Item
         case "CountryView":
-//            return "country"
             return CoverConnector.Country
         case "WikiView":
-//            return "wikipedia"
             return CoverConnector.Wikipedia
         default:
-//            return "overview"
             return CoverConnector.Overview
         }
-    }
-
-    Connections {
-        target: dlMan
-        onDbDownloadFinished: { checkDbTimer.start(); installedDbRevision = dlMan.getLocalDBVersion() }
     }
 
     Connections {
@@ -59,29 +46,8 @@ ApplicationWindow
         onFavsChanged: inOperation = false
     }
 
-    Timer {
-        id: checkDbTimer; interval: 200; running: false; repeat: false
-        onTriggered: { dataBaseExists = dbMan.checkDB() }
-    }
-
     initialPage: Component { MainView { } }
     cover: Qt.resolvedUrl("Pages/CoverPage.qml")
-
-//    QtObject {
-//        id: coverConnector
-
-//        property string country
-//        property string name
-//        property string type
-//        property string sign
-//        property string state
-//        property string colors
-//        property string countryName
-//        property string countrySign
-//        property string countryColors
-//        property string mode: "overview"
-//    }
-
 
     Connections {
         target: pageStack

@@ -23,18 +23,21 @@ import "../Delegates"
 import "../Common"
 import "../BTComponents"
 import "../Models"
+import harbour.chennzeihhan 1.0
 
 Page {
     id: mainView
     objectName: "MainView"
 
     property string searchString
-    property int searchTarget: 0
-    property int sortType: 0
+    property int searchTarget: config.defaultSearchTarget
+    property int sortType: config.defaultOrderTarget
     property string cha: ""
     property int activeRow: 0
-    property bool showMainContent: dataBaseExists && (installedDbRevision >= minimumDbRevision) && searchString === ""
+    property bool showMainContent: dbMan.dbExists && (config.databaseVersion >= config.minimumDbVersion) && searchString === ""
     property variant abc
+    readonly property int abcColumns: 5
+    readonly property real plateRatio: 0.84
 
     FirstStartInfo {
         visible: config.get("system/version", 0) < versionInt
@@ -47,34 +50,14 @@ Page {
         onClicked: config.set("system/version", versionInt)
     }
 
-    Component.onCompleted: {
-        searchTarget = config.get("display/search", 0)
-        sortType = config.get("display/ordering", 0)
-        abc = abcModel.getAbc(sortType)
-    }
-
     Connections {
         target: config
-        onConfigChanged: {
-            searchTarget = config.get("display/search", 0)
-            searchT.currentIndex = config.get("display/search", 0)
-            sortType = config.get("display/ordering", 0)
-            sortOrdering.currentIndex = config.get("display/ordering", 0)
-        }
-    }
-
-    Connections {
-        target: dlMan
-        onDbDownloadFinished: { checkDbTimer.start(); installedDbRevision = dlMan.getLocalDBVersion() }
-    }
-
-    Timer {
-        id: checkDbTimer; interval: 220; running: false; repeat: false
-        onTriggered: { abc = abcModel.getAbc(sortType) }
+        onDefaultSearchTargetChanged: { searchTarget = defaultSearchTarget; searchT.currentIndex = searchTarget }
+        onDefaultOrderTargetChanged: { sortType = defaultOrderTarget; sortOrdering.currentIndex = sortType }
     }
 
     onSearchStringChanged: countriesSearch.refresh(searchString, searchTarget, sortType)
-    onSortTypeChanged: { abc = abcModel.getAbc(sortType); if (cha !== "") { countriesModel.setFirstChar(cha, sortType) } else if (searchString !== "") { countriesSearch.refresh(searchString, searchTarget, sortType) } }
+    onSortTypeChanged: { alphabetModel.init(sortType); if (cha !== "") { countriesModel.setFirstChar(cha, sortType) } else if (searchString !== "") { countriesSearch.refresh(searchString, searchTarget, sortType) } }
     onSearchTargetChanged: if (searchString !== "") countriesSearch.refresh(searchString, searchTarget, sortType)
     onChaChanged: countriesModel.setFirstChar(cha, sortType)
 
@@ -114,7 +97,7 @@ Page {
 
             SearchField {
                 id: searchField
-                visible: dataBaseExists && (installedDbRevision >= minimumDbRevision)
+                visible: dbMan.dbExists && (config.databaseVersion >= config.minimumDbVersion)
                 anchors { left: parent.left; right: parent.right; }
                 placeholderText: qsTr("Search ...")
                 EnterKey.onClicked: searchField.focus = false
@@ -124,7 +107,7 @@ Page {
                     target: mainView
                     property: "searchString"
                     value: searchField.text
-                    }
+                }
             }
 
             GridView {
@@ -134,7 +117,7 @@ Page {
                 anchors { left: parent.left; right: parent.right }
                 delegate: CountriesDelegate{ showBg: false}
                 interactive: false
-                cellWidth: 180; cellHeight: 150
+                cellWidth: width/3; cellHeight: cellWidth * plateRatio
                 model: countriesFavourites
                 Component.onCompleted: countriesFavourites.getFavs()
                 Connections {
@@ -152,12 +135,11 @@ Page {
             Item {
                 id: abcGrid
                 visible: showMainContent
-
-                property int steps: 5
-                property int count: mainView.abc.length
-                property int cols: Math.ceil(count/steps)
-
                 anchors { left: parent.left; right: parent.right }
+
+                property real cellWidth: width/abcColumns
+                property real cellHeight: width/abcColumns
+
                 height: col.height
 
                 Column {
@@ -166,43 +148,83 @@ Page {
                     move: Transition { NumberAnimation { properties: "y"; easing.type: Easing.InOutQuad } }
                     add: Transition { AddAnimation {} }
                     Repeater {
-                        id: colRep
-                        model: abcGrid.cols
-                        anchors { left: parent.left; right: parent.right }
+                        model: AlphabetModel { id: alphabetModel; dbManager: dbMan }
+
                         Item {
                             id: rowBase
                             anchors { left: parent.left; right: parent.right }
-                            height: row.height + grid.height
-                            property int rowNumber: model.index+1
-                            AbcRow {
-                                id: row
+                            height: abcRow.height + grid.height
+                            property int rowIdx: model.index
+
+                            Row {
+                                id: abcRow
                                 z: 2
-                                cha: mainView.cha
-                                cont: mainView.abc.slice(model.index * 5, (model.index+1) * 5)
-                                onClicked: {
-                                    mainView.activeRow = (mainView.cha === txt) ? 0 : rowBase.rowNumber;
-                                    mainView.cha = (mainView.cha === txt) ? "" : txt;
+                                Repeater {
+                                    model: row
+
+                                    BackgroundItem {
+                                        id: abcItem
+
+                                        width: abcGrid.cellWidth
+                                        height: abcGrid.cellHeight
+                                        contentHeight: abcGrid.cellHeight
+
+                                        property alias text: label.text
+                                        property bool expanded: cha === text
+
+                                        highlightedColor: "transparent"
+
+                                        Image {
+                                            z: 0
+                                            anchors.fill: parent
+                                            fillMode: Image.Tile
+                                            visible: !abcItem.expanded && !abcItem.pressed
+                                            source: "/usr/share/harbour-chennzeihhan/images/abcbg.png"
+                                        }
+
+                                        Label {
+                                            z: 1
+                                            id: label
+                                            anchors.centerIn: parent
+                                            font.pixelSize: Theme.fontSizeExtraLarge
+                                            color: !abcItem.expanded && !abcItem.pressed ? Theme.primaryColor : Theme.highlightColor
+                                            opacity: 0.7
+                                            text: display
+                                        }
+
+                                        onClicked: {
+                                            mainView.activeRow = (mainView.cha === text) ? -1 : rowBase.rowIdx;
+                                            mainView.cha = (mainView.cha === text) ? "" : text;
+                                        }
+                                    }
                                 }
                             }
-                            SignGrid {
+
+                            GridView {
                                 id: grid
                                 z: 1
                                 clip: true
-                                anchors { top: row.bottom; left: parent.left; right: parent.right }
-                                visible: rowBase.rowNumber === mainView.activeRow
+                                visible: rowBase.rowIdx === mainView.activeRow
+                                height: visible ? Math.ceil(count / 3) * cellHeight : 0
+                                anchors { top: abcRow.bottom; left: parent.left; right: parent.right }
+                                delegate: CountriesDelegate{}
+                                interactive: false
+                                cellWidth: width/3; cellHeight: cellWidth * plateRatio
+                                model: countriesModel
                                 opacity: visible ? 1 : 0
                                 Behavior on opacity { FadeAnimation{} }
                             }
                         }
                     }
                 }
+                Component.onCompleted:  alphabetModel.init(sortType)
             }
 
 
             Row {
                 id: searchSortOptions
                 anchors { left: parent.left; right: parent.right }
-                visible: dataBaseExists && (installedDbRevision >= minimumDbRevision)
+                visible: dbMan.dbExists && (config.databaseVersion >= config.minimumDbVersion)
 
                 ComboBox {
                     id: sortOrdering
@@ -238,14 +260,13 @@ Page {
 
             GridView {
                 id: searchView
-
                 visible: searchString !== ""
                 width: parent.width
                 clip: true
                 anchors { left: parent.left; right: parent.right }
                 height: flick.height - pageHeader.height - searchField.height
                 delegate: CountriesDelegate{ search: searchString; target: searchTarget}
-                cellWidth: 180; cellHeight: 150
+                cellWidth: width/3; cellHeight: cellWidth * plateRatio
                 model: countriesSearch
                 VerticalScrollDecorator { flickable: searchView }
             }
@@ -253,12 +274,12 @@ Page {
         }
 
         ViewPlaceholder {
-            enabled: !dataBaseExists
+            enabled: !dbMan.dbExists
             text: qsTr("You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.")
         }
 
         ViewPlaceholder {
-            enabled: dataBaseExists && (installedDbRevision < minimumDbRevision)
+            enabled: dbMan.dbExists && (config.databaseVersion < config.minimumDbVersion)
             text: qsTr("Because of changes in the data models you have to update the database. Please go to the settings to do so. We apologize for the inconvenience.")
         }
     }
