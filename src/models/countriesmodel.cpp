@@ -19,6 +19,7 @@
 
 #include "countriesmodel.h"
 #include "../globals.h"
+#include <QCoreApplication>
 
 const char* CountriesModel::COLUMN_NAMES[] = {
     "itemId",
@@ -64,6 +65,10 @@ QVariant CountriesModel::data(const QModelIndex &index, int role) const
         int columnIdx = role - Qt::UserRole - 1;
         QModelIndex modelIndex = this->index(index.row(), columnIdx);
         value = QSqlQueryModel::data(modelIndex, Qt::DisplayRole);
+
+        if (columnIdx == 6) {
+            value = QCoreApplication::translate("DBStrings", value.toString().toUtf8().constData());
+        }
     }
 
     return value;
