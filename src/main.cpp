@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
     dbman.checkDB();
 
     DownloadManager dlManager;
-    Wikipedia wikipedia;
+//    Wikipedia wikipedia;
     CoverConnector cc;
 
     Configuration *config = new Configuration;
@@ -102,6 +102,7 @@ int main(int argc, char *argv[])
 
     qmlRegisterType<LanguageModel>("harbour.chennzeihhan", 1, 0, "LanguageModel");
     qmlRegisterType<CountryModelFilter>("harbour.chennzeihhan", 1, 0, "CountryModel");
+    qmlRegisterType<Wikipedia>("harbour.chennzeihhan", 1, 0, "Wikipedia");
     qmlRegisterUncreatableType<SimpleItemModel>("harbour.chennzeihhan", 1, 0, "SimpleItemModel", QStringLiteral("You can not create a SimpleItemModel component."));
     qmlRegisterUncreatableType<CoverConnector>("harbour.chennzeihhan", 1, 0, "CoverConnector", QStringLiteral("You can not create a CoverConnector component."));
     qmlRegisterUncreatableType<Configuration>("harbour.chennzeihhan", 1, 0, "Configuration", QStringLiteral("You can not create a Configuration component."));
@@ -125,7 +126,7 @@ int main(int argc, char *argv[])
 
     view->rootContext()->setContextProperty(QStringLiteral("dbMan"), &dbman);
     view->rootContext()->setContextProperty(QStringLiteral("dlMan"), &dlManager);
-    view->rootContext()->setContextProperty(QStringLiteral("wp"), &wikipedia);
+//    view->rootContext()->setContextProperty(QStringLiteral("wp"), &wikipedia);
     view->rootContext()->setContextProperty(QStringLiteral("config"), config);
     view->rootContext()->setContextProperty(QStringLiteral("countriesModel"), countriesModel);
     view->rootContext()->setContextProperty(QStringLiteral("countriesFavourites"), countriesFavourites);

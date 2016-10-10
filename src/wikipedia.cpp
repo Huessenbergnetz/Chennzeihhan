@@ -35,35 +35,120 @@ Wikipedia::Wikipedia(QObject *parent) :
 }
 
 
-QUrl Wikipedia::getTranslation(const QString &langCode, const QString &entry)
+/*!
+ * \property Wikipedia::langCode
+ * \brief The language code.
+ *
+ * \par Access functions:
+ * <TABLE><TR><TD>QString</TD><TD>langCode() const</TD></TR><TR><TD>void</TD><TD>setLangCode(const QString &nLangCode)</TD></TR></TABLE>
+ * \par Notifier signal:
+ * <TABLE><TR><TD>void</TD><TD>langCodeChanged(const QString &langCode)</TD></TR></TABLE>
+ */
+
+
+QString Wikipedia::langCode() const { return m_langCode; }
+
+void Wikipedia::setLangCode(const QString &nLangCode)
 {
-    QSettings s;
-    QString lang = s.value(QStringLiteral("display/language")).toString().left(2).toLower();
-    if (lang.isEmpty() || (lang == QLatin1String("c"))) {
-        lang = QLocale::system().name().left(2);
+    if (nLangCode != m_langCode) {
+        m_langCode = nLangCode;
+#ifdef QT_DEBUG
+        qDebug() << "Changed langCode to" << m_langCode;
+#endif
+        emit langCodeChanged(langCode());
+        getTranslation();
+    }
+}
+
+
+
+
+/*!
+ * \property Wikipedia::entry
+ * \brief The entry name.
+ *
+ * \par Access functions:
+ * <TABLE><TR><TD>QString</TD><TD>entry() const</TD></TR><TR><TD>void</TD><TD>setEntry(const QString &nEntry)</TD></TR></TABLE>
+ * \par Notifier signal:
+ * <TABLE><TR><TD>void</TD><TD>entryChanged(const QString &entry)</TD></TR></TABLE>
+ */
+
+
+QString Wikipedia::entry() const { return m_entry; }
+
+void Wikipedia::setEntry(const QString &nEntry)
+{
+    if (nEntry != m_entry) {
+        m_entry = nEntry;
+#ifdef QT_DEBUG
+        qDebug() << "Changed entry to" << m_entry;
+#endif
+        emit entryChanged(entry());
+        getTranslation();
+    }
+}
+
+
+
+
+/*!
+ * \property Wikipedia::url
+ * \brief The requested url.
+ *
+ * \par Access functions:
+ * <TABLE><TR><TD>QUrl</TD><TD>url() const</TD></TR><TR><TD>void</TD><TD>setUrl(const QUrl &nUrl)</TD></TR></TABLE>
+ * \par Notifier signal:
+ * <TABLE><TR><TD>void</TD><TD>urlChanged(const QUrl &url)</TD></TR></TABLE>
+ */
+
+
+QUrl Wikipedia::url() const { return m_url; }
+
+void Wikipedia::setUrl(const QUrl &nUrl)
+{
+    if (nUrl != m_url) {
+        m_url = nUrl;
+#ifdef QT_DEBUG
+        qDebug() << "Changed url to" << m_url;
+#endif
+        emit urlChanged(url());
+    }
+}
+
+
+
+
+void Wikipedia::getTranslation()
+{
+    if (langCode().isEmpty() || entry().isEmpty()) {
+        return;
     }
 
-//    QString lang = QLocale::system().name().left(2);
+    QSettings s;
+    QString lang = s.value(QStringLiteral("display/language")).toString().left(2).toUpper();
+    if (lang.isEmpty() || (lang == QLatin1String("C"))) {
+        lang = QLocale::system().name().left(2);
+    }
 
     QUrl wpURL;
     wpURL.setScheme(QStringLiteral("https"));
 
 
-    if (lang == langCode) {
-        wpURL.setHost(QStringLiteral("%1.wikipedia.org").arg(langCode));
-        wpURL.setPath(QStringLiteral("/wiki/%1").arg(entry));
+    if (lang == langCode()) {
+        wpURL.setHost(QStringLiteral("%1.wikipedia.org").arg(langCode()));
+        wpURL.setPath(QStringLiteral("/wiki/%1").arg(entry()));
     } else {
 
         QString enFallback;
 
-        QMap<QString, QString> interWiki = reqTranslations(langCode, entry);
+        QMap<QString, QString> interWiki = reqTranslations(langCode(), entry());
         if (interWiki.contains(QStringLiteral("en"))) {
             enFallback = interWiki.value(QStringLiteral("en"));
         }
 
         while (!interWiki.contains(lang) && (interWiki[QStringLiteral("cont")] != QStringLiteral(""))) {
 
-            interWiki = reqTranslations(langCode, entry, interWiki[QStringLiteral("cont")]);
+            interWiki = reqTranslations(langCode(), entry(), interWiki[QStringLiteral("cont")]);
 
             if (interWiki.contains(QStringLiteral("en"))) {
                 enFallback = interWiki.value(QStringLiteral("en"));
@@ -77,8 +162,8 @@ QUrl Wikipedia::getTranslation(const QString &langCode, const QString &entry)
             wpURL.setHost(QStringLiteral("en.wikipedia.org"));
             wpURL.setPath(QStringLiteral("/wiki/%1").arg(enFallback));
         } else {
-            wpURL.setHost(QStringLiteral("%1.wikipedia.org").arg(langCode));
-            wpURL.setPath(QStringLiteral("/wiki/%1").arg(entry));
+            wpURL.setHost(QStringLiteral("%1.wikipedia.org").arg(langCode()));
+            wpURL.setPath(QStringLiteral("/wiki/%1").arg(entry()));
         }
 
 #ifdef QT_DEBUG
@@ -87,7 +172,7 @@ QUrl Wikipedia::getTranslation(const QString &langCode, const QString &entry)
 
     }
 
-    return wpURL;
+    setUrl(wpURL);
 }
 
 

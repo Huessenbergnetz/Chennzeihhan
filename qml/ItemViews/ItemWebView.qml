@@ -20,20 +20,25 @@
 import QtQuick 2.2
 import QtWebKit 3.0
 import Sailfish.Silica 1.0
+import harbour.chennzeihhan 1.0
 
 Page {
     id: singleWebView
     objectName: "WikiView"
 
-    property string itemUrl
-    property string wpLang
+    property alias wpLang: wp.langCode
     property string wpName
+
+    Wikipedia {
+        id: wp
+        onUrlChanged: webView.url = url
+    }
 
     allowedOrientations: Orientation.Landscape | Orientation.Portrait
 
     onStatusChanged: {
         if (status === PageStatus.Active) {
-            webView.url = wp.getTranslation(wpLang, wpName)
+            wp.entry = wpName
         }
     }
 
