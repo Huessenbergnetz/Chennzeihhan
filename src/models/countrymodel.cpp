@@ -18,6 +18,7 @@
 */
 
 #include "countrymodel.h"
+#include <QCoreApplication>
 #include <QSqlQuery>
 #ifdef QT_DEBUG
 #include <QtDebug>
@@ -141,7 +142,7 @@ void CountryModel::init()
 
         while (q.next()) {
 
-            _l.append(new SimpleItem(q.value(0).toUInt(), q.value(1).toString(), q.value(2).toString(), q.value(3).toString(), q.value(4).toString(), q.value(5).toBool()));
+            _l.append(new SimpleItem(q.value(0).toUInt(), q.value(1).toString(), QCoreApplication::translate("DBStrings", q.value(2).toString().toUtf8().constData()), q.value(3).toString(), QCoreApplication::translate("DBStrings", q.value(4).toString().toUtf8().constData()), q.value(5).toBool()));
 
         }
 

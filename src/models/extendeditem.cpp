@@ -1,5 +1,6 @@
 #include "extendeditem.h"
 #include "simpleitemmodel.h"
+#include <QCoreApplication>
 #include <QVariant>
 #include <QSqlQuery>
 #ifdef QT_DEBUG
@@ -207,8 +208,8 @@ void ExtendedItem::query()
         setSign(q.value(0).toString());
         setName(q.value(1).toString());
         setCapital(q.value(2).toString());
-        setType(q.value(3).toString());
-        setState(q.value(4).toString());
+        setType(QCoreApplication::translate("DBStrings", q.value(3).toString().toUtf8().constData()));
+        setState(QCoreApplication::translate("DBStrings", q.value(4).toString().toUtf8().constData()));
         setFounded(q.value(5).toUInt());
         setSuccessorId(q.value(6).toUInt());
         setTpoId(q.value(7).toUInt());
@@ -223,7 +224,7 @@ void ExtendedItem::query()
             qWarning("Failed to perform query: %s", qPrintable(q.lastError().text()));
         } else if (q.next()) {
             //: 1 - the carplate sign, 2 - the district type, 3 - the district name
-            setSuccessor(tr("%1 - %2 %3").arg(q.value(2).toString(), q.value(1).toString(), q.value(0).toString()));
+            setSuccessor(tr("%1 - %2 %3").arg(q.value(2).toString(), QCoreApplication::translate("DBStrings", q.value(1).toString().toUtf8().constData()), q.value(0).toString()));
         }
     }
 
@@ -232,7 +233,7 @@ void ExtendedItem::query()
             qWarning("Failed to perform query: %s", qPrintable(q.lastError().text()));
         } else if (q.next()) {
             //: 1 - the carplate sign, 2 - the district type, 3 - the district name
-            setTpo(tr("%1 - %2 %3").arg(q.value(2).toString(), q.value(1).toString(), q.value(0).toString()));
+            setTpo(tr("%1 - %2 %3").arg(q.value(2).toString(), QCoreApplication::translate("DBStrings", q.value(1).toString().toUtf8().constData()), q.value(0).toString()));
         }
     }
 
@@ -281,7 +282,7 @@ void ExtendedItem::query()
     if (q.exec(QStringLiteral("SELECT id AS itemId, name, type, sign FROM %1 WHERE successor = %2").arg(countryCode()).arg(id()))) {
         QList<SimpleItem*> l;
         while (q.next()) {
-            l.append(new SimpleItem(q.value(0).toUInt(), q.value(1).toString(), q.value(2).toString(), q.value(3).toString()));
+            l.append(new SimpleItem(q.value(0).toUInt(), q.value(1).toString(), QCoreApplication::translate("DBStrings", q.value(2).toString().toUtf8().constData()), q.value(3).toString()));
         }
         if (!l.isEmpty() && antecessors()) {
             antecessors()->addItems(l);

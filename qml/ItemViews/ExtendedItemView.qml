@@ -29,6 +29,7 @@ Page {
     property alias name: nameLabel.text
     property alias state: stateLabel.text
     property alias capital: capitalText.contentText
+    property alias capitalHeader: capitalText.header
     property int disbanded: 0
     property int founded: 0
     property int optional: 0

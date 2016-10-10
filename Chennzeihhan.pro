@@ -7,12 +7,9 @@ QT += sql xml
 SOURCES += \
     src/main.cpp \
     src/dbmanager.cpp \
-    src/models/dehelper.cpp \
     src/models/countrymodel.cpp \
-    src/models/itemmodel.cpp \
     src/downloadmanager.cpp \
     src/wikipedia.cpp \
-    src/models/athelper.cpp \
     src/models/countriesmodel.cpp \
     src/globals.cpp \
     src/configuration.cpp \
@@ -76,12 +73,9 @@ OTHER_FILES += \
 HEADERS += \
     src/dbmanager.h \
     src/globals.h \
-    src/models/dehelper.h \
     src/models/countrymodel.h \
-    src/models/itemmodel.h \
     src/downloadmanager.h \
     src/wikipedia.h \
-    src/models/athelper.h \
     src/models/countriesmodel.h \
     src/configuration.h \
     src/models/languagemodel.h \

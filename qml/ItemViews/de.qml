@@ -37,6 +37,7 @@ ExtendedItemView {
     name: qsTr("%1 %2").arg(deItem.type).arg(deItem.name)
     state: deItem.state
     capital: deItem.capital
+    capitalHeader: qsTr("Capital", "District capital in Germany")
     disbanded: deItem.disbanded
     founded: deItem.founded
     optional: deItem.optional

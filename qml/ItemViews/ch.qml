@@ -28,6 +28,7 @@ SimpleItemView {
     sign: chItem.sign
     name: qsTr("Canton %1").arg(chItem.name)
     capital: chItem.capital
+    capitalHeader: qsTr("Capital", "District capital in Switzerland")
     wikipedia: chItem.wikipedia
     wikipediaLang: "de"
 

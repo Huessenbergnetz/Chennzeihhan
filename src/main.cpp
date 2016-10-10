@@ -43,7 +43,6 @@
 #include "configuration.h"
 #include "coverconnector.h"
 #include "models/countrymodel.h"
-#include "models/itemmodel.h"
 #include "models/countriesmodel.h"
 #include "models/languagemodel.h"
 #include "models/simpleitemmodel.h"
@@ -117,9 +116,6 @@ int main(int argc, char *argv[])
     CountriesModel *countriesSearch = new CountriesModel();
     CountriesModel *countriesFavourites = new CountriesModel();
     CountriesModel *abcModel = new CountriesModel();
-    ItemModel *itemModel = new ItemModel();
-
-//    AntecessorModel *antecessorModel = new AntecessorModel();
 
 #ifndef CLAZY
     QQuickView* view = SailfishApp::createView();
@@ -135,8 +131,6 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty(QStringLiteral("countriesFavourites"), countriesFavourites);
     view->rootContext()->setContextProperty(QStringLiteral("countriesSearch"), countriesSearch);
     view->rootContext()->setContextProperty(QStringLiteral("abcModel"), abcModel);
-    view->rootContext()->setContextProperty(QStringLiteral("itemModel"), itemModel);
-//    view->rootContext()->setContextProperty(QStringLiteral("antecessorModel"), antecessorModel);
     view->rootContext()->setContextProperty(QStringLiteral("cc"), &cc);
     view->rootContext()->setContextProperty(QStringLiteral("versionString"), QStringLiteral(VERSION_STRING));
     view->rootContext()->setContextProperty(QStringLiteral("versionInt"), VERSION);

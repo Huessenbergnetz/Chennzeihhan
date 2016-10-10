@@ -27,6 +27,7 @@ Page {
     property alias sign: pHeader.title
     property alias name: nameLabel.text
     property alias capital: capitalText.contentText
+    property alias capitalHeader: capitalText.header
     property string wikipedia
     property string wikipediaLang
 

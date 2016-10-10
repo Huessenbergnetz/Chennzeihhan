@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="de">
 <context>
     <name>About</name>
     <message>
@@ -214,6 +216,22 @@
     </message>
 </context>
 <context>
+    <name>AtItem</name>
+    <message>
+        <location filename="../src/models/atitem.cpp" line="6"/>
+        <source>Austria</source>
+        <translation>Österreich</translation>
+    </message>
+</context>
+<context>
+    <name>ChItem</name>
+    <message>
+        <location filename="../src/models/chitem.cpp" line="6"/>
+        <source>Switzerland</source>
+        <translation>Schweiz</translation>
+    </message>
+</context>
+<context>
     <name>Changelog</name>
     <message>
         <location filename="../qml/BTComponents/Changelog.qml" line="42"/>
@@ -302,65 +320,372 @@
 <context>
     <name>CountryDelegate</name>
     <message>
-        <location filename="../qml/Delegates/CountryDelegate.qml" line="62"/>
+        <location filename="../qml/Delegates/CountryDelegate.qml" line="63"/>
         <source>%1 %2</source>
         <translation>%1 %2</translation>
     </message>
     <message>
-        <location filename="../qml/Delegates/CountryDelegate.qml" line="74"/>
+        <location filename="../qml/Delegates/CountryDelegate.qml" line="75"/>
         <source>%1 - %2</source>
         <translation>%1 - %2</translation>
     </message>
 </context>
 <context>
-    <name>CountryModel</name>
-    <message>
-        <location filename="../src/models/countrymodel.cpp" line="94"/>
-        <source>Canton</source>
-        <translation>Kanton</translation>
-    </message>
-</context>
-<context>
     <name>CountryView</name>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="65"/>
+        <location filename="../qml/Views/CountryView.qml" line="68"/>
         <source>Search: Code</source>
         <translation>Suche: Zeichen</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="65"/>
+        <location filename="../qml/Views/CountryView.qml" line="68"/>
         <source>Search: Name</source>
         <translation>Suche: Name</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="65"/>
+        <location filename="../qml/Views/CountryView.qml" line="68"/>
         <source>Search: Code and Name</source>
         <translation>Suche: Zeichen und Name</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="73"/>
+        <location filename="../qml/Views/CountryView.qml" line="75"/>
         <source>Sorting: Name</source>
         <translation>Sortierung: Name</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="73"/>
+        <location filename="../qml/Views/CountryView.qml" line="75"/>
         <source>Sorting: Code</source>
         <translation>Sortierung: Zeichen</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="89"/>
+        <location filename="../qml/Views/CountryView.qml" line="91"/>
         <source>Information to the local breakdown of the vehicle registration plate system in %1 will be part of the premium version.</source>
         <translation>Informationen zur lokalen Aufschlüsselung des Kennzeichensystems von %1 werden Teil der Premiumversion sein.</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="94"/>
+        <location filename="../qml/Views/CountryView.qml" line="96"/>
         <source>The vehicle registration plate system of %1 does not use a breakdown into districts, regions or something similar. The premium version will contain further information. </source>
         <translation>Das Kennzeichensystem von %1 wird nicht weiter in Distrikte, Regionen oder ähnliches aufgeschlüsselt. Die Premiumversion wird weitere Informationen enthalten.</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="103"/>
+        <location filename="../qml/Views/CountryView.qml" line="105"/>
         <source>Search</source>
         <translation>Suche</translation>
+    </message>
+</context>
+<context>
+    <name>DBStrings</name>
+    <message>
+        <location filename="../data/dbstrings.h" line="7"/>
+        <source>Bavaria</source>
+        <comment>Germany</comment>
+        <translation>Bayern</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="8"/>
+        <source>Baden-WÃ¼rttemberg</source>
+        <comment>Germany</comment>
+        <translation>Baden-Württemberg</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="9"/>
+        <source>Thuringia</source>
+        <comment>Germany</comment>
+        <translation>Thüringen</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="10"/>
+        <source>Saxony-Anhalt</source>
+        <comment>Germany</comment>
+        <translation>Sachsen-Anhalt</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="11"/>
+        <source>North Rhine-Westphalia</source>
+        <comment>Germany</comment>
+        <translation>Nordrhein-Westfalen</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="12"/>
+        <source>Saxony</source>
+        <comment>Germany</comment>
+        <translation>Sachsen</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="13"/>
+        <source>Lower Saxony</source>
+        <comment>Germany</comment>
+        <translation>Niedersachsen</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="14"/>
+        <source>Hesse</source>
+        <comment>Germany</comment>
+        <translation>Hessen</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="15"/>
+        <source>Brandenburg</source>
+        <comment>Germany</comment>
+        <translation>Brandenburg</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="16"/>
+        <source>Mecklenburg-Vorpommern</source>
+        <comment>Germany</comment>
+        <translation>Mecklenburg-Vorpommern</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="17"/>
+        <source>Rhineland-Palatinate</source>
+        <comment>Germany</comment>
+        <translation>Rheinland-Pfalz</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="18"/>
+        <source>Berlin</source>
+        <comment>Germany</comment>
+        <translation>Berlin</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="19"/>
+        <source>Schleswig-Holstein</source>
+        <comment>Germany</comment>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="20"/>
+        <source>Bremen</source>
+        <comment>Germany</comment>
+        <translation>Bremen</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="21"/>
+        <source>Hamburg</source>
+        <comment>Germany</comment>
+        <translation>Hamburg</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="22"/>
+        <source>Saarland</source>
+        <comment>Germany</comment>
+        <translation>Saarland</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="23"/>
+        <source>Germany</source>
+        <comment>Germany</comment>
+        <translation>Deutschland</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="24"/>
+        <source>City and District of</source>
+        <comment>Germany</comment>
+        <translation>Stadt und Kreis</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="25"/>
+        <source>District of</source>
+        <comment>Germany</comment>
+        <translation>Kreis</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="26"/>
+        <source>Cities region</source>
+        <comment>Germany</comment>
+        <translation>Städteregion</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="27"/>
+        <source>Members of the</source>
+        <comment>Germany</comment>
+        <translation>Angehörige der</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="28"/>
+        <source>City of</source>
+        <comment>Germany</comment>
+        <translation>Stadt</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="29"/>
+        <source>Region of</source>
+        <comment>Germany</comment>
+        <translation>Region</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="30"/>
+        <source>Officials of the</source>
+        <comment>Germany</comment>
+        <translation>Offizielle der</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="31"/>
+        <source>Regional association of</source>
+        <comment>Germany</comment>
+        <translation>Regionalverband</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="32"/>
+        <source>Official cars</source>
+        <comment>Germany</comment>
+        <translation>Dienstfahrzeuge</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="33"/>
+        <source>Austria</source>
+        <comment>Austria</comment>
+        <translation>Österreich</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="34"/>
+        <source>Lower Austria</source>
+        <comment>Austria</comment>
+        <translation>Niederösterreich</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="35"/>
+        <source>Vorarlberg</source>
+        <comment>Austria</comment>
+        <translation>Vorarlberg</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="36"/>
+        <source>Burgenland</source>
+        <comment>Austria</comment>
+        <translation>Burgenland</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="37"/>
+        <source>Styria</source>
+        <comment>Austria</comment>
+        <translation>Steiermark</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="38"/>
+        <source>Upper Austria</source>
+        <comment>Austria</comment>
+        <translation>Oberösterreich</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="39"/>
+        <source>Carinthia</source>
+        <comment>Austria</comment>
+        <translation>Kärnten</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="40"/>
+        <source>Salzburg</source>
+        <comment>Austria</comment>
+        <translation>Salzburg</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="41"/>
+        <source>Tyrol</source>
+        <comment>Austria</comment>
+        <translation>Tirol</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="42"/>
+        <source>Vienna</source>
+        <comment>Austria</comment>
+        <translation>Wien</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="43"/>
+        <source>Federal Officials</source>
+        <comment>Austria</comment>
+        <translation>Oberste Organe der Republik</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="44"/>
+        <source>District of</source>
+        <comment>Austria</comment>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="45"/>
+        <source>State of</source>
+        <comment>Austria</comment>
+        <translation>Bundesland</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="46"/>
+        <source>Political Expositur</source>
+        <comment>Austria</comment>
+        <translation>Politische Expositur</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="47"/>
+        <source>Federal Railways</source>
+        <comment>Austria</comment>
+        <translation>Bundesbahn</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="48"/>
+        <source>Diplomatic Corps in</source>
+        <comment>Austria</comment>
+        <translation>Diplomatisches Korps in</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="49"/>
+        <source>Federal Bus Service</source>
+        <comment>Austria</comment>
+        <translation>Bundesbusdienst</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="50"/>
+        <source>Postbus</source>
+        <comment>Austria</comment>
+        <translation>Postbus</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="51"/>
+        <source>Federal Gendarmerie</source>
+        <comment>Austria</comment>
+        <translation>Bundesgendarmerie</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="52"/>
+        <source>Austrian Armed Forces</source>
+        <comment>Austria</comment>
+        <translation>Bundesheer</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="53"/>
+        <source>Consul in</source>
+        <comment>Austria</comment>
+        <translation>Konsul in</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="54"/>
+        <source>Federal Police</source>
+        <comment>Austria</comment>
+        <translation>Bundespolizei</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="55"/>
+        <source>City of</source>
+        <comment>Austria</comment>
+        <translation>Stadt</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="56"/>
+        <source>Financial Administration</source>
+        <comment>Austria</comment>
+        <translation>Finanzverwaltung</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="57"/>
+        <source>Justice Guard</source>
+        <comment>Austria</comment>
+        <translation>Justizwache</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="58"/>
+        <source>Border Control</source>
+        <comment>Austria</comment>
+        <translation>Zollwache</translation>
     </message>
 </context>
 <context>
@@ -502,6 +827,69 @@
     </message>
 </context>
 <context>
+    <name>DeItem</name>
+    <message>
+        <location filename="../src/models/deitem.cpp" line="11"/>
+        <source>Germany</source>
+        <translation>Deutschland</translation>
+    </message>
+</context>
+<context>
+    <name>ExtendedItem</name>
+    <message>
+        <location filename="../src/models/extendeditem.cpp" line="227"/>
+        <location filename="../src/models/extendeditem.cpp" line="236"/>
+        <source>%1 - %2 %3</source>
+        <extracomment>1 - the carplate sign, 2 - the district type, 3 - the district name
+----------
+1 - the carplate sign, 2 - the district type, 3 - the district name</extracomment>
+        <translation>%1 - %2 %3</translation>
+    </message>
+</context>
+<context>
+    <name>ExtendedItemView</name>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="100"/>
+        <source>Capital</source>
+        <translation>Verwaltungssitz</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="106"/>
+        <source>Existing since</source>
+        <translation>Existiert seit</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="106"/>
+        <source>Existed from</source>
+        <translation>Existierte von</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="113"/>
+        <source>Optional plate signs</source>
+        <translation>Optionale Kennzeichen</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="120"/>
+        <source>Sign optional available since</source>
+        <translation>Kennzeichen optional erhältlich seit</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="134"/>
+        <source>Merged into</source>
+        <translation>Aufgegangen in</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="143"/>
+        <source>Today part of</source>
+        <translation>Heute Teil von</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="152"/>
+        <source>Includes this old districts</source>
+        <translation>Beinhaltet folgende Altkreise</translation>
+    </message>
+</context>
+<context>
     <name>FirstStartInfo</name>
     <message>
         <location filename="../qml/BTComponents/FirstStartInfo.qml" line="76"/>
@@ -567,8 +955,9 @@
 <context>
     <name>ItemEntry</name>
     <message>
-        <location filename="../qml/ItemViews/ItemEntry.qml" line="117"/>
+        <location filename="../qml/ItemViews/ItemEntry.qml" line="118"/>
         <source>%1 - %2 %3</source>
+        <extracomment>1 - the carplate sign, 2 - the district type, 3 - the district name</extracomment>
         <translation>%1 - %2 %3</translation>
     </message>
 </context>
@@ -802,22 +1191,22 @@
 <context>
     <name>SearchTarget</name>
     <message>
-        <location filename="../qml/Dialogs/SearchTarget.qml" line="32"/>
+        <location filename="../qml/Dialogs/SearchTarget.qml" line="31"/>
         <source>Search Target</source>
         <translation>Suchziel</translation>
     </message>
     <message>
-        <location filename="../qml/Dialogs/SearchTarget.qml" line="41"/>
+        <location filename="../qml/Dialogs/SearchTarget.qml" line="40"/>
         <source>Code</source>
         <translation>Zeichen</translation>
     </message>
     <message>
-        <location filename="../qml/Dialogs/SearchTarget.qml" line="65"/>
+        <location filename="../qml/Dialogs/SearchTarget.qml" line="64"/>
         <source>Code and Name</source>
         <translation>Zeichen und Name</translation>
     </message>
     <message>
-        <location filename="../qml/Dialogs/SearchTarget.qml" line="53"/>
+        <location filename="../qml/Dialogs/SearchTarget.qml" line="52"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
@@ -871,41 +1260,49 @@
         <translation>Standardsortierung</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="234"/>
-        <location filename="../qml/Pages/Settings.qml" line="249"/>
+        <location filename="../qml/Pages/Settings.qml" line="235"/>
+        <location filename="../qml/Pages/Settings.qml" line="252"/>
         <source>Code</source>
         <translation>Zeichen</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="235"/>
-        <location filename="../qml/Pages/Settings.qml" line="250"/>
+        <location filename="../qml/Pages/Settings.qml" line="236"/>
+        <location filename="../qml/Pages/Settings.qml" line="253"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="244"/>
+        <location filename="../qml/Pages/Settings.qml" line="246"/>
         <source>Default search</source>
         <translation>Standardsuche</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="251"/>
+        <location filename="../qml/Pages/Settings.qml" line="254"/>
         <source>Both</source>
         <translation>Beides</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="257"/>
+        <location filename="../qml/Pages/Settings.qml" line="261"/>
         <source>Display language</source>
         <translation>Anzeigesprache</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="261"/>
+        <location filename="../qml/Pages/Settings.qml" line="265"/>
         <source>Language</source>
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="262"/>
+        <location filename="../qml/Pages/Settings.qml" line="266"/>
         <source>Changing the display language is only applied after a restart of the application.</source>
         <translation>Das Ändern der Anzeigesprache wird erst nach einem Neustart der Anwendung wirksam.</translation>
+    </message>
+</context>
+<context>
+    <name>SimpleItemView</name>
+    <message>
+        <location filename="../qml/ItemViews/SimpleItemView.qml" line="69"/>
+        <source>Capital</source>
+        <translation>Verwaltungssitz</translation>
     </message>
 </context>
 <context>
@@ -929,137 +1326,45 @@
 <context>
     <name>at</name>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="80"/>
-        <source>Austria</source>
-        <translation>Österreich</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="104"/>
+        <location filename="../qml/ItemViews/at.qml" line="37"/>
         <source>%1 %2</source>
+        <extracomment>the first one is the district type, the second is the district name</extracomment>
         <translation>%1 %2</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="126"/>
+        <location filename="../qml/ItemViews/at.qml" line="40"/>
         <source>Capital</source>
+        <comment>District capital in Austria</comment>
         <translation>Verwaltungssitz</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="132"/>
-        <source>Assigend since</source>
-        <translation>Vergeben seit</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="132"/>
-        <source>Assigned from</source>
-        <translation>Vergeben von</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="139"/>
-        <source>Optional plate signs</source>
-        <translation>Optionale Kennzeichen</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="146"/>
-        <source>Sign optional available since</source>
-        <translation>Kennzeichen optional erhältlich seit</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="158"/>
-        <source>Merged into</source>
-        <translation>Aufgegangen in</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="161"/>
-        <location filename="../qml/ItemViews/at.qml" line="171"/>
-        <source>%1 - %2 %3</source>
-        <translation>%1 - %2 %3</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="168"/>
-        <source>Today part of</source>
-        <translation>Heute Teil von</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="178"/>
-        <source>Includes this old plate signs</source>
-        <translation>Beinhaltet folgende Altzeichen</translation>
     </message>
 </context>
 <context>
     <name>ch</name>
     <message>
-        <location filename="../qml/ItemViews/ch.qml" line="50"/>
-        <source>Switzerland</source>
-        <translation>Schweiz</translation>
+        <location filename="../qml/ItemViews/ch.qml" line="29"/>
+        <source>Canton %1</source>
+        <translation>Kanton %1</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ch.qml" line="72"/>
-        <source>Canton %2</source>
-        <translation>Kanton %2</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/ch.qml" line="89"/>
+        <location filename="../qml/ItemViews/ch.qml" line="31"/>
         <source>Capital</source>
+        <comment>District capital in Switzerland</comment>
         <translation>Hauptort</translation>
     </message>
 </context>
 <context>
     <name>de</name>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="83"/>
-        <source>Germany</source>
-        <translation>Deutschland</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="104"/>
+        <location filename="../qml/ItemViews/de.qml" line="37"/>
         <source>%1 %2</source>
+        <extracomment>the first one is the district type, the second is the district name</extracomment>
         <translation>%1 %2</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="126"/>
+        <location filename="../qml/ItemViews/de.qml" line="40"/>
         <source>Capital</source>
+        <comment>District capital in Germany</comment>
         <translation>Verwaltungssitz</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="132"/>
-        <source>Existing since</source>
-        <translation>Existiert seit</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="132"/>
-        <source>Existed from</source>
-        <translation>Existierte von</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="139"/>
-        <source>Optional plate signs</source>
-        <translation>Optionale Kennzeichen</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="146"/>
-        <source>Sign optional available since</source>
-        <translation>Kennzeichen optional erhältlich seit</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="158"/>
-        <source>Merged into</source>
-        <translation>Aufgegangen in</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="161"/>
-        <location filename="../qml/ItemViews/de.qml" line="171"/>
-        <source>%1 - %2 %3</source>
-        <translation>%1 - %2 %3</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="168"/>
-        <source>Today part of</source>
-        <translation>Heute Teil von</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="178"/>
-        <source>Includes this old districts</source>
-        <translation>Beinhaltet folgende Altkreise</translation>
     </message>
 </context>
 </TS>

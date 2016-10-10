@@ -1,25 +1,27 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="it" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="it">
 <context>
     <name>About</name>
     <message>
         <location filename="../qml/Pages/About.qml" line="29"/>
         <source>Vehicle registation plates database for Sailfish OS</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/About.qml" line="33"/>
         <source>Source code is licensed under the &lt;a href=&apos;http://www.gnu.org/licenses/gpl-2.0.en.html&apos;&gt;GNU GPL v2&lt;/a&gt;.&lt;br /&gt;Car plates database is licensed under &lt;a href=&apos;http://creativecommons.org/licenses/by-nc-sa/4.0/&apos;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/About.qml" line="48"/>
         <source>Munich</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/About.qml" line="49"/>
         <source>Germany</source>
-        <translation type="unfinished"/>
+        <translation>Germania</translation>
     </message>
 </context>
 <context>
@@ -27,52 +29,52 @@
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="77"/>
         <source>Homepage</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="82"/>
         <source>Privacy Policy</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="87"/>
         <source>Changelog</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Changelog</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="92"/>
         <source>Contributors</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="102"/>
         <source>About</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="161"/>
         <source>Contact</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="245"/>
         <source>Contribute</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="254"/>
         <source>Translate</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="261"/>
         <source>Report bugs</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/AboutPage.qml" line="284"/>
         <source>3rd party licenses</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -135,7 +137,7 @@
     <message>
         <location filename="../src/models/athelper.cpp" line="79"/>
         <source>Federal Officials</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/models/athelper.cpp" line="82"/>
@@ -150,47 +152,47 @@
     <message>
         <location filename="../src/models/athelper.cpp" line="88"/>
         <source>Political Expositur</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/models/athelper.cpp" line="91"/>
         <source>Federal Railways</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/models/athelper.cpp" line="94"/>
         <source>Diplomatic Corps in</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/models/athelper.cpp" line="97"/>
         <source>Federal Bus Service</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/models/athelper.cpp" line="100"/>
         <source>Postbus</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/models/athelper.cpp" line="103"/>
         <source>Federal Gendarmerie</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/models/athelper.cpp" line="106"/>
         <source>Austrian Armed Forces</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/models/athelper.cpp" line="109"/>
         <source>Consul in</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/models/athelper.cpp" line="112"/>
         <source>Federal Police</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/models/athelper.cpp" line="115"/>
@@ -200,17 +202,33 @@
     <message>
         <location filename="../src/models/athelper.cpp" line="118"/>
         <source>Financial Administration</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/models/athelper.cpp" line="121"/>
         <source>Justice Guard</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/models/athelper.cpp" line="124"/>
         <source>Border Control</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AtItem</name>
+    <message>
+        <location filename="../src/models/atitem.cpp" line="6"/>
+        <source>Austria</source>
+        <translation>Austria</translation>
+    </message>
+</context>
+<context>
+    <name>ChItem</name>
+    <message>
+        <location filename="../src/models/chitem.cpp" line="6"/>
+        <source>Switzerland</source>
+        <translation>Svizzera</translation>
     </message>
 </context>
 <context>
@@ -223,22 +241,22 @@
     <message>
         <location filename="../qml/BTComponents/Changelog.qml" line="62"/>
         <source>New</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/Changelog.qml" line="81"/>
         <source>Improved</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/Changelog.qml" line="100"/>
         <source>Fixed</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/Changelog.qml" line="119"/>
         <source>Note</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -246,7 +264,7 @@
     <message>
         <location filename="../qml/BTComponents/Contributors.qml" line="34"/>
         <source>Contributors</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -254,12 +272,12 @@
     <message>
         <location filename="../qml/BTComponents/ContributorsDelegate.qml" line="127"/>
         <source>Website</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/ContributorsDelegate.qml" line="152"/>
         <source>Sina Weibo</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -267,28 +285,28 @@
     <message>
         <location filename="../qml/Models/ContributorsModel.qml" line="26"/>
         <source>Main developer, Chennzeihhan creator</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Models/ContributorsModel.qml" line="27"/>
         <source>Author</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Models/ContributorsModel.qml" line="36"/>
         <source>Italian translation</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Models/ContributorsModel.qml" line="37"/>
         <location filename="../qml/Models/ContributorsModel.qml" line="43"/>
         <source>Thanks to</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Models/ContributorsModel.qml" line="42"/>
         <source>Dutch (Netherlands) translation</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -296,71 +314,378 @@
     <message>
         <location filename="../qml/Delegates/CountriesDelegate.qml" line="107"/>
         <source>Romving from favourites</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>CountryDelegate</name>
     <message>
-        <location filename="../qml/Delegates/CountryDelegate.qml" line="62"/>
+        <location filename="../qml/Delegates/CountryDelegate.qml" line="63"/>
         <source>%1 %2</source>
         <translation>%1 %2</translation>
     </message>
     <message>
-        <location filename="../qml/Delegates/CountryDelegate.qml" line="74"/>
+        <location filename="../qml/Delegates/CountryDelegate.qml" line="75"/>
         <source>%1 - %2</source>
         <translation>%1 - %2</translation>
     </message>
 </context>
 <context>
-    <name>CountryModel</name>
+    <name>CountryView</name>
     <message>
-        <location filename="../src/models/countrymodel.cpp" line="94"/>
-        <source>Canton</source>
-        <translation>Canton</translation>
+        <location filename="../qml/Views/CountryView.qml" line="68"/>
+        <source>Search: Code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Views/CountryView.qml" line="68"/>
+        <source>Search: Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Views/CountryView.qml" line="68"/>
+        <source>Search: Code and Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Views/CountryView.qml" line="75"/>
+        <source>Sorting: Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Views/CountryView.qml" line="75"/>
+        <source>Sorting: Code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Views/CountryView.qml" line="91"/>
+        <source>Information to the local breakdown of the vehicle registration plate system in %1 will be part of the premium version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Views/CountryView.qml" line="96"/>
+        <source>The vehicle registration plate system of %1 does not use a breakdown into districts, regions or something similar. The premium version will contain further information. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Views/CountryView.qml" line="105"/>
+        <source>Search</source>
+        <translation>Cerca</translation>
     </message>
 </context>
 <context>
-    <name>CountryView</name>
+    <name>DBStrings</name>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="65"/>
-        <source>Search: Code</source>
-        <translation type="unfinished"/>
+        <location filename="../data/dbstrings.h" line="7"/>
+        <source>Bavaria</source>
+        <comment>Germany</comment>
+        <translation>Bavaria</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="65"/>
-        <source>Search: Name</source>
-        <translation type="unfinished"/>
+        <location filename="../data/dbstrings.h" line="8"/>
+        <source>Baden-WÃ¼rttemberg</source>
+        <comment>Germany</comment>
+        <translation>Baden-Württemberg</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="65"/>
-        <source>Search: Code and Name</source>
-        <translation type="unfinished"/>
+        <location filename="../data/dbstrings.h" line="9"/>
+        <source>Thuringia</source>
+        <comment>Germany</comment>
+        <translation>Turingia</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="73"/>
-        <source>Sorting: Name</source>
-        <translation type="unfinished"/>
+        <location filename="../data/dbstrings.h" line="10"/>
+        <source>Saxony-Anhalt</source>
+        <comment>Germany</comment>
+        <translation>Sassonia-Anhalt</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="73"/>
-        <source>Sorting: Code</source>
-        <translation type="unfinished"/>
+        <location filename="../data/dbstrings.h" line="11"/>
+        <source>North Rhine-Westphalia</source>
+        <comment>Germany</comment>
+        <translation>Renania Settentrionale-Vestfalia</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="89"/>
-        <source>Information to the local breakdown of the vehicle registration plate system in %1 will be part of the premium version.</source>
-        <translation type="unfinished"/>
+        <location filename="../data/dbstrings.h" line="12"/>
+        <source>Saxony</source>
+        <comment>Germany</comment>
+        <translation>Sassonia</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="94"/>
-        <source>The vehicle registration plate system of %1 does not use a breakdown into districts, regions or something similar. The premium version will contain further information. </source>
-        <translation type="unfinished"/>
+        <location filename="../data/dbstrings.h" line="13"/>
+        <source>Lower Saxony</source>
+        <comment>Germany</comment>
+        <translation>Bassa Sassonia</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="103"/>
-        <source>Search</source>
-        <translation>Cerca</translation>
+        <location filename="../data/dbstrings.h" line="14"/>
+        <source>Hesse</source>
+        <comment>Germany</comment>
+        <translation>Assia</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="15"/>
+        <source>Brandenburg</source>
+        <comment>Germany</comment>
+        <translation>Brandeburgo</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="16"/>
+        <source>Mecklenburg-Vorpommern</source>
+        <comment>Germany</comment>
+        <translation>Meclemburgo-Pomerania Anteriore</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="17"/>
+        <source>Rhineland-Palatinate</source>
+        <comment>Germany</comment>
+        <translation>Renania-Palatinato</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="18"/>
+        <source>Berlin</source>
+        <comment>Germany</comment>
+        <translation>Berlino</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="19"/>
+        <source>Schleswig-Holstein</source>
+        <comment>Germany</comment>
+        <translation>Schleswig-Holstein</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="20"/>
+        <source>Bremen</source>
+        <comment>Germany</comment>
+        <translation>Brema</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="21"/>
+        <source>Hamburg</source>
+        <comment>Germany</comment>
+        <translation>Amburgo</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="22"/>
+        <source>Saarland</source>
+        <comment>Germany</comment>
+        <translation>Saarland</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="23"/>
+        <source>Germany</source>
+        <comment>Germany</comment>
+        <translation>Germania</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="24"/>
+        <source>City and District of</source>
+        <comment>Germany</comment>
+        <translation>Città e distretto di </translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="25"/>
+        <source>District of</source>
+        <comment>Germany</comment>
+        <translation>Distretto di</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="26"/>
+        <source>Cities region</source>
+        <comment>Germany</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="27"/>
+        <source>Members of the</source>
+        <comment>Germany</comment>
+        <translation>Membro del</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="28"/>
+        <source>City of</source>
+        <comment>Germany</comment>
+        <translation>Città di</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="29"/>
+        <source>Region of</source>
+        <comment>Germany</comment>
+        <translation>Regione di</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="30"/>
+        <source>Officials of the</source>
+        <comment>Germany</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="31"/>
+        <source>Regional association of</source>
+        <comment>Germany</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="32"/>
+        <source>Official cars</source>
+        <comment>Germany</comment>
+        <translation>Auto ufficiali </translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="33"/>
+        <source>Austria</source>
+        <comment>Austria</comment>
+        <translation>Austria</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="34"/>
+        <source>Lower Austria</source>
+        <comment>Austria</comment>
+        <translation>Bassa Austria</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="35"/>
+        <source>Vorarlberg</source>
+        <comment>Austria</comment>
+        <translation>Vorarlberg</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="36"/>
+        <source>Burgenland</source>
+        <comment>Austria</comment>
+        <translation>Burgenland</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="37"/>
+        <source>Styria</source>
+        <comment>Austria</comment>
+        <translation>Stiria</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="38"/>
+        <source>Upper Austria</source>
+        <comment>Austria</comment>
+        <translation>Alta Austria</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="39"/>
+        <source>Carinthia</source>
+        <comment>Austria</comment>
+        <translation>Carinzia</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="40"/>
+        <source>Salzburg</source>
+        <comment>Austria</comment>
+        <translation>Salisburgo</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="41"/>
+        <source>Tyrol</source>
+        <comment>Austria</comment>
+        <translation>Tirolo</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="42"/>
+        <source>Vienna</source>
+        <comment>Austria</comment>
+        <translation>Vienna</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="43"/>
+        <source>Federal Officials</source>
+        <comment>Austria</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="44"/>
+        <source>District of</source>
+        <comment>Austria</comment>
+        <translation>Distretto di</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="45"/>
+        <source>State of</source>
+        <comment>Austria</comment>
+        <translation>Stato di</translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="46"/>
+        <source>Political Expositur</source>
+        <comment>Austria</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="47"/>
+        <source>Federal Railways</source>
+        <comment>Austria</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="48"/>
+        <source>Diplomatic Corps in</source>
+        <comment>Austria</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="49"/>
+        <source>Federal Bus Service</source>
+        <comment>Austria</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="50"/>
+        <source>Postbus</source>
+        <comment>Austria</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="51"/>
+        <source>Federal Gendarmerie</source>
+        <comment>Austria</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="52"/>
+        <source>Austrian Armed Forces</source>
+        <comment>Austria</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="53"/>
+        <source>Consul in</source>
+        <comment>Austria</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="54"/>
+        <source>Federal Police</source>
+        <comment>Austria</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="55"/>
+        <source>City of</source>
+        <comment>Austria</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="56"/>
+        <source>Financial Administration</source>
+        <comment>Austria</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="57"/>
+        <source>Justice Guard</source>
+        <comment>Austria</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../data/dbstrings.h" line="58"/>
+        <source>Border Control</source>
+        <comment>Austria</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -473,7 +798,7 @@
     <message>
         <location filename="../src/models/dehelper.cpp" line="108"/>
         <source>Cities region</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/models/dehelper.cpp" line="111"/>
@@ -483,7 +808,7 @@
     <message>
         <location filename="../src/models/dehelper.cpp" line="114"/>
         <source>Regional association of</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/models/dehelper.cpp" line="117"/>
@@ -498,7 +823,70 @@
     <message>
         <location filename="../src/models/dehelper.cpp" line="123"/>
         <source>Officials of the</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DeItem</name>
+    <message>
+        <location filename="../src/models/deitem.cpp" line="11"/>
+        <source>Germany</source>
+        <translation>Germania</translation>
+    </message>
+</context>
+<context>
+    <name>ExtendedItem</name>
+    <message>
+        <location filename="../src/models/extendeditem.cpp" line="227"/>
+        <location filename="../src/models/extendeditem.cpp" line="236"/>
+        <source>%1 - %2 %3</source>
+        <extracomment>1 - the carplate sign, 2 - the district type, 3 - the district name
+----------
+1 - the carplate sign, 2 - the district type, 3 - the district name</extracomment>
+        <translation>%1 - %2 %3</translation>
+    </message>
+</context>
+<context>
+    <name>ExtendedItemView</name>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="100"/>
+        <source>Capital</source>
+        <translation>Capitale</translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="106"/>
+        <source>Existing since</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="106"/>
+        <source>Existed from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="113"/>
+        <source>Optional plate signs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="120"/>
+        <source>Sign optional available since</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="134"/>
+        <source>Merged into</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="143"/>
+        <source>Today part of</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="152"/>
+        <source>Includes this old districts</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -507,22 +895,22 @@
         <location filename="../qml/BTComponents/FirstStartInfo.qml" line="76"/>
         <source>Welcome to %1 %2</source>
         <comment>First is app name, second is version number</comment>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/FirstStartInfo.qml" line="91"/>
         <source>Last changes</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/FirstStartInfo.qml" line="155"/>
         <source>Help</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Aiuto</translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/FirstStartInfo.qml" line="161"/>
         <source>Close</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -541,34 +929,35 @@
     <message>
         <location filename="../qml/Pages/Help.qml" line="59"/>
         <source>You have marked this as a favourite for faster access.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/Help.qml" line="80"/>
         <source>This is an official code that appears in the UN list of distinguishing codes.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/Help.qml" line="101"/>
         <source>This country uses a deeper categorized system of registration plate code signs.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/Help.qml" line="122"/>
         <source>This district does not exist anymore but the code may be still in use by old registered vehicles or is now optionally available for the successor district.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/Help.qml" line="133"/>
         <source>To add a country to the list of favourites, press and hold the list entry.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ItemEntry</name>
     <message>
-        <location filename="../qml/ItemViews/ItemEntry.qml" line="117"/>
+        <location filename="../qml/ItemViews/ItemEntry.qml" line="118"/>
         <source>%1 - %2 %3</source>
+        <extracomment>1 - the carplate sign, 2 - the district type, 3 - the district name</extracomment>
         <translation>%1 - %2 %3</translation>
     </message>
 </context>
@@ -582,7 +971,7 @@
     <message>
         <location filename="../qml/ItemViews/ItemWebView.qml" line="61"/>
         <source>Stop loading</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/ItemViews/ItemWebView.qml" line="65"/>
@@ -600,7 +989,7 @@
     <message>
         <location filename="../qml/Pages/LanguageChooser.qml" line="91"/>
         <source>Search</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Cerca</translation>
     </message>
 </context>
 <context>
@@ -608,7 +997,7 @@
     <message>
         <location filename="../src/models/languagemodel.cpp" line="106"/>
         <source>System default</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -616,12 +1005,12 @@
     <message>
         <location filename="../qml/Views/MainView.qml" line="44"/>
         <source>Chennzeihhan (old high german for Kennzeichen/registration plate) is an offline database for vehicle registration plates that can find the district of the vehicle plate. It covers currently more than 1200 international and local codes from Austria, Germany and Switzerland.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Views/MainView.qml" line="91"/>
         <source>About</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Views/MainView.qml" line="95"/>
@@ -668,12 +1057,12 @@
     <message>
         <location filename="../qml/Views/MainView.qml" line="257"/>
         <source>You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Views/MainView.qml" line="262"/>
         <source>Because of changes in the data models you have to update the database. Please go to the settings to do so. We apologize for the inconvenience.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -681,143 +1070,143 @@
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="127"/>
         <source>Currency</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="128"/>
         <source>Euro</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="129"/>
         <source>US Dollar</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="130"/>
         <source>Australian Dollar</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="131"/>
         <source>Brazilian Real</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="132"/>
         <source>Pound Sterling</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="133"/>
         <source>Danish Krone</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="134"/>
         <source>Hong Kong Dollar</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="135"/>
         <source>Israel New Shekel</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="136"/>
         <source>Japanese Yen</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="137"/>
         <source>Canadian Dollar</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="138"/>
         <source>Mexican Peso</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="139"/>
         <source>New Taiwan Dollar</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="140"/>
         <source>New Zealand Dollar</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="141"/>
         <source>Norwegian Krone</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="142"/>
         <source>Philippine Peso</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="143"/>
         <source>Polish Zloty</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="144"/>
         <source>Russian Ruble</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="145"/>
         <source>Swedish Krone</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="146"/>
         <source>Swiss Franc</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="147"/>
         <source>Singapore Dollar</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="148"/>
         <source>Thai Baht</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="149"/>
         <source>Czech Koruna</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/BTComponents/PaypalChooser.qml" line="150"/>
         <source>Hungarian Forint</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SearchTarget</name>
     <message>
-        <location filename="../qml/Dialogs/SearchTarget.qml" line="32"/>
+        <location filename="../qml/Dialogs/SearchTarget.qml" line="31"/>
         <source>Search Target</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Dialogs/SearchTarget.qml" line="41"/>
+        <location filename="../qml/Dialogs/SearchTarget.qml" line="40"/>
         <source>Code</source>
         <translation>Codice</translation>
     </message>
     <message>
-        <location filename="../qml/Dialogs/SearchTarget.qml" line="65"/>
+        <location filename="../qml/Dialogs/SearchTarget.qml" line="64"/>
         <source>Code and Name</source>
         <translation>Codice e nome</translation>
     </message>
     <message>
-        <location filename="../qml/Dialogs/SearchTarget.qml" line="53"/>
+        <location filename="../qml/Dialogs/SearchTarget.qml" line="52"/>
         <source>Name</source>
         <translation>Nome</translation>
     </message>
@@ -827,12 +1216,12 @@
     <message>
         <location filename="../qml/Pages/Settings.qml" line="56"/>
         <source>Check for new database version</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/Settings.qml" line="62"/>
         <source>Download new database version</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/Settings.qml" line="74"/>
@@ -847,7 +1236,7 @@
     <message>
         <location filename="../qml/Pages/Settings.qml" line="83"/>
         <source>Currently there is no database installed. Please use the pully menu to check for new DB version.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/Settings.qml" line="131"/>
@@ -858,54 +1247,62 @@
     <message>
         <location filename="../qml/Pages/Settings.qml" line="204"/>
         <source>Changes in this version:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/Settings.qml" line="224"/>
         <source>Display</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Pages/Settings.qml" line="229"/>
         <source>Default ordering</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="234"/>
-        <location filename="../qml/Pages/Settings.qml" line="249"/>
+        <location filename="../qml/Pages/Settings.qml" line="235"/>
+        <location filename="../qml/Pages/Settings.qml" line="252"/>
         <source>Code</source>
         <translation>Codice</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="235"/>
-        <location filename="../qml/Pages/Settings.qml" line="250"/>
+        <location filename="../qml/Pages/Settings.qml" line="236"/>
+        <location filename="../qml/Pages/Settings.qml" line="253"/>
         <source>Name</source>
         <translation>Nome</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="244"/>
+        <location filename="../qml/Pages/Settings.qml" line="246"/>
         <source>Default search</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="251"/>
+        <location filename="../qml/Pages/Settings.qml" line="254"/>
         <source>Both</source>
         <translation>Entrambi</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="257"/>
-        <source>Display language</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
         <location filename="../qml/Pages/Settings.qml" line="261"/>
-        <source>Language</source>
-        <translation type="unfinished"/>
+        <source>Display language</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="262"/>
+        <location filename="../qml/Pages/Settings.qml" line="265"/>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Pages/Settings.qml" line="266"/>
         <source>Changing the display language is only applied after a restart of the application.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SimpleItemView</name>
+    <message>
+        <location filename="../qml/ItemViews/SimpleItemView.qml" line="69"/>
+        <source>Capital</source>
+        <translation type="unfinished">Capitale</translation>
     </message>
 </context>
 <context>
@@ -913,7 +1310,7 @@
     <message>
         <location filename="../qml/Dialogs/Sorting.qml" line="32"/>
         <source>Sorting</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Ordine</translation>
     </message>
     <message>
         <location filename="../qml/Dialogs/Sorting.qml" line="41"/>
@@ -929,137 +1326,45 @@
 <context>
     <name>at</name>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="80"/>
-        <source>Austria</source>
-        <translation>Austria</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="104"/>
+        <location filename="../qml/ItemViews/at.qml" line="37"/>
         <source>%1 %2</source>
+        <extracomment>the first one is the district type, the second is the district name</extracomment>
         <translation>%1 %2</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="126"/>
+        <location filename="../qml/ItemViews/at.qml" line="40"/>
         <source>Capital</source>
-        <translation>Capitale</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="132"/>
-        <source>Assigend since</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="132"/>
-        <source>Assigned from</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="139"/>
-        <source>Optional plate signs</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="146"/>
-        <source>Sign optional available since</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="158"/>
-        <source>Merged into</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="161"/>
-        <location filename="../qml/ItemViews/at.qml" line="171"/>
-        <source>%1 - %2 %3</source>
-        <translation>%1 - %2 %3</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="168"/>
-        <source>Today part of</source>
-        <translation>Oggi parte di</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/at.qml" line="178"/>
-        <source>Includes this old plate signs</source>
-        <translation type="unfinished"/>
+        <comment>District capital in Austria</comment>
+        <translation type="unfinished">Capitale</translation>
     </message>
 </context>
 <context>
     <name>ch</name>
     <message>
-        <location filename="../qml/ItemViews/ch.qml" line="50"/>
-        <source>Switzerland</source>
-        <translation>Svizzera</translation>
+        <location filename="../qml/ItemViews/ch.qml" line="29"/>
+        <source>Canton %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ch.qml" line="72"/>
-        <source>Canton %2</source>
-        <translation>Canton %2</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/ch.qml" line="89"/>
+        <location filename="../qml/ItemViews/ch.qml" line="31"/>
         <source>Capital</source>
-        <translation>Capitale</translation>
+        <comment>District capital in Switzerland</comment>
+        <translation type="unfinished">Capitale</translation>
     </message>
 </context>
 <context>
     <name>de</name>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="83"/>
-        <source>Germany</source>
-        <translation>Germania</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="104"/>
+        <location filename="../qml/ItemViews/de.qml" line="37"/>
         <source>%1 %2</source>
+        <extracomment>the first one is the district type, the second is the district name</extracomment>
         <translation>%1 %2</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="126"/>
+        <location filename="../qml/ItemViews/de.qml" line="40"/>
         <source>Capital</source>
-        <translation>Capitale</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="132"/>
-        <source>Existing since</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="132"/>
-        <source>Existed from</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="139"/>
-        <source>Optional plate signs</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="146"/>
-        <source>Sign optional available since</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="158"/>
-        <source>Merged into</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="161"/>
-        <location filename="../qml/ItemViews/de.qml" line="171"/>
-        <source>%1 - %2 %3</source>
-        <translation>%1 - %2 %3</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="168"/>
-        <source>Today part of</source>
-        <translation>Oggi parte di</translation>
-    </message>
-    <message>
-        <location filename="../qml/ItemViews/de.qml" line="178"/>
-        <source>Includes this old districts</source>
-        <translation type="unfinished"/>
+        <comment>District capital in Germany</comment>
+        <translation type="unfinished">Capitale</translation>
     </message>
 </context>
 </TS>
