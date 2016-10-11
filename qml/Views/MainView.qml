@@ -1,6 +1,6 @@
 /*
     Chennzeihhan - Vehicle Registration Code Database for SailfishOS
-    Copyright (C) 2014  Buschtrommel/Matthias Fehring
+    Copyright (C) 2014-2016  Buschtrommel/Matthias Fehring
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -29,13 +29,9 @@ Page {
     id: mainView
     objectName: "MainView"
 
-    property string searchString
-    property int searchTarget: config.defaultSearchTarget
     property int sortType: config.defaultOrderTarget
-    property string cha: ""
-    property int activeRow: 0
-    property bool showMainContent: dbMan.dbExists && (config.databaseVersion >= config.minimumDbVersion) && searchString === ""
-    property variant abc
+    property int activeRow: -1
+    property bool showMainContent: dbMan.dbExists && (config.databaseVersion >= config.minimumDbVersion) && countriesModel.search === ""
     readonly property int abcColumns: 5
     readonly property real plateRatio: 0.84
 
@@ -52,20 +48,16 @@ Page {
 
     Connections {
         target: config
-        onDefaultSearchTargetChanged: { searchTarget = defaultSearchTarget; searchT.currentIndex = searchTarget }
+        onDefaultSearchTargetChanged: { searchT.currentIndex = defaultSearchTarget }
         onDefaultOrderTargetChanged: { sortType = defaultOrderTarget; sortOrdering.currentIndex = sortType }
     }
 
-    onSearchStringChanged: countriesSearch.refresh(searchString, searchTarget, sortType)
-    onSortTypeChanged: { alphabetModel.init(sortType); if (cha !== "") { countriesModel.setFirstChar(cha, sortType) } else if (searchString !== "") { countriesSearch.refresh(searchString, searchTarget, sortType) } }
-    onSearchTargetChanged: if (searchString !== "") countriesSearch.refresh(searchString, searchTarget, sortType)
-    onChaChanged: countriesModel.setFirstChar(cha, sortType)
+    onSortTypeChanged: { alphabetModel.init(sortType); countriesModel.sortTarget = sortType }
 
     SilicaFlickable {
         id: flick
         anchors.fill: parent
-        VerticalScrollDecorator {}
-        interactive: searchString === ""
+        VerticalScrollDecorator { flickable: flick }
         contentHeight: contentCol.height
         clip: true
 
@@ -89,11 +81,11 @@ Page {
             id: contentCol
             anchors { left: parent.left; right: parent.right }
             move: Transition { NumberAnimation { properties: "y"; easing.type: Easing.InOutQuad } }
-            add: Transition { AddAnimation {} }
+//            add: Transition { AddAnimation {} }
             PageHeader { id: pageHeader; title: "Chennzeihhan" }
-            Behavior on height {
-                        NumberAnimation { duration: 300; easing.type: Easing.InOutQuad }
-                    }
+//            Behavior on height {
+//                        NumberAnimation { duration: 300; easing.type: Easing.InOutQuad }
+//                    }
 
             SearchField {
                 id: searchField
@@ -104,8 +96,8 @@ Page {
                 EnterKey.iconSource: "image://theme/icon-m-enter-close"
 
                 Binding {
-                    target: mainView
-                    property: "searchString"
+                    target: countriesModel
+                    property: "search"
                     value: searchField.text
                 }
             }
@@ -118,12 +110,7 @@ Page {
                 delegate: CountriesDelegate{ showBg: false}
                 interactive: false
                 cellWidth: width/3; cellHeight: cellWidth * plateRatio
-                model: countriesFavourites
-                Component.onCompleted: countriesFavourites.getFavs()
-                Connections {
-                    target: config
-                    onFavsChanged: countriesFavourites.getFavs()
-                }
+                model: favoritesModel
             }
 
             Item {
@@ -146,19 +133,18 @@ Page {
                     id: col
                     anchors { left: parent.left; right: parent.right }
                     move: Transition { NumberAnimation { properties: "y"; easing.type: Easing.InOutQuad } }
-                    add: Transition { AddAnimation {} }
+//                    add: Transition { AddAnimation {} }
                     Repeater {
                         model: AlphabetModel { id: alphabetModel; dbManager: dbMan }
 
                         Item {
                             id: rowBase
                             anchors { left: parent.left; right: parent.right }
-                            height: abcRow.height + grid.height
+                            height: abcRow.height  + (abcLoader.item ? abcLoader.item.height : 0)
                             property int rowIdx: model.index
 
                             Row {
                                 id: abcRow
-                                z: 2
                                 Repeater {
                                     model: row
 
@@ -170,7 +156,7 @@ Page {
                                         contentHeight: abcGrid.cellHeight
 
                                         property alias text: label.text
-                                        property bool expanded: cha === text
+                                        property bool expanded: countriesModel.firstChar === text
 
                                         highlightedColor: "transparent"
 
@@ -193,26 +179,31 @@ Page {
                                         }
 
                                         onClicked: {
-                                            mainView.activeRow = (mainView.cha === text) ? -1 : rowBase.rowIdx;
-                                            mainView.cha = (mainView.cha === text) ? "" : text;
+                                            mainView.activeRow = (countriesModel.firstChar === text) ? -1 : rowBase.rowIdx;
+                                            countriesModel.firstChar = (countriesModel.firstChar === text) ? "" : text;
+                                        }
+
+                                        Connections {
+                                            target: mainView
+                                            onActiveRowChanged: {
+                                                if (mainView.activeRow === rowBase.rowIdx) {
+                                                    if (abcLoader.status === Loader.Null) {
+                                                        abcLoader.setSource(Qt.resolvedUrl("SignGrid.qml"))
+                                                    }
+                                                } else {
+                                                    if (abcLoader.status !== Loader.Null) {
+                                                        abcLoader.source = ""
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
                             }
 
-                            GridView {
-                                id: grid
-                                z: 1
-                                clip: true
-                                visible: rowBase.rowIdx === mainView.activeRow
-                                height: visible ? Math.ceil(count / 3) * cellHeight : 0
+                            Loader {
+                                id: abcLoader
                                 anchors { top: abcRow.bottom; left: parent.left; right: parent.right }
-                                delegate: CountriesDelegate{}
-                                interactive: false
-                                cellWidth: width/3; cellHeight: cellWidth * plateRatio
-                                model: countriesModel
-                                opacity: visible ? 1 : 0
-                                Behavior on opacity { FadeAnimation{} }
                             }
                         }
                     }
@@ -246,7 +237,7 @@ Page {
                     width: parent.width/2
                     label: qsTr("Search") + "          "
 
-                    currentIndex: mainView.searchTarget
+                    currentIndex: config.defaultSearchTarget
 
                     menu: ContextMenu {
                         MenuItem { text: qsTr("Code") }
@@ -254,23 +245,35 @@ Page {
                         MenuItem { text: qsTr("Both") }
                     }
 
-                    onCurrentIndexChanged: mainView.searchTarget = currentIndex
+                    onCurrentIndexChanged: countriesModel.searchTarget = currentIndex
                 }
             }
 
-            GridView {
-                id: searchView
-                visible: searchString !== ""
+            Item {
+                id: searchViewPlaceholder
                 width: parent.width
-                clip: true
-                anchors { left: parent.left; right: parent.right }
-                height: flick.height - pageHeader.height - searchField.height
-                delegate: CountriesDelegate{ search: searchString; target: searchTarget}
-                cellWidth: width/3; cellHeight: cellWidth * plateRatio
-                model: countriesSearch
-                VerticalScrollDecorator { flickable: searchView }
-            }
+                height: searchLoader.item ? searchLoader.item.height : 0
 
+                Connections {
+                    target: countriesModel
+                    onSearchChanged: {
+                        if (search !== "") {
+                            if (searchLoader.status === Loader.Null) {
+                                searchLoader.setSource(Qt.resolvedUrl("SignGrid.qml"))
+                            }
+                        } else {
+                            if (searchLoader.status !== Loader.Null) {
+                                searchLoader.source = ""
+                            }
+                        }
+                    }
+                }
+
+                Loader {
+                    id: searchLoader
+                    anchors { top: searchViewPlaceholder.top; left: parent.left; right: parent.right }
+                }
+            }
         }
 
         ViewPlaceholder {

@@ -178,6 +178,6 @@ bool CountryModelFilter::filterAcceptsRow(int source_row, const QModelIndex &sou
     case Chennzeihhan::Name:
         return sourceModel()->data(index, CountryModel::Name).toString().contains(search(), Qt::CaseInsensitive);
     default:
-        return (sourceModel()->data(index, CountryModel::Sign).toString().contains(search(), Qt::CaseInsensitive) && sourceModel()->data(index, CountryModel::Name).toString().contains(search(), Qt::CaseInsensitive));
+        return (sourceModel()->data(index, CountryModel::Sign).toString().contains(search(), Qt::CaseInsensitive) || sourceModel()->data(index, CountryModel::Name).toString().contains(search(), Qt::CaseInsensitive));
     }
 }

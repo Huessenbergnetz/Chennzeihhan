@@ -29,13 +29,14 @@ Page {
 
     property string title
     property alias code: countryModel.countryCode
-    property string colors
+    property var colors: []
     property string sign
     property int type
 
     onStatusChanged: {
         cc.countryName = countryView.title
         cc.countrySign = countryView.sign
+        cc.countryColors = countryView.colors
 //        coverConnector.countryName = countryView.title
 //        coverConnector.countrySign = countryView.sign
 //        coverConnector.countryColors = countryView.colors

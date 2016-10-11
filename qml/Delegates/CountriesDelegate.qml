@@ -20,29 +20,33 @@
 import QtQuick 2.2
 import Sailfish.Silica 1.0
 import "../Common"
+import harbour.chennzeihhan 1.0
 
 ListItem {
     id: listItem
 
     property alias showBg: bgImage.visible
-    property bool fav: config.isFav(model.sign)
+    property bool fav: favoritesModel.isFav(model.sign)
     property string search
     property int target
 
-    property string name: (target === 1 || target === 2) ? Theme.highlightText(model.name, search, Theme.highlightColor) : model.name
-    property string sign: (target === 0 || target === 2) ? Theme.highlightText(model.sign, search, Theme.secondaryHighlightColor) : model.sign
+    property string name: (countriesModel.searchTarget === 1 || countriesModel.searchTarget === 2) ? Theme.highlightText(model.name, countriesModel.search, Theme.highlightColor) : model.name
+    property string sign: (countriesModel.searchTarget === 0 || countriesModel.searchTarget === 2) ? Theme.highlightText(model.sign, countriesModel.search, Theme.secondaryHighlightColor) : model.sign
 
     onClicked: pageStack.push(Qt.resolvedUrl("../Views/CountryView.qml"), {title: model.name, code: model.code, type: model.type, colors: model.colors, sign: model.sign})
 
-    onPressAndHold: if (!inOperation) { if (fav) { chennzeihhan.inOperation = true; rmFav() } else { config.setFav(model.sign); fav = true } }
+    onPressAndHold: if (fav) { rmFav() } else { favoritesModel.add(model.sign); fav = true }
 
     width: GridView.view.cellWidth
     height: GridView.view.cellHeight
     contentHeight: GridView.view.cellHeight
 
+    GridView.onAdd: AddAnimation { target: listItem }
+    GridView.onRemove: RemoveAnimation { target: listItem }
+
     Connections {
-        target: config
-        onFavsChanged: listItem.fav = config.isFav(model.sign)
+        target: favoritesModel
+        onModelChanged: listItem.fav = favoritesModel.isFav(model.sign)
     }
 
     Image {
@@ -104,9 +108,9 @@ ListItem {
     }
 
     function rmFav() {
-        remorse.execute(listItem, qsTr("Romving from favourites"), function() {config.removeFav(model.sign); fav = false }, 3000)
+        remorse.execute(listItem, qsTr("Romving from favourites"), function() {favoritesModel.remove(model.sign); fav = false }, 3000)
     }
 
-    RemorseItem { id: remorse; onCanceled: chennzeihhan.inOperation = false }
+    RemorseItem { id: remorse }
 
 }

@@ -10,7 +10,6 @@ SOURCES += \
     src/models/countrymodel.cpp \
     src/downloadmanager.cpp \
     src/wikipedia.cpp \
-    src/models/countriesmodel.cpp \
     src/globals.cpp \
     src/configuration.cpp \
     src/models/languagemodel.cpp \
@@ -22,7 +21,11 @@ SOURCES += \
     src/models/chitem.cpp \
     src/models/atitem.cpp \
     src/models/countrymodelfilter.cpp \
-    src/models/alphabetmodel.cpp
+    src/models/alphabetmodel.cpp \
+    src/models/countriesbasemodel.cpp \
+    src/models/favoritesmodel.cpp \
+    src/models/countriesmodelnew.cpp \
+    src/models/countriesmodelfilter.cpp
 
 translations.path = /usr/share/harbour-chennzeihhan/translations
 translations.files = l10n/*.qm
@@ -74,7 +77,6 @@ HEADERS += \
     src/models/countrymodel.h \
     src/downloadmanager.h \
     src/wikipedia.h \
-    src/models/countriesmodel.h \
     src/configuration.h \
     src/models/languagemodel.h \
     src/models/item.h \
@@ -86,8 +88,13 @@ HEADERS += \
     src/models/chitem.h \
     src/models/atitem.h \
     src/models/countrymodelfilter.h \
-    src/models/alphabetmodel.h
+    src/models/alphabetmodel.h \
+    src/models/countriesbasemodel.h \
+    src/models/favoritesmodel.h \
+    src/models/countriesmodelnew.h \
+    src/models/countriesmodelfilter.h
 
 DISTFILES += \
     qml/ItemViews/SimpleItemView.qml \
-    qml/ItemViews/ExtendedItemView.qml
+    qml/ItemViews/ExtendedItemView.qml \
+    qml/Views/SignGrid.qml
