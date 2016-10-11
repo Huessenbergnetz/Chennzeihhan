@@ -34,6 +34,8 @@ images.path = /usr/share/harbour-chennzeihhan/images
 images.files = images/*
 INSTALLS += images
 
+SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
+
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
     rpm/Chennzeihhan.spec \

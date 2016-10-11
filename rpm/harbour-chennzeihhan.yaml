@@ -24,5 +24,5 @@ Files:
 - '%attr(755, root, root) %{_bindir}/harbour-chennzeihhan'
 - '%{_datadir}/%{name}'
 - '%{_datadir}/applications/%{name}.desktop'
-- '%{_datadir}/icons/hicolor/86x86/apps/%{name}.png'
+- '%{_datadir}/icons/hicolor/*/apps/%{name}.png'
 PkgBR: []
