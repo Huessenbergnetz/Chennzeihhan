@@ -139,7 +139,7 @@ Page {
 
                         Item {
                             id: rowBase
-                            anchors { left: parent.left; right: parent.right }
+                            width: parent ? parent.width : 0
                             height: abcRow.height  + (abcLoader.item ? abcLoader.item.height : 0)
                             property int rowIdx: model.index
 

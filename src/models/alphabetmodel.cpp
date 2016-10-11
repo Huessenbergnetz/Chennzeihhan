@@ -234,7 +234,7 @@ void AlphabetModel::init(Chennzeihhan::Target sorting)
             QStringList _l;
 
             while (q.next()) {
-                _l.append(QCoreApplication::translate("DBStrings", q.value(0).toString().toUtf8().constData()).left(1));
+                _l.append(QCoreApplication::translate("DBStrings", q.value(0).toString().toUtf8().constData()).at(0));
             }
 
             if (!_l.isEmpty()) {
