@@ -48,10 +48,24 @@ Page {
     signal tpoClicked(int tpoId)
     signal antecessorClicked(int anteId)
 
-    onStatusChanged: {
-        if (status == PageStatus.Active && wikipedia !== "") {
-            pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {wpLang: wikipediaLang, wpName: wikipedia})
+    function attachWikipedia() {
+        if (status == PageStatus.Active) {
+            if (wikipedia !== "") {
+                pageStack.pushAttached(Qt.resolvedUrl("ItemWebView.qml"), {wpLang: wikipediaLang, wpName: wikipedia})
+            } else {
+                if (forwardNavigation) {
+                    pageStack.popAttached()
+                }
+            }
         }
+    }
+
+    onStatusChanged: {
+        attachWikipedia()
+    }
+
+    onWikipediaChanged: {
+        attachWikipedia()
     }
 
     BusyIndicator {
