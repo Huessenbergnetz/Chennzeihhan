@@ -59,14 +59,6 @@ OTHER_FILES += \
     qml/Pages/Help.qml \
     qml/Dialogs/Sorting.qml \
     qml/Dialogs/SearchTarget.qml \
-    qml/BTComponents/AboutPage.qml \
-    qml/BTComponents/Changelog.qml \
-    qml/BTComponents/ChangelogDelegate.qml \
-    qml/BTComponents/ComboBoxList.qml \
-    qml/BTComponents/Contributors.qml \
-    qml/BTComponents/ContributorsDelegate.qml \
-    qml/BTComponents/FirstStartInfo.qml \
-    qml/BTComponents/PaypalChooser.qml \
     qml/Models/ContributorsModel.qml \
     qml/Models/ChangelogModel.qml
 
