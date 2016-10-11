@@ -78,7 +78,7 @@
 <context>
     <name>AtItem</name>
     <message>
-        <location filename="../src/models/atitem.cpp" line="6"/>
+        <location filename="../src/models/atitem.cpp" line="25"/>
         <source>Austria</source>
         <translation>Austria</translation>
     </message>
@@ -86,7 +86,7 @@
 <context>
     <name>ChItem</name>
     <message>
-        <location filename="../src/models/chitem.cpp" line="6"/>
+        <location filename="../src/models/chitem.cpp" line="25"/>
         <source>Switzerland</source>
         <translation>Svizzera</translation>
     </message>
@@ -143,28 +143,28 @@
 <context>
     <name>ContributorsModel</name>
     <message>
-        <location filename="../qml/Models/ContributorsModel.qml" line="26"/>
+        <location filename="../qml/Models/ContributorsModel.qml" line="25"/>
         <source>Main developer, Chennzeihhan creator</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Models/ContributorsModel.qml" line="27"/>
+        <location filename="../qml/Models/ContributorsModel.qml" line="26"/>
         <source>Author</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Models/ContributorsModel.qml" line="36"/>
+        <location filename="../qml/Models/ContributorsModel.qml" line="35"/>
         <source>Italian translation</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Models/ContributorsModel.qml" line="37"/>
-        <location filename="../qml/Models/ContributorsModel.qml" line="43"/>
+        <location filename="../qml/Models/ContributorsModel.qml" line="36"/>
+        <location filename="../qml/Models/ContributorsModel.qml" line="42"/>
         <source>Thanks to</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Models/ContributorsModel.qml" line="42"/>
+        <location filename="../qml/Models/ContributorsModel.qml" line="41"/>
         <source>Dutch (Netherlands) translation</source>
         <translation type="unfinished"/>
     </message>
@@ -172,7 +172,7 @@
 <context>
     <name>CountriesDelegate</name>
     <message>
-        <location filename="../qml/Delegates/CountriesDelegate.qml" line="107"/>
+        <location filename="../qml/Delegates/CountriesDelegate.qml" line="111"/>
         <source>Romving from favourites</source>
         <translation type="unfinished"/>
     </message>
@@ -193,42 +193,42 @@
 <context>
     <name>CountryView</name>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="68"/>
+        <location filename="../qml/Views/CountryView.qml" line="56"/>
         <source>Search: Code</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="68"/>
+        <location filename="../qml/Views/CountryView.qml" line="56"/>
         <source>Search: Name</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="68"/>
+        <location filename="../qml/Views/CountryView.qml" line="56"/>
         <source>Search: Code and Name</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="75"/>
+        <location filename="../qml/Views/CountryView.qml" line="63"/>
         <source>Sorting: Name</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="75"/>
+        <location filename="../qml/Views/CountryView.qml" line="63"/>
         <source>Sorting: Code</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="91"/>
+        <location filename="../qml/Views/CountryView.qml" line="78"/>
         <source>Information to the local breakdown of the vehicle registration plate system in %1 will be part of the premium version.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="96"/>
+        <location filename="../qml/Views/CountryView.qml" line="83"/>
         <source>The vehicle registration plate system of %1 does not use a breakdown into districts, regions or something similar. The premium version will contain further information. </source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="105"/>
+        <location filename="../qml/Views/CountryView.qml" line="92"/>
         <source>Search</source>
         <translation>Cerca</translation>
     </message>
@@ -1912,7 +1912,7 @@
 <context>
     <name>DeItem</name>
     <message>
-        <location filename="../src/models/deitem.cpp" line="11"/>
+        <location filename="../src/models/deitem.cpp" line="30"/>
         <source>Germany</source>
         <translation>Germania</translation>
     </message>
@@ -1920,8 +1920,8 @@
 <context>
     <name>ExtendedItem</name>
     <message>
-        <location filename="../src/models/extendeditem.cpp" line="227"/>
-        <location filename="../src/models/extendeditem.cpp" line="236"/>
+        <location filename="../src/models/extendeditem.cpp" line="246"/>
+        <location filename="../src/models/extendeditem.cpp" line="255"/>
         <source>%1 - %2 %3</source>
         <extracomment>1 - the carplate sign, 2 - the district type, 3 - the district name
 ----------
@@ -2047,38 +2047,30 @@
 <context>
     <name>ItemWebView</name>
     <message>
-        <location filename="../qml/ItemViews/ItemWebView.qml" line="61"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="66"/>
         <source>Reload</source>
         <translation>Ricarica</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ItemWebView.qml" line="61"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="66"/>
         <source>Stop loading</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ItemWebView.qml" line="65"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="70"/>
         <source>Open in browser</source>
         <translation>Apri nel browser</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ItemWebView.qml" line="69"/>
+        <location filename="../qml/ItemViews/ItemWebView.qml" line="74"/>
         <source>Back</source>
         <translation>Indietro</translation>
     </message>
 </context>
 <context>
-    <name>LanguageChooser</name>
-    <message>
-        <location filename="../qml/Pages/LanguageChooser.qml" line="91"/>
-        <source>Search</source>
-        <translation type="unfinished"/>
-    </message>
-</context>
-<context>
     <name>LanguageModel</name>
     <message>
-        <location filename="../src/models/languagemodel.cpp" line="106"/>
+        <location filename="../src/models/languagemodel.cpp" line="125"/>
         <source>System default</source>
         <translation type="unfinished"/>
     </message>
@@ -2086,64 +2078,64 @@
 <context>
     <name>MainView</name>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="44"/>
+        <location filename="../qml/Views/MainView.qml" line="43"/>
         <source>Chennzeihhan (old high german for Kennzeichen/registration plate) is an offline database for vehicle registration plates that can find the district of the vehicle plate. It covers currently more than 1200 international and local codes from Austria, Germany and Switzerland.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="91"/>
+        <location filename="../qml/Views/MainView.qml" line="66"/>
         <source>About</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="95"/>
+        <location filename="../qml/Views/MainView.qml" line="70"/>
         <source>Help/Legend</source>
         <translation>Aiuto/legenda</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="99"/>
+        <location filename="../qml/Views/MainView.qml" line="74"/>
         <source>Settings</source>
         <translation>Impostazioni</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="119"/>
+        <location filename="../qml/Views/MainView.qml" line="94"/>
         <source>Search ...</source>
         <translation>Cerca...</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="210"/>
+        <location filename="../qml/Views/MainView.qml" line="223"/>
         <source>Sorting</source>
         <translation>Ordine</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="215"/>
-        <location filename="../qml/Views/MainView.qml" line="230"/>
+        <location filename="../qml/Views/MainView.qml" line="228"/>
+        <location filename="../qml/Views/MainView.qml" line="243"/>
         <source>Code</source>
         <translation>Codice</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="216"/>
-        <location filename="../qml/Views/MainView.qml" line="231"/>
+        <location filename="../qml/Views/MainView.qml" line="229"/>
+        <location filename="../qml/Views/MainView.qml" line="244"/>
         <source>Name</source>
         <translation>Nome</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="225"/>
+        <location filename="../qml/Views/MainView.qml" line="238"/>
         <source>Search</source>
         <translation>Cerca</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="232"/>
+        <location filename="../qml/Views/MainView.qml" line="245"/>
         <source>Both</source>
         <translation>Entrambi</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="257"/>
+        <location filename="../qml/Views/MainView.qml" line="281"/>
         <source>You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="262"/>
+        <location filename="../qml/Views/MainView.qml" line="286"/>
         <source>Because of changes in the data models you have to update the database. Please go to the settings to do so. We apologize for the inconvenience.</source>
         <translation type="unfinished"/>
     </message>
@@ -2297,85 +2289,85 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="56"/>
+        <location filename="../qml/Pages/Settings.qml" line="53"/>
         <source>Check for new database version</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="62"/>
+        <location filename="../qml/Pages/Settings.qml" line="59"/>
         <source>Download new database version</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="74"/>
+        <location filename="../qml/Pages/Settings.qml" line="71"/>
         <source>Settings</source>
         <translation>Impostazioni</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="76"/>
+        <location filename="../qml/Pages/Settings.qml" line="73"/>
         <source>Database</source>
         <translation>Database</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="83"/>
+        <location filename="../qml/Pages/Settings.qml" line="80"/>
         <source>Currently there is no database installed. Please use the pully menu to check for new DB version.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="131"/>
-        <location filename="../qml/Pages/Settings.qml" line="149"/>
+        <location filename="../qml/Pages/Settings.qml" line="122"/>
+        <location filename="../qml/Pages/Settings.qml" line="140"/>
         <source>Rev.</source>
         <translation>Rev.</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="204"/>
+        <location filename="../qml/Pages/Settings.qml" line="197"/>
         <source>Changes in this version:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="224"/>
+        <location filename="../qml/Pages/Settings.qml" line="218"/>
         <source>Display</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="229"/>
+        <location filename="../qml/Pages/Settings.qml" line="223"/>
         <source>Default ordering</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="235"/>
-        <location filename="../qml/Pages/Settings.qml" line="252"/>
+        <location filename="../qml/Pages/Settings.qml" line="228"/>
+        <location filename="../qml/Pages/Settings.qml" line="243"/>
         <source>Code</source>
         <translation>Codice</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="236"/>
-        <location filename="../qml/Pages/Settings.qml" line="253"/>
+        <location filename="../qml/Pages/Settings.qml" line="229"/>
+        <location filename="../qml/Pages/Settings.qml" line="244"/>
         <source>Name</source>
         <translation>Nome</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="246"/>
+        <location filename="../qml/Pages/Settings.qml" line="238"/>
         <source>Default search</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="254"/>
+        <location filename="../qml/Pages/Settings.qml" line="245"/>
         <source>Both</source>
         <translation>Entrambi</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="261"/>
+        <location filename="../qml/Pages/Settings.qml" line="251"/>
         <source>Display language</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="265"/>
+        <location filename="../qml/Pages/Settings.qml" line="255"/>
         <source>Language</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="266"/>
+        <location filename="../qml/Pages/Settings.qml" line="256"/>
         <source>Changing the display language is only applied after a restart of the application.</source>
         <translation type="unfinished"/>
     </message>
