@@ -1,3 +1,22 @@
+/*
+    Chennzeihhan - Vehicle Registration Code Database for SailfishOS
+    Copyright (C) 2014-2016  Buschtrommel/Matthias Fehring
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+*/
+
 #ifndef COUNTRYMODELFILTER_H
 #define COUNTRYMODELFILTER_H
 
@@ -19,13 +38,6 @@ class CountryModelFilter : public QSortFilterProxyModel
     Q_ENUMS(Chennzeihhan::Target)
 public:
     explicit CountryModelFilter(QObject *parent = nullptr);
-
-//    enum Target {
-//        Code = 0,
-//        Name = 1,
-//        Both = 2
-//    };
-//    Q_ENUMS(Target)
 
     QString search() const;
     Chennzeihhan::Target searchTarget() const;
@@ -59,6 +71,5 @@ private:
     QTimer *m_timer;
     CountryModel *m_cm;
 };
-//Q_DECLARE_METATYPE(CountryModelFilter::Target)
 
 #endif // COUNTRYMODELFILTER_H

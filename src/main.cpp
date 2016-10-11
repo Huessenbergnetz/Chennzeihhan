@@ -1,6 +1,6 @@
 /*
     Chennzeihhan - Vehicle Registration Code Database for SailfishOS
-    Copyright (C) 2014  Buschtrommel/Matthias Fehring
+    Copyright (C) 2014-2016  Buschtrommel/Matthias Fehring
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -115,12 +115,8 @@ int main(int argc, char *argv[])
     qmlRegisterType<DeItem>("harbour.chennzeihhan", 1, 0, "DeItem");
 
 
-//    CountriesModel *countriesModel = new CountriesModel();
     const QScopedPointer<CountriesModelFilter> countriesModel(new CountriesModelFilter);
-//    CountriesModel *countriesSearch = new CountriesModel();
-//    CountriesModel *countriesFavourites = new CountriesModel();
     const QScopedPointer<FavoritesModel> favoritesModel(new FavoritesModel(&config));
-//    CountriesModel *abcModel = new CountriesModel();
 
 #ifndef CLAZY
     QQuickView* view = SailfishApp::createView();
@@ -132,7 +128,6 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty(QStringLiteral("config"), &config);
     view->rootContext()->setContextProperty(QStringLiteral("countriesModel"), countriesModel.data());
     view->rootContext()->setContextProperty(QStringLiteral("favoritesModel"), favoritesModel.data());
-//    view->rootContext()->setContextProperty(QStringLiteral("countriesSearch"), countriesSearch);
     view->rootContext()->setContextProperty(QStringLiteral("cc"), &cc);
     view->rootContext()->setContextProperty(QStringLiteral("versionString"), QStringLiteral(VERSION_STRING));
     view->rootContext()->setContextProperty(QStringLiteral("versionInt"), VERSION);

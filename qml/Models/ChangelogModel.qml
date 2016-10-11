@@ -1,7 +1,6 @@
 /*
-    BTComponents - QML components shared between various Buschtrommel projects
-    Copyright (C) 2014  Buschtrommel/Matthias Fehring
-    Contact: Matthias Fehring <kontakt@buschmann23.de>
+    Chennzeihhan - Vehicle Registration Code Database for SailfishOS
+    Copyright (C) 2014-2016  Buschtrommel/Matthias Fehring
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

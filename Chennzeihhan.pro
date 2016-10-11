@@ -68,8 +68,7 @@ OTHER_FILES += \
     qml/BTComponents/FirstStartInfo.qml \
     qml/BTComponents/PaypalChooser.qml \
     qml/Models/ContributorsModel.qml \
-    qml/Models/ChangelogModel.qml \
-    qml/Pages/LanguageChooser.qml
+    qml/Models/ChangelogModel.qml
 
 HEADERS += \
     src/dbmanager.h \
