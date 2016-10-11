@@ -25,7 +25,7 @@ import "../Models"
 AboutPage {
 
     appTitle: "Chennzeihhan"
-    appVersion: versionString
+    appVersion: Qt.application.version
     appDescription: qsTr("Vehicle registation plates database for Sailfish OS")
     appHomepage: "http://www.buschmann23.de/entwicklung/anwendungen/chennzeihhan/"
     appCover: "/usr/share/harbour-chennzeihhan/images/banner.png"

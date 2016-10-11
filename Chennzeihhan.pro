@@ -10,7 +10,6 @@ SOURCES += \
     src/models/countrymodel.cpp \
     src/downloadmanager.cpp \
     src/wikipedia.cpp \
-    src/globals.cpp \
     src/configuration.cpp \
     src/models/languagemodel.cpp \
     src/models/item.cpp \
@@ -88,4 +87,10 @@ HEADERS += \
 DISTFILES += \
     qml/ItemViews/SimpleItemView.qml \
     qml/ItemViews/ExtendedItemView.qml \
-    qml/Views/SignGrid.qml
+    qml/Views/SignGrid.qml \
+    qml/BTComponents/AboutPage.qml \
+    qml/BTComponents/Changelog.qml \
+    qml/BTComponents/ChangelogDelegate.qml \
+    qml/BTComponents/Contributors.qml \
+    qml/BTComponents/ContributorsDelegate.qml \
+    qml/BTComponents/FirstStartInfo.qml

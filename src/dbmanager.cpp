@@ -56,9 +56,9 @@ bool DbManager::openDB()
 
     bool dbStatus = db.open();
 
-    if (dbStatus) {
-        tables = db.tables(QSql::Tables);
-    }
+//    if (dbStatus) {
+//        tables = db.tables(QSql::Tables);
+//    }
 
     return dbStatus;
 }

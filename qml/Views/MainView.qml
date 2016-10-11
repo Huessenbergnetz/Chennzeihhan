@@ -38,7 +38,7 @@ Page {
     FirstStartInfo {
         visible: config.get("system/version", 0) < versionInt
         name: "Chennzeihhan"
-        version: versionString
+        version: Qt.application.version
         helpPage: "../Pages/Help.qml"
         description: qsTr("Chennzeihhan (old high german for Kennzeichen/registration plate) is an offline database for vehicle registration plates that can find the district of the vehicle plate. It covers currently more than 1200 international and local codes from Austria, Germany and Switzerland.")
         changeLogModel: ChangelogModel {}

@@ -129,7 +129,6 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty(QStringLiteral("countriesModel"), countriesModel.data());
     view->rootContext()->setContextProperty(QStringLiteral("favoritesModel"), favoritesModel.data());
     view->rootContext()->setContextProperty(QStringLiteral("cc"), &cc);
-    view->rootContext()->setContextProperty(QStringLiteral("versionString"), QStringLiteral(VERSION_STRING));
     view->rootContext()->setContextProperty(QStringLiteral("versionInt"), VERSION);
 
 #ifndef CLAZY
