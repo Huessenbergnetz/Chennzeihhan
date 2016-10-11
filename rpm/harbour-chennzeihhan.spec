@@ -13,7 +13,7 @@ Name:       harbour-chennzeihhan
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Offline Car License Plate Database for SailfishOS
-Version:    1.2.7
+Version:    1.3.0
 Release:    2
 Group:      Qt/Qt
 License:    GPL-2.0

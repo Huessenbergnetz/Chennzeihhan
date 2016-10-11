@@ -23,12 +23,12 @@
 #include <QStringList>
 #include <QObject>
 
-#define VERSION_STRING "1.2.7"
-#define VERSION 127
+#define VERSION_STRING "1.3.0"
+#define VERSION 130
 #define VER_MAJ 1
-#define VER_MIN 2
-#define VER_PAT 7
-#define MIN_DB_VERSION 8
+#define VER_MIN 3
+#define VER_PAT 0
+#define MIN_DB_VERSION 16
 
 #define DATA_DIR "/.local/share/harbour-chennzeihhan"
 

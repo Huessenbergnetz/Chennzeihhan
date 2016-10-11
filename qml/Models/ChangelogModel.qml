@@ -30,6 +30,15 @@ import QtQuick 2.2
 ListModel {
 
     ListElement {
+        version: "1.3.0"
+        date: 1476180941000
+        entries: [
+            ListElement { type: 1; issue: ""; description: "many internal optimizations" },
+            ListElement { type: 2; issue: ""; description: "fixed database download url" }
+        ]
+    }
+
+    ListElement {
         version: "1.2.7"
         date: 1443201404000
         entries: [
