@@ -34,7 +34,8 @@ CoverBackground {
     CoverPlaceholder {
         visible: cc.mode === CoverConnector.Overview
         text: "Chenn zeihhan"
-        icon.source: "/usr/share/icons/hicolor/86x86/apps/harbour-chennzeihhan.png"
+//        icon.source: "/usr/share/icons/hicolor/86x86/apps/harbour-chennzeihhan.png"
+        icon.source: coverIcon
     }
 
     Column {
@@ -44,9 +45,11 @@ CoverBackground {
         anchors { left: parent.left; leftMargin: Theme.paddingLarge; right: parent.right; rightMargin: Theme.paddingLarge }
         spacing: 0
         Image {
-            source: "/usr/share/icons/hicolor/86x86/apps/harbour-chennzeihhan.png"
-            width: 86
-            height: 86
+//            source: "/usr/share/icons/hicolor/86x86/apps/harbour-chennzeihhan.png"
+//            width: 86
+//            height: 86
+            source: coverIcon
+            width: Theme.iconSizeLauncher; height: Theme.iconSizeLauncher
             anchors.horizontalCenter: parent.horizontalCenter
             opacity: 0.4
             visible: cc.mode !== CoverConnector.Wikipedia
@@ -111,7 +114,8 @@ CoverBackground {
         anchors.fill: parent
         CountryPlate {
             y: Theme.paddingLarge
-            width: 140; height: 90
+//            width: 140; height: 90
+            height: Theme.iconSizeLarge; width: Theme.iconSizeLarge * 1.555555555555556
             anchors.horizontalCenter: parent.horizontalCenter
             color: "white"
             borderColor: cc.countryColors

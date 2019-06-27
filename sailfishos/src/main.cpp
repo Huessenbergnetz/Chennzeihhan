@@ -142,6 +142,7 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty(QStringLiteral("favoritesModel"), favoritesModel.data());
     view->rootContext()->setContextProperty(QStringLiteral("cc"), &cc);
     view->rootContext()->setContextProperty(QStringLiteral("versionInt"), VERSION);
+    view->rootContext()->setContextProperty(QStringLiteral("coverIcon"), Hbnsc::getLauncherIcon({86, 108, 128, 150, 172}));
 
 #ifndef CLAZY
     view->setSource(SailfishApp::pathTo(QStringLiteral("qml/harbour-chennzeihhan.qml")));
