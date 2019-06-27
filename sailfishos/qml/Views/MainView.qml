@@ -21,7 +21,6 @@ import QtQuick 2.2
 import Sailfish.Silica 1.0
 import "../Delegates"
 import "../Common"
-import "../BTComponents"
 import "../Models"
 import harbour.chennzeihhan 1.0
 
@@ -35,16 +34,16 @@ Page {
     readonly property int abcColumns: 5
     readonly property real plateRatio: 0.84
 
-    FirstStartInfo {
-        visible: config.get("system/version", 0) < versionInt
-        name: "Chennzeihhan"
-        version: Qt.application.version
-        helpPage: "../Pages/Help.qml"
-        description: qsTr("Chennzeihhan (old high german for Kennzeichen/registration plate) is an offline database for vehicle registration plates that can find the district of the vehicle plate. It covers currently more than 1200 international and local codes from Austria, Germany and Switzerland.")
-        changeLogModel: ChangelogModel {}
-        changeLogTracker: "https://github.com/Buschtrommel/Chennzeihhan/issues/"
-        onClicked: config.set("system/version", versionInt)
-    }
+//    FirstStartInfo {
+//        visible: config.get("system/version", 0) < versionInt
+//        name: "Chennzeihhan"
+//        version: Qt.application.version
+//        helpPage: "../Pages/Help.qml"
+//        description: qsTr("Chennzeihhan (old high german for Kennzeichen/registration plate) is an offline database for vehicle registration plates that can find the district of the vehicle plate. It covers currently more than 1200 international and local codes from Austria, Germany and Switzerland.")
+//        changeLogModel: ChangelogModel {}
+//        changeLogTracker: "https://github.com/Buschtrommel/Chennzeihhan/issues/"
+//        onClicked: config.set("system/version", versionInt)
+//    }
 
     Connections {
         target: config

@@ -19,40 +19,43 @@
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
-import "../BTComponents"
+import de.huessenbergnetz.hbnsc 1.0
+import harbour.chennzeihhan 1.0
 import "../Models"
 
 AboutPage {
 
     appTitle: "Chennzeihhan"
-    appVersion: Qt.application.version
     appDescription: qsTr("Vehicle registation plates database for Sailfish OS")
     appHomepage: "http://www.buschmann23.de/entwicklung/anwendungen/chennzeihhan/"
-    appCover: "/usr/share/harbour-chennzeihhan/images/banner.png"
-    appCopyright: "© 2014-2016, Buschtrommel"
-    appLicense: qsTr("Source code is licensed under the <a href='http://www.gnu.org/licenses/gpl-2.0.en.html'>GNU GPL v2</a>.<br />Car plates database is licensed under <a href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.")
+    appCopyrightHolder: "Matthias Fehring"
+    appCopyrightYearFrom: "2014"
+    appCopyrightYearTo: "2019"
+    appLicense: "GNU General Public License, Version 2"
+    appLicenseFile: "GPLv2.qml"
+//    appLicense: qsTr("Source code is licensed under the <a href='http://www.gnu.org/licenses/gpl-2.0.en.html'>GNU GPL v2</a>.<br />Car plates database is licensed under <a href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.")
 
     changelogModel: ChangelogModel {}
-    bugTrackerBaseUrl: "https://github.com/Buschtrommel/Chennzeihhan/issues/"
+    bugTrackerBaseUrl: "https://github.com/Huessenbergnetz/Chennzeihhan/issues/"
 
     contributorsAvatarBasePath: "/usr/share/harbour-chennzeihhan/images/contributors"
     contributorsModel: ContributorsModel {}
 
     privacyPolicyQmlFile: ""
 
-    contactCompany: "Buschtrommel"
+    contactCompany: "Hüssenbergnetz"
     contactName: "Matthias Fehring"
-    contactStreet: "Engelhardstraße"
-    contactHouseNo: "32"
-    contactZIP: "81369"
-    contactCity: qsTr("Munich")
+    contactStreet: "Zum Südholz"
+    contactHouseNo: "8"
+    contactZIP: "34439"
+    contactCity: "Willebadessen"
     contactCountry: qsTr("Germany")
-    contactEmail: "kontakt@buschmann23.de"
-    contactWebsite: "www.buschmann23.de"
+    contactEmail: Qt.atob("a29udGFrdEBodWVzc2VuYmVyZ25ldHouZGU=")
+    contactWebsite: "www.huessenbergnetz.de"
+    contactWebsiteLink: "https://www.huessenbergnetz.de/?pk_campaign=Sailfish-App-Chennzeihhan&pk_kwd=AboutPage"
 
-    bugUrl: "https://github.com/Buschtrommel/Chennzeihhan/issues/"
-    translateUrl: "https://www.transifex.com/projects/p/chennzeihhan/"
+    bugUrl: "https://github.com/Huessenbergnetz/Chennzeihhan/issues/"
+    translateUrl: "https://www.transifex.com/huessenbergnetz/chennzeihhan"
 
-    licensesModel: ListModel {
-    }
+    licensesModel: LicensesModel {}
 }

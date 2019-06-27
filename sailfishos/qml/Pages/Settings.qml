@@ -20,6 +20,7 @@
 import QtQuick 2.2
 import Sailfish.Silica 1.0
 import harbour.chennzeihhan 1.0
+import de.huessenbergnetz.hbnsc 1.0
 
 Page {
     id: settings
@@ -250,20 +251,27 @@ Page {
 
             SectionHeader { text: qsTr("Display language") }
 
-            ComboBox {
-                id: langChoser
-                label: qsTr("Language")
-                description: qsTr("Changing the display language is only applied after a restart of the application.")
-                width: parent.width
-                menu: ContextMenu {
-                    Repeater {
-                        model: LanguageModel { id: langModel }
-                        MenuItem { text: model.name; readonly property string value: model.code }
-                    }
-                }
-                onCurrentIndexChanged: { if (currentItem) { config.displayLanguage = currentItem.value } }
+            LanguagePicker {
+                id: langPicker
+                model: LanguageModel { id: langModel }
+                onCurrentIndexChanged: if (currentItem) { config.displayLanguage = currentItem.value }
                 currentIndex: langModel.findIndex(config.displayLanguage)
             }
+
+//            ComboBox {
+//                id: langChoser
+//                label: qsTr("Language")
+//                description: qsTr("Changing the display language is only applied after a restart of the application.")
+//                width: parent.width
+//                menu: ContextMenu {
+//                    Repeater {
+//                        model: LanguageModel { id: langModel }
+//                        MenuItem { text: model.name; readonly property string value: model.code }
+//                    }
+//                }
+//                onCurrentIndexChanged: { if (currentItem) { config.displayLanguage = currentItem.value } }
+//                currentIndex: langModel.findIndex(config.displayLanguage)
+//            }
         }
     }
 }

@@ -8,14 +8,17 @@ License: GPL-2.0
 Sources:
 - '%{name}-%{version}.tar.bz2'
 Description: |
-  Chennzeihhan (old high german for Kennzeichen/registration plate) is an offline database for vehicle registration plates that can find the district of the vehicle plate. It covers currently more than 800 district codes from Germany and Switzerland.
+  Chennzeihhan (old high german for Kennzeichen/registration plate) is an offline database for vehicle registration plates that can find the district of the vehicle plate. It covers currently more than 800 district codes from Germany, Austria and Switzerland.
 Configure: none
 Builder: qtc5
 PkgConfigBR:
 - Qt5Quick
 - Qt5Qml
 - Qt5Core
+- Qt5Sql
 - sailfishapp >= 0.0.10
+- sailfishsilica
+- sqlite3
 Requires:
 - qt5-qtdeclarative-import-xmllistmodel
 - sailfishsilica-qt5 >= 0.10.9

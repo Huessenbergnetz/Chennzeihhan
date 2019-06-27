@@ -30,12 +30,16 @@
 #endif
 
 #ifdef QT_DEBUG
-#include <QtDebug>
+#include <QDebug>
 #endif
 
 #ifndef CLAZY
 #include <sailfishapp.h>
 #endif
+
+#include "hbnsc.h"
+#include "hbnsciconprovider.h"
+
 #include "globals.h"
 #include "dbmanager.h"
 #include "downloadmanager.h"
@@ -43,7 +47,8 @@
 #include "configuration.h"
 #include "coverconnector.h"
 #include "models/countrymodel.h"
-#include "models/languagemodel.h"
+#include "models/languagesmodel.h"
+#include "models/licensesmodel.h"
 #include "models/simpleitemmodel.h"
 #include "models/atitem.h"
 #include "models/chitem.h"
@@ -76,31 +81,35 @@ int main(int argc, char *argv[])
 
     Configuration config;
 
-    QString locale = config.displayLanguage();
+    {
+        QString localeString = config.displayLanguage();
 
-#ifdef QT_DEBUG
-    qDebug() << "Stored locale code:" << locale;
-#endif
+        if (localeString == QLatin1String("C")) {
+            localeString.clear();
+            config.setDisplayLanguage(localeString);
+        }
 
-    if (locale == QLatin1String("C")) {
-        locale = QLocale::system().name();
-    } else {
-        QLocale::setDefault(QLocale(locale));
-    }
+        if (!localeString.isEmpty()) {
+            QLocale::setDefault(QLocale(localeString));
+        }
 
-#ifdef QT_DEBUG
-    qDebug() << "Loading locale:" << locale;
-#endif
+        if (!Hbnsc::loadTranslations()) {
+            qWarning("Failed to load HBNSC translations for locale \"%s\".", qUtf8Printable(localeString));
+        }
 
 #ifndef CLAZY
-    QTranslator *translator = new QTranslator(app);
-    if (translator->load("chennzeihhan_"+locale, SailfishApp::pathTo(QStringLiteral("translations")).toString(QUrl::RemoveScheme))) {
-        app->installTranslator(translator);
-    }
+        QTranslator *translator = new QTranslator(app);
+        if (translator->load(QLocale(), QStringLiteral("chennzeihhan"), QStringLiteral("_"), SailfishApp::pathTo(QStringLiteral("translations")).toString(QUrl::RemoveScheme), QStringLiteral(".qm"))) {
+            if (!app->installTranslator(translator)) {
+                qWarning("Failed to install app translator for locale \"%s\".", qUtf8Printable(localeString));
+            }
+        } else {
+            qWarning("Failed to load app translations for locale \"%s\".", qUtf8Printable(localeString));
+        }
 #endif
+    }
 
-
-    qmlRegisterType<LanguageModel>("harbour.chennzeihhan", 1, 0, "LanguageModel");
+    qmlRegisterType<LanguagesModel>("harbour.chennzeihhan", 1, 0, "LanguageModel");
     qmlRegisterType<CountryModelFilter>("harbour.chennzeihhan", 1, 0, "CountryModel");
     qmlRegisterType<Wikipedia>("harbour.chennzeihhan", 1, 0, "Wikipedia");
     qmlRegisterType<DownloadManager>("harbour.chennzeihhan", 1, 0, "DownloadManager");
@@ -113,6 +122,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<AtItem>("harbour.chennzeihhan", 1, 0, "AtItem");
     qmlRegisterType<ChItem>("harbour.chennzeihhan", 1, 0, "ChItem");
     qmlRegisterType<DeItem>("harbour.chennzeihhan", 1, 0, "DeItem");
+    qmlRegisterType<LicensesModel>("harbour.chennzeihhan", 1, 0, "LicensesModel");
 
 
     const QScopedPointer<CountriesModelFilter> countriesModel(new CountriesModelFilter);
@@ -123,6 +133,8 @@ int main(int argc, char *argv[])
 #else
     QQuickView* view = new QQuickView;
 #endif
+
+    auto hbnscIconProv = Hbnsc::HbnscIconProvider::createProvider(view->engine());
 
     view->rootContext()->setContextProperty(QStringLiteral("dbMan"), &dbman);
     view->rootContext()->setContextProperty(QStringLiteral("config"), &config);

@@ -11,7 +11,6 @@ SOURCES += \
     src/downloadmanager.cpp \
     src/wikipedia.cpp \
     src/configuration.cpp \
-    src/models/languagemodel.cpp \
     src/models/item.cpp \
     src/models/simpleitemmodel.cpp \
     src/models/extendeditem.cpp \
@@ -24,7 +23,9 @@ SOURCES += \
     src/models/countriesbasemodel.cpp \
     src/models/favoritesmodel.cpp \
     src/models/countriesmodelnew.cpp \
-    src/models/countriesmodelfilter.cpp
+    src/models/countriesmodelfilter.cpp \
+    src/models/languagesmodel.cpp \
+    src/models/licensesmodel.cpp
 
 translations.path = /usr/share/harbour-chennzeihhan/translations
 translations.files = ../translations/*.qm
@@ -61,7 +62,10 @@ OTHER_FILES += \
     qml/Dialogs/Sorting.qml \
     qml/Dialogs/SearchTarget.qml \
     qml/Models/ContributorsModel.qml \
-    qml/Models/ChangelogModel.qml
+    qml/Models/ChangelogModel.qml \
+    qml/ItemViews/SimpleItemView.qml \
+    qml/ItemViews/ExtendedItemView.qml \
+    qml/Views/SignGrid.qml
 
 HEADERS += \
     src/dbmanager.h \
@@ -70,7 +74,6 @@ HEADERS += \
     src/downloadmanager.h \
     src/wikipedia.h \
     src/configuration.h \
-    src/models/languagemodel.h \
     src/models/item.h \
     src/models/simpleitemmodel.h \
     src/models/simpleitem.h \
@@ -84,15 +87,8 @@ HEADERS += \
     src/models/countriesbasemodel.h \
     src/models/favoritesmodel.h \
     src/models/countriesmodelnew.h \
-    src/models/countriesmodelfilter.h
+    src/models/countriesmodelfilter.h \
+    src/models/languagesmodel.h \
+    src/models/licensesmodel.h
 
-DISTFILES += \
-    qml/ItemViews/SimpleItemView.qml \
-    qml/ItemViews/ExtendedItemView.qml \
-    qml/Views/SignGrid.qml \
-    qml/BTComponents/AboutPage.qml \
-    qml/BTComponents/Changelog.qml \
-    qml/BTComponents/ChangelogDelegate.qml \
-    qml/BTComponents/Contributors.qml \
-    qml/BTComponents/ContributorsDelegate.qml \
-    qml/BTComponents/FirstStartInfo.qml
+include(../HBN_SFOS_Components/HBN_SFOS_Components.pri)

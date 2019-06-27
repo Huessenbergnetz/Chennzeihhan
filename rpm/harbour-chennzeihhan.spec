@@ -6,6 +6,7 @@
 Name:       harbour-chennzeihhan
 
 # >> macros
+%define __provides_exclude_from ^%{_datadir}/%{name}/de/huessenbergnetz/.*$
 # << macros
 
 %{!?qtc_qmake:%define qtc_qmake %qmake}
@@ -26,6 +27,8 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(sailfishapp) >= 0.0.10
+BuildRequires:  pkgconfig(sailfishsilica)
+BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  desktop-file-utils
 
 %description
@@ -56,8 +59,6 @@ rm -rf %{buildroot}
 %qmake5_install
 
 # >> install post
-rm -rf %{buildroot}%{_datadir}/%{name}/qml/BTComponents/.git
-rm -rf %{buildroot}%{_datadir}/%{name}/qml/BTComponents/.gitignore
 # << install post
 
 desktop-file-install --delete-original       \
