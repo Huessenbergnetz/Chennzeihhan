@@ -1,84 +1,18 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.0">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_NL" version="2.1">
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/Pages/About.qml" line="29"/>
         <source>Vehicle registation plates database for Sailfish OS</source>
         <translation>Kentekenregistratie-database voor SailfishOS</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/About.qml" line="33"/>
-        <source>Source code is licensed under the &lt;a href=&apos;http://www.gnu.org/licenses/gpl-2.0.en.html&apos;&gt;GNU GPL v2&lt;/a&gt;.&lt;br /&gt;Car plates database is licensed under &lt;a href=&apos;http://creativecommons.org/licenses/by-nc-sa/4.0/&apos;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International&lt;/a&gt;.</source>
-        <translation>Broncode is gelicenseerd onder de &lt;a href=&apos;http://www.gnu.org/licenses/gpl-2.0.en.html&apos;&gt;GNU GPL v2&lt;/a&gt;-licentie.&lt;br /&gt;De kenteken-database is gelicenseerd onder de &lt;a href=&apos;http://creativecommons.org/licenses/by-nc-sa/4.0/&apos;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International&lt;/a&gt;.</translation>
-    </message>
-    <message>
-        <location filename="../qml/Pages/About.qml" line="48"/>
-        <source>Munich</source>
-        <translation>München</translation>
-    </message>
-    <message>
-        <location filename="../qml/Pages/About.qml" line="49"/>
         <source>Germany</source>
         <translation>Duitsland</translation>
     </message>
 </context>
 <context>
-    <name>AboutPage</name>
-    <message>
-        <location filename="../qml/BTComponents/AboutPage.qml" line="82"/>
-        <source>Homepage</source>
-        <translation>Website</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/AboutPage.qml" line="87"/>
-        <source>Privacy Policy</source>
-        <translation>Privacyovereenkomst</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/AboutPage.qml" line="92"/>
-        <source>Changelog</source>
-        <translation>Wijzigingslog</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/AboutPage.qml" line="97"/>
-        <source>Contributors</source>
-        <translation>Bijdragers</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/AboutPage.qml" line="107"/>
-        <source>About</source>
-        <translation>Over</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/AboutPage.qml" line="167"/>
-        <source>Contact</source>
-        <translation>Contact</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/AboutPage.qml" line="252"/>
-        <source>Contribute</source>
-        <translation>Bijdragen</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/AboutPage.qml" line="261"/>
-        <source>Translate</source>
-        <translation>Vertalen</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/AboutPage.qml" line="268"/>
-        <source>Report bugs</source>
-        <translation>Bugs rapporteren</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/AboutPage.qml" line="291"/>
-        <source>3rd party licenses</source>
-        <translation>Licenties van derde partijen</translation>
-    </message>
-</context>
-<context>
     <name>AtItem</name>
     <message>
-        <location filename="../src/models/atitem.cpp" line="25"/>
         <source>Austria</source>
         <translation>Oostenrijk</translation>
     </message>
@@ -86,91 +20,29 @@
 <context>
     <name>ChItem</name>
     <message>
-        <location filename="../src/models/chitem.cpp" line="25"/>
         <source>Switzerland</source>
         <translation>Zwitserland</translation>
     </message>
 </context>
 <context>
-    <name>Changelog</name>
-    <message>
-        <location filename="../qml/BTComponents/Changelog.qml" line="39"/>
-        <source>Changelog</source>
-        <translation>Wijzigingslog</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/Changelog.qml" line="59"/>
-        <source>New</source>
-        <translation>Nieuw</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/Changelog.qml" line="78"/>
-        <source>Improved</source>
-        <translation>Verbeterd</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/Changelog.qml" line="97"/>
-        <source>Fixed</source>
-        <translation>Opgelost</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/Changelog.qml" line="116"/>
-        <source>Note</source>
-        <translation>Noot</translation>
-    </message>
-</context>
-<context>
-    <name>Contributors</name>
-    <message>
-        <location filename="../qml/BTComponents/Contributors.qml" line="44"/>
-        <source>Contributors</source>
-        <translation>Bijdragers</translation>
-    </message>
-</context>
-<context>
-    <name>ContributorsDelegate</name>
-    <message>
-        <location filename="../qml/BTComponents/ContributorsDelegate.qml" line="138"/>
-        <source>Website</source>
-        <translation>Website</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/ContributorsDelegate.qml" line="163"/>
-        <source>Sina Weibo</source>
-        <translation>Sina Weibo</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/ContributorsDelegate.qml" line="169"/>
-        <source>TMO</source>
-        <extracomment>abbreviation for talk.maemo.org</extracomment>
-        <translation type="unfinished"/>
-    </message>
-</context>
-<context>
     <name>ContributorsModel</name>
     <message>
-        <location filename="../qml/Models/ContributorsModel.qml" line="25"/>
         <source>Main developer, Chennzeihhan creator</source>
         <translation>Hoofdontwikkelaar, Chennzeihhan-bedenker</translation>
     </message>
     <message>
-        <location filename="../qml/Models/ContributorsModel.qml" line="26"/>
         <source>Author</source>
         <translation>Auteur</translation>
     </message>
     <message>
-        <location filename="../qml/Models/ContributorsModel.qml" line="35"/>
         <source>Italian translation</source>
         <translation>Italiaanse vertaling</translation>
     </message>
     <message>
-        <location filename="../qml/Models/ContributorsModel.qml" line="36"/>
-        <location filename="../qml/Models/ContributorsModel.qml" line="42"/>
         <source>Thanks to</source>
         <translation>Bedankt aan</translation>
     </message>
     <message>
-        <location filename="../qml/Models/ContributorsModel.qml" line="41"/>
         <source>Dutch (Netherlands) translation</source>
         <translation>Nederlandse (Nederland) vertaling</translation>
     </message>
@@ -178,7 +50,6 @@
 <context>
     <name>CountriesDelegate</name>
     <message>
-        <location filename="../qml/Delegates/CountriesDelegate.qml" line="111"/>
         <source>Romving from favourites</source>
         <translation>Bezig met verwijderen uit favorieten</translation>
     </message>
@@ -186,12 +57,10 @@
 <context>
     <name>CountryDelegate</name>
     <message>
-        <location filename="../qml/Delegates/CountryDelegate.qml" line="63"/>
         <source>%1 %2</source>
         <translation>%1 %2</translation>
     </message>
     <message>
-        <location filename="../qml/Delegates/CountryDelegate.qml" line="75"/>
         <source>%1 - %2</source>
         <translation>%1 - %2</translation>
     </message>
@@ -199,42 +68,34 @@
 <context>
     <name>CountryView</name>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="56"/>
         <source>Search: Code</source>
         <translation>Zoeken: Code</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="56"/>
         <source>Search: Name</source>
         <translation>Zoeken: Naam</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="56"/>
         <source>Search: Code and Name</source>
         <translation>Zoeken: Code en Naam</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="63"/>
         <source>Sorting: Name</source>
         <translation>Sortering: Naam</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="63"/>
         <source>Sorting: Code</source>
         <translation>Sortering: Code</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="78"/>
         <source>Information to the local breakdown of the vehicle registration plate system in %1 will be part of the premium version.</source>
         <translation>Informatie over het lokale onderscheid van het voertuigregistratie-kentekensysteem in %1 zal onderdeel worden van de premium-versie.</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="83"/>
         <source>The vehicle registration plate system of %1 does not use a breakdown into districts, regions or something similar. The premium version will contain further information. </source>
         <translation>In het voertuigregistratie-kentekensysteem van %1 zal geen onderscheid worden gemaakt in districten, regio&apos;s of iets dergelijks. De premium-versie zal verdere informatie bevatten.</translation>
     </message>
     <message>
-        <location filename="../qml/Views/CountryView.qml" line="92"/>
         <source>Search</source>
         <translation>Zoeken</translation>
     </message>
@@ -242,1675 +103,1382 @@
 <context>
     <name>DBStrings</name>
     <message>
-        <location filename="../data/dbstrings.h" line="7"/>
         <source>Bavaria</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Bavaria</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="8"/>
-        <source>Baden-WÃ¼rttemberg</source>
-        <comment>Germany</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="9"/>
         <source>Thuringia</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Thüringen</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="10"/>
         <source>Saxony-Anhalt</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Saksen-Anhalt</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="11"/>
         <source>North Rhine-Westphalia</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Noordrijn-Westfalen</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="12"/>
         <source>Saxony</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Saksen</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="13"/>
         <source>Lower Saxony</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Nedersaksen</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="14"/>
         <source>Hesse</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Hesse</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="15"/>
         <source>Brandenburg</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Brandenburg</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="16"/>
         <source>Mecklenburg-Vorpommern</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Mecklenburg-Vorpommern</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="17"/>
         <source>Rhineland-Palatinate</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Rijnland-Pfalz</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="18"/>
         <source>Berlin</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Berlijn</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="19"/>
         <source>Schleswig-Holstein</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Schleswig-Holstein</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="20"/>
         <source>Bremen</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Bremen</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="21"/>
         <source>Hamburg</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Hamburg</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="22"/>
         <source>Saarland</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Saarland</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="23"/>
         <source>Germany</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Duitsland</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="24"/>
         <source>City and District of</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Stad en district van</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="25"/>
         <source>District of</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>District van</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="26"/>
         <source>Cities region</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Stadsregio</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="27"/>
         <source>Members of the</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Leden van de</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="28"/>
         <source>City of</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Stad van</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="29"/>
         <source>Region of</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Regio van</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="30"/>
         <source>Officials of the</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Ambtenaren van de</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="31"/>
         <source>Regional association of</source>
         <comment>Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Regionale associatie van</translation>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="32"/>
         <source>Official cars</source>
+        <comment>Germany</comment>
+        <translation>Officiële auto&apos;s</translation>
+    </message>
+    <message>
+        <source>Austria</source>
+        <comment>Austria</comment>
+        <translation>Oostenrijk</translation>
+    </message>
+    <message>
+        <source>Lower Austria</source>
+        <comment>Austria</comment>
+        <translation>Nederoostenrijk</translation>
+    </message>
+    <message>
+        <source>Vorarlberg</source>
+        <comment>Austria</comment>
+        <translation>Vorarlberg</translation>
+    </message>
+    <message>
+        <source>Burgenland</source>
+        <comment>Austria</comment>
+        <translation>Burgenland</translation>
+    </message>
+    <message>
+        <source>Styria</source>
+        <comment>Austria</comment>
+        <translation>Stiria</translation>
+    </message>
+    <message>
+        <source>Upper Austria</source>
+        <comment>Austria</comment>
+        <translation>Hoogoostenrijk</translation>
+    </message>
+    <message>
+        <source>Carinthia</source>
+        <comment>Austria</comment>
+        <translation>Korintië</translation>
+    </message>
+    <message>
+        <source>Salzburg</source>
+        <comment>Austria</comment>
+        <translation>Salzburg</translation>
+    </message>
+    <message>
+        <source>Tyrol</source>
+        <comment>Austria</comment>
+        <translation>Tirol</translation>
+    </message>
+    <message>
+        <source>Vienna</source>
+        <comment>Austria</comment>
+        <translation>Wenen</translation>
+    </message>
+    <message>
+        <source>Federal Officials</source>
+        <comment>Austria</comment>
+        <translation>Nationale ambtenaren</translation>
+    </message>
+    <message>
+        <source>District of</source>
+        <comment>Austria</comment>
+        <translation>District van</translation>
+    </message>
+    <message>
+        <source>State of</source>
+        <comment>Austria</comment>
+        <translation>Staat van</translation>
+    </message>
+    <message>
+        <source>Political Expositur</source>
+        <comment>Austria</comment>
+        <translation>Politieke expositur</translation>
+    </message>
+    <message>
+        <source>Federal Railways</source>
+        <comment>Austria</comment>
+        <translation>Nationale spoorwegen</translation>
+    </message>
+    <message>
+        <source>Diplomatic Corps in</source>
+        <comment>Austria</comment>
+        <translation>Diplomatiek korps in</translation>
+    </message>
+    <message>
+        <source>Federal Bus Service</source>
+        <comment>Austria</comment>
+        <translation>Nationale busdienst</translation>
+    </message>
+    <message>
+        <source>Postbus</source>
+        <comment>Austria</comment>
+        <translation>Postbus</translation>
+    </message>
+    <message>
+        <source>Federal Gendarmerie</source>
+        <comment>Austria</comment>
+        <translation>Nationale leger</translation>
+    </message>
+    <message>
+        <source>Austrian Armed Forces</source>
+        <comment>Austria</comment>
+        <translation>Oostenrijkse Militaire Eenheid</translation>
+    </message>
+    <message>
+        <source>Consul in</source>
+        <comment>Austria</comment>
+        <translation>Consultant in</translation>
+    </message>
+    <message>
+        <source>Federal Police</source>
+        <comment>Austria</comment>
+        <translation>Nationale politie</translation>
+    </message>
+    <message>
+        <source>City of</source>
+        <comment>Austria</comment>
+        <translation>Stad van</translation>
+    </message>
+    <message>
+        <source>Financial Administration</source>
+        <comment>Austria</comment>
+        <translation>Financiële administratie</translation>
+    </message>
+    <message>
+        <source>Justice Guard</source>
+        <comment>Austria</comment>
+        <translation>Jurisdictiele bewaking</translation>
+    </message>
+    <message>
+        <source>Border Control</source>
+        <comment>Austria</comment>
+        <translation>Grenscontrole</translation>
+    </message>
+    <message>
+        <source>Austria</source>
+        <comment>Countries</comment>
+        <translation>Oostenrijk</translation>
+    </message>
+    <message>
+        <source>Afghanistan</source>
+        <comment>Countries</comment>
+        <translation>Afghanistan</translation>
+    </message>
+    <message>
+        <source>Antigua and Barbuda</source>
+        <comment>Countries</comment>
+        <translation>Antigua en Barbuda</translation>
+    </message>
+    <message>
+        <source>Albania</source>
+        <comment>Countries</comment>
+        <translation>Albanië</translation>
+    </message>
+    <message>
+        <source>Armenia</source>
+        <comment>Countries</comment>
+        <translation>Armenië</translation>
+    </message>
+    <message>
+        <source>Andorra</source>
+        <comment>Countries</comment>
+        <translation>Andorra</translation>
+    </message>
+    <message>
+        <source>Angola</source>
+        <comment>Countries</comment>
+        <translation>Angola</translation>
+    </message>
+    <message>
+        <source>Aruba</source>
+        <comment>Countries</comment>
+        <translation>Aruba</translation>
+    </message>
+    <message>
+        <source>Australia</source>
+        <comment>Countries</comment>
+        <translation>Australië</translation>
+    </message>
+    <message>
+        <source>Palestinian territories</source>
+        <comment>Countries</comment>
+        <translation>Palestijnse staten</translation>
+    </message>
+    <message>
+        <source>Anguilla</source>
+        <comment>Countries</comment>
+        <translation>Anguilla</translation>
+    </message>
+    <message>
+        <source>Azerbaijan</source>
+        <comment>Countries</comment>
+        <translation>Azerbeidjan</translation>
+    </message>
+    <message>
+        <source>Belgium</source>
+        <comment>Countries</comment>
+        <translation>België</translation>
+    </message>
+    <message>
+        <source>Bangladesh</source>
+        <comment>Countries</comment>
+        <translation>Bangladesh</translation>
+    </message>
+    <message>
+        <source>Barbados</source>
+        <comment>Countries</comment>
+        <translation>Barbedos</translation>
+    </message>
+    <message>
+        <source>Burkina Faso</source>
+        <comment>Countries</comment>
+        <translation>Burkina Faso</translation>
+    </message>
+    <message>
+        <source>Bulgaria</source>
+        <comment>Countries</comment>
+        <translation>Bulgarije</translation>
+    </message>
+    <message>
+        <source>Belize</source>
+        <comment>Countries</comment>
+        <translation>Belize</translation>
+    </message>
+    <message>
+        <source>Bhutan</source>
+        <comment>Countries</comment>
+        <translation>Bhutan</translation>
+    </message>
+    <message>
+        <source>Bosnia and Herzegovina</source>
+        <comment>Countries</comment>
+        <translation>Bosnië en Herzegovina</translation>
+    </message>
+    <message>
+        <source>Benin</source>
+        <comment>Countries</comment>
+        <translation>Benin</translation>
+    </message>
+    <message>
+        <source>Bolivia</source>
+        <comment>Countries</comment>
+        <translation>Bolivië</translation>
+    </message>
+    <message>
+        <source>Brazil</source>
+        <comment>Countries</comment>
+        <translation>Brazilië</translation>
+    </message>
+    <message>
+        <source>Bahrain</source>
+        <comment>Countries</comment>
+        <translation>Bahrein</translation>
+    </message>
+    <message>
+        <source>Brunei</source>
+        <comment>Countries</comment>
+        <translation>Brunei</translation>
+    </message>
+    <message>
+        <source>Bahamas</source>
+        <comment>Countries</comment>
+        <translation>Bahama&apos;s</translation>
+    </message>
+    <message>
+        <source>British Virgin Islands</source>
+        <comment>Countries</comment>
+        <translation>Britse maagdeneilanden</translation>
+    </message>
+    <message>
+        <source>Botswana</source>
+        <comment>Countries</comment>
+        <translation>Botswana</translation>
+    </message>
+    <message>
+        <source>Belarus</source>
+        <comment>Countries</comment>
+        <translation>Wit-Rusland</translation>
+    </message>
+    <message>
+        <source>Cuba</source>
+        <comment>Countries</comment>
+        <translation>Cuba</translation>
+    </message>
+    <message>
+        <source>Cameroon</source>
+        <comment>Countries</comment>
+        <translation>Kameroen</translation>
+    </message>
+    <message>
+        <source>Canada</source>
+        <comment>Countries</comment>
+        <translation>Canada</translation>
+    </message>
+    <message>
+        <source>Congo-Kinshasa</source>
+        <comment>Countries</comment>
+        <translation>Congo-Kinshasa</translation>
+    </message>
+    <message>
+        <source>Switzerland</source>
+        <comment>Countries</comment>
+        <translation>Zwitserland</translation>
+    </message>
+    <message>
+        <source>China</source>
+        <comment>Countries</comment>
+        <translation>China</translation>
+    </message>
+    <message>
+        <source>Ivory Coast</source>
+        <comment>Countries</comment>
+        <translation>Ivoorkust</translation>
+    </message>
+    <message>
+        <source>Sri Lanka</source>
+        <comment>Countries</comment>
+        <translation>Sri Lanka</translation>
+    </message>
+    <message>
+        <source>Colombia</source>
+        <comment>Countries</comment>
+        <translation>Colombia</translation>
+    </message>
+    <message>
+        <source>Comores</source>
+        <comment>Countries</comment>
+        <translation>Comores</translation>
+    </message>
+    <message>
+        <source>Costa Rica</source>
+        <comment>Countries</comment>
+        <translation>Costa Rica</translation>
+    </message>
+    <message>
+        <source>Cape Verde</source>
+        <comment>Countries</comment>
+        <translation>Kaapverdië</translation>
+    </message>
+    <message>
+        <source>Cyprus</source>
+        <comment>Countries</comment>
+        <translation>Cyprus</translation>
+    </message>
+    <message>
+        <source>Wales (GB)</source>
+        <comment>Countries</comment>
+        <translation>Wales (VK)</translation>
+    </message>
+    <message>
+        <source>Czech Republic</source>
+        <comment>Countries</comment>
+        <translation>Tjechië</translation>
+    </message>
+    <message>
+        <source>Germany</source>
+        <comment>Countries</comment>
+        <translation>Duitsland</translation>
+    </message>
+    <message>
+        <source>Djibouti</source>
+        <comment>Countries</comment>
+        <translation>Djibouti</translation>
+    </message>
+    <message>
+        <source>Denmark</source>
+        <comment>Countries</comment>
+        <translation>Denemarken</translation>
+    </message>
+    <message>
+        <source>Dominican Republic</source>
+        <comment>Countries</comment>
+        <translation>Dominicaanse Republiek</translation>
+    </message>
+    <message>
+        <source>Algeria</source>
+        <comment>Countries</comment>
+        <translation>Algerië</translation>
+    </message>
+    <message>
+        <source>Spain</source>
+        <comment>Countries</comment>
+        <translation>Spanje</translation>
+    </message>
+    <message>
+        <source>Kenya</source>
+        <comment>Countries</comment>
+        <translation>Kenia</translation>
+    </message>
+    <message>
+        <source>Tanzania</source>
+        <comment>Countries</comment>
+        <translation>Tanzania</translation>
+    </message>
+    <message>
+        <source>Uganda</source>
+        <comment>Countries</comment>
+        <translation>Uganda</translation>
+    </message>
+    <message>
+        <source>Ecuador</source>
+        <comment>Countries</comment>
+        <translation>Ecuador</translation>
+    </message>
+    <message>
+        <source>England (GB)</source>
+        <comment>Countries</comment>
+        <translation>Engeland (VK)</translation>
+    </message>
+    <message>
+        <source>Eritrea</source>
+        <comment>Countries</comment>
+        <translation>Eritrea</translation>
+    </message>
+    <message>
+        <source>El Salvador</source>
+        <comment>Countries</comment>
+        <translation>El Salvador</translation>
+    </message>
+    <message>
+        <source>Estonia</source>
+        <comment>Countries</comment>
+        <translation>Estland</translation>
+    </message>
+    <message>
+        <source>Egypt</source>
+        <comment>Countries</comment>
+        <translation>Egypte</translation>
+    </message>
+    <message>
+        <source>Ethiopia</source>
+        <comment>Countries</comment>
+        <translation>Ethiopië</translation>
+    </message>
+    <message>
+        <source>France</source>
+        <comment>Countries</comment>
+        <translation>Frankrijk</translation>
+    </message>
+    <message>
+        <source>Finland</source>
+        <comment>Countries</comment>
+        <translation>Finland</translation>
+    </message>
+    <message>
+        <source>Fiji</source>
+        <comment>Countries</comment>
+        <translation>Fiji</translation>
+    </message>
+    <message>
+        <source>Liechtenstein</source>
+        <comment>Countries</comment>
+        <translation>Liechtenstein</translation>
+    </message>
+    <message>
+        <source>Faroe Islands</source>
+        <comment>Countries</comment>
+        <translation>Faraö-eilanden</translation>
+    </message>
+    <message>
+        <source>Micronesia</source>
+        <comment>Countries</comment>
+        <translation>Micronesië</translation>
+    </message>
+    <message>
+        <source>Gabon</source>
+        <comment>Countries</comment>
+        <translation>Gabo</translation>
+    </message>
+    <message>
+        <source>United Kingdom</source>
+        <comment>Countries</comment>
+        <translation>Verenigd Koninkrijk</translation>
+    </message>
+    <message>
+        <source>Alderney</source>
+        <comment>Countries</comment>
+        <translation>Alderney</translation>
+    </message>
+    <message>
+        <source>Guernsey</source>
+        <comment>Countries</comment>
+        <translation>Guernsey</translation>
+    </message>
+    <message>
+        <source>Jersey</source>
+        <comment>Countries</comment>
+        <translation>Jersey</translation>
+    </message>
+    <message>
+        <source>Isle of Man</source>
+        <comment>Countries</comment>
+        <translation>Isle of Man</translation>
+    </message>
+    <message>
+        <source>Gibraltar</source>
+        <comment>Countries</comment>
+        <translation>Gibraltar</translation>
+    </message>
+    <message>
+        <source>Guatemala</source>
+        <comment>Countries</comment>
+        <translation>Guatemala</translation>
+    </message>
+    <message>
+        <source>Georgia</source>
+        <comment>Countries</comment>
+        <translation>Georgië</translation>
+    </message>
+    <message>
+        <source>Ghana</source>
+        <comment>Countries</comment>
+        <translation>Ghana</translation>
+    </message>
+    <message>
+        <source>Equatorial Guinea</source>
+        <comment>Countries</comment>
+        <translation>Equatoriaal Guinea</translation>
+    </message>
+    <message>
+        <source>Greece</source>
+        <comment>Countries</comment>
+        <translation>Griekenland</translation>
+    </message>
+    <message>
+        <source>Guinea-Bissau</source>
+        <comment>Countries</comment>
+        <translation>Guinea-Bissau</translation>
+    </message>
+    <message>
+        <source>Guinea</source>
+        <comment>Countries</comment>
+        <translation>Guinea</translation>
+    </message>
+    <message>
+        <source>Guyana</source>
+        <comment>Countries</comment>
+        <translation>Guyana</translation>
+    </message>
+    <message>
+        <source>Hungary</source>
+        <comment>Countries</comment>
+        <translation>Hongarije</translation>
+    </message>
+    <message>
+        <source>Hongkong</source>
+        <comment>Countries</comment>
+        <translation>Hong Kong</translation>
+    </message>
+    <message>
+        <source>Jordan</source>
+        <comment>Countries</comment>
+        <translation>Jordanië</translation>
+    </message>
+    <message>
+        <source>Honduras</source>
+        <comment>Countries</comment>
+        <translation>Honduras</translation>
+    </message>
+    <message>
+        <source>Croatia</source>
+        <comment>Countries</comment>
+        <translation>Kroatië</translation>
+    </message>
+    <message>
+        <source>Italy</source>
+        <comment>Countries</comment>
+        <translation>Italië</translation>
+    </message>
+    <message>
+        <source>Israel</source>
+        <comment>Countries</comment>
+        <translation>Israël</translation>
+    </message>
+    <message>
+        <source>India</source>
+        <comment>Countries</comment>
+        <translation>India</translation>
+    </message>
+    <message>
+        <source>Iran</source>
+        <comment>Countries</comment>
+        <translation>Iran</translation>
+    </message>
+    <message>
+        <source>Ireland</source>
+        <comment>Countries</comment>
+        <translation>Ierland</translation>
+    </message>
+    <message>
+        <source>Irag</source>
+        <comment>Countries</comment>
+        <translation>Irak</translation>
+    </message>
+    <message>
+        <source>Iceland</source>
+        <comment>Countries</comment>
+        <translation>IJsland</translation>
+    </message>
+    <message>
+        <source>Japan</source>
+        <comment>Countries</comment>
+        <translation>Japan</translation>
+    </message>
+    <message>
+        <source>Jamaica</source>
+        <comment>Countries</comment>
+        <translation>Jamaica</translation>
+    </message>
+    <message>
+        <source>Cambodia</source>
+        <comment>Countries</comment>
+        <translation>Cambodia</translation>
+    </message>
+    <message>
+        <source>Saint Kitts and Nevis</source>
+        <comment>Countries</comment>
+        <translation>Saint Kitts en Nevis</translation>
+    </message>
+    <message>
+        <source>Kiribati</source>
+        <comment>Countries</comment>
+        <translation>Kiribati</translation>
+    </message>
+    <message>
+        <source>Greenland</source>
+        <comment>Countries</comment>
+        <translation>Groenland</translation>
+    </message>
+    <message>
+        <source>North Korea</source>
+        <comment>Countries</comment>
+        <translation>Noord-Korea</translation>
+    </message>
+    <message>
+        <source>Kyrgyzstan</source>
+        <comment>Countries</comment>
+        <translation>Kyrzigië</translation>
+    </message>
+    <message>
+        <source>Saudi Arabia</source>
+        <comment>Countries</comment>
+        <translation>Saoedi-Arabië</translation>
+    </message>
+    <message>
+        <source>Kuwait</source>
+        <comment>Countries</comment>
+        <translation>Koeweit</translation>
+    </message>
+    <message>
+        <source>Kazakhstan</source>
+        <comment>Countries</comment>
+        <translation>Kazachstan</translation>
+    </message>
+    <message>
+        <source>Laos</source>
+        <comment>Countries</comment>
+        <translation>Laos</translation>
+    </message>
+    <message>
+        <source>Libya</source>
+        <comment>Countries</comment>
+        <translation>Libië</translation>
+    </message>
+    <message>
+        <source>Liberia</source>
+        <comment>Countries</comment>
+        <translation>Liberië</translation>
+    </message>
+    <message>
+        <source>Lesotho</source>
+        <comment>Countries</comment>
+        <translation>Lesotho</translation>
+    </message>
+    <message>
+        <source>Lithuania</source>
+        <comment>Countries</comment>
+        <translation>Litouwen</translation>
+    </message>
+    <message>
+        <source>Luxembourg</source>
+        <comment>Countries</comment>
+        <translation>Luxemburg</translation>
+    </message>
+    <message>
+        <source>Latvia</source>
+        <comment>Countries</comment>
+        <translation>Letland</translation>
+    </message>
+    <message>
+        <source>Malta</source>
+        <comment>Countries</comment>
+        <translation>Malta</translation>
+    </message>
+    <message>
+        <source>Morocco</source>
+        <comment>Countries</comment>
+        <translation>Marokko</translation>
+    </message>
+    <message>
+        <source>Malaysia</source>
+        <comment>Countries</comment>
+        <translation>Maleisië</translation>
+    </message>
+    <message>
+        <source>Moncao</source>
+        <comment>Countries</comment>
+        <translation>Monaco</translation>
+    </message>
+    <message>
+        <source>Moldova</source>
+        <comment>Countries</comment>
+        <translation>Moldova</translation>
+    </message>
+    <message>
+        <source>Mexico</source>
+        <comment>Countries</comment>
+        <translation>Mexico</translation>
+    </message>
+    <message>
+        <source>Mongolia</source>
+        <comment>Countries</comment>
+        <translation>Mongolië</translation>
+    </message>
+    <message>
+        <source>Marshall Islands</source>
+        <comment>Countries</comment>
+        <translation>Marshall-eilanden</translation>
+    </message>
+    <message>
+        <source>Macedonia</source>
+        <comment>Countries</comment>
+        <translation>Macedonië</translation>
+    </message>
+    <message>
+        <source>Montenegro</source>
+        <comment>Countries</comment>
+        <translation>Montenegro</translation>
+    </message>
+    <message>
+        <source>Macau</source>
+        <comment>Countries</comment>
+        <translation>Macau</translation>
+    </message>
+    <message>
+        <source>Mozambique</source>
+        <comment>Countries</comment>
+        <translation>Mozambique</translation>
+    </message>
+    <message>
+        <source>Mauritius</source>
+        <comment>Countries</comment>
+        <translation>Mauritius</translation>
+    </message>
+    <message>
+        <source>Maldives</source>
+        <comment>Countries</comment>
+        <translation>Maladiven</translation>
+    </message>
+    <message>
+        <source>Malawi</source>
+        <comment>Countries</comment>
+        <translation>Malawi</translation>
+    </message>
+    <message>
+        <source>Myanmar</source>
+        <comment>Countries</comment>
+        <translation>Myanmar</translation>
+    </message>
+    <message>
+        <source>Norway</source>
+        <comment>Countries</comment>
+        <translation>Noorwegen</translation>
+    </message>
+    <message>
+        <source>Netherlands Antilles</source>
+        <comment>Countries</comment>
+        <translation>Nederlandse Antillen</translation>
+    </message>
+    <message>
+        <source>Namibia</source>
+        <comment>Countries</comment>
+        <translation>Namibië</translation>
+    </message>
+    <message>
+        <source>Nauru</source>
+        <comment>Countries</comment>
+        <translation>Nauru</translation>
+    </message>
+    <message>
+        <source>New Caledonia</source>
+        <comment>Countries</comment>
+        <translation>Nieuw-Caledonië</translation>
+    </message>
+    <message>
+        <source>Nepal</source>
+        <comment>Countries</comment>
+        <translation>Nepal</translation>
+    </message>
+    <message>
+        <source>Nigeria</source>
+        <comment>Countries</comment>
+        <translation>Nigeria</translation>
+    </message>
+    <message>
+        <source>Northern Ireland (GB)</source>
+        <comment>Countries</comment>
+        <translation>Noord-Ierland (VK)</translation>
+    </message>
+    <message>
+        <source>Nicaragua</source>
+        <comment>Countries</comment>
+        <translation>Nicaragua</translation>
+    </message>
+    <message>
+        <source>Netherlands</source>
+        <comment>Countries</comment>
+        <translation>Nederland</translation>
+    </message>
+    <message>
+        <source>New Zealand</source>
+        <comment>Countries</comment>
+        <translation>Nieuw-Zeeland</translation>
+    </message>
+    <message>
+        <source>Oman</source>
+        <comment>Countries</comment>
+        <translation>Oman</translation>
+    </message>
+    <message>
+        <source>Portugal</source>
+        <comment>Countries</comment>
+        <translation>Portugal</translation>
+    </message>
+    <message>
+        <source>Panama</source>
+        <comment>Countries</comment>
+        <translation>Panama</translation>
+    </message>
+    <message>
+        <source>Palau</source>
+        <comment>Countries</comment>
+        <translation>Palau</translation>
+    </message>
+    <message>
+        <source>Peru</source>
+        <comment>Countries</comment>
+        <translation>Peru</translation>
+    </message>
+    <message>
+        <source>Pakistan</source>
+        <comment>Countries</comment>
+        <translation>Pakistan</translation>
+    </message>
+    <message>
+        <source>Poland</source>
+        <comment>Countries</comment>
+        <translation>Polen</translation>
+    </message>
+    <message>
+        <source>Transnistria</source>
+        <comment>Countries</comment>
+        <translation>Transnistrië</translation>
+    </message>
+    <message>
+        <source>Papua New Guinea</source>
+        <comment>Countries</comment>
+        <translation>Papua Nieuw-Guinea</translation>
+    </message>
+    <message>
+        <source>Puerto Rico</source>
+        <comment>Countries</comment>
+        <translation>Puerto Rico</translation>
+    </message>
+    <message>
+        <source>Palestine</source>
+        <comment>Countries</comment>
+        <translation>Palestina</translation>
+    </message>
+    <message>
+        <source>Paraguay</source>
+        <comment>Countries</comment>
+        <translation>Paraguay</translation>
+    </message>
+    <message>
+        <source>Qatar</source>
+        <comment>Countries</comment>
+        <translation>Qatar</translation>
+    </message>
+    <message>
+        <source>Argentina</source>
+        <comment>Countries</comment>
+        <translation>Argentinië</translation>
+    </message>
+    <message>
+        <source>Taiwan</source>
+        <comment>Countries</comment>
+        <translation>Taiwan</translation>
+    </message>
+    <message>
+        <source>Central African Republic</source>
+        <comment>Countries</comment>
+        <translation>Centrale Afrikaanse Republiek</translation>
+    </message>
+    <message>
+        <source>Congo-Brazzaville</source>
+        <comment>Countries</comment>
+        <translation>Congo-Brazzaville</translation>
+    </message>
+    <message>
+        <source>Chile</source>
+        <comment>Countries</comment>
+        <translation>Chili</translation>
+    </message>
+    <message>
+        <source>Haiti</source>
+        <comment>Countries</comment>
+        <translation>Haïti</translation>
+    </message>
+    <message>
+        <source>Indonesia</source>
+        <comment>Countries</comment>
+        <translation>Indonesië</translation>
+    </message>
+    <message>
+        <source>Mauritania</source>
+        <comment>Countries</comment>
+        <translation>Mauritanië</translation>
+    </message>
+    <message>
+        <source>Kosovo</source>
+        <comment>Countries</comment>
+        <translation>Kosovo</translation>
+    </message>
+    <message>
+        <source>Lebanon</source>
+        <comment>Countries</comment>
+        <translation>Libanon</translation>
+    </message>
+    <message>
+        <source>Madagascar</source>
+        <comment>Countries</comment>
+        <translation>Madagaskar</translation>
+    </message>
+    <message>
+        <source>Mali</source>
+        <comment>Countries</comment>
+        <translation>Mali</translation>
+    </message>
+    <message>
+        <source>Niger</source>
+        <comment>Countries</comment>
+        <translation>Nigeria</translation>
+    </message>
+    <message>
+        <source>Romania</source>
+        <comment>Countries</comment>
+        <translation>Roemenië</translation>
+    </message>
+    <message>
+        <source>South Korea</source>
+        <comment>Countries</comment>
+        <translation>Zuid-Korea</translation>
+    </message>
+    <message>
+        <source>Uruguay</source>
+        <comment>Countries</comment>
+        <translation>Uruguay</translation>
+    </message>
+    <message>
+        <source>Philippines</source>
+        <comment>Countries</comment>
+        <translation>Filipijnen</translation>
+    </message>
+    <message>
+        <source>Republika Srpska</source>
+        <comment>Countries</comment>
+        <translation>Servische Republiek</translation>
+    </message>
+    <message>
+        <source>San Marino</source>
+        <comment>Countries</comment>
+        <translation>San Marino</translation>
+    </message>
+    <message>
+        <source>Togo</source>
+        <comment>Countries</comment>
+        <translation>Togo</translation>
+    </message>
+    <message>
+        <source>Burundi</source>
+        <comment>Countries</comment>
+        <translation>Burundi</translation>
+    </message>
+    <message>
+        <source>Russia</source>
+        <comment>Countries</comment>
+        <translation>Rusland</translation>
+    </message>
+    <message>
+        <source>Rwanda</source>
+        <comment>Countries</comment>
+        <translation>Roewanda</translation>
+    </message>
+    <message>
+        <source>Sweden</source>
+        <comment>Countries</comment>
+        <translation>Zweden</translation>
+    </message>
+    <message>
+        <source>Scotland (GB)</source>
+        <comment>Countries</comment>
+        <translation>Schotland (VK)</translation>
+    </message>
+    <message>
+        <source>Swaziland</source>
+        <comment>Countries</comment>
+        <translation>Swaziland</translation>
+    </message>
+    <message>
+        <source>Singapore</source>
+        <comment>Countries</comment>
+        <translation>Singapore</translation>
+    </message>
+    <message>
+        <source>Slovakia</source>
+        <comment>Countries</comment>
+        <translation>Slowakije</translation>
+    </message>
+    <message>
+        <source>Sierra Leone</source>
+        <comment>Countries</comment>
+        <translation>Sierra Leone</translation>
+    </message>
+    <message>
+        <source>Slovenia</source>
+        <comment>Countries</comment>
+        <translation>Slovenië</translation>
+    </message>
+    <message>
+        <source>Suriname</source>
+        <comment>Countries</comment>
+        <translation>Suriname</translation>
+    </message>
+    <message>
+        <source>Sovereign Military Order of Malta</source>
+        <comment>Countries</comment>
+        <translation>Orde van Malta</translation>
+    </message>
+    <message>
+        <source>Senegal</source>
+        <comment>Countries</comment>
+        <translation>Senegal</translation>
+    </message>
+    <message>
+        <source>Somalia</source>
+        <comment>Countries</comment>
+        <translation>Somalië</translation>
+    </message>
+    <message>
+        <source>Solomon Islands</source>
+        <comment>Countries</comment>
+        <translation>Solomon-eilanden</translation>
+    </message>
+    <message>
+        <source>Serbia</source>
+        <comment>Countries</comment>
+        <translation>Servië</translation>
+    </message>
+    <message>
+        <source>South Sudan</source>
+        <comment>Countries</comment>
+        <translation>Zuid-Soedan</translation>
+    </message>
+    <message>
+        <source>Sudan</source>
+        <comment>Countries</comment>
+        <translation>Soedan</translation>
+    </message>
+    <message>
+        <source>Seychelles</source>
+        <comment>Countries</comment>
+        <translation>Seychellen</translation>
+    </message>
+    <message>
+        <source>Syria</source>
+        <comment>Countries</comment>
+        <translation>Syrië</translation>
+    </message>
+    <message>
+        <source>Thailand</source>
+        <comment>Countries</comment>
+        <translation>Thailand</translation>
+    </message>
+    <message>
+        <source>Chad</source>
+        <comment>Countries</comment>
+        <translation>Chad</translation>
+    </message>
+    <message>
+        <source>Tajikistan</source>
+        <comment>Countries</comment>
+        <translation>Tajikistan</translation>
+    </message>
+    <message>
+        <source>Timor-Leste</source>
+        <comment>Countries</comment>
+        <translation>Timor-Leste</translation>
+    </message>
+    <message>
+        <source>Turkmenistan</source>
+        <comment>Countries</comment>
+        <translation>Turkmenistan</translation>
+    </message>
+    <message>
+        <source>Tunisia</source>
+        <comment>Countries</comment>
+        <translation>Tunisië</translation>
+    </message>
+    <message>
+        <source>Tonga</source>
+        <comment>Countries</comment>
+        <translation>Tonga</translation>
+    </message>
+    <message>
+        <source>Turkey</source>
+        <comment>Countries</comment>
+        <translation>Turkije</translation>
+    </message>
+    <message>
+        <source>Trinidad and Tobago</source>
+        <comment>Countries</comment>
+        <translation>Trinidad en Tobago</translation>
+    </message>
+    <message>
+        <source>Tuvalu</source>
+        <comment>Countries</comment>
+        <translation>Tuvalu</translation>
+    </message>
+    <message>
+        <source>Ukraine</source>
+        <comment>Countries</comment>
+        <translation>Oekraïne</translation>
+    </message>
+    <message>
+        <source>United Arab Emirates</source>
+        <comment>Countries</comment>
+        <translation>Verenigde Arabische Emiraten</translation>
+    </message>
+    <message>
+        <source>United States</source>
+        <comment>Countries</comment>
+        <translation>Verenigde Staten</translation>
+    </message>
+    <message>
+        <source>Uzbekistan</source>
+        <comment>Countries</comment>
+        <translation>Oezbekistan</translation>
+    </message>
+    <message>
+        <source>Vatican City</source>
+        <comment>Countries</comment>
+        <translation>Vaticaanstad</translation>
+    </message>
+    <message>
+        <source>Vanuatu</source>
+        <comment>Countries</comment>
+        <translation>Vanuatu</translation>
+    </message>
+    <message>
+        <source>Virgin Islands</source>
+        <comment>Countries</comment>
+        <translation>Maagdeneilanden</translation>
+    </message>
+    <message>
+        <source>Vietnam</source>
+        <comment>Countries</comment>
+        <translation>Vietnam</translation>
+    </message>
+    <message>
+        <source>Gambia</source>
+        <comment>Countries</comment>
+        <translation>Gambia</translation>
+    </message>
+    <message>
+        <source>West Bank</source>
+        <comment>Countries</comment>
+        <translation>Westelijke Jordaanoever</translation>
+    </message>
+    <message>
+        <source>Dominica</source>
+        <comment>Countries</comment>
+        <translation>Dominica</translation>
+    </message>
+    <message>
+        <source>Grenada</source>
+        <comment>Countries</comment>
+        <translation>Grenada</translation>
+    </message>
+    <message>
+        <source>Saint Lucia</source>
+        <comment>Countries</comment>
+        <translation>Sint-Lucia</translation>
+    </message>
+    <message>
+        <source>Samoa</source>
+        <comment>Countries</comment>
+        <translation>Samoa</translation>
+    </message>
+    <message>
+        <source>Western Sahara</source>
+        <comment>Countries</comment>
+        <translation>Westelijke Sahara</translation>
+    </message>
+    <message>
+        <source>Saint Vincent and the Grenadines</source>
+        <comment>Countries</comment>
+        <translation>Sint-Vincent en de Grenadinen</translation>
+    </message>
+    <message>
+        <source>Yemen</source>
+        <comment>Countries</comment>
+        <translation>Jemen</translation>
+    </message>
+    <message>
+        <source>Venezuela</source>
+        <comment>Countries</comment>
+        <translation>Venezuela</translation>
+    </message>
+    <message>
+        <source>Zambia</source>
+        <comment>Countries</comment>
+        <translation>Zambia</translation>
+    </message>
+    <message>
+        <source>South Africa</source>
+        <comment>Countries</comment>
+        <translation>Zuid-Afrika</translation>
+    </message>
+    <message>
+        <source>Zimbabwe</source>
+        <comment>Countries</comment>
+        <translation>Zimbabwe</translation>
+    </message>
+    <message>
+        <source>Baden-Württemberg</source>
         <comment>Germany</comment>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="33"/>
-        <source>Austria</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="34"/>
-        <source>Lower Austria</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="35"/>
-        <source>Vorarlberg</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="36"/>
-        <source>Burgenland</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="37"/>
-        <source>Styria</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="38"/>
-        <source>Upper Austria</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="39"/>
-        <source>Carinthia</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="40"/>
-        <source>Salzburg</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="41"/>
-        <source>Tyrol</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="42"/>
-        <source>Vienna</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="43"/>
-        <source>Federal Officials</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="44"/>
-        <source>District of</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="45"/>
-        <source>State of</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="46"/>
-        <source>Political Expositur</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="47"/>
-        <source>Federal Railways</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="48"/>
-        <source>Diplomatic Corps in</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="49"/>
-        <source>Federal Bus Service</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="50"/>
-        <source>Postbus</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="51"/>
-        <source>Federal Gendarmerie</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="52"/>
-        <source>Austrian Armed Forces</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="53"/>
-        <source>Consul in</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="54"/>
-        <source>Federal Police</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="55"/>
-        <source>City of</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="56"/>
-        <source>Financial Administration</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="57"/>
-        <source>Justice Guard</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="58"/>
-        <source>Border Control</source>
-        <comment>Austria</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="59"/>
-        <source>Austria</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="60"/>
-        <source>Afghanistan</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="61"/>
-        <source>Antigua and Barbuda</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="62"/>
-        <source>Albania</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="63"/>
-        <source>Armenia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="64"/>
-        <source>Andorra</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="65"/>
-        <source>Angola</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="66"/>
-        <source>Aruba</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="67"/>
-        <source>Australia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="68"/>
-        <source>Palestinian territories</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="69"/>
-        <source>Ãland Islands</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="70"/>
-        <source>Anguilla</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="71"/>
-        <source>Azerbaijan</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="72"/>
-        <source>Belgium</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="73"/>
-        <source>Bangladesh</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="74"/>
-        <source>Barbados</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="75"/>
-        <source>Burkina Faso</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="76"/>
-        <source>Bulgaria</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="77"/>
-        <location filename="../data/dbstrings.h" line="89"/>
-        <source>Belize</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="78"/>
-        <source>Bhutan</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="79"/>
-        <source>Bosnia and Herzegovina</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="80"/>
-        <location filename="../data/dbstrings.h" line="110"/>
-        <source>Benin</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="81"/>
-        <source>Bolivia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="82"/>
-        <source>Brazil</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="83"/>
-        <source>Bahrain</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="84"/>
-        <source>Brunei</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="85"/>
-        <source>Bahamas</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="86"/>
-        <source>British Virgin Islands</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="87"/>
-        <location filename="../data/dbstrings.h" line="219"/>
-        <source>Botswana</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="88"/>
-        <source>Belarus</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="90"/>
-        <source>Cuba</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="91"/>
-        <source>Cameroon</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="92"/>
-        <source>Canada</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="93"/>
-        <location filename="../data/dbstrings.h" line="298"/>
-        <source>Congo-Kinshasa</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="94"/>
-        <source>Switzerland</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="95"/>
-        <location filename="../data/dbstrings.h" line="98"/>
-        <source>China</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="96"/>
-        <source>Ivory Coast</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="97"/>
-        <source>Sri Lanka</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="99"/>
-        <source>Colombia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="100"/>
-        <source>Comores</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="101"/>
-        <source>Costa Rica</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="102"/>
-        <source>Cape Verde</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="103"/>
-        <source>Cyprus</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="104"/>
-        <source>Wales (GB)</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="105"/>
-        <source>Czech Republic</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="106"/>
-        <source>Germany</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="107"/>
-        <source>Djibouti</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="108"/>
-        <source>Denmark</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="109"/>
-        <source>Dominican Republic</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="111"/>
-        <source>Algeria</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="112"/>
-        <source>Spain</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="113"/>
-        <source>Kenya</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="114"/>
-        <source>Tanzania</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="115"/>
-        <source>Uganda</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="116"/>
-        <source>Ecuador</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="117"/>
-        <source>England (GB)</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="118"/>
-        <source>Eritrea</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="119"/>
-        <source>El Salvador</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="120"/>
-        <source>Estonia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="121"/>
-        <source>Egypt</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="122"/>
-        <source>Ethiopia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="123"/>
-        <source>France</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="124"/>
-        <source>Finland</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="125"/>
-        <source>Fiji</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="126"/>
-        <source>Liechtenstein</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="127"/>
-        <source>Faroe Islands</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="128"/>
-        <source>Micronesia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="129"/>
-        <source>Gabon</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="130"/>
-        <source>United Kingdom</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="131"/>
-        <source>Alderney</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="132"/>
-        <source>Guernsey</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="133"/>
-        <source>Jersey</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="134"/>
-        <source>Isle of Man</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="135"/>
-        <source>Gibraltar</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="136"/>
-        <location filename="../data/dbstrings.h" line="141"/>
-        <source>Guatemala</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="137"/>
-        <source>Georgia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="138"/>
-        <source>Ghana</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="139"/>
-        <source>Equatorial Guinea</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="140"/>
-        <source>Greece</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="142"/>
-        <location filename="../data/dbstrings.h" line="145"/>
-        <source>Guinea-Bissau</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="143"/>
-        <location filename="../data/dbstrings.h" line="224"/>
-        <source>Guinea</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="144"/>
-        <source>Guyana</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="146"/>
-        <source>Hungary</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="147"/>
-        <source>Hongkong</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="148"/>
-        <location filename="../data/dbstrings.h" line="160"/>
-        <source>Jordan</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="149"/>
-        <source>Honduras</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="150"/>
-        <source>Croatia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="151"/>
-        <source>Italy</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="152"/>
-        <source>Israel</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="153"/>
-        <source>India</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="154"/>
-        <source>Iran</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="155"/>
-        <source>Ireland</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="156"/>
-        <source>Irag</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="157"/>
-        <source>Iceland</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="158"/>
-        <source>Japan</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="159"/>
-        <source>Jamaica</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="161"/>
-        <source>Cambodia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="162"/>
-        <source>Saint Kitts and Nevis</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="163"/>
-        <source>Kiribati</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="164"/>
-        <source>Greenland</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="165"/>
-        <source>North Korea</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="166"/>
-        <source>Kyrgyzstan</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="167"/>
-        <source>Saudi Arabia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="168"/>
-        <source>Kuwait</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="169"/>
-        <source>Kazakhstan</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="170"/>
-        <source>Laos</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="171"/>
-        <source>Libya</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="172"/>
-        <source>Liberia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="173"/>
-        <source>Lesotho</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="174"/>
-        <source>Lithuania</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="175"/>
-        <source>Luxembourg</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="176"/>
-        <source>Latvia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="177"/>
-        <source>Malta</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="178"/>
-        <source>Morocco</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="179"/>
-        <source>Malaysia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="180"/>
-        <source>Moncao</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="181"/>
-        <source>Moldova</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="182"/>
-        <source>Mexico</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="183"/>
-        <source>Mongolia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="184"/>
-        <source>Marshall Islands</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="185"/>
-        <source>Macedonia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="186"/>
-        <source>Montenegro</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="187"/>
-        <source>Macau</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="188"/>
-        <source>Mozambique</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="189"/>
-        <source>Mauritius</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="190"/>
-        <source>Maldives</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="191"/>
-        <source>Malawi</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="192"/>
-        <source>Myanmar</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="193"/>
-        <source>Norway</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="194"/>
-        <source>Netherlands Antilles</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="195"/>
-        <source>Namibia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="196"/>
-        <source>Nauru</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="197"/>
-        <location filename="../data/dbstrings.h" line="198"/>
-        <source>New Caledonia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="199"/>
-        <source>Nepal</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="200"/>
-        <location filename="../data/dbstrings.h" line="285"/>
-        <source>Nigeria</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="201"/>
-        <source>Northern Ireland (GB)</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="202"/>
-        <source>Nicaragua</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="203"/>
-        <source>Netherlands</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="204"/>
-        <source>New Zealand</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="205"/>
-        <source>Oman</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="206"/>
-        <source>Portugal</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="207"/>
-        <source>Panama</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="208"/>
-        <source>Palau</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="209"/>
-        <source>Peru</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="210"/>
-        <source>Pakistan</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="211"/>
-        <source>Poland</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="212"/>
-        <source>Transnistria</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="213"/>
-        <source>Papua New Guinea</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="214"/>
-        <source>Puerto Rico</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="215"/>
-        <source>Palestine</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="216"/>
-        <source>Paraguay</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="217"/>
-        <source>Qatar</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="218"/>
-        <source>Argentina</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="220"/>
-        <source>Taiwan</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="221"/>
-        <source>Central African Republic</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="222"/>
-        <source>Congo-Brazzaville</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="223"/>
-        <source>Chile</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="225"/>
-        <source>Haiti</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="226"/>
-        <source>Indonesia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="227"/>
-        <source>Mauritania</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="228"/>
-        <source>Kosovo</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="229"/>
-        <source>Lebanon</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="230"/>
-        <source>Madagascar</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="231"/>
-        <source>Mali</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="232"/>
-        <source>Niger</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="233"/>
-        <location filename="../data/dbstrings.h" line="241"/>
-        <source>Romania</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="234"/>
-        <source>South Korea</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="235"/>
-        <location filename="../data/dbstrings.h" line="276"/>
-        <source>Uruguay</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="236"/>
-        <source>Philippines</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="237"/>
-        <source>Republika Srpska</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="238"/>
-        <source>San Marino</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="239"/>
-        <location filename="../data/dbstrings.h" line="264"/>
-        <source>Togo</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="240"/>
-        <source>Burundi</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="242"/>
-        <source>Russia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="243"/>
-        <source>Rwanda</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="244"/>
-        <source>Sweden</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="245"/>
-        <source>Scotland (GB)</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="246"/>
-        <source>Swaziland</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="247"/>
-        <source>Singapore</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="248"/>
-        <source>Slovakia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="249"/>
-        <location filename="../data/dbstrings.h" line="284"/>
-        <source>Sierra Leone</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="250"/>
-        <source>Slovenia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="251"/>
-        <source>Suriname</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="252"/>
-        <source>Sovereign Military Order of Malta</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="253"/>
-        <source>Senegal</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="254"/>
-        <source>Somalia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="255"/>
-        <source>Solomon Islands</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="256"/>
-        <source>Serbia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="257"/>
-        <source>South Sudan</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="258"/>
-        <source>SÃ£o TomÃ© and PrÃ­ncipe</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="259"/>
-        <source>Sudan</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="260"/>
-        <source>Seychelles</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="261"/>
-        <source>Syria</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="262"/>
-        <source>Thailand</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="263"/>
-        <source>Chad</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="265"/>
-        <source>Tajikistan</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="266"/>
-        <source>Timor-Leste</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="267"/>
-        <source>Turkmenistan</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="268"/>
-        <source>Tunisia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="269"/>
-        <source>Tonga</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="270"/>
-        <source>Turkey</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="271"/>
-        <source>Trinidad and Tobago</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="272"/>
-        <source>Tuvalu</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="273"/>
-        <source>Ukraine</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="274"/>
-        <source>United Arab Emirates</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="275"/>
-        <source>United States</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="277"/>
-        <source>Uzbekistan</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="278"/>
-        <source>Vatican City</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="279"/>
-        <location filename="../data/dbstrings.h" line="282"/>
-        <source>Vanuatu</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="280"/>
-        <source>Virgin Islands</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="281"/>
-        <source>Vietnam</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="283"/>
-        <source>Gambia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="286"/>
-        <source>West Bank</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="287"/>
-        <source>Dominica</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="288"/>
-        <source>Grenada</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="289"/>
-        <source>Saint Lucia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="290"/>
-        <source>Samoa</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="291"/>
-        <source>Western Sahara</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="292"/>
-        <source>Saint Vincent and the Grenadines</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="293"/>
-        <location filename="../data/dbstrings.h" line="294"/>
-        <source>Yemen</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="295"/>
-        <source>Venezuela</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="296"/>
-        <source>Zambia</source>
-        <comment>Countries</comment>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../data/dbstrings.h" line="297"/>
-        <source>South Africa</source>
+        <source>Åland Islands</source>
         <comment>Countries</comment>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../data/dbstrings.h" line="299"/>
-        <source>Zimbabwe</source>
+        <source>São Tomé and Príncipe</source>
         <comment>Countries</comment>
         <translation type="unfinished"/>
     </message>
@@ -1918,7 +1486,6 @@
 <context>
     <name>DeItem</name>
     <message>
-        <location filename="../src/models/deitem.cpp" line="30"/>
         <source>Germany</source>
         <translation>Duitsland</translation>
     </message>
@@ -1926,117 +1493,73 @@
 <context>
     <name>ExtendedItem</name>
     <message>
-        <location filename="../src/models/extendeditem.cpp" line="246"/>
-        <location filename="../src/models/extendeditem.cpp" line="255"/>
         <source>%1 - %2 %3</source>
-        <extracomment>1 - the carplate sign, 2 - the district type, 3 - the district name
-----------
-1 - the carplate sign, 2 - the district type, 3 - the district name</extracomment>
+        <extracomment>1 - the carplate sign, 2 - the district type, 3 - the district name</extracomment>
         <translation>%1 - %2 %3</translation>
     </message>
 </context>
 <context>
     <name>ExtendedItemView</name>
     <message>
-        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="114"/>
         <source>Capital</source>
         <translation>Hoofdstad</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="120"/>
         <source>Existing since</source>
         <translation>Bestaat sinds</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="120"/>
         <source>Existed from</source>
         <translation>Bestond van</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="127"/>
         <source>Optional plate signs</source>
         <translation>Optionele kentekens</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="134"/>
         <source>Sign optional available since</source>
         <translation>Optioneel kenteken beschikbaar sinds</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="148"/>
         <source>Merged into</source>
         <translation>Samengevoegd in</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="157"/>
         <source>Today part of</source>
         <translation>Heden een deel van</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ExtendedItemView.qml" line="166"/>
         <source>Includes this old districts</source>
         <translation>Bevat deze oude districten</translation>
     </message>
 </context>
 <context>
-    <name>FirstStartInfo</name>
-    <message>
-        <location filename="../qml/BTComponents/FirstStartInfo.qml" line="86"/>
-        <source>Welcome to %1 %2</source>
-        <comment>First is app name, second is version number</comment>
-        <translation>Welkom bij %1 %2</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/FirstStartInfo.qml" line="101"/>
-        <source>Last changes</source>
-        <translation>Nieuwste wijzigingen</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/FirstStartInfo.qml" line="164"/>
-        <source>Help</source>
-        <translation>Hulp</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/FirstStartInfo.qml" line="170"/>
-        <source>Close</source>
-        <translation>Sluiten</translation>
-    </message>
-</context>
-<context>
     <name>Help</name>
     <message>
-        <location filename="../qml/Pages/Help.qml" line="38"/>
-        <location filename="../qml/Pages/Help.qml" line="126"/>
         <source>Help</source>
         <translation>Hul</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Help.qml" line="40"/>
         <source>Legend</source>
         <translation>Legenda</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Help.qml" line="59"/>
         <source>You have marked this as a favourite for faster access.</source>
         <translation>U heeft deze gemarkeerd als favoriet voor snelle toegang.</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Help.qml" line="80"/>
         <source>This is an official code that appears in the UN list of distinguishing codes.</source>
         <translation>Dit is een officiële code die voorkomt in de VN-lijst van onderscheid-codes.</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Help.qml" line="101"/>
         <source>This country uses a deeper categorized system of registration plate code signs.</source>
         <translation>Dit land gebruikt een dieper gecategoriseerd systeem van kentekenregistratie-codes.</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Help.qml" line="122"/>
         <source>This district does not exist anymore but the code may be still in use by old registered vehicles or is now optionally available for the successor district.</source>
         <translation>Dit district bestaat niet meer maar de code kan nog steeds in gebruik zijn bij oude geregistreerde voertuigen of is nu een optioneel onderdeel van het nieuwe district.</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Help.qml" line="133"/>
         <source>To add a country to the list of favourites, press and hold the list entry.</source>
         <translation>Druk en houdt het lijstitem vast om een land aan de lijst met favorieten toe te voegen.</translation>
     </message>
@@ -2044,7 +1567,6 @@
 <context>
     <name>ItemEntry</name>
     <message>
-        <location filename="../qml/ItemViews/ItemEntry.qml" line="118"/>
         <source>%1 - %2 %3</source>
         <extracomment>1 - the carplate sign, 2 - the district type, 3 - the district name</extracomment>
         <translation>%1 - %2 %3</translation>
@@ -2053,241 +1575,95 @@
 <context>
     <name>ItemWebView</name>
     <message>
-        <location filename="../qml/ItemViews/ItemWebView.qml" line="66"/>
         <source>Reload</source>
         <translation>Herladen</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ItemWebView.qml" line="66"/>
         <source>Stop loading</source>
         <translation>Stoppen met laden</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ItemWebView.qml" line="70"/>
         <source>Open in browser</source>
         <translation>Openen in browser</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ItemWebView.qml" line="74"/>
         <source>Back</source>
         <translation>Terug</translation>
     </message>
 </context>
 <context>
-    <name>LanguageModel</name>
+    <name>LicensesModel</name>
     <message>
-        <location filename="../src/models/languagemodel.cpp" line="125"/>
-        <source>System default</source>
-        <translation>Systeemstandaard</translation>
+        <source>Car plates database providing data about car plates in Germany, Austria and Switzerland.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>The translations for Chennzeihhan are provided by the community. To see who is responsible for which translation, open the contributors page.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>MainView</name>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="43"/>
-        <source>Chennzeihhan (old high german for Kennzeichen/registration plate) is an offline database for vehicle registration plates that can find the district of the vehicle plate. It covers currently more than 1200 international and local codes from Austria, Germany and Switzerland.</source>
-        <translation>Chennzeihhan (oud-Hoogduits voor &quot;Kenteken/Registratieplaat&quot;) is een offline-database voor kentekens van motorvoertuigen die het district van de plaathouder kan vinden. Het bevat momenteel meer dan 1200 internationale en lokale codes van Oostenrijk, Duitsland en Zwitserland.</translation>
-    </message>
-    <message>
-        <location filename="../qml/Views/MainView.qml" line="66"/>
         <source>About</source>
         <translation>Over</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="70"/>
         <source>Help/Legend</source>
         <translation>Help/Legenda</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="74"/>
         <source>Settings</source>
         <translation>Instellingen</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="94"/>
         <source>Search ...</source>
         <translation>Bezig met zoeken ...</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="223"/>
         <source>Sorting</source>
         <translation>Sortering</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="228"/>
-        <location filename="../qml/Views/MainView.qml" line="243"/>
         <source>Code</source>
         <translation>Code</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="229"/>
-        <location filename="../qml/Views/MainView.qml" line="244"/>
         <source>Name</source>
         <translation>Naam</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="238"/>
         <source>Search</source>
         <translation>Zoeke</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="245"/>
         <source>Both</source>
         <translation>Beiden</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="281"/>
         <source>You have no database installed. The database is not part of the application package to allow database updates without releasing new application versions. Go to the settings to download the database.</source>
         <translation>U heeft geen database geïnstalleerd. De database is geen onderdeel van het applicatiepakket om te voorkomen dat database-updates een nieuwe applicatieversie zouden vereisen. Ga naar de instellingen om de database te downloaden.</translation>
     </message>
     <message>
-        <location filename="../qml/Views/MainView.qml" line="286"/>
         <source>Because of changes in the data models you have to update the database. Please go to the settings to do so. We apologize for the inconvenience.</source>
         <translation>Vanwege veranderingen in de datamodellen moet u de database bijwerken. Ga naar de instellingen om dit te doen. Onze excues voor het ongemak.</translation>
     </message>
 </context>
 <context>
-    <name>PaypalChooser</name>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="137"/>
-        <source>Currency</source>
-        <translation>Munteenheid</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="138"/>
-        <source>Euro</source>
-        <translation>Eur</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="139"/>
-        <source>US Dollar</source>
-        <translation>Amerikaanse Dollar</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="140"/>
-        <source>Australian Dollar</source>
-        <translation>Australische Dollar</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="141"/>
-        <source>Brazilian Real</source>
-        <translation>Braziliaanse Reaal</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="142"/>
-        <source>Pound Sterling</source>
-        <translation>Pond</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="143"/>
-        <source>Danish Krone</source>
-        <translation>Deense Kroo</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="144"/>
-        <source>Hong Kong Dollar</source>
-        <translation>Hong Kong Dollar</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="145"/>
-        <source>Israel New Shekel</source>
-        <translation>Israëlische Nieuwe Schenkel</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="146"/>
-        <source>Japanese Yen</source>
-        <translation>Japanse Yen</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="147"/>
-        <source>Canadian Dollar</source>
-        <translation>Canadese Dollar</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="148"/>
-        <source>Mexican Peso</source>
-        <translation>Mexicaanse Peso</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="149"/>
-        <source>New Taiwan Dollar</source>
-        <translation>Nieuwe Taiwanese Dollar</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="150"/>
-        <source>New Zealand Dollar</source>
-        <translation>Nieuw-Zeelandse Dollar</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="151"/>
-        <source>Norwegian Krone</source>
-        <translation>Noorse Kroo</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="152"/>
-        <source>Philippine Peso</source>
-        <translation>Filipijnse Peso</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="153"/>
-        <source>Polish Zloty</source>
-        <translation>Poolse Zloty</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="154"/>
-        <source>Russian Ruble</source>
-        <translation>Russische Roebel</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="155"/>
-        <source>Swedish Krone</source>
-        <translation>Zweedse Kroo</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="156"/>
-        <source>Swiss Franc</source>
-        <translation>Zwitserse Frank</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="157"/>
-        <source>Singapore Dollar</source>
-        <translation>Singapoerese Dollar</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="158"/>
-        <source>Thai Baht</source>
-        <translation>Thaise Baht</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="159"/>
-        <source>Czech Koruna</source>
-        <translation>Tjechische Kroon</translation>
-    </message>
-    <message>
-        <location filename="../qml/BTComponents/PaypalChooser.qml" line="160"/>
-        <source>Hungarian Forint</source>
-        <translation>Hongaarse Florijn</translation>
-    </message>
-</context>
-<context>
     <name>SearchTarget</name>
     <message>
-        <location filename="../qml/Dialogs/SearchTarget.qml" line="31"/>
         <source>Search Target</source>
         <translation>Zoekdoel</translation>
     </message>
     <message>
-        <location filename="../qml/Dialogs/SearchTarget.qml" line="40"/>
         <source>Code</source>
         <translation>Code</translation>
     </message>
     <message>
-        <location filename="../qml/Dialogs/SearchTarget.qml" line="64"/>
         <source>Code and Name</source>
         <translation>Code en naam</translation>
     </message>
     <message>
-        <location filename="../qml/Dialogs/SearchTarget.qml" line="52"/>
         <source>Name</source>
         <translation>Naam</translation>
     </message>
@@ -2295,93 +1671,65 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="53"/>
         <source>Check for new database version</source>
         <translation>Controleren op nieuwe database-versie</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="59"/>
         <source>Download new database version</source>
         <translation>Nieuwe database-versie downloaden</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="71"/>
         <source>Settings</source>
         <translation>Instellingen</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="73"/>
         <source>Database</source>
         <translation>Database</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="80"/>
         <source>Currently there is no database installed. Please use the pully menu to check for new DB version.</source>
         <translation>Er is momenteel geen database geïnstalleerd. Gebruik het trekmenu om te controleren op een nieuwe database-versie.</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="122"/>
-        <location filename="../qml/Pages/Settings.qml" line="140"/>
         <source>Rev.</source>
         <translation>Rev.</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="197"/>
         <source>Changes in this version:</source>
         <translation>Wijzigingen in deze versie:</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="218"/>
         <source>Display</source>
         <translation>Weergave</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="223"/>
         <source>Default ordering</source>
         <translation>Standaard sortering</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="228"/>
-        <location filename="../qml/Pages/Settings.qml" line="243"/>
         <source>Code</source>
         <translation>Code</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="229"/>
-        <location filename="../qml/Pages/Settings.qml" line="244"/>
         <source>Name</source>
         <translation>Naam</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="238"/>
         <source>Default search</source>
         <translation>Zoekstandaard</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="245"/>
         <source>Both</source>
         <translation>Beiden</translation>
     </message>
     <message>
-        <location filename="../qml/Pages/Settings.qml" line="251"/>
         <source>Display language</source>
         <translation>Weergavetaal</translation>
-    </message>
-    <message>
-        <location filename="../qml/Pages/Settings.qml" line="255"/>
-        <source>Language</source>
-        <translation>Taal</translation>
-    </message>
-    <message>
-        <location filename="../qml/Pages/Settings.qml" line="256"/>
-        <source>Changing the display language is only applied after a restart of the application.</source>
-        <translation>Het wijzigen van de weergavetaal vereist een herstart van de applicatie.</translation>
     </message>
 </context>
 <context>
     <name>SimpleItemView</name>
     <message>
-        <location filename="../qml/ItemViews/SimpleItemView.qml" line="83"/>
         <source>Capital</source>
         <translation>Hoofdstad</translation>
     </message>
@@ -2389,17 +1737,14 @@
 <context>
     <name>Sorting</name>
     <message>
-        <location filename="../qml/Dialogs/Sorting.qml" line="32"/>
         <source>Sorting</source>
         <translation>Sortering</translation>
     </message>
     <message>
-        <location filename="../qml/Dialogs/Sorting.qml" line="41"/>
         <source>Code</source>
         <translation>Code</translation>
     </message>
     <message>
-        <location filename="../qml/Dialogs/Sorting.qml" line="53"/>
         <source>Name</source>
         <translation>Naam</translation>
     </message>
@@ -2407,13 +1752,11 @@
 <context>
     <name>at</name>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="37"/>
         <source>%1 %2</source>
         <extracomment>the first one is the district type, the second is the district name</extracomment>
         <translation>%1 %2</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/at.qml" line="40"/>
         <source>Capital</source>
         <comment>District capital in Austria</comment>
         <translation>Hoofdstad</translation>
@@ -2422,12 +1765,10 @@
 <context>
     <name>ch</name>
     <message>
-        <location filename="../qml/ItemViews/ch.qml" line="29"/>
         <source>Canton %1</source>
         <translation>Kanton %1</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/ch.qml" line="31"/>
         <source>Capital</source>
         <comment>District capital in Switzerland</comment>
         <translation>Hoofdstad</translation>
@@ -2436,16 +1777,14 @@
 <context>
     <name>de</name>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="37"/>
         <source>%1 %2</source>
         <extracomment>the first one is the district type, the second is the district name</extracomment>
         <translation>%1 %2</translation>
     </message>
     <message>
-        <location filename="../qml/ItemViews/de.qml" line="40"/>
         <source>Capital</source>
         <comment>District capital in Germany</comment>
-        <translation type="unfinished"/>
+        <translation>Hoofdstad</translation>
     </message>
 </context>
 </TS>

@@ -1,9 +1,8 @@
- #!/bin/bash
- 
-STARTDIR=$PWD
+#!/bin/bash
 
-cd l10n
+pushd translations
 for LANG in de it nl_NL
 do
-lrelease chennzeihhan_$LANG.ts
+lrelease-qt5 chennzeihhan_$LANG.ts
 done
+popd
